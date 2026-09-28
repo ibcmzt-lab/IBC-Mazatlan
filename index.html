@@ -1,7 +1,15 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Immersive Beverage Concepts | IBC Mazatlán</title><meta name="description" content="Immersive Beverage Concepts creates future-forward beverage experiences built around self-pour technology, discovery and great products."><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Immersive Beverage Concepts | IBC Mazatlán</title>
+
+<meta name="description" content="Immersive Beverage Concepts is a beverage discovery and tasting laboratory in Mazatlán, Mexico. Explore beer, wine, sparkling beverages, zero-proof pours and what comes next.">
+
+<style>
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,7 +42,98 @@ a {
   margin: 0 auto;
 }
 
-/* HERO */
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  background: #17201f;
+  color: #f5f1e8;
+  border-bottom: 1px solid rgba(198,161,91,.35);
+}
+
+.header-inner {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #c6a15b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c6a15b;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+  color: #c6a15b;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.language-switch button {
+  background: transparent;
+  border: 0;
+  color: #aaa9a2;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 5px;
+}
+
+.language-switch button.active {
+  color: #c6a15b;
+  font-weight: bold;
+}
+
+.language-divider {
+  color: #666d69;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   background: #17201f;
@@ -102,7 +201,10 @@ h1 {
   color: #17201f;
 }
 
-/* INTRO */
+
+/* =========================
+   INTRO
+========================= */
 
 .intro {
   padding: 95px 0;
@@ -128,7 +230,10 @@ h1 {
   margin-bottom: 22px;
 }
 
-/* EXPERIENCE */
+
+/* =========================
+   EXPERIENCE
+========================= */
 
 .experience {
   padding: 100px 0;
@@ -183,7 +288,10 @@ h1 {
   font-size: 16px;
 }
 
-/* STATEMENT */
+
+/* =========================
+   STATEMENT
+========================= */
 
 .statement {
   background: #c6a15b;
@@ -203,7 +311,10 @@ h1 {
   font-size: 17px;
 }
 
-/* SUPPLIERS */
+
+/* =========================
+   SUPPLIERS
+========================= */
 
 .suppliers {
   padding: 100px 0;
@@ -289,7 +400,10 @@ button {
   font-family: inherit;
 }
 
-/* STAY INFORMED */
+
+/* =========================
+   STAY INFORMED
+========================= */
 
 .informed {
   padding: 100px 0;
@@ -325,7 +439,10 @@ button {
   background: #f5f1e8;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
   padding: 70px 0;
@@ -352,7 +469,10 @@ button {
   color: #75602f;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   background: #17201f;
@@ -363,9 +483,40 @@ footer {
   letter-spacing: 1px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
+
+  .header-inner {
+    min-height: 82px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+    letter-spacing: 1.8px;
+  }
+
+  .brand-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .language-switch {
+    font-size: 11px;
+  }
+
+  .language-switch button {
+    font-size: 11px;
+  }
 
   .hero-content {
     padding: 55px 0 65px;
@@ -393,399 +544,966 @@ footer {
   .hero-image {
     max-height: 480px;
   }
+
 }
-</style></head><body><!-- HERO --><section class="hero"><img
-class="hero-image"
-src="Self-Pour.jpg"
-alt="Self-pour beverage wall"
-
-«»
-
-  <div class="container hero-content"><div class="eyebrow">
-  Immersive Beverage Concepts
-</div>
-
-<h1>
-  THE FUTURE<br>
-  OF POUR.
-</h1>
-
-<p class="hero-copy">
-  Beer. Wine. Seltzers. Cider. Cocktails.
-  And whatever comes next.
-</p>
-
-<p class="hero-copy">
-  IBC creates beverage discovery experiences built around
-  self-pour technology, great products and the freedom to explore.
-</p>
-
-<div class="buttons">
-
-  <a class="button button-primary" href="#experience">
-    Explore IBC
-  </a>
-
-  <a class="button" href="#partners">
-    Become a Partner
-  </a>
-
-</div>
-
-  </div></section><!-- INTRO --><section class="intro">  <div class="container intro-grid"><div>
-
-  <div class="section-label">
-    The Concept
-  </div>
-
-  <h2>
-    MORE THAN<br>
-    A POUR.
-  </h2>
-
-</div>
-
-<div>
-
-  <p>
-    Immersive Beverage Concepts is building a new kind
-    of beverage experience.
-  </p>
-
-  <p>
-    Instead of choosing one drink and hoping you made
-    the right decision, IBC puts discovery in your hands.
-  </p>
-
-  <p>
-    Taste. Compare. Explore. Find something new.
-  </p>
-
-  <p>
-    The experience can include beer, wine, cider, seltzers,
-    cocktails, spirits and whatever interesting beverage
-    comes through the door next.
-  </p>
-
-</div>
-
-  </div></section><!-- IBC EXPERIENCE --><section class="experience" id="experience">  <div class="container"><div class="section-heading">
-
-  <div class="section-label">
-    The IBC Experience
-  </div>
-
-  <h2>
-    DISCOVERY<br>
-    BUILT IN.
-  </h2>
-
-  <p>
-    Technology is only part of the experience.
-    The goal is to create an environment where people
-    can discover products, explore flavors and enjoy
-    the freedom to pour what interests them.
-  </p>
-
-</div>
 
 
-<div class="cards">
+/* =========================
+   LANGUAGE VISIBILITY
+========================= */
 
-  <div class="card">
+.lang-es {
+  display: none;
+}
 
-    <div class="card-number">01</div>
+body.spanish .lang-en {
+  display: none;
+}
 
-    <h3>
-      Self-Pour Discovery
-    </h3>
+body.spanish .lang-es {
+  display: block;
+}
 
-    <p>
-      Give guests control of the experience. Pour a little,
-      try something different and discover what they actually like.
-    </p>
+body.spanish .inline-en {
+  display: none;
+}
+
+body:not(.spanish) .inline-es {
+  display: none;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <a href="#" class="brand">
+
+      <div class="brand-mark">
+        IBC
+      </div>
+
+      <div class="brand-text">
+
+        <div class="brand-name">
+          IMMERSIVE BEVERAGE CONCEPTS
+        </div>
+
+        <div class="brand-subtitle">
+          Beverage Discovery & Tasting Laboratory
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <div class="language-switch">
+
+      <button
+        id="enButton"
+        class="active"
+        onclick="setLanguage('en')">
+        🇺🇸 EN
+      </button>
+
+      <span class="language-divider">|</span>
+
+      <button
+        id="esButton"
+        onclick="setLanguage('es')">
+        🇲🇽 ES
+      </button>
+
+    </div>
 
   </div>
 
-
-  <div class="card">
-
-    <div class="card-number">02</div>
-
-    <h3>
-      The Draft Wall
-    </h3>
-
-    <p>
-      A constantly evolving lineup of beverages creates a
-      destination built around exploration rather than a fixed menu.
-    </p>
-
-  </div>
+</header>
 
 
-  <div class="card">
 
-    <div class="card-number">03</div>
+<!-- =========================
+     HERO
+========================= -->
 
-    <h3>
-      Sampling Platform
-    </h3>
+<section class="hero">
 
-    <p>
-      A better way for breweries, wineries, distributors and
-      beverage brands to put products directly in front of consumers.
-    </p>
-
-  </div>
-
-
-  <div class="card">
-
-    <div class="card-number">04</div>
-
-    <h3>
-      Technology + Atmosphere
-    </h3>
-
-    <p>
-      Smart technology meets hospitality, design and a social
-      environment created around the simple pleasure of discovering
-      something new.
-    </p>
-
-  </div>
-
-</div>
-
-  </div></section><!-- STATEMENT --><section class="statement">  <div class="container"><h2>
-  DISCOVER. POUR. EXPLORE.
-</h2>
-
-<p>
-  The beverage experience is changing.
-</p>
-
-  </div></section><!-- SUPPLIER PARTNERS --><section class="suppliers" id="partners">  <div class="container supplier-grid"><div>
-
-  <div class="section-label">
-    Supplier Partners
-  </div>
-
-  <h2>
-    BRING US<br>
-    SOMETHING<br>
-    INTERESTING.
-  </h2>
-
-  <p>
-    IBC is always looking for great products and interesting
-    beverage brands to introduce to our audience.
-  </p>
-
-  <p>
-    If you make, import or distribute something worth pouring,
-    tell us about it.
-  </p>
-
-  <div class="tags">
-
-    <span class="tag">Breweries</span>
-    <span class="tag">Wineries</span>
-    <span class="tag">Importers</span>
-    <span class="tag">Distributors</span>
-    <span class="tag">Cider</span>
-    <span class="tag">Seltzer</span>
-    <span class="tag">Spirits</span>
-    <span class="tag">Technology</span>
-
-  </div>
-
-</div>
-
-
-<div>
-
-  <form
-    action="mailto:hello@ibcmazatlan.com"
-    method="post"
-    enctype="text/plain"
+  <img
+    class="hero-image"
+    src="Self-Pour.jpg"
+    alt="IBC beverage discovery and self-pour wall"
   >
 
-    <label for="name">
-      Name
-    </label>
-
-    <input
-      type="text"
-      id="name"
-      name="Name"
-      required
-    >
+  <div class="container hero-content">
 
 
-    <label for="company">
-      Company
-    </label>
+    <div class="lang-en">
 
-    <input
-      type="text"
-      id="company"
-      name="Company"
-    >
+      <div class="eyebrow">
+        Beverage Discovery & Tasting Laboratory
+      </div>
 
+      <h1>
+        THE FUTURE<br>
+        OF POUR.
+      </h1>
 
-    <label for="contact">
-      Email / WhatsApp
-    </label>
+      <p class="hero-copy">
+        Beer. Wine. Sparkling. Zero-proof.
+        And whatever comes next.
+      </p>
 
-    <input
-      type="text"
-      id="contact"
-      name="Contact"
-      required
-    >
+      <p class="hero-copy">
+        IBC is a place to taste, explore and discover
+        an ever-changing world of beverages, with new
+        products and new ideas always on the pour.
+      </p>
 
+      <div class="buttons">
 
-    <label for="message">
-      Tell Us About Your Product
-    </label>
+        <a class="button button-primary" href="#experience">
+          Explore IBC
+        </a>
 
-    <textarea
-      id="message"
-      name="Message"
-      required
-    ></textarea>
+        <a class="button" href="#partners">
+          Become a Partner
+        </a>
 
+      </div>
 
-    <label for="price-sheet">
-      Price Sheet / Product List
-    </label>
-
-    <input
-      type="file"
-      id="price-sheet"
-      name="Price Sheet"
-      accept=".pdf,.xls,.xlsx,.csv,.doc,.docx"
-    >
-
-    <div class="form-note">
-      You can also send your price sheet or product list
-      directly by WhatsApp or email.
     </div>
 
 
-    <button
-      class="button button-primary"
-      type="submit"
-    >
-      Contact IBC
-    </button>
+    <div class="lang-es">
 
-  </form>
+      <div class="eyebrow">
+        Laboratorio de Descubrimiento y Degustación
+      </div>
 
-</div>
+      <h1>
+        EL FUTURO<br>
+        DEL POUR.
+      </h1>
 
-  </div></section><!-- STAY INFORMED --><section class="informed">  <div class="container informed-inner"><div class="section-label">
-  Stay Informed
-</div>
+      <p class="hero-copy">
+        Cerveza. Vino. Bebidas con gas. Sin alcohol.
+        Y todo lo que venga después.
+      </p>
 
-<h2>
-  SEE WHAT WE ARE<br>
-  POURING NEXT.
-</h2>
+      <p class="hero-copy">
+        IBC es un espacio para probar, explorar y descubrir
+        un mundo de bebidas en constante evolución,
+        con nuevos productos y nuevas ideas siempre en el pour.
+      </p>
 
-<p>
-  IBC is always evolving. Stay connected for new pours,
-  new partners, new experiences and what's coming next.
-</p>
+      <div class="buttons">
 
-<form
-  class="email-form"
-  action="mailto:hello@ibcmazatlan.com"
-  method="post"
-  enctype="text/plain"
->
+        <a class="button button-primary" href="#experience">
+          Explorar IBC
+        </a>
 
-  <input
-    type="email"
-    name="Email"
-    placeholder="Your email address"
-    required
-  >
+        <a class="button" href="#partners">
+          Ser Socio
+        </a>
 
-  <button
-    class="button button-primary"
-    type="submit"
-  >
-    Stay Connected
-  </button>
+      </div>
 
-</form>
-
-  </div></section><!-- CONTACT --><section class="contact">  <div class="container contact-grid"><div>
-
-  <h3>
-    Immersive Beverage Concepts
-  </h3>
-
-  <p>
-    Future-forward beverage experiences
-    built around discovery.
-  </p>
-
-</div>
+    </div>
 
 
-<div>
+  </div>
 
-  <h3>
-    Contact
-  </h3>
-
-  <p>
-    Mazatlán, Sinaloa, Mexico
-  </p>
-
-  <p>
-    WhatsApp:
-    <a href="https://wa.me/526693327829">
-      669-332-2789
-    </a>
-  </p>
-
-  <p>
-    <a href="mailto:hello@ibcmazatlan.com">
-      hello@ibcmazatlan.com
-    </a>
-  </p>
-
-</div>
+</section>
 
 
-<div>
 
-  <h3>
-    Online
-  </h3>
+<!-- =========================
+     INTRO
+========================= -->
 
-  <p>
-    <a href="https://ibcmazatlan.com">
-      IBCMazatlan.com
-    </a>
-  </p>
+<section class="intro">
 
-  <p>
-    Instagram: @IBCMazatlan
-  </p>
+  <div class="container intro-grid">
 
-  <p>
-    Facebook: Immersive Beverage Concepts
-  </p>
 
-</div>
+    <div class="lang-en">
 
-  </div></section><!-- FOOTER --><footer>
+      <div class="section-label">
+        The Concept
+      </div>
+
+      <h2>
+        MORE THAN<br>
+        A POUR.
+      </h2>
+
+    </div>
+
+
+    <div class="lang-en">
+
+      <p>
+        Immersive Beverage Concepts is a new kind of
+        beverage discovery and tasting environment.
+      </p>
+
+      <p>
+        Instead of choosing one drink and hoping you made
+        the right decision, IBC puts discovery in your hands.
+      </p>
+
+      <p>
+        Taste. Compare. Explore. Find something new.
+      </p>
+
+      <p>
+        From Mexican beer and wine to sparkling beverages,
+        zero-proof options and emerging concepts, the
+        selection is designed to keep changing.
+      </p>
+
+    </div>
+
+
+    <div class="lang-es">
+
+      <div class="section-label">
+        El Concepto
+      </div>
+
+      <h2>
+        MUCHO MÁS<br>
+        QUE UN POUR.
+      </h2>
+
+    </div>
+
+
+    <div class="lang-es">
+
+      <p>
+        Immersive Beverage Concepts es un nuevo concepto
+        de descubrimiento y degustación de bebidas.
+      </p>
+
+      <p>
+        En lugar de elegir una sola bebida y esperar haber
+        tomado la decisión correcta, IBC pone el descubrimiento
+        en tus manos.
+      </p>
+
+      <p>
+        Prueba. Compara. Explora. Descubre algo nuevo.
+      </p>
+
+      <p>
+        Desde cerveza y vino mexicanos hasta bebidas
+        sparkling, opciones sin alcohol y nuevos conceptos,
+        la selección está diseñada para evolucionar constantemente.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section class="experience" id="experience">
+
+  <div class="container">
+
+
+    <div class="section-heading lang-en">
+
+      <div class="section-label">
+        The IBC Experience
+      </div>
+
+      <h2>
+        DISCOVERY<br>
+        BUILT IN.
+      </h2>
+
+      <p>
+        IBC brings together an evolving selection of beverages
+        in an environment designed around tasting, exploration
+        and the freedom to discover something different.
+      </p>
+
+    </div>
+
+
+    <div class="section-heading lang-es">
+
+      <div class="section-label">
+        La Experiencia IBC
+      </div>
+
+      <h2>
+        EL DESCUBRIMIENTO<br>
+        ES PARTE DE LA EXPERIENCIA.
+      </h2>
+
+      <p>
+        IBC reúne una selección de bebidas en constante evolución
+        dentro de un espacio creado para probar, explorar y
+        descubrir algo diferente.
+      </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+      <div class="card">
+
+        <div class="card-number">01</div>
+
+        <div class="lang-en">
+
+          <h3>
+            Self-Pour Discovery
+          </h3>
+
+          <p>
+            Pour what interests you. Try a little, compare
+            different styles and discover what you actually like.
+          </p>
+
+        </div>
+
+        <div class="lang-es">
+
+          <h3>
+            Descubrimiento Self-Pour
+          </h3>
+
+          <p>
+            Sirve lo que te llame la atención. Prueba un poco,
+            compara diferentes estilos y descubre lo que realmente te gusta.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <div class="card-number">02</div>
+
+        <div class="lang-en">
+
+          <h3>
+            The Draft Wall
+          </h3>
+
+          <p>
+            An evolving lineup of beverages creates a destination
+            built around exploration rather than a fixed menu.
+          </p>
+
+        </div>
+
+        <div class="lang-es">
+
+          <h3>
+            El Draft Wall
+          </h3>
+
+          <p>
+            Una selección de bebidas que cambia constantemente
+            crea un espacio pensado para explorar, no para seguir un menú fijo.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <div class="card-number">03</div>
+
+        <div class="lang-en">
+
+          <h3>
+            New Product Discovery
+          </h3>
+
+          <p>
+            A place where emerging beverages, new brands and
+            new ideas can be tasted, explored and introduced.
+          </p>
+
+        </div>
+
+        <div class="lang-es">
+
+          <h3>
+            Descubrimiento de Nuevos Productos
+          </h3>
+
+          <p>
+            Un espacio donde nuevas bebidas, nuevas marcas
+            y nuevas ideas pueden probarse, explorarse y darse a conocer.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="card">
+
+        <div class="card-number">04</div>
+
+        <div class="lang-en">
+
+          <h3>
+            Always Evolving
+          </h3>
+
+          <p>
+            The experience is never meant to stay the same.
+            New pours, new producers and new beverage concepts
+            keep the discovery moving forward.
+          </p>
+
+        </div>
+
+        <div class="lang-es">
+
+          <h3>
+            Siempre en Evolución
+          </h3>
+
+          <p>
+            La experiencia nunca está pensada para quedarse igual.
+            Nuevos pours, productores y conceptos mantienen vivo
+            el descubrimiento.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     STATEMENT
+========================= -->
+
+<section class="statement">
+
+  <div class="container">
+
+    <div class="lang-en">
+
+      <h2>
+        DISCOVER. POUR. EXPLORE.
+      </h2>
+
+      <p>
+        The beverage experience is changing.
+      </p>
+
+    </div>
+
+    <div class="lang-es">
+
+      <h2>
+        DESCUBRE. SIRVE. EXPLORA.
+      </h2>
+
+      <p>
+        La experiencia de las bebidas está cambiando.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SUPPLIER PARTNERS
+========================= -->
+
+<section class="suppliers" id="partners">
+
+  <div class="container supplier-grid">
+
+
+    <div class="lang-en">
+
+      <div class="section-label">
+        Supplier Partners
+      </div>
+
+      <h2>
+        BRING US<br>
+        SOMETHING<br>
+        INTERESTING.
+      </h2>
+
+      <p>
+        IBC is always looking for interesting products,
+        emerging brands and new beverage concepts to
+        introduce to our audience.
+      </p>
+
+      <p>
+        If you make, import or distribute something worth
+        pouring, tell us about it.
+      </p>
+
+      <div class="tags">
+
+        <span class="tag">Breweries</span>
+        <span class="tag">Wineries</span>
+        <span class="tag">Importers</span>
+        <span class="tag">Distributors</span>
+        <span class="tag">Sparkling</span>
+        <span class="tag">Zero-Proof</span>
+        <span class="tag">Emerging Brands</span>
+        <span class="tag">Technology</span>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="lang-es">
+
+      <div class="section-label">
+        Socios y Proveedores
+      </div>
+
+      <h2>
+        TRÁENOS<br>
+        ALGO<br>
+        INTERESANTE.
+      </h2>
+
+      <p>
+        IBC siempre está buscando productos interesantes,
+        nuevas marcas y conceptos de bebidas para presentar
+        a nuestra comunidad.
+      </p>
+
+      <p>
+        Si produces, importas o distribuyes algo que vale
+        la pena probar, queremos conocerlo.
+      </p>
+
+      <div class="tags">
+
+        <span class="tag">Cervecerías</span>
+        <span class="tag">Bodegas</span>
+        <span class="tag">Importadores</span>
+        <span class="tag">Distribuidores</span>
+        <span class="tag">Sparkling</span>
+        <span class="tag">Sin Alcohol</span>
+        <span class="tag">Nuevas Marcas</span>
+        <span class="tag">Tecnología</span>
+
+      </div>
+
+    </div>
+
+
+
+    <div>
+
+      <form
+        action="mailto:IBC.mZT@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <label for="name">
+          <span class="lang-en">Name</span>
+          <span class="lang-es">Nombre</span>
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="Name"
+          required
+        >
+
+
+        <label for="company">
+          <span class="lang-en">Company</span>
+          <span class="lang-es">Empresa</span>
+        </label>
+
+        <input
+          type="text"
+          id="company"
+          name="Company"
+        >
+
+
+        <label for="contact">
+          <span class="lang-en">Email / WhatsApp</span>
+          <span class="lang-es">Email / WhatsApp</span>
+        </label>
+
+        <input
+          type="text"
+          id="contact"
+          name="Contact"
+          required
+        >
+
+
+        <label for="message">
+          <span class="lang-en">Tell Us About Your Product</span>
+          <span class="lang-es">Cuéntanos Sobre Tu Producto</span>
+        </label>
+
+        <textarea
+          id="message"
+          name="Message"
+          required
+        ></textarea>
+
+
+        <label for="price-sheet">
+          <span class="lang-en">Price Sheet / Product List</span>
+          <span class="lang-es">Lista de Precios / Productos</span>
+        </label>
+
+        <input
+          type="file"
+          id="price-sheet"
+          name="Price Sheet"
+          accept=".pdf,.xls,.xlsx,.csv,.doc,.docx"
+        >
+
+        <div class="form-note">
+
+          <span class="lang-en">
+            You can also send your price sheet or product list
+            directly by WhatsApp or email.
+          </span>
+
+          <span class="lang-es">
+            También puedes enviar tu lista de precios o productos
+            directamente por WhatsApp o email.
+          </span>
+
+        </div>
+
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+
+          <span class="lang-en">
+            Contact IBC
+          </span>
+
+          <span class="lang-es">
+            Contactar a IBC
+          </span>
+
+        </button>
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     STAY INFORMED
+========================= -->
+
+<section class="informed">
+
+  <div class="container informed-inner">
+
+
+    <div class="lang-en">
+
+      <div class="section-label">
+        Stay Informed
+      </div>
+
+      <h2>
+        SEE WHAT WE ARE<br>
+        POURING NEXT.
+      </h2>
+
+      <p>
+        IBC is always evolving. Stay connected for new pours,
+        new partners, new experiences and what's coming next.
+      </p>
+
+      <form
+        class="email-form"
+        action="mailto:IBC.mZT@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <input
+          type="email"
+          name="Email"
+          placeholder="Your email address"
+          required
+        >
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          Stay Connected
+        </button>
+
+      </form>
+
+    </div>
+
+
+
+    <div class="lang-es">
+
+      <div class="section-label">
+        Mantente Informado
+      </div>
+
+      <h2>
+        DESCUBRE LO QUE<br>
+        VIENE EN EL POUR.
+      </h2>
+
+      <p>
+        IBC está siempre evolucionando. Mantente conectado para
+        conocer nuevos pours, nuevos socios, nuevas experiencias
+        y todo lo que viene.
+      </p>
+
+      <form
+        class="email-form"
+        action="mailto:IBC.mZT@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <input
+          type="email"
+          name="Email"
+          placeholder="Tu correo electrónico"
+          required
+        >
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          Mantenerme Conectado
+        </button>
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact">
+
+  <div class="container contact-grid">
+
+
+    <div>
+
+      <h3>
+        Immersive Beverage Concepts
+      </h3>
+
+      <p class="lang-en">
+        Beverage discovery and tasting experiences
+        built around what's next.
+      </p>
+
+      <p class="lang-es">
+        Experiencias de descubrimiento y degustación
+        enfocadas en lo que viene.
+      </p>
+
+    </div>
+
+
+
+    <div>
+
+      <h3>
+        <span class="lang-en">Contact</span>
+        <span class="lang-es">Contacto</span>
+      </h3>
+
+      <p>
+        Mazatlán, Sinaloa, Mexico
+      </p>
+
+      <p>
+        WhatsApp:
+        <a href="https://wa.me/526693322789">
+          669-332-2789
+        </a>
+      </p>
+
+      <p>
+        <a href="mailto:IBC.mZT@gmail.com">
+          IBC.mZT@gmail.com
+        </a>
+      </p>
+
+    </div>
+
+
+
+    <div>
+
+      <h3>
+        <span class="lang-en">Online</span>
+        <span class="lang-es">En Línea</span>
+      </h3>
+
+      <p>
+        <a href="https://IBCMazatlan.com">
+          IBCMazatlan.com
+        </a>
+      </p>
+
+      <p>
+        Instagram: @IBCMazatlan
+      </p>
+
+      <p>
+        Facebook: Immersive Beverage Concepts
+      </p>
+
+      <p>
+        X: @IBC_MZT
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
   © 2026 Immersive Beverage Concepts · Mazatlán, Mexico
-</footer></body>
+
+</footer>
+
+
+
+<!-- =========================
+     LANGUAGE SCRIPT
+========================= -->
+
+<script>
+
+function setLanguage(language) {
+
+  const body = document.body;
+
+  const enButton = document.getElementById("enButton");
+  const esButton = document.getElementById("esButton");
+
+  if (language === "es") {
+
+    body.classList.add("spanish");
+
+    enButton.classList.remove("active");
+    esButton.classList.add("active");
+
+    document.documentElement.lang = "es";
+
+  } else {
+
+    body.classList.remove("spanish");
+
+    esButton.classList.remove("active");
+    enButton.classList.add("active");
+
+    document.documentElement.lang = "en";
+
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+</script>
+
+
+</body>
 </html>
