@@ -1,440 +1,754 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IBC Mazatlán | Immersive Beverage Discovery Studio</title>
-<meta name="description" content="IBC Mazatlán is an immersive beverage discovery studio exploring beer, wine, seltzers, ciders, cocktails, spirits, non-alcoholic beverages and experimental pours.">
+<meta name="description" content="IBC Mazatlán is an immersive beverage discovery studio exploring self-pour, draft, sampling, technology, and an ever-evolving world of beer, wine, seltzers, ciders and more.">
+
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:#071014;
+color:#f4f7f6;
+font-family:Arial,Helvetica,sans-serif
 }
 
-html {
-  scroll-behavior: smooth;
+a{
+color:inherit;
+text-decoration:none
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #080808;
-  color: #f5f5f5;
-  line-height: 1.6;
+.wrap{
+width:min(1120px,92%);
+margin:auto
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+nav{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #ffffff1c;
+position:relative;
+z-index:5
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(8,8,8,0.94);
-  border-bottom: 1px solid #222;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.logo{
+font-weight:900;
+letter-spacing:.12em;
+font-size:14px
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: 3px;
+.logo b{
+color:#f2bd55
 }
 
-.logo span {
-  display: block;
-  font-size: 0.62rem;
-  letter-spacing: 1.5px;
-  color: #aaa;
-  margin-top: 3px;
+nav a{
+font-size:12px;
+color:#c4d0d1;
+margin-left:24px;
+letter-spacing:.08em;
+text-transform:uppercase
 }
 
-nav a {
-  margin-left: 22px;
-  color: #ccc;
-  font-size: 0.9rem;
+.hero{
+min-height:690px;
+display:flex;
+align-items:center;
+position:relative;
+background-image:
+linear-gradient(
+90deg,
+rgba(3,9,11,.91) 0%,
+rgba(3,9,11,.72) 43%,
+rgba(3,9,11,.28) 100%
+),
+url("self-pour.jpg");
+background-size:cover;
+background-position:center
 }
 
-nav a:hover {
-  color: white;
+.hero .inner{
+padding:95px 0;
+max-width:760px
 }
 
-.hero {
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  padding: 90px 8%;
-  background:
-    radial-gradient(circle at 80% 30%, #252525 0%, transparent 32%),
-    radial-gradient(circle at 20% 70%, #181818 0%, transparent 30%);
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:9px;
+color:#75d5c6;
+font-size:11px;
+font-weight:900;
+letter-spacing:.2em;
+text-transform:uppercase
 }
 
-.hero-content {
-  max-width: 850px;
+.eyebrow:before{
+content:"";
+width:28px;
+height:1px;
+background:#f2bd55
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #aaa;
-  font-size: 0.75rem;
-  margin-bottom: 24px;
+.kicker{
+color:#f2bd55;
+font-weight:800;
+font-size:13px;
+letter-spacing:.2em;
+text-transform:uppercase
 }
 
-h1 {
-  font-size: clamp(4rem, 11vw, 9rem);
-  line-height: 0.88;
-  letter-spacing: -5px;
-  margin-bottom: 30px;
+h1{
+font-size:clamp(48px,8vw,94px);
+line-height:.88;
+letter-spacing:-.055em;
+margin:20px 0 28px
 }
 
-h1 span {
-  display: block;
-  font-size: clamp(1.7rem, 4vw, 3.3rem);
-  letter-spacing: -1px;
-  line-height: 1.1;
-  color: #d0d0d0;
-  margin-top: 25px;
+.hero p{
+font-size:20px;
+line-height:1.5;
+color:#d0dadb;
+max-width:650px
 }
 
-.hero p {
-  max-width: 700px;
-  font-size: 1.15rem;
-  color: #bcbcbc;
-  margin-bottom: 35px;
+.hero .sub{
+font-size:13px;
+line-height:1.7;
+color:#aebcbe;
+max-width:590px;
+margin-top:15px
 }
 
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+.btn{
+display:inline-block;
+margin-top:24px;
+padding:15px 22px;
+border-radius:30px;
+background:#f2bd55;
+color:#111;
+font-weight:900
 }
 
-.button {
-  display: inline-block;
-  padding: 13px 23px;
-  border: 1px solid #555;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: 0.2s;
+.btn.alt{
+background:transparent;
+color:#f4f7f6;
+border:1px solid #ffffff30;
+margin-left:8px
 }
 
-.button:hover {
-  background: white;
-  color: black;
+section{
+padding:78px 0;
+border-top:1px solid #ffffff1c
 }
 
-.button.primary {
-  background: white;
-  color: black;
-  border-color: white;
+.head{
+display:flex;
+justify-content:space-between;
+gap:35px;
+align-items:end;
+margin-bottom:35px
 }
 
-section {
-  padding: 100px 8%;
-  border-top: 1px solid #202020;
+h2{
+font-size:clamp(38px,6vw,64px);
+line-height:.95;
+letter-spacing:-.045em;
+margin:0
 }
 
-.section-label {
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.7rem;
-  margin-bottom: 15px;
+.lead{
+max-width:560px;
+color:#aebcbe;
+font-size:18px
 }
 
-h2 {
-  font-size: clamp(2.3rem, 6vw, 5rem);
-  line-height: 1;
-  letter-spacing: -2px;
-  margin-bottom: 45px;
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
 
-.discovery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+.card{
+background:linear-gradient(145deg,#10262b,#0b191d);
+border:1px solid #ffffff17;
+border-radius:18px;
+padding:25px;
+min-height:205px;
+transition:.2s transform,.2s border-color
 }
 
-.card {
-  border: 1px solid #292929;
-  padding: 30px;
-  min-height: 220px;
-  background: #0d0d0d;
+.card:hover{
+transform:translateY(-4px);
+border-color:#f2bd5550
 }
 
-.card-number {
-  color: #777;
-  font-size: 0.75rem;
-  margin-bottom: 45px;
+.num{
+color:#f2bd55;
+font-size:12px;
+font-weight:900;
+letter-spacing:.18em
 }
 
-.card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+.card h3{
+margin:38px 0 10px;
+font-size:19px
 }
 
-.card p {
-  color: #999;
-  font-size: 0.9rem;
+.card p{
+color:#aebcbe;
+font-size:14px;
+line-height:1.6
 }
 
-.beverages {
-  background: #0b0b0b;
+.statement{
+text-align:center;
+font-size:clamp(38px,7vw,76px);
+line-height:.98;
+font-weight:900;
+letter-spacing:-.05em
 }
 
-.beverage-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 950px;
+.statement span{
+color:#75d5c6
 }
 
-.tag {
-  border: 1px solid #444;
-  padding: 12px 18px;
-  border-radius: 30px;
-  color: #ddd;
-  font-size: 0.9rem;
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
 }
 
-.lab {
-  background:
-    linear-gradient(135deg, #111 0%, #080808 60%);
+.partner-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
 }
 
-.lab-content {
-  max-width: 850px;
+.partner-card{
+background:#0d1c21;
+border:1px solid #ffffff17;
+border-radius:18px;
+padding:30px
 }
 
-.lab-content p {
-  color: #aaa;
-  font-size: 1.15rem;
-  margin-bottom: 28px;
+.partner-card h3{
+margin:0 0 12px
 }
 
-.lab-title {
-  font-size: clamp(2.8rem, 7vw, 6rem);
-  line-height: 0.95;
-  margin-bottom: 30px;
-  letter-spacing: -3px;
+.partner-card p{
+color:#aebcbe;
+line-height:1.65
 }
 
-.lab-tag {
-  display: inline-block;
-  border: 1px solid #444;
-  padding: 9px 14px;
-  color: #aaa;
-  font-size: 0.8rem;
+.tag{
+display:inline-block;
+padding:7px 10px;
+border:1px solid #ffffff20;
+border-radius:99px;
+color:#f2bd55;
+font-size:11px;
+font-weight:800;
+margin:5px 5px 0 0
 }
 
-.experience {
-  text-align: center;
+.form{
+display:grid;
+gap:12px
 }
 
-.experience h2 {
-  max-width: 850px;
-  margin: 0 auto 25px;
+.form input,
+.form textarea{
+width:100%;
+background:#071014;
+border:1px solid #ffffff20;
+border-radius:10px;
+color:#f4f7f6;
+padding:13px;
+font:inherit
 }
 
-.experience p {
-  max-width: 650px;
-  margin: 0 auto 35px;
-  color: #aaa;
-  font-size: 1.05rem;
+.form textarea{
+min-height:120px;
+resize:vertical
 }
 
-footer {
-  border-top: 1px solid #222;
-  padding: 35px 8%;
-  display: flex;
-  justify-content: space-between;
-  color: #777;
-  font-size: 0.8rem;
+.form small{
+color:#7f9092;
+line-height:1.5
 }
 
-@media (max-width: 800px) {
-  header {
-    padding: 15px 5%;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .hero {
-    min-height: 80vh;
-    padding: 70px 7%;
-  }
-
-  h1 {
-    letter-spacing: -3px;
-  }
-
-  section {
-    padding: 75px 7%;
-  }
-
-  .discovery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 10px;
-  }
+.form .btn{
+border:0;
+cursor:pointer;
+font:inherit
 }
 
-@media (max-width: 520px) {
-  .discovery-grid {
-    grid-template-columns: 1fr;
-  }
+.signup{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:18px;
+align-items:stretch
+}
 
-  .card {
-    min-height: auto;
-  }
+.signup-box{
+background:linear-gradient(145deg,#10262b,#0b191d);
+border:1px solid #ffffff17;
+border-radius:18px;
+padding:32px
+}
+
+.signup-box h3{
+font-size:28px;
+margin:0 0 12px
+}
+
+.signup-box p{
+color:#aebcbe;
+line-height:1.65
+}
+
+.chips{
+margin-top:18px
+}
+
+.box{
+background:#0d1c21;
+border:1px solid #ffffff17;
+border-radius:18px;
+padding:30px
+}
+
+.box h3{
+margin-top:0
+}
+
+.box p{
+color:#aebcbe
+}
+
+footer{
+border-top:1px solid #ffffff1c;
+padding:28px 0;
+color:#879698;
+display:flex;
+justify-content:space-between;
+font-size:13px
+}
+
+@media(max-width:800px){
+
+.grid{
+grid-template-columns:1fr 1fr
+}
+
+.contact,
+.partner-grid,
+.signup{
+grid-template-columns:1fr
+}
+
+.hero{
+min-height:650px
+}
+
+nav a{
+margin-left:12px;
+font-size:10px
+}
+
+}
+
+@media(max-width:520px){
+
+.grid{
+grid-template-columns:1fr
+}
+
+nav div:nth-child(2) a{
+display:none
+}
+
+.head{
+display:block
+}
+
+.head .lead{
+margin-top:20px
+}
+
+.btn.alt{
+margin-left:0;
+margin-top:10px
+}
+
+footer{
+display:block
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    IBC MAZATLÁN
-    <span>IMMERSIVE BEVERAGE DISCOVERY STUDIO</span>
-  </div>
-  <nav>
-    <a href="#discovery">Discovery</a>
-    <a href="#beverages">Beverages</a>
-    <a href="#lab">Beverage Lab</a>
-    <a href="#experience">Experience</a>
-  </nav>
+<div class="wrap">
+
+<nav>
+<div class="logo">IBC<span style="color:#f2bd55">.</span>MAZATLÁN</div>
+
+<div>
+<a href="#studio">THE STUDIO</a>
+<a href="#partners">SUPPLIERS</a>
+<a href="#stay-informed">STAY INFORMED</a>
+<a href="#contact">CONTACT</a>
+</div>
+</nav>
+
+</div>
+
+
+<header class="hero" id="top">
+
+<div class="wrap">
+
+<div class="inner">
+
+<div class="eyebrow">
+Immersive Beverage Discovery Studio
+</div>
+
+<h1>
+THE<br>
+FUTURE<br>
+OF POUR.
+</h1>
+
+<p>
+Beer. Wine. Seltzers. Cider. Cocktails. And whatever comes next.
+</p>
+
+<p class="sub">
+IBC Mazatlán is a place for beverage discovery, built around a draft wall, sampling platform, self-pour experience, and an atmosphere designed to make trying something new part of the fun.
+</p>
+
+<a class="btn" href="#studio">
+EXPLORE IBC&nbsp; →
+</a>
+
+<a class="btn alt" href="#partners">
+BECOME A PARTNER
+</a>
+
+</div>
+
+</div>
+
 </header>
 
-<main>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Mazatlán • Mexico</div>
+<main class="wrap">
 
-    <h1>
-      IBC
-      <span>Immersive Beverage Discovery Studio</span>
-    </h1>
 
-    <p>
-      An ever-evolving environment for discovering, sampling and experiencing beverages from around the world. Explore the unexpected through an interactive self-pour experience where there is always something new waiting on the wall.
-    </p>
+<section id="studio">
 
-    <div class="buttons">
-      <a class="button primary" href="#discovery">Explore IBC</a>
-      <a class="button" href="#experience">The Experience</a>
-    </div>
-  </div>
+<div class="head">
+
+<h2>
+THE<br>
+STUDIO
+</h2>
+
+<p class="lead">
+Not just another tap wall. IBC is an evolving beverage laboratory where people can discover, sample, compare, and pour their own experience.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<article class="card">
+<div class="num">01</div>
+<h3>Self-Pour Discovery</h3>
+<p>
+Choose what interests you, pour what you want, and explore at your own pace across a constantly changing selection.
+</p>
+</article>
+
+<article class="card">
+<div class="num">02</div>
+<h3>The Draft Wall</h3>
+<p>
+A visual centerpiece for an ever-changing mix of beer, wine, cider, seltzer, cocktails, and other beverage ideas.
+</p>
+</article>
+
+<article class="card">
+<div class="num">03</div>
+<h3>Sampling Platform</h3>
+<p>
+A place to taste new releases, compare styles, meet producers, and discover beverages you may never have ordered by the glass.
+</p>
+</article>
+
+<article class="card">
+<div class="num">04</div>
+<h3>Technology + Atmosphere</h3>
+<p>
+Cashless service, connected pouring, smart beverage technology, and immersive design come together around the drink itself.
+</p>
+</article>
+
+</div>
+
 </section>
 
-<section id="discovery">
-  <div class="section-label">The Concept</div>
-  <h2>Discovery is the destination.</h2>
 
-  <div class="discovery-grid">
+<section>
 
-    <div class="card">
-      <div class="card-number">01</div>
-      <h3>Ever-Evolving</h3>
-      <p>
-        The selection is constantly changing, creating new opportunities to taste, compare and discover.
-      </p>
-    </div>
+<div class="statement">
+DISCOVER. <span>POUR. EXPLORE.</span>
+</div>
 
-    <div class="card">
-      <div class="card-number">02</div>
-      <h3>Self-Pour Discovery</h3>
-      <p>
-        An interactive self-pour wall puts the experience directly in your hands. Pour what interests you and explore at your own pace.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-number">03</div>
-      <h3>Beyond Beer</h3>
-      <p>
-        Beer is only part of the story. Wine, cocktails, spirits, seltzers, ciders, non-alcoholic beverages and more all belong here.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-number">04</div>
-      <h3>Immersive Experience</h3>
-      <p>
-        IBC is designed around curiosity, conversation and the simple pleasure of finding something you did not expect.
-      </p>
-    </div>
-
-  </div>
 </section>
 
-<section id="beverages" class="beverages">
-  <div class="section-label">The Selection</div>
-  <h2>More than one kind of drink.</h2>
 
-  <div class="beverage-tags">
-    <span class="tag">Beer</span>
-    <span class="tag">Wine</span>
-    <span class="tag">Seltzers</span>
-    <span class="tag">Ciders</span>
-    <span class="tag">Cocktails</span>
-    <span class="tag">Spirits</span>
-    <span class="tag">Non-Alcoholic</span>
-    <span class="tag">Experimental</span>
-    <span class="tag">And More</span>
-  </div>
+<section id="partners">
+
+<div class="head">
+
+<h2>
+SUPPLIER<br>
+PARTNERS
+</h2>
+
+<p class="lead">
+We are looking for beverage producers, importers, distributors, technology partners, and creative suppliers who want to put great products in front of curious drinkers.
+</p>
+
+</div>
+
+
+<div class="partner-grid">
+
+
+<div class="partner-card">
+
+<h3>
+Bring Us Something Interesting.
+</h3>
+
+<p>
+IBC is designed around variety and discovery. We want to hear about established favorites, emerging brands, limited releases, experimental products, and the technology that helps beverage experiences evolve.
+</p>
+
+<div class="chips">
+
+<span class="tag">Breweries</span>
+<span class="tag">Wineries</span>
+<span class="tag">Importers</span>
+<span class="tag">Distributors</span>
+<span class="tag">Cider</span>
+<span class="tag">Seltzer</span>
+<span class="tag">Spirits</span>
+<span class="tag">Technology</span>
+
+</div>
+
+</div>
+
+
+<div class="partner-card">
+
+<h3>
+Send Your Information
+</h3>
+
+<p>
+Tell us about your products, territory, availability, pricing, and anything else you think belongs in the IBC discovery lineup.
+</p>
+
+<form
+class="form"
+action="mailto:hello@ibcmazatlan.com"
+method="post"
+enctype="text/plain"
+>
+
+<input
+name="name"
+placeholder="Your name / company"
+required
+>
+
+<input
+name="contact"
+placeholder="Email or WhatsApp"
+required
+>
+
+<textarea
+name="message"
+placeholder="Tell us what you offer"
+></textarea>
+
+<label style="color:#aebcbe;font-size:13px">
+
+Price sheet / product list
+
+<input
+type="file"
+name="attachment"
+style="margin-top:7px;padding:9px"
+>
+
+</label>
+
+<small>
+For now, this form prepares an email. The attachment option is included for the future supplier portal.
+</small>
+
+<button class="btn" type="submit">
+CONTACT IBC&nbsp; →
+</button>
+
+</form>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="lab" class="lab">
-  <div class="section-label">IBC Beverage Lab</div>
 
-  <div class="lab-content">
-    <div class="lab-title">Curiosity belongs behind the bar.</div>
+<section id="stay-informed">
 
-    <p>
-      The Beverage Lab is where new ideas, unusual products, emerging beverage styles and unexpected combinations come together.
-    </p>
+<div class="signup">
 
-    <p>
-      Experiment. Explore. Discover.
-    </p>
 
-    <span class="lab-tag">Always evolving • Never predictable</span>
-  </div>
+<div class="signup-box">
+
+<div class="eyebrow">
+Stay Informed
+</div>
+
+<h3>
+See What We Are Pouring Next.
+</h3>
+
+<p>
+Get occasional updates about new beverage discoveries, tastings, supplier opportunities, events, and what is happening inside the IBC world.
+</p>
+
+<a
+class="btn"
+href="mailto:hello@ibcmazatlan.com?subject=Stay%20Informed"
+>
+JOIN THE LIST&nbsp; →
+</a>
+
+</div>
+
+
+<div class="signup-box">
+
+<h3>
+Always Evolving.
+</h3>
+
+<p>
+IBC is intentionally fluid. The lineup changes. The technology changes. New producers arrive. New ideas get tested. The next pour is part of the experience.
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<section id="experience" class="experience">
-  <div class="section-label">The IBC Experience</div>
 
-  <h2>Pour. Taste. Discover. Repeat.</h2>
+<section id="contact">
 
-  <p>
-    Come for the curiosity. Stay for the discovery. IBC is an ever-changing beverage environment built around sampling, conversation and finding your next favorite pour.
-  </p>
+<div class="head">
 
-  <a class="button primary" href="mailto:ibc.mzt@gmail.com">
-    Start a Conversation
-  </a>
+<h2>
+LET'S<br>
+TALK.
+</h2>
+
+<p class="lead">
+Have a beverage, technology idea, supplier proposal, or collaboration in mind? IBC Mazatlán wants to hear it.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+
+<div class="box">
+
+<h3>
+Immersive Beverage Concepts
+</h3>
+
+<p>
+Mazatlán, Sinaloa, Mexico
+</p>
+
+<p>
+<strong>WhatsApp:</strong> 669-332-2789
+</p>
+
+</div>
+
+
+<div class="box">
+
+<h3>
+Connect
+</h3>
+
+<p>
+Instagram · Facebook · X
+</p>
+
+<p style="color:#f2bd55;font-weight:800">
+IBCMazatlan.com
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
 </main>
 
+
+<div class="wrap">
+
 <footer>
-  <div>IBC MAZATLÁN</div>
-  <div>© 2026 IBC Mazatlán</div>
+
+<span>
+© 2026 Immersive Beverage Concepts
+</span>
+
+<span>
+IBCMazatlan.com
+</span>
+
 </footer>
+
+</div>
 
 </body>
 </html>
