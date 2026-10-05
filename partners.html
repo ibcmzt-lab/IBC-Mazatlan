@@ -51,12 +51,12 @@ header{padding:28px 0 18px;border-bottom:1px solid #ffffff18}.brand{font-weight:
 <button class="btn" id="scanBtn">📷 SCAN OR PHOTOGRAPH DOCUMENT</button>
 <button class="btn secondary" id="uploadBtn">📄 UPLOAD AN EXISTING PDF</button>
 <button class="btn secondary hidden" id="addPageBtn">➕ ADD ANOTHER PAGE</button>
-<button class="btn hidden" id="makePdfBtn">📄 CREATE PDF</button>
+<button class="btn hidden" id="makePdfBtn">↗ SEND TO IBC</button>
 
 <div id="status" class="status"></div>
 <div id="preview" class="preview"></div>
 
-<button class="btn hidden" id="shareBtn">↗ SHARE PDF WITH IBC</button>
+<button class="btn hidden" id="shareBtn">↗ SEND TO IBC</button>
 
 <div class="note">No product-by-product form. Send the document you already have. If you have a printed sheet, photograph it. If you already have a PDF, upload it.</div>
 </section>
@@ -81,14 +81,17 @@ status=document.getElementById('status'),
 preview=document.getElementById('preview'),
 shareBtn=document.getElementById('shareBtn');
 
-let pdfBlob=null, imagePages=[];
+let pdfBlob=null,imagePages=[];
 
 scanBtn.onclick=()=>camera.click();
 uploadBtn.onclick=()=>files.click();
 addPageBtn.onclick=()=>camera.click();
 
 makePdfBtn.onclick=async()=>{
-if(imagePages.length){await createPdf()}
+if(imagePages.length){
+await createPdf();
+if(pdfBlob) await sharePdf();
+}
 };
 
 camera.onchange=()=>{
@@ -98,7 +101,7 @@ if(list.length){
 imagePages.push(...list);
 renderPreview();
 
-status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or create the PDF.`;
+status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or send to IBC.`;
 
 addPageBtn.classList.remove('hidden');
 makePdfBtn.classList.remove('hidden');
@@ -110,6 +113,7 @@ camera.value='';
 files.onchange=()=>handleFiles([...files.files]);
 
 function handleFiles(list){
+
 if(list.length===1 && list[0].type==='application/pdf'){
 pdfBlob=list[0];
 imagePages=[];
@@ -118,9 +122,10 @@ preview.innerHTML='';
 addPageBtn.classList.add('hidden');
 makePdfBtn.classList.add('hidden');
 
-status.textContent='PDF ready. Tap Share PDF with IBC.';
+status.textContent='PDF ready. Tap Send to IBC.';
 shareBtn.classList.remove('hidden');
-return
+
+return;
 }
 
 const imgs=list.filter(f=>f.type.startsWith('image/'));
@@ -129,7 +134,7 @@ if(imgs.length){
 imagePages.push(...imgs);
 renderPreview();
 
-status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or create the PDF.`;
+status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or send to IBC.`;
 
 addPageBtn.classList.remove('hidden');
 makePdfBtn.classList.remove('hidden');
@@ -149,23 +154,24 @@ preview.appendChild(img);
 }
 
 async function createPdf(){
-status.textContent='Preparing your PDF…';
 
+status.textContent='Preparing your PDF…';
 makePdfBtn.disabled=true;
 addPageBtn.disabled=true;
 
 try{
 pdfBlob=await buildPdf(imagePages);
 
-status.textContent=`PDF ready with ${imagePages.length} page${imagePages.length>1?'s':''}. Tap Share PDF with IBC.`;
+status.textContent=`PDF ready with ${imagePages.length} page${imagePages.length>1?'s':''}. Tap Send to IBC.`;
 
 shareBtn.classList.remove('hidden');
 
 }catch(e){
-status.textContent='Could not create the PDF. Please try again.';
-}
 
-finally{
+status.textContent='Could not create the PDF. Please try again.';
+
+}finally{
+
 makePdfBtn.disabled=false;
 addPageBtn.disabled=false;
 }
@@ -186,20 +192,18 @@ async function buildPdf(list){
 const pages=[];
 
 for(const f of list){
-const im=await loadImage(f);
 
-const max=1440,
-scale=Math.min(1,max/im.width),
-w=Math.round(im.width*scale),
-h=Math.round(im.height*scale);
+const im=await loadImage(f);
+const max=1440;
+const scale=Math.min(1,max/im.width);
+const w=Math.round(im.width*scale);
+const h=Math.round(im.height*scale);
 
 const c=document.createElement('canvas');
-
 c.width=w;
 c.height=h;
 
 const x=c.getContext('2d');
-
 x.drawImage(im,0,0,w,h);
 
 pages.push({
@@ -248,12 +252,15 @@ pageId=3+i*3,
 imgId=pageId+1,
 contId=pageId+2;
 
-const b64=p.jpg.split(',')[1],
-raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+const b64=p.jpg.split(',')[1];
+const raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
 
 offsets[imgId]=pos;
 
-add(`${imgId} 0 obj\n<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${raw.length} >>\nstream\n`);
+add(`${imgId} 0 obj
+<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${raw.length} >>
+stream
+`);
 
 addBin(raw);
 
@@ -267,26 +274,41 @@ dh=Math.round(p.h*sc),
 x=Math.round((pageW-dw)/2),
 y=Math.round((pageH-dh)/2);
 
-const stream=`q\n${dw} 0 0 ${dh} ${x} ${y} cm\n/Im${i} Do\nQ\n`;
+const stream=`q
+${dw} 0 0 ${dh} ${x} ${y} cm
+/Im${i} Do
+Q
+`;
 
-obj(contId,`<< /Length ${stream.length} >>\nstream\n${stream}endstream`);
+obj(contId,`<< /Length ${stream.length} >>
+stream
+${stream}endstream`);
 
 obj(pageId,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW} ${pageH}] /Resources << /XObject << /Im${i} ${imgId} 0 R >> >> /Contents ${contId} 0 R >>`);
 }
 
 const xref=pos;
 
-add(`xref\n0 ${n+1}\n0000000000 65535 f \n`);
+add(`xref
+0 ${n+1}
+0000000000 65535 f 
+`);
 
-for(let i=1;i<=n;i++)
+for(let i=1;i<=n;i++){
 add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');
+}
 
-add(`trailer\n<< /Size ${n+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+add(`trailer
+<< /Size ${n+1} /Root 1 0 R >>
+startxref
+${xref}
+%%EOF`);
 
 return new Blob(chunks,{type:'application/pdf'});
 }
 
-shareBtn.onclick=async()=>{
+async function sharePdf(){
+
 if(!pdfBlob)return;
 
 const file=new File(
@@ -295,8 +317,7 @@ const file=new File(
 {type:'application/pdf'}
 );
 
-if(navigator.share &&
-(!navigator.canShare || navigator.canShare({files:[file]}))){
+if(navigator.share && (!navigator.canShare || navigator.canShare({files:[file]}))){
 
 try{
 
@@ -319,6 +340,8 @@ a.click();
 
 status.textContent='PDF saved. Open WhatsApp below and attach the PDF to IBC.';
 }
+
+shareBtn.onclick=()=>sharePdf();
 </script>
 
 </body>
