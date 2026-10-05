@@ -3,298 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>IBC Mazatlán | Supplier Partners</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:#173b40;
+background:linear-gradient(135deg,#e8f4f2,#f7f3ed 55%,#dceeed);
 }
-
-html {
-    scroll-behavior: smooth;
+header{
+background:rgba(255,255,255,.94);
+border-bottom:1px solid #b8d7d4;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
 }
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 85% 10%, rgba(20, 190, 190, 0.12), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(190, 105, 55, 0.10), transparent 30%),
-        #071619;
-    color: #f2f7f6;
-    min-height: 100vh;
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+text-decoration:none;
+color:#173b40;
 }
-
-/* TECH GRID */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.10;
-    background-image:
-        linear-gradient(rgba(70, 190, 190, 0.35) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(70, 190, 190, 0.35) 1px, transparent 1px);
-    background-size: 55px 55px;
+.mark{
+width:42px;height:42px;
+border:3px solid #168d91;
+transform:rotate(45deg);
+position:relative;
 }
-
-/* HEADER */
-header {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 6%;
-    border-bottom: 1px solid rgba(100, 210, 205, 0.22);
-    background: rgba(5, 19, 22, 0.88);
-    backdrop-filter: blur(10px);
+.mark:after{
+content:"";
+position:absolute;
+width:16px;height:16px;
+border:3px solid #bd7148;
+left:10px;top:10px;
 }
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.logo strong{
+font-size:20px;
+letter-spacing:3px;
 }
-
-.logo-mark {
-    width: 42px;
-    height: 42px;
-    border: 2px solid #39c6c1;
-    transform: rotate(45deg);
-    position: relative;
+.logo small{
+display:block;
+font-size:10px;
+letter-spacing:2px;
+margin-top:4px;
+color:#638084;
 }
-
-.logo-mark::after {
-    content: "";
-    position: absolute;
-    width: 17px;
-    height: 17px;
-    border: 2px solid #c77b4d;
-    left: 10px;
-    top: 10px;
+.lang{
+border:1px solid #168d91;
+background:white;
+color:#173b40;
+padding:9px 13px;
+border-radius:5px;
+cursor:pointer;
 }
-
-.logo-text {
-    letter-spacing: 3px;
-    font-size: 19px;
-    font-weight: 700;
+.hero{
+padding:70px 7% 55px;
+background:
+linear-gradient(90deg,rgba(231,247,244,.98),rgba(247,243,237,.88)),
+url("Self-Pour.jpg") center/cover;
 }
-
-.logo-sub {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #8da7a8;
-    margin-top: 4px;
+.label{
+font-size:11px;
+letter-spacing:3px;
+color:#bd7148;
+font-weight:bold;
+margin-bottom:14px;
 }
-
-.language {
-    border: 1px solid rgba(90, 210, 205, 0.55);
-    background: transparent;
-    color: white;
-    padding: 9px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    letter-spacing: 1px;
+h1{
+font-size:clamp(40px,7vw,72px);
+line-height:1;
+margin:0 0 22px;
+color:#123b40;
 }
-
-/* HERO */
-.hero {
-    position: relative;
-    z-index: 1;
-    min-height: 62vh;
-    display: flex;
-    align-items: center;
-    padding: 70px 7%;
-    overflow: hidden;
+.accent{
+color:#168d91;
 }
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg,
-            rgba(4, 17, 20, 0.96) 0%,
-            rgba(4, 17, 20, 0.82) 42%,
-            rgba(4, 17, 20, 0.40) 75%,
-            rgba(4, 17, 20, 0.78) 100%);
-    z-index: -1;
+.hero p{
+max-width:760px;
+font-size:18px;
+line-height:1.65;
+color:#456367;
 }
-
-.hero-content {
-    max-width: 780px;
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:28px;
 }
-
-.eyebrow {
-    color: #49d0ca;
-    font-size: 11px;
-    letter-spacing: 4px;
-    margin-bottom: 18px;
+.btn{
+display:inline-block;
+padding:14px 20px;
+border-radius:5px;
+text-decoration:none;
+font-size:12px;
+font-weight:bold;
+letter-spacing:1px;
+border:1px solid #168d91;
+color:#126e72;
+background:white;
 }
-
-h1 {
-    font-size: clamp(42px, 7vw, 78px);
-    line-height: 0.98;
-    margin: 0 0 24px;
-    letter-spacing: -2px;
+.btn.primary{
+background:linear-gradient(90deg,#168d91,#bd7148);
+color:white;
+border:none;
 }
-
-.gradient-text {
-    background: linear-gradient(90deg, #45d1ca, #c97b4e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+main{
+padding:45px 7%;
 }
-
-.hero p {
-    max-width: 670px;
-    color: #c8d6d5;
-    font-size: 18px;
-    line-height: 1.7;
+.card{
+background:rgba(255,255,255,.88);
+border:1px solid #bfdad7;
+border-radius:8px;
+padding:30px;
+margin-bottom:25px;
+box-shadow:0 8px 30px rgba(20,70,70,.07);
 }
-
-/* BUTTONS */
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 32px;
+h2{
+margin:0 0 12px;
+font-size:30px;
+color:#173b40;
 }
-
-.btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 21px;
-    border: 1px solid #3bc8c2;
-    color: white;
-    letter-spacing: 1.5px;
-    font-size: 12px;
-    border-radius: 3px;
-    transition: 0.25s;
+h3{
+color:#168d91;
+margin-bottom:8px;
 }
-
-.btn:hover {
-    background: rgba(59, 200, 194, 0.14);
-    transform: translateY(-2px);
+p{
+line-height:1.65;
+color:#506b6e;
 }
-
-.btn.primary {
-    background: linear-gradient(90deg, #197f82, #a35e3f);
-    border: none;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
 }
-
-/* CONTENT */
-.section {
-    position: relative;
-    z-index: 2;
-    padding: 65px 7%;
+.box{
+padding:22px;
+border:1px solid #c5ddda;
+border-radius:6px;
+background:#f8fbfa;
 }
-
-.section-card {
-    border: 1px solid rgba(90, 205, 200, 0.22);
-    background: rgba(9, 29, 32, 0.78);
-    padding: 35px;
-    max-width: 950px;
+.formgrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:16px;
 }
-
-.section-label {
-    color: #c77b4d;
-    letter-spacing: 3px;
-    font-size: 11px;
-    margin-bottom: 12px;
+label{
+display:block;
+font-size:12px;
+font-weight:bold;
+letter-spacing:.7px;
+margin-bottom:7px;
+color:#31585c;
 }
-
-h2 {
-    font-size: 32px;
-    margin: 0 0 18px;
+input,select,textarea{
+width:100%;
+padding:13px;
+border:1px solid #b8d3d0;
+border-radius:5px;
+background:white;
+font:inherit;
+color:#173b40;
 }
-
-p {
-    color: #bdcecd;
-    line-height: 1.7;
+textarea{
+min-height:110px;
+resize:vertical;
 }
-
-/* GRID */
-.partner-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 18px;
-    margin-top: 30px;
+.file{
+padding:20px;
+border:2px dashed #8dbebb;
+border-radius:7px;
+background:#f4faf9;
+margin-top:12px;
 }
-
-.partner-box {
-    padding: 24px;
-    min-height: 145px;
-    border: 1px solid rgba(75, 194, 190, 0.22);
-    background: rgba(7, 24, 27, 0.82);
+.file input{
+border:none;
+padding:5px 0;
+background:transparent;
 }
-
-.partner-box h3 {
-    margin-top: 0;
-    color: #f4f8f7;
-    font-size: 17px;
+.note{
+font-size:13px;
+color:#688083;
 }
-
-.partner-box p {
-    font-size: 14px;
+footer{
+text-align:center;
+padding:30px;
+background:#d7ebe8;
+color:#557174;
+font-size:11px;
+letter-spacing:1px;
 }
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    padding: 70px 7%;
-    border-top: 1px solid rgba(90, 205, 200, 0.18);
-}
-
-.contact p {
-    max-width: 650px;
-    margin: 0 auto 25px;
-}
-
-.email {
-    color: #45d1ca;
-    font-size: 18px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 28px;
-    color: #708887;
-    font-size: 11px;
-    letter-spacing: 1px;
-    border-top: 1px solid rgba(90, 205, 200, 0.12);
-}
-
-/* MOBILE */
-@media (max-width: 650px) {
-    header {
-        padding: 18px 5%;
-    }
-
-    .logo-sub {
-        display: none;
-    }
-
-    .hero {
-        min-height: 70vh;
-        padding: 55px 6%;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .section {
-        padding: 45px 6%;
-    }
-
-    .section-card {
-        padding: 25px;
-    }
+@media(max-width:600px){
+header{padding:15px 5%}
+.logo small{display:none}
+.hero{padding:50px 6%}
+main{padding:30px 6%}
+.card{padding:23px}
 }
 </style>
 </head>
@@ -302,275 +212,327 @@ footer {
 <body>
 
 <header>
+<a class="logo" href="index.html">
+<div class="mark"></div>
+<div>
+<strong>IBC MAZATLÁN</strong>
+<small data-en="IMMERSIVE BEVERAGE CONCEPTS"
+data-es="CONCEPTOS INMERSIVOS DE BEBIDAS">
+IMMERSIVE BEVERAGE CONCEPTS
+</small>
+</div>
+</a>
 
-    <a href="index.html" style="text-decoration:none; color:white;">
-        <div class="logo-area">
-            <div class="logo-mark"></div>
-
-            <div>
-                <div class="logo-text">IBC MAZATLÁN</div>
-                <div class="logo-sub"
-                     data-en="IMMERSIVE BEVERAGE CONCEPTS"
-                     data-es="CONCEPTOS INMERSIVOS DE BEBIDAS">
-                    IMMERSIVE BEVERAGE CONCEPTS
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <button class="language" onclick="toggleLanguage()">
-        🇪🇸 ESPAÑOL
-    </button>
-
+<button class="lang" onclick="toggleLanguage()">🇪🇸 ESPAÑOL</button>
 </header>
 
-
 <section class="hero">
+<div class="label"
+data-en="SUPPLIER PARTNER PORTAL"
+data-es="PORTAL DE SOCIOS PROVEEDORES">
+SUPPLIER PARTNER PORTAL
+</div>
 
-    <div class="hero-content">
+<h1>
+<span data-en="Become an IBC"
+data-es="Conviértete en Socio de">
+Become an IBC
+</span>
+<br>
+<span class="accent"
+data-en="Supplier Partner"
+data-es="IBC">
+Supplier Partner
+</span>
+</h1>
 
-        <div class="eyebrow"
-             data-en="SUPPLIER PARTNER NETWORK"
-             data-es="RED DE SOCIOS PROVEEDORES">
-            SUPPLIER PARTNER NETWORK
-        </div>
+<p
+data-en="IBC Mazatlán is building its supplier network now. Our immediate goal is to connect with beverage producers, distributors, technology companies and equipment suppliers so we can source products for the future IBC experience."
+data-es="IBC Mazatlán está construyendo su red de proveedores ahora. Nuestro objetivo inmediato es conectar con productores de bebidas, distribuidores, empresas de tecnología y proveedores de equipos para obtener productos para la futura experiencia IBC.">
+IBC Mazatlán is building its supplier network now. Our immediate goal is to connect with beverage producers, distributors, technology companies and equipment suppliers so we can source products for the future IBC experience.
+</p>
 
-        <h1>
-            <span data-en="Bring What's Next" data-es="Trae Lo Que Sigue">
-                Bring What's Next
-            </span>
-            <br>
-            <span class="gradient-text"
-                  data-en="to the Pour"
-                  data-es="al Mundo de las Bebidas">
-                to the Pour
-            </span>
-        </h1>
+<div class="buttons">
+<a href="index.html" class="btn primary"
+data-en="← EXPLORE IBC"
+data-es="← EXPLORAR IBC">
+← EXPLORE IBC
+</a>
 
-        <p
-            data-en="IBC Mazatlán is building an immersive beverage discovery environment where producers, technology companies, equipment suppliers and innovators can introduce what comes next."
-            data-es="IBC Mazatlán está creando un entorno inmersivo de descubrimiento de bebidas donde productores, empresas de tecnología, proveedores de equipos e innovadores pueden presentar lo que viene.">
-            IBC Mazatlán is building an immersive beverage discovery environment where producers, technology companies, equipment suppliers and innovators can introduce what comes next.
-        </p>
+<a href="#partner" class="btn"
+data-en="BECOME A PARTNER"
+data-es="CONVIÉRTETE EN SOCIO">
+BECOME A PARTNER
+</a>
+</div>
+</section>
 
-        <div class="buttons">
+<main>
 
-            <a href="index.html"
-               class="btn primary"
-               data-en="← EXPLORE IBC"
-               data-es="← EXPLORAR IBC">
-                ← EXPLORE IBC
-            </a>
+<section class="card">
+<div class="label"
+data-en="WHAT WE ARE LOOKING FOR"
+data-es="LO QUE ESTAMOS BUSCANDO">
+WHAT WE ARE LOOKING FOR
+</div>
 
-            <a href="#connect"
-               class="btn"
-               data-en="SHARE WITH IBC"
-               data-es="COMPARTIR CON IBC">
-                SHARE WITH IBC
-            </a>
+<h2
+data-en="Products first."
+data-es="Primero los productos.">
+Products first.
+</h2>
 
-        </div>
+<p
+data-en="We are especially interested in suppliers with established brands and finished products that are ready to source, purchase and experience. We are building relationships now, ahead of opening the IBC studio."
+data-es="Estamos especialmente interesados en proveedores con marcas establecidas y productos terminados que podamos obtener, comprar y experimentar. Estamos construyendo relaciones desde ahora, antes de abrir el estudio IBC.">
+We are especially interested in suppliers with established brands and finished products that are ready to source, purchase and experience. We are building relationships now, ahead of opening the IBC studio.
+</p>
 
-    </div>
+<div class="grid">
+
+<div class="box">
+<h3 data-en="BEVERAGES"
+data-es="BEBIDAS">BEVERAGES</h3>
+<p data-en="Beer, wine, cider, hard seltzer, cocktails, non-alcoholic beverages, coffee and emerging categories."
+data-es="Cerveza, vino, sidra, hard seltzer, cócteles, bebidas sin alcohol, café y categorías emergentes.">
+Beer, wine, cider, hard seltzer, cocktails, non-alcoholic beverages, coffee and emerging categories.
+</p>
+</div>
+
+<div class="box">
+<h3 data-en="DISTRIBUTION"
+data-es="DISTRIBUCIÓN">DISTRIBUTION</h3>
+<p data-en="Producers, importers, distributors and suppliers able to provide current product and pricing information."
+data-es="Productores, importadores, distribuidores y proveedores que puedan proporcionar información actualizada de productos y precios.">
+Producers, importers, distributors and suppliers able to provide current product and pricing information.
+</p>
+</div>
+
+<div class="box">
+<h3 data-en="EQUIPMENT"
+data-es="EQUIPOS">EQUIPMENT</h3>
+<p data-en="Draft, dispensing, refrigeration, serving equipment and related solutions."
+data-es="Draft, dispensado, refrigeración, equipos de servicio y soluciones relacionadas.">
+Draft, dispensing, refrigeration, serving equipment and related solutions.
+</p>
+</div>
+
+<div class="box">
+<h3 data-en="TECHNOLOGY"
+data-es="TECNOLOGÍA">TECHNOLOGY</h3>
+<p data-en="Software, digital experiences, data systems and technology supporting beverage discovery."
+data-es="Software, experiencias digitales, sistemas de datos y tecnología para el descubrimiento de bebidas.">
+Software, digital experiences, data systems and technology supporting beverage discovery.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="card" id="partner">
+
+<div class="label"
+data-en="TELL US WHO YOU ARE"
+data-es="CUÉNTANOS QUIÉN ERES">
+TELL US WHO YOU ARE
+</div>
+
+<h2
+data-en="Become an IBC Supplier Partner"
+data-es="Conviértete en Socio Proveedor de IBC">
+Become an IBC Supplier Partner
+</h2>
+
+<div class="formgrid">
+
+<div>
+<label data-en="COMPANY / BRAND"
+data-es="EMPRESA / MARCA">COMPANY / BRAND</label>
+<input type="text" placeholder="Company name">
+</div>
+
+<div>
+<label data-en="CONTACT NAME"
+data-es="NOMBRE DE CONTACTO">CONTACT NAME</label>
+<input type="text" placeholder="Contact name">
+</div>
+
+<div>
+<label data-en="EMAIL"
+data-es="CORREO ELECTRÓNICO">EMAIL</label>
+<input type="email" placeholder="Email">
+</div>
+
+<div>
+<label data-en="WHATSAPP"
+data-es="WHATSAPP">WHATSAPP</label>
+<input type="text" placeholder="WhatsApp">
+</div>
+
+<div>
+<label data-en="WEBSITE"
+data-es="SITIO WEB">WEBSITE</label>
+<input type="text" placeholder="Website">
+</div>
+
+<div>
+<label data-en="SUPPLIER TYPE"
+data-es="TIPO DE PROVEEDOR">SUPPLIER TYPE</label>
+<select>
+<option data-en="Select one" data-es="Selecciona uno">Select one</option>
+<option>Beverage Producer</option>
+<option>Distributor / Importer</option>
+<option>Equipment Supplier</option>
+<option>Technology Supplier</option>
+<option>Other</option>
+</select>
+</div>
+
+</div>
+
+<br>
+
+<label data-en="TELL US ABOUT YOUR COMPANY"
+data-es="CUÉNTANOS SOBRE TU EMPRESA">
+TELL US ABOUT YOUR COMPANY
+</label>
+
+<textarea placeholder="Company, brands, products, territory, distribution, etc."></textarea>
 
 </section>
 
+<section class="card">
 
-<section class="section">
+<div class="label"
+data-en="SEND YOUR PRODUCT INFORMATION"
+data-es="ENVÍA TU INFORMACIÓN DE PRODUCTOS">
+SEND YOUR PRODUCT INFORMATION
+</div>
 
-    <div class="section-card">
+<h2
+data-en="Price Sheets & Catalogs"
+data-es="Listas de Precios y Catálogos">
+Price Sheets & Catalogs
+</h2>
 
-        <div class="section-label"
-             data-en="WHY PARTNER WITH IBC"
-             data-es="POR QUÉ ASOCIARSE CON IBC">
-            WHY PARTNER WITH IBC
-        </div>
+<p
+data-en="Your current pricing is one of the most important pieces of information we need. Send us your current wholesale price list, product catalog, line card or availability sheet."
+data-es="Tus precios actuales son una de las piezas de información más importantes que necesitamos. Envíanos tu lista de precios mayoristas, catálogo de productos, line card o lista de disponibilidad actual.">
+Your current pricing is one of the most important pieces of information we need. Send us your current wholesale price list, product catalog, line card or availability sheet.
+</p>
 
-        <h2
-            data-en="A Discovery Studio Built Around Innovation"
-            data-es="Un Estudio de Descubrimiento Enfocado en la Innovación">
-            A Discovery Studio Built Around Innovation
-        </h2>
+<div class="file">
 
-        <p
-            data-en="IBC is designed to give beverage innovators a place to be discovered, tasted, experienced and evaluated. We are interested in products, equipment and technology that create a better beverage experience."
-            data-es="IBC está diseñado para dar a los innovadores de bebidas un lugar donde puedan ser descubiertos, degustados, experimentados y evaluados. Nos interesan los productos, equipos y tecnologías que crean una mejor experiencia de bebidas.">
-            IBC is designed to give beverage innovators a place to be discovered, tasted, experienced and evaluated. We are interested in products, equipment and technology that create a better beverage experience.
-        </p>
+<label data-en="UPLOAD PRICE SHEET / CATALOG"
+data-es="SUBIR LISTA DE PRECIOS / CATÁLOGO">
+UPLOAD PRICE SHEET / CATALOG
+</label>
 
-    </div>
+<input type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
 
+<p class="note"
+data-en="You can select multiple files, including multi-page PDFs, catalogs, price sheets, product sheets and images."
+data-es="Puedes seleccionar varios archivos, incluyendo PDFs de varias páginas, catálogos, listas de precios, fichas de producto e imágenes.">
+You can select multiple files, including multi-page PDFs, catalogs, price sheets, product sheets and images.
+</p>
 
-    <div class="partner-grid">
-
-        <div class="partner-box">
-            <h3 data-en="BEVERAGE PRODUCERS"
-                data-es="PRODUCTORES DE BEBIDAS">
-                BEVERAGE PRODUCERS
-            </h3>
-
-            <p
-                data-en="Beer, wine, cider, hard seltzer, cocktails, non-alcoholic beverages, coffee and emerging categories."
-                data-es="Cerveza, vino, sidra, hard seltzer, cócteles, bebidas sin alcohol, café y categorías emergentes.">
-                Beer, wine, cider, hard seltzer, cocktails, non-alcoholic beverages, coffee and emerging categories.
-            </p>
-        </div>
-
-
-        <div class="partner-box">
-            <h3 data-en="TECHNOLOGY"
-                data-es="TECNOLOGÍA">
-                TECHNOLOGY
-            </h3>
-
-            <p
-                data-en="Dispensing, digital experiences, data systems, software, customer interaction and beverage technology."
-                data-es="Dispensado, experiencias digitales, sistemas de datos, software, interacción con clientes y tecnología para bebidas.">
-                Dispensing, digital experiences, data systems, software, customer interaction and beverage technology.
-            </p>
-        </div>
-
-
-        <div class="partner-box">
-            <h3 data-en="EQUIPMENT"
-                data-es="EQUIPOS">
-                EQUIPMENT
-            </h3>
-
-            <p
-                data-en="Draft systems, serving equipment, refrigeration, specialty hardware and innovative solutions."
-                data-es="Sistemas de draft, equipos de servicio, refrigeración, hardware especializado y soluciones innovadoras.">
-                Draft systems, serving equipment, refrigeration, specialty hardware and innovative solutions.
-            </p>
-        </div>
-
-
-        <div class="partner-box">
-            <h3 data-en="EMERGING IDEAS"
-                data-es="IDEAS EMERGENTES">
-                EMERGING IDEAS
-            </h3>
-
-            <p
-                data-en="Experimental products and new concepts that deserve a place in front of curious consumers."
-                data-es="Productos experimentales y nuevos conceptos que merecen estar frente a consumidores curiosos.">
-                Experimental products and new concepts that deserve a place in front of curious consumers.
-            </p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
+<section class="card">
 
-<section class="section" id="connect">
+<div class="label"
+data-en="KEEP US UP TO DATE"
+data-es="MANTÉNNOS ACTUALIZADOS">
+KEEP US UP TO DATE
+</div>
 
-    <div class="section-card">
+<h2
+data-en="New Products. New Releases. New Collaborations."
+data-es="Nuevos Productos. Nuevos Lanzamientos. Nuevas Colaboraciones.">
+New Products. New Releases. New Collaborations.
+</h2>
 
-        <div class="section-label"
-             data-en="KEEP US UP TO DATE"
-             data-es="MANTÉNNOS ACTUALIZADOS">
-            KEEP US UP TO DATE
-        </div>
+<p
+data-en="Already connected with IBC? Use this section to keep your company and product information current."
+data-es="¿Ya estás conectado con IBC? Utiliza esta sección para mantener actualizada la información de tu empresa y productos.">
+Already connected with IBC? Use this section to keep your company and product information current.
+</p>
 
-        <h2
-            data-en="Share What's New With IBC"
-            data-es="Comparte Lo Nuevo Con IBC">
-            Share What's New With IBC
-        </h2>
-
-        <p
-            data-en="Have a new product, technology, price list, catalog, equipment solution or experimental beverage? We want to know about it."
-            data-es="¿Tienes un nuevo producto, tecnología, lista de precios, catálogo, solución de equipo o bebida experimental? Queremos conocerla.">
-            Have a new product, technology, price list, catalog, equipment solution or experimental beverage? We want to know about it.
-        </p>
-
-        <div class="buttons">
-
-            <a class="btn primary"
-               href="mailto:ibc.mzt@gmail.com?subject=IBC Supplier Partner Inquiry"
-               data-en="EMAIL IBC"
-               data-es="ENVIAR CORREO A IBC">
-                EMAIL IBC
-            </a>
-
-            <a class="btn"
-               href="https://wa.me/526693322789"
-               target="_blank"
-               data-en="CONTACT VIA WHATSAPP"
-               data-es="CONTACTAR POR WHATSAPP">
-                CONTACT VIA WHATSAPP
-            </a>
-
-        </div>
-
-    </div>
+<textarea
+placeholder="Tell us about a new product, collaboration, release, price update, availability change, or other important update."
+data-en-placeholder="Tell us about a new product, collaboration, release, price update, availability change, or other important update."
+data-es-placeholder="Cuéntanos sobre un nuevo producto, colaboración, lanzamiento, cambio de precio, disponibilidad u otra actualización importante.">
+</textarea>
 
 </section>
 
+<section class="card">
 
-<section class="contact">
+<div class="label"
+data-en="SUBMIT TO IBC"
+data-es="ENVIAR A IBC">
+SUBMIT TO IBC
+</div>
 
-    <h2
-        data-en="Discover. Taste. Innovate."
-        data-es="Descubre. Degusta. Innova.">
-        Discover. Taste. Innovate.
-    </h2>
+<h2
+data-en="Let's Build the Supplier Network"
+data-es="Construyamos la Red de Proveedores">
+Let's Build the Supplier Network
+</h2>
 
-    <p
-        data-en="IBC Mazatlán is creating a new way to discover beverages and the technology behind them."
-        data-es="IBC Mazatlán está creando una nueva forma de descubrir bebidas y la tecnología detrás de ellas.">
-        IBC Mazatlán is creating a new way to discover beverages and the technology behind them.
-    </p>
+<p
+data-en="Send us your company information, current pricing and product materials. We want to know what you have available and how we can work together."
+data-es="Envíanos la información de tu empresa, precios actuales y materiales de productos. Queremos conocer lo que tienes disponible y cómo podemos trabajar juntos.">
+Send us your company information, current pricing and product materials. We want to know what you have available and how we can work together.
+</p>
 
-    <div class="email">
-        ibc.mzt@gmail.com
-    </div>
+<div class="buttons">
+<a class="btn primary"
+href="mailto:ibc.mzt@gmail.com?subject=IBC Supplier Partner Submission"
+data-en="BECOME AN IBC SUPPLIER PARTNER"
+data-es="CONVERTIRSE EN SOCIO PROVEEDOR DE IBC">
+BECOME AN IBC SUPPLIER PARTNER
+</a>
+</div>
+
+<p class="note"
+data-en="Online document storage and supplier records will be connected to the IBC supplier system as the platform is developed."
+data-es="El almacenamiento de documentos y los registros de proveedores se conectarán al sistema de proveedores de IBC a medida que se desarrolle la plataforma.">
+Online document storage and supplier records will be connected to the IBC supplier system as the platform is developed.
+</p>
 
 </section>
 
+</main>
 
 <footer>
-
-    IBC MAZATLÁN · IMMERSIVE BEVERAGE CONCEPTS
-
+IBC MAZATLÁN · IMMERSIVE BEVERAGE CONCEPTS
 </footer>
 
-
 <script>
+let currentLanguage="en";
 
-let currentLanguage = "en";
+function toggleLanguage(){
+const elements=document.querySelectorAll("[data-en]");
 
-function toggleLanguage() {
-
-    const elements = document.querySelectorAll("[data-en]");
-
-    if (currentLanguage === "en") {
-
-        elements.forEach(function(element) {
-            element.textContent = element.getAttribute("data-es");
-        });
-
-        document.documentElement.lang = "es";
-
-        document.querySelector(".language").textContent = "🇺🇸 ENGLISH";
-
-        currentLanguage = "es";
-
-    } else {
-
-        elements.forEach(function(element) {
-            element.textContent = element.getAttribute("data-en");
-        });
-
-        document.documentElement.lang = "en";
-
-        document.querySelector(".language").textContent = "🇪🇸 ESPAÑOL";
-
-        currentLanguage = "en";
-    }
+if(currentLanguage==="en"){
+elements.forEach(el=>{
+el.textContent=el.getAttribute("data-es");
+});
+document.querySelector(".lang").textContent="🇺🇸 ENGLISH";
+document.documentElement.lang="es";
+currentLanguage="es";
+}else{
+elements.forEach(el=>{
+el.textContent=el.getAttribute("data-en");
+});
+document.querySelector(".lang").textContent="🇪🇸 ESPAÑOL";
+document.documentElement.lang="en";
+currentLanguage="en";
 }
-
+}
 </script>
 
 </body>
