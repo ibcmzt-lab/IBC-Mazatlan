@@ -4,596 +4,645 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IBC Mazatlán | Supplier Partners</title>
+<title>IBC Mazatlán | Immersive Beverage Concepts</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #071f24;
-        color: #f2f7f7;
-        line-height: 1.6;
-    }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #071f24;
+    color: #f4f8f8;
+    line-height: 1.6;
+}
 
-    header {
-        position: relative;
-        padding: 24px 20px 18px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
+header {
+    position: relative;
+    padding: 22px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    background: rgba(7,31,36,0.96);
+}
 
-    .brand {
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        color: #ffffff;
-    }
+.logo {
+    font-size: 31px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
 
-    .brand span {
-        color: #3bc4c8;
-    }
+.logo span {
+    color: #3bc4c8;
+}
 
-    .subtitle {
-        margin-top: 5px;
-        font-size: 13px;
-        letter-spacing: 2px;
-        color: #b9cacc;
-        text-transform: uppercase;
-    }
+.tagline {
+    margin-top: 5px;
+    color: #b8c9cb;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
 
-    .language-switch {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-    }
+.language {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+}
 
-    .language-switch button {
-        border: 1px solid #3bc4c8;
-        background: transparent;
-        color: #ffffff;
-        border-radius: 20px;
-        padding: 7px 12px;
-        cursor: pointer;
-        font-size: 13px;
-    }
+.language button {
+    background: transparent;
+    border: 1px solid #3bc4c8;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
 
-    .language-switch button:hover {
-        background: #3bc4c8;
-        color: #071f24;
+.language button:hover {
+    background: #3bc4c8;
+    color: #071f24;
+}
+
+.hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(
+            rgba(7,31,36,0.42),
+            rgba(7,31,36,0.90)
+        ),
+        url("Self-Pour.jpg") center center / cover no-repeat;
+}
+
+.hero-content {
+    width: min(950px, 92%);
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 72px);
+    line-height: 1.02;
+    margin: 0 0 22px;
+    letter-spacing: 1px;
+}
+
+.hero h1 span {
+    color: #3bc4c8;
+}
+
+.hero p {
+    max-width: 780px;
+    margin: 0 auto 30px;
+    font-size: clamp(17px, 2.5vw, 21px);
+    color: #e0ebec;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid #3bc4c8;
+}
+
+.primary {
+    background: #3bc4c8;
+    color: #071f24;
+}
+
+.secondary {
+    background: rgba(7,31,36,0.65);
+    color: #ffffff;
+}
+
+section {
+    padding: 65px 0;
+}
+
+.container {
+    width: min(1050px, 92%);
+    margin: auto;
+}
+
+.section-title {
+    margin: 0 0 14px;
+    color: #3bc4c8;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.section-intro {
+    max-width: 820px;
+    color: #c9d7d9;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.story {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: rgba(255,255,255,0.055);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.card p {
+    color: #c7d5d7;
+    margin-bottom: 0;
+}
+
+.beverages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.beverage {
+    padding: 20px;
+    border-left: 3px solid #3bc4c8;
+    background: rgba(255,255,255,0.045);
+    border-radius: 7px;
+}
+
+.beverage strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.beverage span {
+    color: #aebfc1;
+    font-size: 14px;
+}
+
+.highlight {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,196,200,0.10),
+            rgba(191,119,75,0.08)
+        );
+    border-top: 1px solid rgba(59,196,200,0.20);
+    border-bottom: 1px solid rgba(59,196,200,0.20);
+}
+
+.cta {
+    text-align: center;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: #cbd8da;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    color: #91a5a8;
+    font-size: 13px;
+}
+
+footer a {
+    color: #3bc4c8;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+
+    .language {
+        position: static;
+        margin-top: 14px;
     }
 
     .hero {
-        padding: 65px 20px 55px;
-        text-align: center;
-        background:
-            linear-gradient(rgba(7,31,36,0.80), rgba(7,31,36,0.94)),
-            url("Self-Pour.jpg") center/cover no-repeat;
+        min-height: 68vh;
     }
 
-    .hero h1 {
-        margin: 0 auto 18px;
-        max-width: 850px;
-        font-size: clamp(34px, 7vw, 62px);
-        line-height: 1.05;
-        letter-spacing: 1px;
+    .hero-content {
+        padding: 60px 10px;
     }
-
-    .hero p {
-        max-width: 760px;
-        margin: 0 auto;
-        font-size: 18px;
-        color: #d5e2e3;
-    }
-
-    .container {
-        width: min(1050px, 92%);
-        margin: 0 auto;
-    }
-
-    section {
-        padding: 55px 0;
-    }
-
-    .section-title {
-        margin: 0 0 10px;
-        font-size: 30px;
-        color: #3bc4c8;
-        letter-spacing: 1px;
-    }
-
-    .section-intro {
-        margin: 0 0 30px;
-        color: #c8d6d8;
-    }
-
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        background: rgba(255,255,255,0.055);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 14px;
-        padding: 24px;
-    }
-
-    .card h3 {
-        margin-top: 0;
-        color: #ffffff;
-    }
-
-    .card p {
-        color: #c8d6d8;
-        margin-bottom: 0;
-    }
-
-    .form-box {
-        background: rgba(255,255,255,0.055);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 16px;
-        padding: 28px;
-    }
-
-    label {
-        display: block;
-        margin: 18px 0 7px;
-        font-weight: 600;
-        color: #e9f2f2;
-    }
-
-    input,
-    textarea,
-    select {
-        width: 100%;
-        padding: 13px 14px;
-        border-radius: 8px;
-        border: 1px solid rgba(255,255,255,0.18);
-        background: #102d32;
-        color: #ffffff;
-        font-size: 16px;
-    }
-
-    textarea {
-        min-height: 130px;
-        resize: vertical;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-        color: #91a5a8;
-    }
-
-    .button {
-        display: inline-block;
-        margin-top: 24px;
-        padding: 14px 24px;
-        border: none;
-        border-radius: 8px;
-        background: #3bc4c8;
-        color: #071f24;
-        font-weight: 700;
-        font-size: 15px;
-        cursor: pointer;
-    }
-
-    .button:hover {
-        opacity: 0.88;
-    }
-
-    .notice {
-        margin-top: 18px;
-        padding: 14px;
-        border-radius: 8px;
-        background: rgba(59,196,200,0.10);
-        color: #cfe9ea;
-        font-size: 14px;
-    }
-
-    .contact-box {
-        text-align: center;
-        padding: 35px 20px;
-        border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .contact-box a {
-        color: #3bc4c8;
-        text-decoration: none;
-    }
-
-    footer {
-        text-align: center;
-        padding: 28px 20px;
-        color: #91a5a8;
-        font-size: 13px;
-        border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    @media (max-width: 600px) {
-        .language-switch {
-            position: static;
-            margin-top: 14px;
-        }
-
-        .hero {
-            padding: 48px 18px;
-        }
-
-        .form-box {
-            padding: 20px;
-        }
-    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="brand">IBC <span>MAZATLÁN</span></div>
 
-    <div class="subtitle"
+    <div class="logo">
+        IBC <span>MAZATLÁN</span>
+    </div>
+
+    <div class="tagline"
          data-en="Immersive Beverage Concepts"
          data-es="Conceptos Inmersivos de Bebidas">
         Immersive Beverage Concepts
     </div>
 
-    <div class="language-switch">
-        <button id="languageButton" type="button" onclick="toggleLanguage()">
+    <div class="language">
+        <button id="languageButton"
+                type="button"
+                onclick="toggleLanguage()">
             🇲🇽 Español
         </button>
     </div>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-    <div class="container">
+
+    <div class="hero-content">
+
         <h1
-            data-en="Supplier Partner Connection"
-            data-es="Conexión con Proveedores">
-            Supplier Partner Connection
+            data-en="Discover What's <span>Next</span> in Beverage"
+            data-es="Descubre lo que viene en el mundo de las <span>bebidas</span>">
+            Discover What's <span>Next</span> in Beverage
         </h1>
 
         <p
-            data-en="IBC Mazatlán is developing an immersive beverage discovery studio where consumers, producers and beverage innovators can connect, taste and learn."
-            data-es="IBC Mazatlán está desarrollando un estudio inmersivo de descubrimiento de bebidas donde consumidores, productores e innovadores de bebidas pueden conectarse, probar y descubrir nuevos productos.">
-            IBC Mazatlán is developing an immersive beverage discovery studio where consumers, producers and beverage innovators can connect, taste and learn.
+            data-en="IBC Mazatlán is an immersive beverage discovery experience where you can explore, taste and compare a constantly changing selection of beverages."
+            data-es="IBC Mazatlán es una experiencia inmersiva de descubrimiento de bebidas donde puedes explorar, probar y comparar una selección de bebidas que cambia constantemente.">
+            IBC Mazatlán is an immersive beverage discovery experience where you can explore, taste and compare a constantly changing selection of beverages.
         </p>
+
+        <div class="buttons">
+
+            <a class="button primary"
+               href="#experience"
+               data-en="EXPLORE THE EXPERIENCE"
+               data-es="EXPLORA LA EXPERIENCIA">
+                EXPLORE THE EXPERIENCE
+            </a>
+
+            <a class="button secondary"
+               href="#suppliers"
+               data-en="BEVERAGE SUPPLIERS"
+               data-es="PROVEEDORES DE BEBIDAS">
+                BEVERAGE SUPPLIERS
+            </a>
+
+        </div>
+
     </div>
+
 </section>
 
-<section>
+
+<!-- WHAT IS IBC -->
+
+<section id="experience">
+
     <div class="container">
 
         <h2 class="section-title"
-            data-en="SHARE WITH IBC"
-            data-es="COMPARTE CON IBC">
-            SHARE WITH IBC
+            data-en="WHAT IS IBC?"
+            data-es="¿QUÉ ES IBC?">
+            WHAT IS IBC?
         </h2>
 
         <p class="section-intro"
-           data-en="We're interested in products, pricing, availability and ideas from beverage suppliers and producers."
-           data-es="Nos interesan productos, precios, disponibilidad e ideas de proveedores y productores de bebidas.">
-            We're interested in products, pricing, availability and ideas from beverage suppliers and producers.
+           data-en="Think of IBC as a beverage discovery studio. Instead of choosing one drink and committing to a full serving, you can explore a variety of beverages through interactive tasting and sampling."
+           data-es="Piensa en IBC como un estudio de descubrimiento de bebidas. En lugar de elegir una sola bebida y comprometerte con una porción completa, puedes explorar una variedad de bebidas mediante degustaciones y muestras interactivas.">
+            Think of IBC as a beverage discovery studio. Instead of choosing one drink and committing to a full serving, you can explore a variety of beverages through interactive tasting and sampling.
         </p>
 
-        <div class="card-grid">
+        <div class="story">
 
             <div class="card">
+
                 <h3
-                    data-en="New & Experimental Products"
-                    data-es="Productos Nuevos y Experimentales">
-                    New & Experimental Products
+                    data-en="Explore"
+                    data-es="Explora">
+                    Explore
                 </h3>
 
                 <p
-                    data-en="Tell us about new releases, limited products, seasonal offerings and experimental beverages."
-                    data-es="Cuéntanos sobre nuevos lanzamientos, productos limitados, ofertas de temporada y bebidas experimentales.">
-                    Tell us about new releases, limited products, seasonal offerings and experimental beverages.
+                    data-en="Discover beverages you may never have encountered before, from Mexican producers and beyond."
+                    data-es="Descubre bebidas que quizá nunca hayas probado, de productores mexicanos y de otros lugares.">
+                    Discover beverages you may never have encountered before, from Mexican producers and beyond.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3
-                    data-en="Pricing & Availability"
-                    data-es="Precios y Disponibilidad">
-                    Pricing & Availability
+                    data-en="Taste"
+                    data-es="Prueba">
+                    Taste
                 </h3>
 
                 <p
-                    data-en="Keep IBC informed about current pricing, special pricing, availability and promotions."
-                    data-es="Mantén informado a IBC sobre precios actuales, precios especiales, disponibilidad y promociones.">
-                    Keep IBC informed about current pricing, special pricing, availability and promotions.
+                    data-en="Sample what interests you without having to commit to a full glass or bottle."
+                    data-es="Prueba lo que te interesa sin tener que comprometerte con una copa o botella completa.">
+                    Sample what interests you without having to commit to a full glass or bottle.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3
-                    data-en="Product Information"
-                    data-es="Información del Producto">
-                    Product Information
+                    data-en="Discover Your Favorites"
+                    data-es="Descubre Tus Favoritos">
+                    Discover Your Favorites
                 </h3>
 
                 <p
-                    data-en="Share product lists, catalogs, technical information, tasting materials or other useful documents."
-                    data-es="Comparte listas de productos, catálogos, información técnica, materiales de degustación u otros documentos útiles.">
-                    Share product lists, catalogs, technical information, tasting materials or other useful documents.
+                    data-en="Your tasting experience can help you discover what you like, what you don't, and what you want to try next."
+                    data-es="Tu experiencia de degustación puede ayudarte a descubrir qué te gusta, qué no y qué quieres probar después.">
+                    Your tasting experience can help you discover what you like, what you don't, and what you want to try next.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
-<section>
+
+<!-- BEVERAGES -->
+
+<section class="highlight">
+
     <div class="container">
 
         <h2 class="section-title"
-            data-en="KEEP US UP TO DATE"
-            data-es="MANTÉNNOS AL DÍA">
-            KEEP US UP TO DATE
+            data-en="MORE THAN BEER"
+            data-es="MUCHO MÁS QUE CERVEZA">
+            MORE THAN BEER
         </h2>
 
         <p class="section-intro"
-           data-en="Have something new for us? Send us an update about your products, pricing, availability or upcoming releases."
-           data-es="¿Tienes algo nuevo para nosotros? Envíanos una actualización sobre tus productos, precios, disponibilidad o próximos lanzamientos.">
-            Have something new for us? Send us an update about your products, pricing, availability or upcoming releases.
+           data-en="The selection can evolve with the people, producers and ideas that make up the IBC community."
+           data-es="La selección puede evolucionar junto con las personas, productores e ideas que forman parte de la comunidad de IBC.">
+            The selection can evolve with the people, producers and ideas that make up the IBC community.
         </p>
 
-        <div class="form-box">
+        <div class="beverages">
 
-            <form action="mailto:ibc.mzt@gmail.com" method="post" enctype="text/plain">
+            <div class="beverage">
+                <strong data-en="Beer" data-es="Cerveza">Beer</strong>
+                <span
+                    data-en="Lagers, ales, IPAs and emerging styles"
+                    data-es="Lagers, ales, IPAs y estilos emergentes">
+                    Lagers, ales, IPAs and emerging styles
+                </span>
+            </div>
 
-                <label
-                    data-en="Company / Brewery"
-                    data-es="Empresa / Cervecería">
-                    Company / Brewery
-                </label>
+            <div class="beverage">
+                <strong data-en="Wine" data-es="Vino">Wine</strong>
+                <span
+                    data-en="Mexican and international wines"
+                    data-es="Vinos mexicanos e internacionales">
+                    Mexican and international wines
+                </span>
+            </div>
 
-                <input
-                    type="text"
-                    name="Company"
-                    placeholder="Company / Brewery"
-                    data-placeholder-en="Company / Brewery"
-                    data-placeholder-es="Empresa / Cervecería">
+            <div class="beverage">
+                <strong data-en="Cider" data-es="Sidra">Cider</strong>
+                <span
+                    data-en="An emerging category with plenty to discover"
+                    data-es="Una categoría emergente con mucho por descubrir">
+                    An emerging category with plenty to discover
+                </span>
+            </div>
 
-                <label
-                    data-en="Your Name"
-                    data-es="Tu Nombre">
-                    Your Name
-                </label>
+            <div class="beverage">
+                <strong
+                    data-en="Hard Seltzer & More"
+                    data-es="Hard Seltzer y Más">
+                    Hard Seltzer & More
+                </strong>
+                <span
+                    data-en="Modern alternatives and experimental beverages"
+                    data-es="Alternativas modernas y bebidas experimentales">
+                    Modern alternatives and experimental beverages
+                </span>
+            </div>
 
-                <input
-                    type="text"
-                    name="Name"
-                    placeholder="Your Name"
-                    data-placeholder-en="Your Name"
-                    data-placeholder-es="Tu Nombre">
+            <div class="beverage">
+                <strong
+                    data-en="Non-Alcoholic"
+                    data-es="Sin Alcohol">
+                    Non-Alcoholic
+                </strong>
+                <span
+                    data-en="NA beer, cocktails and other options"
+                    data-es="Cerveza sin alcohol, cócteles y otras opciones">
+                    NA beer, cocktails and other options
+                </span>
+            </div>
 
-                <label
-                    data-en="Email or WhatsApp"
-                    data-es="Correo electrónico o WhatsApp">
-                    Email or WhatsApp
-                </label>
-
-                <input
-                    type="text"
-                    name="Contact"
-                    placeholder="Email or WhatsApp"
-                    data-placeholder-en="Email or WhatsApp"
-                    data-placeholder-es="Correo electrónico o WhatsApp">
-
-                <label
-                    data-en="Update Type"
-                    data-es="Tipo de Actualización">
-                    Update Type
-                </label>
-
-                <select name="Update Type">
-                    <option
-                        value="New Release"
-                        data-en="New Release"
-                        data-es="Nuevo lanzamiento">
-                        New Release
-                    </option>
-
-                    <option
-                        value="Specialty / Limited Product"
-                        data-en="Specialty / Limited Product"
-                        data-es="Producto especial o limitado">
-                        Specialty / Limited Product
-                    </option>
-
-                    <option
-                        value="Price Change"
-                        data-en="Price Change"
-                        data-es="Cambio de precio">
-                        Price Change
-                    </option>
-
-                    <option
-                        value="Special Pricing"
-                        data-en="Special Pricing"
-                        data-es="Precio especial">
-                        Special Pricing
-                    </option>
-
-                    <option
-                        value="Promotion"
-                        data-en="Promotion"
-                        data-es="Promoción">
-                        Promotion
-                    </option>
-
-                    <option
-                        value="Seasonal Product"
-                        data-en="Seasonal Product"
-                        data-es="Producto de temporada">
-                        Seasonal Product
-                    </option>
-
-                    <option
-                        value="Availability Change"
-                        data-en="Availability Change"
-                        data-es="Cambio de disponibilidad">
-                        Availability Change
-                    </option>
-
-                    <option
-                        value="Experimental Product"
-                        data-en="Experimental Product"
-                        data-es="Producto experimental">
-                        Experimental Product
-                    </option>
-
-                    <option
-                        value="Other"
-                        data-en="Other"
-                        data-es="Otro">
-                        Other
-                    </option>
-                </select>
-
-                <label
-                    data-en="Product Name"
-                    data-es="Nombre del Producto">
-                    Product Name
-                </label>
-
-                <input
-                    type="text"
-                    name="Product"
-                    placeholder="Product Name"
-                    data-placeholder-en="Product Name"
-                    data-placeholder-es="Nombre del Producto">
-
-                <label
-                    data-en="Details"
-                    data-es="Detalles">
-                    Details
-                </label>
-
-                <textarea
-                    name="Details"
-                    placeholder="Tell us what's new..."
-                    data-placeholder-en="Tell us what's new..."
-                    data-placeholder-es="Cuéntanos qué hay de nuevo..."></textarea>
-
-                <button class="button" type="submit"
-                    data-en="SEND UPDATE TO IBC"
-                    data-es="ENVIAR ACTUALIZACIÓN A IBC">
-                    SEND UPDATE TO IBC
-                </button>
-
-            </form>
-
-            <div class="notice"
-                 data-en="You can also contact IBC directly by email or WhatsApp."
-                 data-es="También puedes contactar directamente a IBC por correo electrónico o WhatsApp.">
-                You can also contact IBC directly by email or WhatsApp.
+            <div class="beverage">
+                <strong
+                    data-en="Coffee & Beyond"
+                    data-es="Café y Más">
+                    Coffee & Beyond
+                </strong>
+                <span
+                    data-en="Caffeinated, innovative and unexpected"
+                    data-es="Bebidas con cafeína, innovadoras e inesperadas">
+                    Caffeinated, innovative and unexpected
+                </span>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
+
+<!-- WHY IT IS DIFFERENT -->
+
 <section>
+
     <div class="container">
 
         <h2 class="section-title"
-            data-en="SHARE A PDF WITH IBC"
-            data-es="COMPARTE UN PDF CON IBC">
-            SHARE A PDF WITH IBC
+            data-en="A DIFFERENT WAY TO DISCOVER"
+            data-es="UNA FORMA DIFERENTE DE DESCUBRIR">
+            A DIFFERENT WAY TO DISCOVER
         </h2>
 
         <p class="section-intro"
-           data-en="Have a price list, catalog or product document? You can share the PDF directly with IBC."
-           data-es="¿Tienes una lista de precios, catálogo o documento de productos? Puedes compartir el PDF directamente con IBC.">
-            Have a price list, catalog or product document? You can share the PDF directly with IBC.
+           data-en="IBC combines the social experience of tasting with technology that can help make every discovery more meaningful."
+           data-es="IBC combina la experiencia social de degustar con tecnología que puede hacer que cada descubrimiento sea más significativo.">
+            IBC combines the social experience of tasting with technology that can help make every discovery more meaningful.
         </p>
 
-        <div class="card-grid">
+        <div class="story">
 
             <div class="card">
+
                 <h3
-                    data-en="Take Photos"
-                    data-es="Tomar Fotos">
-                    Take Photos
+                    data-en="Try More"
+                    data-es="Prueba Más">
+                    Try More
                 </h3>
 
                 <p
-                    data-en="Photograph each page of a price list, catalog or product sheet."
-                    data-es="Fotografía cada página de una lista de precios, catálogo o ficha de producto.">
-                    Photograph each page of a price list, catalog or product sheet.
+                    data-en="Small pours make it easier to explore a wider range of beverages in one visit."
+                    data-es="Las porciones pequeñas facilitan explorar una mayor variedad de bebidas en una sola visita.">
+                    Small pours make it easier to explore a wider range of beverages in one visit.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3
-                    data-en="Create Your PDF"
-                    data-es="Crea Tu PDF">
-                    Create Your PDF
+                    data-en="Share Your Opinion"
+                    data-es="Comparte Tu Opinión">
+                    Share Your Opinion
                 </h3>
 
                 <p
-                    data-en="Combine your photographs into one PDF document before sharing."
-                    data-es="Combina tus fotografías en un solo documento PDF antes de compartirlo.">
-                    Combine your photographs into one PDF document before sharing.
+                    data-en="Your feedback can help shape what gets featured and what appears next."
+                    data-es="Tu opinión puede ayudar a decidir qué productos se presentan y cuáles aparecen después.">
+                    Your feedback can help shape what gets featured and what appears next.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3
-                    data-en="Share With IBC"
-                    data-es="Comparte Con IBC">
-                    Share With IBC
+                    data-en="Find Your Next Favorite"
+                    data-es="Encuentra Tu Próximo Favorito">
+                    Find Your Next Favorite
                 </h3>
 
                 <p
-                    data-en="Send your PDF to IBC so we can review your current products and information."
-                    data-es="Envía tu PDF a IBC para que podamos revisar tus productos e información actuales.">
-                    Send your PDF to IBC so we can review your current products and information.
+                    data-en="The goal is simple: make discovering your next favorite beverage more interesting."
+                    data-es="El objetivo es sencillo: hacer que descubrir tu próxima bebida favorita sea más interesante.">
+                    The goal is simple: make discovering your next favorite beverage more interesting.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
-<div class="contact-box">
 
-    <p
-        data-en="IBC Mazatlán"
-        data-es="IBC Mazatlán">
-        IBC Mazatlán
-    </p>
+<!-- SUPPLIERS -->
 
-    <p>
-        <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a>
-    </p>
+<section class="highlight" id="suppliers">
 
-    <p>
-        <a href="https://wa.me/526693322789" target="_blank">
-            WhatsApp: +52 669 332 2789
+    <div class="container cta">
+
+        <h2 class="section-title"
+            data-en="ARE YOU A BEVERAGE PRODUCER?"
+            data-es="¿ERES PRODUCTOR DE BEBIDAS?">
+            ARE YOU A BEVERAGE PRODUCER?
+        </h2>
+
+        <p
+            data-en="IBC is building relationships with breweries, wineries, beverage producers, technology partners and innovators interested in bringing new products to consumers in Mazatlán."
+            data-es="IBC está creando relaciones con cervecerías, bodegas, productores de bebidas, socios tecnológicos e innovadores interesados en presentar nuevos productos a los consumidores de Mazatlán.">
+            IBC is building relationships with breweries, wineries, beverage producers, technology partners and innovators interested in bringing new products to consumers in Mazatlán.
+        </p>
+
+        <a class="button primary"
+           href="IBC_Partner_Supplier_Landing_Page.html"
+           data-en="SUPPLIER PARTNERS"
+           data-es="SOCIOS PROVEEDORES">
+            SUPPLIER PARTNERS
         </a>
-    </p>
 
-</div>
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section>
+
+    <div class="container cta">
+
+        <h2 class="section-title"
+            data-en="STAY CONNECTED"
+            data-es="MANTENTE CONECTADO">
+            STAY CONNECTED
+        </h2>
+
+        <p
+            data-en="IBC Mazatlán is currently developing the concept and building relationships with beverage producers, technology partners and the local community."
+            data-es="IBC Mazatlán está desarrollando actualmente el concepto y creando relaciones con productores de bebidas, socios tecnológicos y la comunidad local.">
+            IBC Mazatlán is currently developing the concept and building relationships with beverage producers, technology partners and the local community.
+        </p>
+
+        <p>
+            <a href="mailto:ibc.mzt@gmail.com">
+                ibc.mzt@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <a href="https://wa.me/526693322789" target="_blank">
+                WhatsApp: +52 669 332 2789
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
 
 <footer>
+
     <span
         data-en="Immersive Beverage Concepts · Mazatlán, Mexico"
         data-es="Conceptos Inmersivos de Bebidas · Mazatlán, México">
         Immersive Beverage Concepts · Mazatlán, Mexico
     </span>
+
 </footer>
+
 
 <script>
 
@@ -607,43 +656,29 @@ function toggleLanguage() {
 
     document.querySelectorAll("[data-en]").forEach(function(element) {
 
-        const translation = element.getAttribute("data-" + currentLanguage);
+        const translation =
+            element.getAttribute("data-" + currentLanguage);
 
         if (translation !== null) {
-            element.textContent = translation;
+
+            if (translation.includes("<span>")) {
+                element.innerHTML = translation;
+            } else {
+                element.textContent = translation;
+            }
+
         }
 
     });
 
-    document.querySelectorAll("[data-placeholder-en]").forEach(function(element) {
-
-        const placeholder = element.getAttribute(
-            "data-placeholder-" + currentLanguage
-        );
-
-        if (placeholder !== null) {
-            element.placeholder = placeholder;
-        }
-
-    });
-
-    document.querySelectorAll("option[data-en]").forEach(function(option) {
-
-        const translation = option.getAttribute("data-" + currentLanguage);
-
-        if (translation !== null) {
-            option.textContent = translation;
-        }
-
-    });
-
-    const languageButton = document.getElementById("languageButton");
+    const button = document.getElementById("languageButton");
 
     if (currentLanguage === "en") {
-        languageButton.textContent = "🇲🇽 Español";
+        button.textContent = "🇲🇽 Español";
     } else {
-        languageButton.textContent = "🇺🇸 English";
+        button.textContent = "🇺🇸 English";
     }
+
 }
 
 </script>
