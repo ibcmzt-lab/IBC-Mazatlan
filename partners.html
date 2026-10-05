@@ -18,48 +18,308 @@ header{padding:28px 0 18px;border-bottom:1px solid #ffffff18}.brand{font-weight:
 <body>
 <div class="wrap">
 <header><span class="brand">IBC<span>.</span>MAZATLÁN</span><span class="lang">EN / ES</span></header>
+
 <section class="hero">
 <div class="eyebrow">Supplier &amp; Partner Connection</div>
 <h1>BRING US<br>YOUR LINE CARD.</h1>
 <p>Have a product line, price sheet, catalog, or equipment information? Scan it or upload it. We'll handle the details.</p>
 <p class="es">¿Tienes una lista de productos, precios, catálogo o información de equipo? Escanéalo o súbelo. Nosotros nos encargamos de los detalles.</p>
 </section>
+
 <section class="cards">
-<div class="card"><h2>🍺 Beverage Producers</h2><p>Breweries, wineries, cider, seltzer, spirits, coffee, non-alcoholic and emerging beverages.</p><span class="tag">LINE CARD · PRICE SHEET · CATALOG</span></div>
-<div class="card"><h2>⚙️ Technology &amp; Equipment</h2><p>Draft, self-pour, dispensing, refrigeration, POS, RFID/NFC, equipment and beverage technology.</p><span class="tag">PRODUCT LINE · CATALOG · SPECS</span></div>
+<div class="card">
+<h2>🍺 Beverage Producers</h2>
+<p>Breweries, wineries, cider, seltzer, spirits, coffee, non-alcoholic and emerging beverages.</p>
+<span class="tag">LINE CARD · PRICE SHEET · CATALOG</span>
+</div>
+
+<div class="card">
+<h2>⚙️ Technology &amp; Equipment</h2>
+<p>Draft, self-pour, dispensing, refrigeration, POS, RFID/NFC, equipment and beverage technology.</p>
+<span class="tag">PRODUCT LINE · CATALOG · SPECS</span>
+</div>
 </section>
+
 <section class="scan">
-<h2>SCAN A DOCUMENT</h2>
-<p>Take photos of one or several pages. Your phone will turn them into one PDF, ready to share.</p>
-<p class="es">Toma fotos de una o varias páginas. Tu teléfono las convertirá en un solo PDF, listo para compartir.</p>
+<h2>SCAN OR PHOTOGRAPH A DOCUMENT</h2>
+<p>Photograph a printed line card, catalog, price sheet, or product sheet. Add pages one at a time and we'll combine them into one PDF.</p>
+<p class="es">Fotografía una lista de productos, catálogo, precios o ficha de producto. Agrega páginas una por una y las convertiremos en un solo PDF.</p>
+
 <input id="camera" class="hidden" type="file" accept="image/*" capture="environment" multiple>
 <input id="files" class="hidden" type="file" accept="image/*,application/pdf" multiple>
-<button class="btn" id="scanBtn">📷 SCAN LINE CARD / PRICE SHEET</button>
+
+<button class="btn" id="scanBtn">📷 SCAN OR PHOTOGRAPH DOCUMENT</button>
 <button class="btn secondary" id="uploadBtn">📄 UPLOAD AN EXISTING PDF</button>
-<div id="status" class="status"></div><div id="preview" class="preview"></div>
+<button class="btn secondary hidden" id="addPageBtn">➕ ADD ANOTHER PAGE</button>
+<button class="btn hidden" id="makePdfBtn">📄 CREATE PDF</button>
+
+<div id="status" class="status"></div>
+<div id="preview" class="preview"></div>
+
 <button class="btn hidden" id="shareBtn">↗ SHARE PDF WITH IBC</button>
+
 <div class="note">No product-by-product form. Send the document you already have. If you have a printed sheet, photograph it. If you already have a PDF, upload it.</div>
 </section>
-<section class="whatsapp"><h3>Prefer WhatsApp?</h3><p>Send your line card, price sheet, catalog, or product information directly to IBC.</p><a class="btn" href="https://wa.me/526693322789?text=Hello%20IBC%20Mazatl%C3%A1n%2C%20I'd%20like%20to%20send%20our%20product%20line%20or%20catalog.">💬 SEND VIA WHATSAPP</a></section>
+
+<section class="whatsapp">
+<h3>Prefer WhatsApp?</h3>
+<p>Send your line card, price sheet, catalog, or product information directly to IBC.</p>
+<a class="btn" href="https://wa.me/526693322789?text=Hello%20IBC%20Mazatl%C3%A1n%2C%20I'd%20like%20to%20send%20our%20product%20line%20or%20catalog.">💬 SEND VIA WHATSAPP</a>
+</section>
+
 <div class="footer">Immersive Beverage Concepts · Mazatlán, Sinaloa, Mexico · IBCMazatlan.com</div>
 </div>
+
 <script>
-const camera=document.getElementById('camera'), files=document.getElementById('files'), scanBtn=document.getElementById('scanBtn'), uploadBtn=document.getElementById('uploadBtn'), status=document.getElementById('status'), preview=document.getElementById('preview'), shareBtn=document.getElementById('shareBtn');
-let pdfBlob=null;
-scanBtn.onclick=()=>camera.click(); uploadBtn.onclick=()=>files.click();
-camera.onchange=()=>handleImages([...camera.files]);
-files.onchange=()=>handleFiles([...files.files]);
-function handleFiles(list){if(list.length===1 && list[0].type==='application/pdf'){pdfBlob=list[0]; status.textContent='PDF ready. Tap Share PDF with IBC.'; shareBtn.classList.remove('hidden'); preview.innerHTML=''; return} handleImages(list.filter(f=>f.type.startsWith('image/')))}
-function handleImages(list){if(!list.length)return; status.textContent='Preparing your PDF…'; preview.innerHTML=''; list.forEach(f=>{const u=URL.createObjectURL(f),img=document.createElement('img');img.src=u;preview.appendChild(img)}); buildPdf(list).then(blob=>{pdfBlob=blob;status.textContent=`${list.length} page${list.length>1?'s':''} ready. Tap Share PDF with IBC.`;shareBtn.classList.remove('hidden')}).catch(()=>status.textContent='Could not create the PDF. Please use the WhatsApp option instead.')}
-async function loadImage(file){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=rej;im.src=URL.createObjectURL(file)})}
-async function buildPdf(list){
- const pages=[]; for(const f of list){const im=await loadImage(f);const max=1440,scale=Math.min(1,max/im.width);const w=Math.round(im.width*scale),h=Math.round(im.height*scale);const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.drawImage(im,0,0,w,h);pages.push({jpg:c.toDataURL('image/jpeg',.88),w,h})}
- const enc=new TextEncoder(),chunks=[],offsets=[];let pos=0;function add(s){const b=enc.encode(s);chunks.push(b);pos+=b.length}function addBin(b){chunks.push(b);pos+=b.length}
- add('%PDF-1.4\n%\xFF\xFF\xFF\xFF\n');const n=2+pages.length*3;function obj(id,body){offsets[id]=pos;add(id+' 0 obj\n'+body+'\nendobj\n')}
- obj(1,'<< /Type /Catalog /Pages 2 0 R >>');const kids=pages.map((_,i)=>`${3+i*3} 0 R`).join(' ');obj(2,`<< /Type /Pages /Kids [${kids}] /Count ${pages.length} >>`);
- for(let i=0;i<pages.length;i++){const p=pages[i],pageId=3+i*3,imgId=pageId+1,contId=pageId+2;const b64=p.jpg.split(',')[1],raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));offsets[imgId]=pos;add(`${imgId} 0 obj\n<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${raw.length} >>\nstream\n`);addBin(raw);add('\nendstream\nendobj\n');const pageW=595,pageH=842,sc=Math.min(pageW/p.w,pageH/p.h),dw=Math.round(p.w*sc),dh=Math.round(p.h*sc),x=Math.round((pageW-dw)/2),y=Math.round((pageH-dh)/2);const stream=`q\n${dw} 0 0 ${dh} ${x} ${y} cm\n/Im${i} Do\nQ\n`;obj(contId,`<< /Length ${stream.length} >>\nstream\n${stream}endstream`);obj(pageId,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW} ${pageH}] /Resources << /XObject << /Im${i} ${imgId} 0 R >> >> /Contents ${contId} 0 R >>`)}
- const xref=pos;add(`xref\n0 ${n+1}\n0000000000 65535 f \n`);for(let i=1;i<=n;i++)add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');add(`trailer\n<< /Size ${n+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);return new Blob(chunks,{type:'application/pdf'})
+const camera=document.getElementById('camera'),
+files=document.getElementById('files'),
+scanBtn=document.getElementById('scanBtn'),
+uploadBtn=document.getElementById('uploadBtn'),
+addPageBtn=document.getElementById('addPageBtn'),
+makePdfBtn=document.getElementById('makePdfBtn'),
+status=document.getElementById('status'),
+preview=document.getElementById('preview'),
+shareBtn=document.getElementById('shareBtn');
+
+let pdfBlob=null, imagePages=[];
+
+scanBtn.onclick=()=>camera.click();
+uploadBtn.onclick=()=>files.click();
+addPageBtn.onclick=()=>camera.click();
+
+makePdfBtn.onclick=async()=>{
+if(imagePages.length){await createPdf()}
+};
+
+camera.onchange=()=>{
+const list=[...camera.files].filter(f=>f.type.startsWith('image/'));
+
+if(list.length){
+imagePages.push(...list);
+renderPreview();
+
+status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or create the PDF.`;
+
+addPageBtn.classList.remove('hidden');
+makePdfBtn.classList.remove('hidden');
 }
-shareBtn.onclick=async()=>{if(!pdfBlob)return;const file=new File([pdfBlob],'IBC-Supplier-Document.pdf',{type:'application/pdf'});if(navigator.share && (!navigator.canShare || navigator.canShare({files:[file]}))){try{await navigator.share({title:'IBC Supplier Document',text:'IBC Mazatlán supplier line card / price sheet',files:[file]});return}catch(e){}}const a=document.createElement('a');a.href=URL.createObjectURL(pdfBlob);a.download='IBC-Supplier-Document.pdf';a.click();status.textContent='PDF saved. Open WhatsApp below and attach the PDF to IBC.'}
+
+camera.value='';
+};
+
+files.onchange=()=>handleFiles([...files.files]);
+
+function handleFiles(list){
+if(list.length===1 && list[0].type==='application/pdf'){
+pdfBlob=list[0];
+imagePages=[];
+preview.innerHTML='';
+
+addPageBtn.classList.add('hidden');
+makePdfBtn.classList.add('hidden');
+
+status.textContent='PDF ready. Tap Share PDF with IBC.';
+shareBtn.classList.remove('hidden');
+return
+}
+
+const imgs=list.filter(f=>f.type.startsWith('image/'));
+
+if(imgs.length){
+imagePages.push(...imgs);
+renderPreview();
+
+status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or create the PDF.`;
+
+addPageBtn.classList.remove('hidden');
+makePdfBtn.classList.remove('hidden');
+}
+}
+
+function renderPreview(){
+preview.innerHTML='';
+
+imagePages.forEach(f=>{
+const u=URL.createObjectURL(f),
+img=document.createElement('img');
+
+img.src=u;
+preview.appendChild(img);
+});
+}
+
+async function createPdf(){
+status.textContent='Preparing your PDF…';
+
+makePdfBtn.disabled=true;
+addPageBtn.disabled=true;
+
+try{
+pdfBlob=await buildPdf(imagePages);
+
+status.textContent=`PDF ready with ${imagePages.length} page${imagePages.length>1?'s':''}. Tap Share PDF with IBC.`;
+
+shareBtn.classList.remove('hidden');
+
+}catch(e){
+status.textContent='Could not create the PDF. Please try again.';
+}
+
+finally{
+makePdfBtn.disabled=false;
+addPageBtn.disabled=false;
+}
+}
+
+async function loadImage(file){
+return new Promise((res,rej)=>{
+const im=new Image();
+
+im.onload=()=>res(im);
+im.onerror=rej;
+im.src=URL.createObjectURL(file);
+});
+}
+
+async function buildPdf(list){
+
+const pages=[];
+
+for(const f of list){
+const im=await loadImage(f);
+
+const max=1440,
+scale=Math.min(1,max/im.width),
+w=Math.round(im.width*scale),
+h=Math.round(im.height*scale);
+
+const c=document.createElement('canvas');
+
+c.width=w;
+c.height=h;
+
+const x=c.getContext('2d');
+
+x.drawImage(im,0,0,w,h);
+
+pages.push({
+jpg:c.toDataURL('image/jpeg',.88),
+w,
+h
+});
+}
+
+const enc=new TextEncoder(),
+chunks=[],
+offsets=[];
+
+let pos=0;
+
+function add(s){
+const b=enc.encode(s);
+chunks.push(b);
+pos+=b.length;
+}
+
+function addBin(b){
+chunks.push(b);
+pos+=b.length;
+}
+
+add('%PDF-1.4\n%\xFF\xFF\xFF\xFF\n');
+
+const n=2+pages.length*3;
+
+function obj(id,body){
+offsets[id]=pos;
+add(id+' 0 obj\n'+body+'\nendobj\n');
+}
+
+obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+
+const kids=pages.map((_,i)=>`${3+i*3} 0 R`).join(' ');
+
+obj(2,`<< /Type /Pages /Kids [${kids}] /Count ${pages.length} >>`);
+
+for(let i=0;i<pages.length;i++){
+
+const p=pages[i],
+pageId=3+i*3,
+imgId=pageId+1,
+contId=pageId+2;
+
+const b64=p.jpg.split(',')[1],
+raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+
+offsets[imgId]=pos;
+
+add(`${imgId} 0 obj\n<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${raw.length} >>\nstream\n`);
+
+addBin(raw);
+
+add('\nendstream\nendobj\n');
+
+const pageW=595,
+pageH=842,
+sc=Math.min(pageW/p.w,pageH/p.h),
+dw=Math.round(p.w*sc),
+dh=Math.round(p.h*sc),
+x=Math.round((pageW-dw)/2),
+y=Math.round((pageH-dh)/2);
+
+const stream=`q\n${dw} 0 0 ${dh} ${x} ${y} cm\n/Im${i} Do\nQ\n`;
+
+obj(contId,`<< /Length ${stream.length} >>\nstream\n${stream}endstream`);
+
+obj(pageId,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW} ${pageH}] /Resources << /XObject << /Im${i} ${imgId} 0 R >> >> /Contents ${contId} 0 R >>`);
+}
+
+const xref=pos;
+
+add(`xref\n0 ${n+1}\n0000000000 65535 f \n`);
+
+for(let i=1;i<=n;i++)
+add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');
+
+add(`trailer\n<< /Size ${n+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+
+return new Blob(chunks,{type:'application/pdf'});
+}
+
+shareBtn.onclick=async()=>{
+if(!pdfBlob)return;
+
+const file=new File(
+[pdfBlob],
+'IBC-Supplier-Document.pdf',
+{type:'application/pdf'}
+);
+
+if(navigator.share &&
+(!navigator.canShare || navigator.canShare({files:[file]}))){
+
+try{
+
+await navigator.share({
+title:'IBC Supplier Document',
+text:'IBC Mazatlán supplier line card / price sheet',
+files:[file]
+});
+
+return;
+
+}catch(e){}
+}
+
+const a=document.createElement('a');
+
+a.href=URL.createObjectURL(pdfBlob);
+a.download='IBC-Supplier-Document.pdf';
+a.click();
+
+status.textContent='PDF saved. Open WhatsApp below and attach the PDF to IBC.';
+}
 </script>
-</body></html>
+
+</body>
+</html>
