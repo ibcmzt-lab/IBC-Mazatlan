@@ -3,345 +3,1368 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>IBC Mazatlán | Supplier Connection</title>
-<meta name="description" content="IBC Mazatlán supplier connection. Send a product line card, price sheet, catalog, or equipment information in minutes.">
+
+<meta name="description" content="IBC Mazatlán supplier connection for beverage producers, technology partners, product information, pricing, releases and promotions.">
+
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#071014;color:#f4f7f6;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(760px,92%);margin:auto}
-header{padding:28px 0 18px;border-bottom:1px solid #ffffff18}.brand{font-weight:900;letter-spacing:.13em;font-size:14px}.brand span{color:#f2bd55}.lang{float:right;font-size:12px;color:#75d5c6}
-.hero{padding:58px 0 34px}.eyebrow{color:#75d5c6;font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-size:clamp(42px,10vw,76px);line-height:.9;letter-spacing:-.055em;margin:18px 0}.hero p{font-size:18px;line-height:1.55;color:#c3ced0;margin:0}.es{color:#8fa0a3;font-size:14px!important;margin-top:9px!important}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:25px 0}.card{background:linear-gradient(145deg,#10262b,#0b191d);border:1px solid #ffffff18;border-radius:18px;padding:24px}.card h2{font-size:22px;margin:0 0 8px}.card p{color:#aebcbe;line-height:1.5;margin:0}.tag{display:inline-block;margin-top:15px;padding:6px 9px;border:1px solid #ffffff20;border-radius:99px;color:#f2bd55;font-size:10px;font-weight:800}
-.scan{margin:16px 0;background:#0d1c21;border:1px solid #75d5c633;border-radius:20px;padding:26px}.scan h2{font-size:29px;line-height:1;margin:0 0 10px}.scan p{color:#aebcbe;line-height:1.55;margin:0 0 18px}.btn{display:block;width:100%;border:0;border-radius:14px;padding:17px 18px;background:#f2bd55;color:#111;font-size:15px;font-weight:900;text-align:center;cursor:pointer;margin-top:10px}.btn.secondary{background:transparent;color:#f4f7f6;border:1px solid #ffffff2b}.hidden{display:none}.status{margin-top:14px;color:#75d5c6;font-size:13px;line-height:1.5}.preview{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.preview img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;border:1px solid #ffffff18}
-.note{font-size:12px;color:#788b8e;line-height:1.55;margin-top:18px}.whatsapp{margin:18px 0 40px;background:#10262b;border:1px solid #ffffff18;border-radius:18px;padding:22px}.whatsapp h3{margin:0 0 8px}.whatsapp p{color:#aebcbe;line-height:1.5;margin:0 0 12px}.footer{border-top:1px solid #ffffff18;padding:22px 0 35px;color:#718487;font-size:12px}
-@media(max-width:620px){.cards{grid-template-columns:1fr}}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  background:#071014;
+  color:#f4f7f6;
+  font-family:Arial,Helvetica,sans-serif
+}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+.wrap{
+  width:min(760px,92%);
+  margin:auto
+}
+
+header{
+  padding:28px 0 18px;
+  border-bottom:1px solid #ffffff18
+}
+
+.brand{
+  font-weight:900;
+  letter-spacing:.13em;
+  font-size:14px
+}
+
+.brand span{
+  color:#f2bd55
+}
+
+.lang{
+  float:right;
+  font-size:12px;
+  color:#75d5c6
+}
+
+.hero{
+  padding:58px 0 34px
+}
+
+.eyebrow{
+  color:#75d5c6;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.2em;
+  text-transform:uppercase
+}
+
+.hero h1{
+  font-size:clamp(42px,10vw,76px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  margin:18px 0
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.55;
+  color:#c3ced0;
+  margin:0
+}
+
+.es{
+  color:#8fa0a3;
+  font-size:14px!important;
+  margin-top:9px!important
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:25px 0
+}
+
+.card{
+  background:linear-gradient(145deg,#10262b,#0b191d);
+  border:1px solid #ffffff18;
+  border-radius:18px;
+  padding:24px
+}
+
+.card h2{
+  font-size:22px;
+  margin:0 0 8px
+}
+
+.card p{
+  color:#aebcbe;
+  line-height:1.5;
+  margin:0
+}
+
+.tag{
+  display:inline-block;
+  margin-top:15px;
+  padding:6px 9px;
+  border:1px solid #ffffff20;
+  border-radius:99px;
+  color:#f2bd55;
+  font-size:10px;
+  font-weight:800
+}
+
+.scan{
+  margin:16px 0;
+  background:#0d1c21;
+  border:1px solid #75d5c633;
+  border-radius:20px;
+  padding:26px
+}
+
+.scan h2{
+  font-size:29px;
+  line-height:1;
+  margin:0 0 10px
+}
+
+.scan p{
+  color:#aebcbe;
+  line-height:1.55;
+  margin:0 0 18px
+}
+
+.btn{
+  display:block;
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:17px 18px;
+  background:#f2bd55;
+  color:#111;
+  font-size:15px;
+  font-weight:900;
+  text-align:center;
+  cursor:pointer;
+  margin-top:10px
+}
+
+.btn.secondary{
+  background:transparent;
+  color:#f4f7f6;
+  border:1px solid #ffffff2b
+}
+
+.hidden{
+  display:none
+}
+
+.status{
+  margin-top:14px;
+  color:#75d5c6;
+  font-size:13px;
+  line-height:1.5
+}
+
+.preview{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:14px
+}
+
+.preview img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #ffffff18
+}
+
+.note{
+  font-size:12px;
+  color:#788b8e;
+  line-height:1.55;
+  margin-top:18px
+}
+
+/* KEEP US UP TO DATE */
+
+.updates{
+  margin:24px 0;
+  background:linear-gradient(145deg,#10262b,#0b191d);
+  border:1px solid #75d5c633;
+  border-radius:20px;
+  padding:26px
+}
+
+.updates h2{
+  font-size:29px;
+  line-height:1;
+  margin:0 0 12px
+}
+
+.updates p{
+  color:#aebcbe;
+  line-height:1.55;
+  margin:0 0 18px
+}
+
+.update-form{
+  display:grid;
+  gap:11px
+}
+
+.update-form input,
+.update-form select,
+.update-form textarea{
+  width:100%;
+  border:1px solid #ffffff20;
+  border-radius:12px;
+  background:#071014;
+  color:#f4f7f6;
+  padding:14px;
+  font-size:15px;
+  font-family:inherit
+}
+
+.update-form textarea{
+  min-height:120px;
+  resize:vertical
+}
+
+.update-form label{
+  color:#aebcbe;
+  font-size:12px;
+  line-height:1.4
+}
+
+.update-form input::placeholder,
+.update-form textarea::placeholder{
+  color:#718487
+}
+
+.update-help{
+  color:#788b8e;
+  font-size:12px;
+  line-height:1.5;
+  margin-top:12px
+}
+
+.whatsapp{
+  margin:18px 0 40px;
+  background:#10262b;
+  border:1px solid #ffffff18;
+  border-radius:18px;
+  padding:22px
+}
+
+.whatsapp h3{
+  margin:0 0 8px
+}
+
+.whatsapp p{
+  color:#aebcbe;
+  line-height:1.5;
+  margin:0 0 12px
+}
+
+.footer{
+  border-top:1px solid #ffffff18;
+  padding:22px 0 35px;
+  color:#718487;
+  font-size:12px
+}
+
+@media(max-width:620px){
+
+  .cards{
+    grid-template-columns:1fr
+  }
+
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
-<header><span class="brand">IBC<span>.</span>MAZATLÁN</span><span class="lang">EN / ES</span></header>
+
+<header>
+
+<span class="brand">
+IBC<span>.</span>MAZATLÁN
+</span>
+
+<span class="lang">
+EN / ES
+</span>
+
+</header>
+
 
 <section class="hero">
-<div class="eyebrow">Supplier &amp; Partner Connection</div>
-<h1>BRING US<br>YOUR LINE CARD.</h1>
-<p>Have a product line, price sheet, catalog, or equipment information? Scan it or upload it. We'll handle the details.</p>
-<p class="es">¿Tienes una lista de productos, precios, catálogo o información de equipo? Escanéalo o súbelo. Nosotros nos encargamos de los detalles.</p>
+
+<div class="eyebrow">
+Supplier &amp; Partner Connection
+</div>
+
+<h1>
+BRING US<br>
+YOUR LINE CARD.
+</h1>
+
+<p>
+Have a product line, price sheet, catalog, or equipment information?
+Scan it or upload it. We'll handle the details.
+</p>
+
+<p class="es">
+¿Tienes una lista de productos, precios, catálogo o información de equipo?
+Escanéalo o súbelo. Nosotros nos encargamos de los detalles.
+</p>
+
 </section>
+
 
 <section class="cards">
-<div class="card">
-<h2>🍺 Beverage Producers</h2>
-<p>Breweries, wineries, cider, seltzer, spirits, coffee, non-alcoholic and emerging beverages.</p>
-<span class="tag">LINE CARD · PRICE SHEET · CATALOG</span>
-</div>
+
 
 <div class="card">
-<h2>⚙️ Technology &amp; Equipment</h2>
-<p>Draft, self-pour, dispensing, refrigeration, POS, RFID/NFC, equipment and beverage technology.</p>
-<span class="tag">PRODUCT LINE · CATALOG · SPECS</span>
+
+<h2>
+🍺 Beverage Producers
+</h2>
+
+<p>
+Breweries, wineries, cider, seltzer, spirits, coffee,
+non-alcoholic and emerging beverages.
+</p>
+
+<p class="es">
+Cervecerías, bodegas, sidras, seltzers, destilados,
+café, bebidas sin alcohol y bebidas emergentes.
+</p>
+
+<span class="tag">
+LINE CARD · PRICE SHEET · CATALOG
+</span>
+
 </div>
+
+
+<div class="card">
+
+<h2>
+⚙️ Technology &amp; Equipment
+</h2>
+
+<p>
+Draft, self-pour, dispensing, refrigeration, POS,
+RFID/NFC, equipment and beverage technology.
+</p>
+
+<p class="es">
+Sistemas de draft, self-pour, dispensación, refrigeración,
+POS, RFID/NFC, equipos y tecnología para bebidas.
+</p>
+
+<span class="tag">
+PRODUCT LINE · CATALOG · SPECS
+</span>
+
+</div>
+
+
 </section>
+
 
 <section class="scan">
-<h2>SCAN OR PHOTOGRAPH A DOCUMENT</h2>
-<p>Photograph a printed line card, catalog, price sheet, or product sheet. Add pages one at a time and we'll combine them into one PDF.</p>
-<p class="es">Fotografía una lista de productos, catálogo, precios o ficha de producto. Agrega páginas una por una y las convertiremos en un solo PDF.</p>
 
-<input id="camera" class="hidden" type="file" accept="image/*" capture="environment" multiple>
-<input id="files" class="hidden" type="file" accept="image/*,application/pdf" multiple>
+<h2>
+SCAN OR PHOTOGRAPH A DOCUMENT
+</h2>
 
-<button class="btn" id="scanBtn">📷 SCAN OR PHOTOGRAPH DOCUMENT</button>
-<button class="btn secondary" id="uploadBtn">📄 UPLOAD AN EXISTING PDF</button>
-<button class="btn secondary hidden" id="addPageBtn">➕ ADD ANOTHER PAGE</button>
-<button class="btn hidden" id="makePdfBtn">↗ SEND TO IBC</button>
+<p>
+Photograph a printed line card, catalog, price sheet, or product sheet.
+Add pages one at a time and we'll combine them into one PDF.
+</p>
 
-<div id="status" class="status"></div>
-<div id="preview" class="preview"></div>
+<p class="es">
+Fotografía una lista de productos, catálogo, lista de precios o ficha de producto.
+Agrega las páginas una por una y las convertiremos en un solo PDF.
+</p>
 
-<button class="btn hidden" id="shareBtn">↗ SEND TO IBC</button>
 
-<div class="note">No product-by-product form. Send the document you already have. If you have a printed sheet, photograph it. If you already have a PDF, upload it.</div>
-</section>
+<input
+id="camera"
+class="hidden"
+type="file"
+accept="image/*"
+capture="environment"
+multiple
+>
 
-<section class="whatsapp">
-<h3>Prefer WhatsApp?</h3>
-<p>Send your line card, price sheet, catalog, or product information directly to IBC.</p>
-<a class="btn" href="https://wa.me/526693322789?text=Hello%20IBC%20Mazatl%C3%A1n%2C%20I'd%20like%20to%20send%20our%20product%20line%20or%20catalog.">💬 SEND VIA WHATSAPP</a>
-</section>
 
-<div class="footer">Immersive Beverage Concepts · Mazatlán, Sinaloa, Mexico · IBCMazatlan.com</div>
+<input
+id="files"
+class="hidden"
+type="file"
+accept="image/*,application/pdf"
+multiple
+>
+
+
+<button
+class="btn"
+id="scanBtn"
+>
+📷 SCAN OR PHOTOGRAPH DOCUMENT
+</button>
+
+<p class="es">
+📷 ESCANEAR O FOTOGRAFIAR DOCUMENTO
+</p>
+
+
+<button
+class="btn secondary"
+id="uploadBtn"
+>
+📄 UPLOAD AN EXISTING PDF
+</button>
+
+<p class="es">
+📄 SUBIR UN PDF EXISTENTE
+</p>
+
+
+<button
+class="btn secondary hidden"
+id="addPageBtn"
+>
+➕ ADD ANOTHER PAGE
+</button>
+
+<p
+class="es hidden"
+id="addPageEs"
+>
+➕ AGREGAR OTRA PÁGINA
+</p>
+
+
+<button
+class="btn hidden"
+id="makePdfBtn"
+>
+↗ SHARE WITH IBC
+</button>
+
+<p
+class="es hidden"
+id="shareWithEs"
+>
+↗ COMPARTIR CON IBC
+</p>
+
+
+<div
+id="status"
+class="status"
+></div>
+
+
+<div
+id="preview"
+class="preview"
+></div>
+
+
+<button
+class="btn hidden"
+id="shareBtn"
+>
+↗ SHARE PDF WITH IBC
+</button>
+
+<p
+class="es hidden"
+id="sharePdfEs"
+>
+↗ COMPARTIR PDF CON IBC
+</p>
+
+
+<div class="note">
+
+No product-by-product form.
+Send the document you already have.
+If you have a printed sheet, photograph it.
+If you already have a PDF, upload it.
+
+<p class="es">
+No necesitas llenar un formulario producto por producto.
+Envía el documento que ya tienes.
+Si tienes una hoja impresa, fotografíala.
+Si ya tienes un PDF, súbelo.
+</p>
+
 </div>
 
+</section>
+
+
+
+<!-- KEEP US UP TO DATE -->
+
+<section class="updates">
+
+<h2>
+KEEP US UP TO DATE
+</h2>
+
+<p>
+Have something new for us?
+New releases, seasonal products, pricing changes,
+promotions, or special opportunities are always welcome.
+Let us know what's happening so we can consider your products
+for future tasting and discovery programs.
+</p>
+
+<p class="es">
+¿Tienes algo nuevo para nosotros?
+Nuevos lanzamientos, productos de temporada,
+cambios de precios, promociones u oportunidades especiales
+son siempre bienvenidos.
+Cuéntanos qué está pasando para que podamos considerar
+tus productos para futuros programas de degustación y descubrimiento.
+</p>
+
+
+<form
+class="update-form"
+action="mailto:ibc.mzt@gmail.com"
+method="post"
+enctype="text/plain"
+>
+
+
+<input
+type="text"
+name="company"
+placeholder="Company / Brewery"
+required
+>
+
+<p class="es">
+Empresa / Cervecería
+</p>
+
+
+<input
+type="text"
+name="contact"
+placeholder="Your name"
+required
+>
+
+<p class="es">
+Tu nombre
+</p>
+
+
+<input
+type="text"
+name="contact_info"
+placeholder="Email or WhatsApp"
+required
+>
+
+<p class="es">
+Correo electrónico o WhatsApp
+</p>
+
+
+<select
+name="update_type"
+required
+>
+
+<option value="">
+What would you like to update us about?
+</option>
+
+<option>
+New Release / Nuevo lanzamiento
+</option>
+
+<option>
+Specialty / Limited Product / Producto especial o limitado
+</option>
+
+<option>
+Price Change / Cambio de precio
+</option>
+
+<option>
+Special Pricing / Precio especial
+</option>
+
+<option>
+Promotion / Promoción
+</option>
+
+<option>
+Seasonal Product / Producto de temporada
+</option>
+
+<option>
+Availability Change / Cambio de disponibilidad
+</option>
+
+<option>
+Experimental Product / Producto experimental
+</option>
+
+<option>
+Other / Otro
+</option>
+
+</select>
+
+
+<input
+type="text"
+name="product"
+placeholder="Product name / Nombre del producto"
+>
+
+
+<textarea
+name="details"
+placeholder="Tell us about the update... / Cuéntanos sobre la actualización..."
+></textarea>
+
+
+<button
+class="btn"
+type="submit"
+>
+SEND UPDATE TO IBC →
+</button>
+
+<p class="es">
+ENVIAR ACTUALIZACIÓN A IBC →
+</p>
+
+
+</form>
+
+
+<div class="update-help">
+
+Have a price sheet, product sheet, or promotional document?
+You can use <strong>SHARE WITH IBC</strong> above to send the document.
+
+<p class="es">
+¿Tienes una lista de precios, ficha de producto o documento promocional?
+Puedes utilizar <strong>COMPARTIR CON IBC</strong> arriba para enviar el documento.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="whatsapp">
+
+<h3>
+Prefer WhatsApp?
+</h3>
+
+<p>
+Send your line card, price sheet, catalog, or product information
+directly to IBC.
+</p>
+
+<p class="es">
+¿Prefieres WhatsApp?
+Envía directamente a IBC tu lista de productos,
+lista de precios, catálogo o información de productos.
+</p>
+
+
+<a
+class="btn"
+href="https://wa.me/526693322789?text=Hello%20IBC%20Mazatl%C3%A1n%2C%20I'd%20like%20to%20send%20our%20product%20line%20or%20catalog."
+>
+💬 SEND VIA WHATSAPP
+</a>
+
+<p class="es">
+💬 ENVIAR POR WHATSAPP
+</p>
+
+</section>
+
+
+<div class="footer">
+
+Immersive Beverage Concepts · Mazatlán, Sinaloa, Mexico · IBCMazatlan.com
+
+</div>
+
+</div>
+
+
+
 <script>
-const camera=document.getElementById('camera'),
-files=document.getElementById('files'),
-scanBtn=document.getElementById('scanBtn'),
-uploadBtn=document.getElementById('uploadBtn'),
-addPageBtn=document.getElementById('addPageBtn'),
-makePdfBtn=document.getElementById('makePdfBtn'),
-status=document.getElementById('status'),
-preview=document.getElementById('preview'),
-shareBtn=document.getElementById('shareBtn');
 
-let pdfBlob=null,imagePages=[];
+const camera =
+document.getElementById('camera');
 
-scanBtn.onclick=()=>camera.click();
-uploadBtn.onclick=()=>files.click();
-addPageBtn.onclick=()=>camera.click();
+const files =
+document.getElementById('files');
 
-makePdfBtn.onclick=async()=>{
+const scanBtn =
+document.getElementById('scanBtn');
+
+const uploadBtn =
+document.getElementById('uploadBtn');
+
+const addPageBtn =
+document.getElementById('addPageBtn');
+
+const addPageEs =
+document.getElementById('addPageEs');
+
+const makePdfBtn =
+document.getElementById('makePdfBtn');
+
+const shareWithEs =
+document.getElementById('shareWithEs');
+
+const status =
+document.getElementById('status');
+
+const preview =
+document.getElementById('preview');
+
+const shareBtn =
+document.getElementById('shareBtn');
+
+const sharePdfEs =
+document.getElementById('sharePdfEs');
+
+
+let pdfBlob = null;
+
+let imagePages = [];
+
+
+scanBtn.onclick =
+() => camera.click();
+
+
+uploadBtn.onclick =
+() => files.click();
+
+
+addPageBtn.onclick =
+() => camera.click();
+
+
+makePdfBtn.onclick =
+async () => {
+
 if(imagePages.length){
+
 await createPdf();
-if(pdfBlob) await sharePdf();
+
+if(pdfBlob){
+
+await sharePdf();
+
 }
+
+}
+
 };
 
-camera.onchange=()=>{
-const list=[...camera.files].filter(f=>f.type.startsWith('image/'));
+
+camera.onchange =
+() => {
+
+const list =
+[...camera.files]
+.filter(
+f => f.type.startsWith('image/')
+);
+
 
 if(list.length){
+
 imagePages.push(...list);
+
 renderPreview();
 
-status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or send to IBC.`;
+
+status.textContent =
+`${imagePages.length} page${imagePages.length > 1 ? 's' : ''} added. Add another page or tap Share With IBC.`;
+
 
 addPageBtn.classList.remove('hidden');
+
+addPageEs.classList.remove('hidden');
+
 makePdfBtn.classList.remove('hidden');
+
+shareWithEs.classList.remove('hidden');
+
 }
 
-camera.value='';
+
+camera.value = '';
+
 };
 
-files.onchange=()=>handleFiles([...files.files]);
+
+files.onchange =
+() => handleFiles([...files.files]);
+
 
 function handleFiles(list){
 
-if(list.length===1 && list[0].type==='application/pdf'){
-pdfBlob=list[0];
-imagePages=[];
-preview.innerHTML='';
+
+if(
+list.length === 1 &&
+list[0].type === 'application/pdf'
+){
+
+pdfBlob = list[0];
+
+imagePages = [];
+
+preview.innerHTML = '';
 
 addPageBtn.classList.add('hidden');
+
+addPageEs.classList.add('hidden');
+
 makePdfBtn.classList.add('hidden');
 
-status.textContent='PDF ready. Tap Send to IBC.';
+shareWithEs.classList.add('hidden');
+
+status.textContent =
+'PDF ready. Tap Share PDF With IBC.';
+
 shareBtn.classList.remove('hidden');
 
+sharePdfEs.classList.remove('hidden');
+
 return;
+
 }
 
-const imgs=list.filter(f=>f.type.startsWith('image/'));
+
+const imgs =
+list.filter(
+f => f.type.startsWith('image/')
+);
+
 
 if(imgs.length){
+
 imagePages.push(...imgs);
+
 renderPreview();
 
-status.textContent=`${imagePages.length} page${imagePages.length>1?'s':''} added. Add another page or send to IBC.`;
+
+status.textContent =
+`${imagePages.length} page${imagePages.length > 1 ? 's' : ''} added. Add another page or tap Share With IBC.`;
+
 
 addPageBtn.classList.remove('hidden');
+
+addPageEs.classList.remove('hidden');
+
 makePdfBtn.classList.remove('hidden');
+
+shareWithEs.classList.remove('hidden');
+
 }
+
 }
+
 
 function renderPreview(){
-preview.innerHTML='';
 
-imagePages.forEach(f=>{
-const u=URL.createObjectURL(f),
-img=document.createElement('img');
+preview.innerHTML = '';
 
-img.src=u;
+
+imagePages.forEach(f => {
+
+const u =
+URL.createObjectURL(f);
+
+const img =
+document.createElement('img');
+
+img.src = u;
+
 preview.appendChild(img);
+
 });
+
 }
+
 
 async function createPdf(){
 
-status.textContent='Preparing your PDF…';
-makePdfBtn.disabled=true;
-addPageBtn.disabled=true;
+status.textContent =
+'Preparing your PDF…';
+
+makePdfBtn.disabled = true;
+
+addPageBtn.disabled = true;
+
 
 try{
-pdfBlob=await buildPdf(imagePages);
 
-status.textContent=`PDF ready with ${imagePages.length} page${imagePages.length>1?'s':''}. Tap Send to IBC.`;
+pdfBlob =
+await buildPdf(imagePages);
 
-shareBtn.classList.remove('hidden');
 
-}catch(e){
+status.textContent =
+`PDF ready with ${imagePages.length} page${imagePages.length > 1 ? 's' : ''}.`;
 
-status.textContent='Could not create the PDF. Please try again.';
+shareBtn.classList.add('hidden');
 
-}finally{
+sharePdfEs.classList.add('hidden');
 
-makePdfBtn.disabled=false;
-addPageBtn.disabled=false;
+
 }
+catch(e){
+
+status.textContent =
+'Could not create the PDF. Please try again.';
+
 }
+finally{
+
+makePdfBtn.disabled = false;
+
+addPageBtn.disabled = false;
+
+}
+
+}
+
 
 async function loadImage(file){
-return new Promise((res,rej)=>{
-const im=new Image();
 
-im.onload=()=>res(im);
-im.onerror=rej;
-im.src=URL.createObjectURL(file);
-});
+return new Promise(
+(res,rej) => {
+
+const im =
+new Image();
+
+im.onload =
+() => res(im);
+
+im.onerror =
+rej;
+
+im.src =
+URL.createObjectURL(file);
+
 }
+);
+
+}
+
 
 async function buildPdf(list){
 
-const pages=[];
+const pages = [];
+
 
 for(const f of list){
 
-const im=await loadImage(f);
-const max=1440;
-const scale=Math.min(1,max/im.width);
-const w=Math.round(im.width*scale);
-const h=Math.round(im.height*scale);
+const im =
+await loadImage(f);
 
-const c=document.createElement('canvas');
-c.width=w;
-c.height=h;
+const max = 1440;
 
-const x=c.getContext('2d');
-x.drawImage(im,0,0,w,h);
+const scale =
+Math.min(
+1,
+max / im.width
+);
 
-pages.push({
-jpg:c.toDataURL('image/jpeg',.88),
+const w =
+Math.round(
+im.width * scale
+);
+
+const h =
+Math.round(
+im.height * scale
+);
+
+
+const c =
+document.createElement('canvas');
+
+c.width = w;
+
+c.height = h;
+
+
+const x =
+c.getContext('2d');
+
+
+x.drawImage(
+im,
+0,
+0,
 w,
 h
+);
+
+
+pages.push({
+
+jpg:
+c.toDataURL(
+'image/jpeg',
+.88
+),
+
+w,
+
+h
+
 });
+
 }
 
-const enc=new TextEncoder(),
-chunks=[],
-offsets=[];
 
-let pos=0;
+const enc =
+new TextEncoder();
+
+const chunks = [];
+
+const offsets = [];
+
+let pos = 0;
+
 
 function add(s){
-const b=enc.encode(s);
+
+const b =
+enc.encode(s);
+
 chunks.push(b);
-pos+=b.length;
+
+pos += b.length;
+
 }
+
 
 function addBin(b){
+
 chunks.push(b);
-pos+=b.length;
+
+pos += b.length;
+
 }
 
-add('%PDF-1.4\n%\xFF\xFF\xFF\xFF\n');
 
-const n=2+pages.length*3;
+add(
+'%PDF-1.4\n%\xFF\xFF\xFF\xFF\n'
+);
+
+
+const n =
+2 + pages.length * 3;
+
 
 function obj(id,body){
-offsets[id]=pos;
-add(id+' 0 obj\n'+body+'\nendobj\n');
+
+offsets[id] = pos;
+
+add(
+id +
+' 0 obj\n' +
+body +
+'\nendobj\n'
+);
+
 }
 
-obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
 
-const kids=pages.map((_,i)=>`${3+i*3} 0 R`).join(' ');
+obj(
+1,
+'<< /Type /Catalog /Pages 2 0 R >>'
+);
 
-obj(2,`<< /Type /Pages /Kids [${kids}] /Count ${pages.length} >>`);
 
-for(let i=0;i<pages.length;i++){
+const kids =
+pages
+.map(
+(_,i) => `${3+i*3} 0 R`
+)
+.join(' ');
 
-const p=pages[i],
-pageId=3+i*3,
-imgId=pageId+1,
-contId=pageId+2;
 
-const b64=p.jpg.split(',')[1];
-const raw=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+obj(
+2,
+`<< /Type /Pages /Kids [${kids}] /Count ${pages.length} >>`
+);
 
-offsets[imgId]=pos;
 
-add(`${imgId} 0 obj
-<< /Type /XObject /Subtype /Image /Width ${p.w} /Height ${p.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${raw.length} >>
-stream
-`);
+for(
+let i=0;
+i<pages.length;
+i++
+){
+
+const p =
+pages[i];
+
+const pageId =
+3+i*3;
+
+const imgId =
+pageId+1;
+
+const contId =
+pageId+2;
+
+
+const b64 =
+p.jpg.split(',')[1];
+
+
+const raw =
+Uint8Array.from(
+atob(b64),
+c => c.charCodeAt(0)
+);
+
+
+offsets[imgId] =
+pos;
+
+
+add(
+`${imgId} 0 obj\n` +
+`<< /Type /XObject /Subtype /Image ` +
+`/Width ${p.w} /Height ${p.h} ` +
+`/ColorSpace /DeviceRGB ` +
+`/BitsPerComponent 8 ` +
+`/Filter /DCTDecode ` +
+`/Length ${raw.length} >>\n` +
+`stream\n`
+);
+
 
 addBin(raw);
 
-add('\nendstream\nendobj\n');
 
-const pageW=595,
-pageH=842,
-sc=Math.min(pageW/p.w,pageH/p.h),
-dw=Math.round(p.w*sc),
-dh=Math.round(p.h*sc),
-x=Math.round((pageW-dw)/2),
-y=Math.round((pageH-dh)/2);
+add(
+'\nendstream\nendobj\n'
+);
 
-const stream=`q
-${dw} 0 0 ${dh} ${x} ${y} cm
-/Im${i} Do
-Q
-`;
 
-obj(contId,`<< /Length ${stream.length} >>
-stream
-${stream}endstream`);
+const pageW = 595;
 
-obj(pageId,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW} ${pageH}] /Resources << /XObject << /Im${i} ${imgId} 0 R >> >> /Contents ${contId} 0 R >>`);
+const pageH = 842;
+
+
+const sc =
+Math.min(
+pageW/p.w,
+pageH/p.h
+);
+
+
+const dw =
+Math.round(p.w * sc);
+
+const dh =
+Math.round(p.h * sc);
+
+
+const x =
+Math.round(
+(pageW-dw)/2
+);
+
+const y =
+Math.round(
+(pageH-dh)/2
+);
+
+
+const stream =
+`q\n` +
+`${dw} 0 0 ${dh} ${x} ${y} cm\n` +
+`/Im${i} Do\n` +
+`Q\n`;
+
+
+obj(
+contId,
+`<< /Length ${stream.length} >>\n` +
+`stream\n${stream}endstream`
+);
+
+
+obj(
+pageId,
+`<< /Type /Page ` +
+`/Parent 2 0 R ` +
+`/MediaBox [0 0 ${pageW} ${pageH}] ` +
+`/Resources << /XObject << /Im${i} ${imgId} 0 R >> >> ` +
+`/Contents ${contId} 0 R >>`
+);
+
 }
 
-const xref=pos;
 
-add(`xref
-0 ${n+1}
-0000000000 65535 f 
-`);
+const xref =
+pos;
 
-for(let i=1;i<=n;i++){
-add(String(offsets[i]).padStart(10,'0')+' 00000 n \n');
+
+add(
+`xref\n0 ${n+1}\n` +
+`0000000000 65535 f \n`
+);
+
+
+for(
+let i=1;
+i<=n;
+i++
+){
+
+add(
+String(offsets[i])
+.padStart(10,'0') +
+' 00000 n \n'
+);
+
 }
 
-add(`trailer
-<< /Size ${n+1} /Root 1 0 R >>
-startxref
-${xref}
-%%EOF`);
 
-return new Blob(chunks,{type:'application/pdf'});
+add(
+`trailer\n` +
+`<< /Size ${n+1} /Root 1 0 R >>\n` +
+`startxref\n${xref}\n` +
+`%%EOF`
+);
+
+
+return new Blob(
+chunks,
+{
+type:'application/pdf'
 }
+);
+
+}
+
 
 async function sharePdf(){
 
-if(!pdfBlob)return;
+if(!pdfBlob)
+return;
 
-const file=new File(
+
+const file =
+new File(
 [pdfBlob],
 'IBC-Supplier-Document.pdf',
-{type:'application/pdf'}
+{
+type:'application/pdf'
+}
 );
 
-if(navigator.share && (!navigator.canShare || navigator.canShare({files:[file]}))){
+
+if(
+navigator.share &&
+(
+!navigator.canShare ||
+navigator.canShare({
+files:[file]
+})
+)
+){
 
 try{
 
 await navigator.share({
-title:'IBC Supplier Document',
-text:'IBC Mazatlán supplier line card / price sheet',
+
+title:
+'IBC Supplier Document',
+
+text:
+'IBC Mazatlán supplier line card / price sheet',
+
 files:[file]
+
 });
 
 return;
 
-}catch(e){}
+}
+catch(e){}
+
 }
 
-const a=document.createElement('a');
 
-a.href=URL.createObjectURL(pdfBlob);
-a.download='IBC-Supplier-Document.pdf';
+const a =
+document.createElement('a');
+
+
+a.href =
+URL.createObjectURL(
+pdfBlob
+);
+
+
+a.download =
+'IBC-Supplier-Document.pdf';
+
+
 a.click();
 
-status.textContent='PDF saved. Open WhatsApp below and attach the PDF to IBC.';
+
+status.textContent =
+'PDF saved. Open WhatsApp below and attach the PDF to IBC.';
+
 }
 
-shareBtn.onclick=()=>sharePdf();
+
+shareBtn.onclick =
+sharePdf;
+
 </script>
 
 </body>
