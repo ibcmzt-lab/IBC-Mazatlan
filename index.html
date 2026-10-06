@@ -1,771 +1,1084 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UNA MÁS | An Elevated Drinking Experience | Mazatlán</title><style>
-:root {
-  --teal-dark: #073f47;
-  --teal: #0b6972;
-  --teal-light: #58b8b8;
-  --copper: #c9825b;
-  --cream: #f5f1e8;
-  --white: #ffffff;
-  --text: #17383d;
-  --sand: #ead9c7;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: var(--cream);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-  padding: 18px 5%;
-}
-
-.nav {
-  max-width: 1250px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  color: white;
-  line-height: .9;
-}
-
-.brand-main {
-  display: block;
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: 3px;
-}
-
-.brand-sub {
-  display: block;
-  margin-top: 6px;
-  font-size: 9px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  opacity: .8;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.language {
-  display: flex;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.55);
-  border-radius: 30px;
-  background: rgba(5,55,62,.65);
-  backdrop-filter: blur(8px);
-}
-
-.language button {
-  border: 0;
-  background: transparent;
-  color: white;
-  padding: 8px 13px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.language button.active {
-  background: white;
-  color: var(--teal-dark);
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 760px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-
-  background:
-    linear-gradient(
-      110deg,
-      rgba(4,45,51,.90) 0%,
-      rgba(5,65,71,.70) 40%,
-      rgba(5,65,71,.34) 70%,
-      rgba(5,45,51,.18) 100%
-    ),
-    url("Self-Pour.jpg") center center / cover no-repeat;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      135deg,
-      transparent 0%,
-      rgba(201,130,91,.13) 52%,
-      rgba(88,184,184,.16) 100%
-    );
-  pointer-events: none;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 155px 5% 90px;
-}
-
-.hero-copy {
-  max-width: 650px;
-}
-
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 22px;
-  padding: 8px 15px;
-  border: 1px solid rgba(255,255,255,.48);
-  border-radius: 30px;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2.5px;
-  background: rgba(0,0,0,.16);
-}
-
-h1 {
-  margin: 0;
-  color: white;
-  font-size: clamp(58px, 9vw, 104px);
-  line-height: .88;
-  letter-spacing: -4px;
-  font-weight: 900;
-}
-
-.hero-subtitle {
-  margin: 24px 0 18px;
-  color: #9ed9d8;
-  font-size: clamp(21px, 3vw, 30px);
-  font-weight: 700;
-  letter-spacing: .3px;
-}
-
-.hero-description {
-  margin: 0 0 30px;
-  max-width: 590px;
-  color: rgba(255,255,255,.92);
-  font-size: 18px;
-  line-height: 1.65;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.button {
-  display: inline-block;
-  padding: 15px 23px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  transition: .2s ease;
-}
-
-.button-primary {
-  background: white;
-  color: var(--teal-dark);
-}
-
-.button-secondary {
-  border: 1px solid rgba(255,255,255,.65);
-  color: white;
-  background: rgba(255,255,255,.08);
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-/* =========================
-   DRINK STRIP
-========================= */
-
-.drink-strip {
-  position: relative;
-  background: var(--white);
-  border-bottom: 1px solid rgba(7,63,71,.12);
-}
-
-.drink-grid {
-  max-width: 1250px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.drink-item {
-  padding: 26px 14px;
-  text-align: center;
-  border-right: 1px solid rgba(7,63,71,.10);
-}
-
-.drink-item:last-child {
-  border-right: 0;
-}
-
-.drink-item strong {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--teal-dark);
-  font-size: 11px;
-  letter-spacing: 1.3px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-  max-width: 1250px;
-  margin: auto;
-  padding: 95px 5%;
-}
-
-.section-label {
-  margin-bottom: 14px;
-  color: var(--copper);
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2.5px;
-}
-
-.section h2 {
-  margin: 0 0 20px;
-  color: var(--teal-dark);
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.02;
-}
-
-.section-intro {
-  max-width: 760px;
-  color: #49686c;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.experience {
-  background:
-    linear-gradient(
-      135deg,
-      #e4f0ee 0%,
-      #f5f1e8 55%,
-      #f0dfd4 100%
-    );
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.experience-statement {
-  margin-top: 28px;
-  color: var(--teal-dark);
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 1.45;
-}
-
-.feature-list {
-  display: grid;
-  gap: 15px;
-}
-
-.feature {
-  padding: 22px;
-  background: rgba(255,255,255,.72);
-  border-left: 3px solid var(--teal-light);
-}
-
-.feature strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--teal-dark);
-  font-size: 15px;
-  letter-spacing: .5px;
-}
-
-.feature span {
-  color: #557074;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* =========================
-   POUR SECTION
-========================= */
-
-.pour-section {
-  background: var(--teal-dark);
-  color: white;
-  text-align: center;
-}
-
-.pour-section h2 {
-  color: white;
-}
-
-.pour-section .section-intro {
-  margin: 0 auto 34px;
-  color: rgba(255,255,255,.82);
-}
-
-.pour-line {
-  margin: 30px auto 0;
-  color: #9ed9d8;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: .5px;
-}
-
-/* =========================
-   SUPPLIER
-========================= */
-
-.partner {
-  background: #f0e4d8;
-  text-align: center;
-}
-
-.partner .section-intro {
-  margin: 0 auto 30px;
-}
-
-.partner-button {
-  display: inline-block;
-  padding: 15px 24px;
-  background: var(--teal-dark);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  border-radius: 4px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  padding: 32px 5%;
-  background: #042f36;
-  color: rgba(255,255,255,.62);
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-footer strong {
-  color: white;
-  font-size: 15px;
-  letter-spacing: 2px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-  .drink-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .drink-item:nth-child(3) {
-    border-right: 0;
-  }
-
-  .drink-item:nth-child(-n+3) {
-    border-bottom: 1px solid rgba(7,63,71,.10);
-  }
-
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  header {
-    padding: 14px 5%;
-  }
-
-  .brand-main {
-    font-size: 25px;
-  }
-
-  .brand-sub {
-    font-size: 8px;
-  }
-
-  .language button {
-    padding: 7px 9px;
-  }
-
-  .hero {
-    min-height: 730px;
-    background-position: center;
-  }
-
-  .hero-inner {
-    padding-top: 155px;
-  }
-
-  h1 {
-    font-size: 70px;
-    letter-spacing: -3px;
-  }
-
-  .hero-subtitle {
-    font-size: 22px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .drink-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .drink-item {
-    border-right: 1px solid rgba(7,63,71,.10);
-    border-bottom: 1px solid rgba(7,63,71,.10);
-  }
-
-  .drink-item:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .drink-item:nth-last-child(-n+2) {
-    border-bottom: 0;
-  }
-
-  .section {
-    padding: 72px 7%;
-  }
-}
-
-@media (max-width: 400px) {
-
-  h1 {
-    font-size: 61px;
-  }
-
-  .hero-subtitle {
-    font-size: 20px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .button {
-    text-align: center;
-  }
-}
-</style></head><body><header>
-  <nav class="nav"><a href="index.html" class="brand" aria-label="UNA MÁS">
-  <span class="brand-main">UNA MÁS</span>
-  <span class="brand-sub">BY IMMERSIVE BEVERAGE CONCEPTS</span>
-</a>
-
-<div class="nav-right">
-  <div class="language">
-    <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
-    <button id="esBtn" onclick="setLanguage('es')">ES</button>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UNA MÁS | An Elevated Drinking Experience | Mazatlán</title>
+
+  <meta
+    name="description"
+    content="UNA MÁS is an elevated drinking experience in Mazatlán, created by Immersive Beverage Concepts. Discover beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #07191b;
+      color: #f4f1e9;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 28px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-main {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+    .language-toggle {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      padding: 5px;
+      backdrop-filter: blur(8px);
+    }
+
+    .language-toggle button {
+      border: 0;
+      background: transparent;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .language-toggle button.active {
+      background: #f4f1e9;
+      color: #07191b;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 94vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 150px 5vw 85px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4,18,20,0.92) 0%,
+          rgba(4,18,20,0.73) 40%,
+          rgba(4,18,20,0.25) 78%,
+          rgba(4,18,20,0.48) 100%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(4,18,20,0.92) 0%,
+          rgba(4,18,20,0.05) 55%,
+          rgba(4,18,20,0.38) 100%
+        ),
+        url("Self-Pour.jpg") center center / cover no-repeat;
+    }
+
+    .hero-content {
+      width: min(900px, 100%);
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      opacity: 0.88;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.86;
+      letter-spacing: 0.015em;
+      font-weight: 900;
+    }
+
+    .hero-tagline {
+      margin: 26px 0 18px;
+      font-size: clamp(1.4rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      font-weight: 600;
+      max-width: 720px;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      line-height: 1.7;
+      color: rgba(244,241,233,0.88);
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.55);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: #f4f1e9;
+      color: #07191b;
+      border-color: #f4f1e9;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       DRINK STRIP
+    ========================= */
+
+    .drink-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: #0a2325;
+    }
+
+    .drink-item {
+      min-height: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .drink-item:last-child {
+      border-right: 0;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 110px 5vw;
+    }
+
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-weight: 800;
+      margin-bottom: 18px;
+      opacity: 0.65;
+    }
+
+    section h2 {
+      margin: 0 0 24px;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      line-height: 1.7;
+      opacity: 0.82;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      background: #f0ede5;
+      color: #102325;
+    }
+
+    .experience-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .experience-card {
+      min-height: 270px;
+      padding: 30px;
+      border: 1px solid rgba(16,35,37,0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .experience-number {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      opacity: 0.55;
+      margin-bottom: auto;
+    }
+
+    .experience-card h3 {
+      margin: 35px 0 10px;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .experience-card p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      opacity: 0.72;
+    }
+
+    /* =========================
+       WHAT'S POURING
+    ========================= */
+
+    .pouring {
+      background: #07191b;
+    }
+
+    .pouring-list {
+      margin-top: 50px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .pouring-row {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 30px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      align-items: center;
+    }
+
+    .pouring-category {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .pouring-description {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    /* =========================
+       CONNECTION
+    ========================= */
+
+    .connection {
+      background: #102d2f;
+    }
+
+    .connection-box {
+      max-width: 950px;
+    }
+
+    .connection h2 {
+      max-width: 850px;
+    }
+
+    .connection-copy {
+      max-width: 780px;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      line-height: 1.75;
+      opacity: 0.8;
+    }
+
+    .connection-link {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 7px;
+    }
+
+    /* =========================
+       IBC
+    ========================= */
+
+    .ibc {
+      background: #e7e3da;
+      color: #102325;
+    }
+
+    .ibc-content {
+      max-width: 900px;
+    }
+
+    .ibc h2 {
+      max-width: 800px;
+    }
+
+    .ibc-copy {
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      opacity: 0.76;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 55px 5vw;
+      background: #041214;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+    }
+
+    .footer-brand {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-sub {
+      margin-top: 7px;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 0.78rem;
+      opacity: 0.6;
+    }
+
+    /* =========================
+       LANGUAGE
+    ========================= */
+
+    [data-lang="es"] {
+      display: none;
+    }
+
+    body.es [data-lang="en"] {
+      display: none;
+    }
+
+    body.es [data-lang="es"] {
+      display: block;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 22px 5vw;
+      }
+
+      .hero {
+        min-height: 88vh;
+        padding: 140px 5vw 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem, 19vw, 7rem);
+      }
+
+      .hero-tagline {
+        font-size: 1.45rem;
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+      }
+
+      .drink-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .drink-item {
+        min-height: 85px;
+      }
+
+      section {
+        padding: 80px 5vw;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .experience-card {
+        min-height: 230px;
+      }
+
+      .pouring-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-right {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .brand-main {
+        font-size: 1.5rem;
+      }
+
+      .brand-sub {
+        font-size: 0.5rem;
+      }
+
+      .language-toggle button {
+        padding: 5px 8px;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero h1 {
+        font-size: 4.2rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .drink-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .drink-item:nth-child(3),
+      .drink-item:nth-child(6) {
+        border-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="site">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <a href="#" class="brand">
+      <div class="brand-main">UNA MÁS</div>
+      <div class="brand-sub">By Immersive Beverage Concepts</div>
+    </a>
+
+    <div class="language-toggle">
+      <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+      <button id="esBtn" onclick="setLanguage('es')">ES</button>
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow" data-lang="en">
+        Mazatlán • Mexico
+      </div>
+
+      <div class="eyebrow" data-lang="es">
+        Mazatlán • México
+      </div>
+
+      <h1>UNA MÁS</h1>
+
+      <div class="hero-tagline" data-lang="en">
+        An Elevated Drinking Experience
+      </div>
+
+      <div class="hero-tagline" data-lang="es">
+        Una Experiencia de Bebida Elevada
+      </div>
+
+      <div class="hero-copy" data-lang="en">
+        Come for one. Stay for another. Explore a constantly changing lineup of beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more.
+      </div>
+
+      <div class="hero-copy" data-lang="es">
+        Ven por una. Quédate por otra. Descubre una selección en constante evolución de cerveza, vino, sidra, cócteles, seltzer, bebidas sin alcohol, café y mucho más.
+      </div>
+
+      <div class="hero-actions">
+
+        <a href="#experience" class="button primary" data-lang="en">
+          The Experience
+        </a>
+
+        <a href="#experience" class="button primary" data-lang="es">
+          La Experiencia
+        </a>
+
+        <a href="#pouring" class="button" data-lang="en">
+          What's Pouring
+        </a>
+
+        <a href="#pouring" class="button" data-lang="es">
+          Lo Que Se Sirve
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DRINK STRIP
+  ========================== -->
+
+  <div class="drink-strip">
+
+    <div class="drink-item">
+      Beer
+    </div>
+
+    <div class="drink-item">
+      Wine
+    </div>
+
+    <div class="drink-item">
+      Cider
+    </div>
+
+    <div class="drink-item">
+      Cocktails
+    </div>
+
+    <div class="drink-item">
+      Seltzer
+    </div>
+
+    <div class="drink-item">
+      More
+    </div>
+
   </div>
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================== -->
+
+  <section class="experience" id="experience">
+
+    <div class="section-inner">
+
+      <div class="section-label" data-lang="en">
+        The Experience
+      </div>
+
+      <div class="section-label" data-lang="es">
+        La Experiencia
+      </div>
+
+      <h2 data-lang="en">
+        Come thirsty.<br>
+        Leave curious.
+      </h2>
+
+      <h2 data-lang="es">
+        Ven con sed.<br>
+        Sal con curiosidad.
+      </h2>
+
+      <p class="section-intro" data-lang="en">
+        UNA MÁS is built around the simple pleasure of discovering something you didn't expect to love. Try a little. Find a favorite. Pour another.
+      </p>
+
+      <p class="section-intro" data-lang="es">
+        UNA MÁS nace del simple placer de descubrir algo que no esperabas disfrutar. Prueba un poco. Encuentra tu favorito. Sirve otra.
+      </p>
+
+
+      <div class="experience-grid">
+
+        <div class="experience-card">
+
+          <div class="experience-number">
+            01
+          </div>
+
+          <h3 data-lang="en">
+            TRY A LITTLE
+          </h3>
+
+          <h3 data-lang="es">
+            PRUEBA UN POCO
+          </h3>
+
+          <p data-lang="en">
+            Discovery starts with choice. Explore different styles, flavors and producers without committing to a full glass.
+          </p>
+
+          <p data-lang="es">
+            El descubrimiento comienza con la elección. Explora diferentes estilos, sabores y productores sin comprometerte con una copa completa.
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <div class="experience-number">
+            02
+          </div>
+
+          <h3 data-lang="en">
+            POUR YOUR WAY
+          </h3>
+
+          <h3 data-lang="es">
+            SIRVE A TU MANERA
+          </h3>
+
+          <p data-lang="en">
+            Build your own experience. Taste what catches your attention and follow your curiosity wherever it takes you.
+          </p>
+
+          <p data-lang="es">
+            Construye tu propia experiencia. Prueba lo que llame tu atención y sigue tu curiosidad dondequiera que te lleve.
+          </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+          <div class="experience-number">
+            03
+          </div>
+
+          <h3 data-lang="en">
+            STAY FOR ANOTHER
+          </h3>
+
+          <h3 data-lang="es">
+            QUÉDATE POR OTRA
+          </h3>
+
+          <p data-lang="en">
+            Because sometimes the first pour is just the beginning.
+          </p>
+
+          <p data-lang="es">
+            Porque a veces la primera es apenas el comienzo.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WHAT'S POURING
+  ========================== -->
+
+  <section class="pouring" id="pouring">
+
+    <div class="section-inner">
+
+      <div class="section-label" data-lang="en">
+        What's Pouring
+      </div>
+
+      <div class="section-label" data-lang="es">
+        Lo Que Se Sirve
+      </div>
+
+      <h2 data-lang="en">
+        There's always<br>
+        another one to try.
+      </h2>
+
+      <h2 data-lang="es">
+        Siempre hay<br>
+        otra para probar.
+      </h2>
+
+      <p class="section-intro" data-lang="en">
+        The lineup evolves. Discover familiar favorites, emerging Mexican producers, unexpected styles and beverages you may never have thought to order.
+      </p>
+
+      <p class="section-intro" data-lang="es">
+        La selección evoluciona. Descubre favoritos conocidos, productores mexicanos emergentes, estilos inesperados y bebidas que quizá nunca habías pensado pedir.
+      </p>
+
+
+      <div class="pouring-list">
+
+        <div class="pouring-row">
+
+          <div class="pouring-category">
+            Beer
+          </div>
+
+          <div class="pouring-description" data-lang="en">
+            From crisp lagers to bold IPAs and everything worth discovering.
+          </div>
+
+          <div class="pouring-description" data-lang="es">
+            Desde lagers refrescantes hasta IPAs intensas y todo lo que vale la pena descubrir.
+          </div>
+
+        </div>
+
+
+        <div class="pouring-row">
+
+          <div class="pouring-category">
+            Wine
+          </div>
+
+          <div class="pouring-description" data-lang="en">
+            Mexican and international wines selected for exploration by the pour.
+          </div>
+
+          <div class="pouring-description" data-lang="es">
+            Vinos mexicanos e internacionales seleccionados para descubrir copa a copa.
+          </div>
+
+        </div>
+
+
+        <div class="pouring-row">
+
+          <div class="pouring-category">
+            Cider & Seltzer
+          </div>
+
+          <div class="pouring-description" data-lang="en">
+            Bright, refreshing and always worth another taste.
+          </div>
+
+          <div class="pouring-description" data-lang="es">
+            Frescos, refrescantes y siempre dignos de otra probada.
+          </div>
+
+        </div>
+
+
+        <div class="pouring-row">
+
+          <div class="pouring-category">
+            Cocktails
+          </div>
+
+          <div class="pouring-description" data-lang="en">
+            Experimental pours, modern classics and unexpected combinations.
+          </div>
+
+          <div class="pouring-description" data-lang="es">
+            Creaciones experimentales, clásicos modernos y combinaciones inesperadas.
+          </div>
+
+        </div>
+
+
+        <div class="pouring-row">
+
+          <div class="pouring-category">
+            NA & More
+          </div>
+
+          <div class="pouring-description" data-lang="en">
+            Non-alcoholic drinks, coffee, caffeinated options and whatever comes next.
+          </div>
+
+          <div class="pouring-description" data-lang="es">
+            Bebidas sin alcohol, café, opciones con cafeína y lo que venga después.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONNECTION
+  ========================== -->
+
+  <section class="connection">
+
+    <div class="section-inner">
+
+      <div class="connection-box">
+
+        <div class="section-label" data-lang="en">
+          More Than a Bar
+        </div>
+
+        <div class="section-label" data-lang="es">
+          Más Que Un Bar
+        </div>
+
+        <h2 data-lang="en">
+          A better connection between the people who make beverages and the people who drink them.
+        </h2>
+
+        <h2 data-lang="es">
+          Una mejor conexión entre quienes crean bebidas y quienes las disfrutan.
+        </h2>
+
+        <p class="connection-copy" data-lang="en">
+          Behind the experience is a technology-driven platform designed to connect consumers and beverage partners in real time. What people discover, enjoy and come back for can help shape what comes next.
+        </p>
+
+        <p class="connection-copy" data-lang="es">
+          Detrás de la experiencia existe una plataforma impulsada por tecnología diseñada para conectar a consumidores y socios de bebidas en tiempo real. Lo que las personas descubren, disfrutan y vuelven a pedir puede ayudar a definir lo que viene después.
+        </p>
+
+        <a href="partners.html" class="connection-link" data-lang="en">
+          Beverage Partners →
+        </a>
+
+        <a href="partners.html" class="connection-link" data-lang="es">
+          Socios de Bebidas →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       IBC
+  ========================== -->
+
+  <section class="ibc">
+
+    <div class="section-inner">
+
+      <div class="ibc-content">
+
+        <div class="section-label">
+          Immersive Beverage Concepts
+        </div>
+
+        <h2 data-lang="en">
+          UNA MÁS is being created by people who know beverages.
+        </h2>
+
+        <h2 data-lang="es">
+          UNA MÁS está siendo creado por personas que conocen las bebidas.
+        </h2>
+
+        <p class="ibc-copy" data-lang="en">
+          Immersive Beverage Concepts brings together beverage industry experience, hospitality, technology and supplier relationships to create a new kind of drinking destination.
+        </p>
+
+        <p class="ibc-copy" data-lang="es">
+          Immersive Beverage Concepts reúne experiencia en la industria de bebidas, hospitalidad, tecnología y relaciones con proveedores para crear un nuevo tipo de destino para disfrutar bebidas.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="footer-brand">
+          UNA MÁS
+        </div>
+
+        <div class="footer-sub">
+          An Elevated Drinking Experience
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+        <div>
+          By Immersive Beverage Concepts
+        </div>
+
+        <div>
+          Mazatlán, Sinaloa, Mexico
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+
 </div>
 
-  </nav>
-</header><main>  <!-- HERO -->  <section class="hero"><div class="hero-inner">
 
-  <div class="hero-copy">
+<script>
 
-    <div class="eyebrow"
-         data-en="MAZATLÁN"
-         data-es="MAZATLÁN">
-      MAZATLÁN
-    </div>
+  function setLanguage(lang) {
 
-    <h1>UNA<br>MÁS</h1>
+    if (lang === 'es') {
+      document.body.classList.add('es');
+      document.getElementById('esBtn').classList.add('active');
+      document.getElementById('enBtn').classList.remove('active');
+      localStorage.setItem('unaMasLanguage', 'es');
+    } else {
+      document.body.classList.remove('es');
+      document.getElementById('enBtn').classList.add('active');
+      document.getElementById('esBtn').classList.remove('active');
+      localStorage.setItem('unaMasLanguage', 'en');
+    }
 
-    <div class="hero-subtitle"
-         data-en="An Elevated Drinking Experience"
-         data-es="Una Experiencia de Bebida Elevada">
-      An Elevated Drinking Experience
-    </div>
-
-    <p class="hero-description"
-       data-en="Come for one. Stay for another. Explore a constantly changing lineup of beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more."
-       data-es="Ven por una. Quédate por otra. Explora una selección en constante cambio de cerveza, vino, sidra, cócteles, seltzer, bebidas sin alcohol, café y más.">
-      Come for one. Stay for another. Explore a constantly changing lineup of beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#experience"
-         class="button button-primary"
-         data-en="THE EXPERIENCE"
-         data-es="LA EXPERIENCIA">
-        THE EXPERIENCE
-      </a>
-
-      <a href="#pour"
-         class="button button-secondary"
-         data-en="WHAT'S POURING"
-         data-es="QUÉ ESTÁ SIRVIENDO">
-        WHAT'S POURING
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-  </section>  <!-- DRINK CATEGORIES -->  <section class="drink-strip"><div class="drink-grid">
-
-  <div class="drink-item">
-    <strong>BEER</strong>
-  </div>
-
-  <div class="drink-item">
-    <strong>WINE</strong>
-  </div>
-
-  <div class="drink-item">
-    <strong>CIDER</strong>
-  </div>
-
-  <div class="drink-item">
-    <strong>COCKTAILS</strong>
-  </div>
-
-  <div class="drink-item">
-    <strong>SELTZER</strong>
-  </div>
-
-  <div class="drink-item">
-    <strong>MORE</strong>
-  </div>
-
-</div>
-
-  </section>  <!-- EXPERIENCE -->  <section id="experience" class="section experience"><div class="experience-grid">
-
-  <div>
-
-    <div class="section-label"
-         data-en="THE PLACE"
-         data-es="EL LUGAR">
-      THE PLACE
-    </div>
-
-    <h2 data-en="Come thirsty. Leave curious."
-        data-es="Ven con sed. Sal con curiosidad.">
-      Come thirsty. Leave curious.
-    </h2>
-
-    <p class="section-intro"
-       data-en="UNA MÁS is a modern drinking destination built around variety, choice and the simple pleasure of trying something you haven't had before."
-       data-es="UNA MÁS es un destino moderno para beber, creado alrededor de la variedad, la elección y el simple placer de probar algo que nunca has probado.">
-      UNA MÁS is a modern drinking destination built around variety, choice and the simple pleasure of trying something you haven't had before.
-    </p>
-
-    <div class="experience-statement"
-         data-en="Pour what you want. Try something different. Find your favorite."
-         data-es="Sirve lo que quieras. Prueba algo diferente. Encuentra tu favorito.">
-      Pour what you want. Try something different. Find your favorite.
-    </div>
-
-  </div>
+  }
 
 
-  <div class="feature-list">
+  document.addEventListener('DOMContentLoaded', function() {
 
-    <div class="feature">
-      <strong data-en="TRY A LITTLE" data-es="PRUEBA UN POCO">
-        TRY A LITTLE
-      </strong>
+    const savedLanguage =
+      localStorage.getItem('unaMasLanguage') || 'en';
 
-      <span data-en="Sample something new without committing to a full drink."
-            data-es="Prueba algo nuevo sin comprometerte con una bebida completa.">
-        Sample something new without committing to a full drink.
-      </span>
-    </div>
+    setLanguage(savedLanguage);
 
-    <div class="feature">
-      <strong data-en="POUR YOUR WAY" data-es="SIRVE A TU MANERA">
-        POUR YOUR WAY
-      </strong>
-
-      <span data-en="Choose what catches your eye and pour at your own pace."
-            data-es="Elige lo que te llame la atención y sirve a tu propio ritmo.">
-        Choose what catches your eye and pour at your own pace.
-      </span>
-    </div>
-
-    <div class="feature">
-      <strong data-en="STAY FOR ANOTHER" data-es="QUÉDATE POR OTRA">
-        STAY FOR ANOTHER
-      </strong>
-
-      <span data-en="Bring friends, compare favorites and keep exploring what's new."
-            data-es="Ven con amigos, compara favoritos y sigue explorando lo nuevo.">
-        Bring friends, compare favorites and keep exploring what's new.
-      </span>
-    </div>
-
-  </div>
-
-</div>
-
-  </section>  <!-- WHAT'S POURING -->  <section id="pour" class="section pour-section"><div class="section-label"
-     data-en="WHAT'S POURING"
-     data-es="QUÉ ESTÁ SIRVIENDO">
-  WHAT'S POURING
-</div>
-
-<h2 data-en="There's always another one to try."
-    data-es="Siempre hay otra para probar.">
-  There's always another one to try.
-</h2>
-
-<p class="section-intro"
-   data-en="The lineup keeps moving. Local favorites, Mexican producers, international finds and experimental pours can all have a place at UNA MÁS."
-   data-es="La selección siempre cambia. Favoritos locales, productores mexicanos, descubrimientos internacionales y bebidas experimentales pueden tener un lugar en UNA MÁS.">
-  The lineup keeps moving. Local favorites, Mexican producers, international finds and experimental pours can all have a place at UNA MÁS.
-</p>
-
-<div class="pour-line"
-     data-en="Pour. Taste. Enjoy. Repeat."
-     data-es="Sirve. Prueba. Disfruta. Repite.">
-  Pour. Taste. Enjoy. Repeat.
-</div>
-
-  </section>  <!-- SUPPLIER CTA -->  <section class="section partner"><div class="section-label"
-     data-en="BEHIND UNA MÁS"
-     data-es="DETRÁS DE UNA MÁS">
-  BEHIND UNA MÁS
-</div>
-
-<h2 data-en="Created by Immersive Beverage Concepts."
-    data-es="Creado por Immersive Beverage Concepts.">
-  Created by Immersive Beverage Concepts.
-</h2>
-
-<p class="section-intro"
-   data-en="IBC develops the beverage concepts, technology and partnerships that make UNA MÁS different."
-   data-es="IBC desarrolla los conceptos de bebidas, la tecnología y las alianzas que hacen diferente a UNA MÁS.">
-  IBC develops the beverage concepts, technology and partnerships that make UNA MÁS different.
-</p>
-
-<a href="partners.html"
-   class="partner-button"
-   data-en="IBC SUPPLIER PARTNERS"
-   data-es="SOCIOS PROVEEDORES DE IBC">
-  IBC SUPPLIER PARTNERS
-</a>
-
-  </section></main><footer><strong>UNA MÁS</strong><br>
-
-<span data-en="An Elevated Drinking Experience"
-data-es="Una Experiencia de Bebida Elevada">
-An Elevated Drinking Experience
-</span>
-
-<br><br>
-
-<span data-en="Created by Immersive Beverage Concepts"
-data-es="Creado por Immersive Beverage Concepts">
-Created by Immersive Beverage Concepts
-</span>
-
-</footer><script>
-
-/* =========================
-   LANGUAGE SWITCHER
-========================= */
-
-function setLanguage(lang) {
-
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-en]").forEach(element => {
-    element.textContent = element.getAttribute("data-" + lang);
   });
 
-  document.getElementById("enBtn").classList.toggle("active", lang === "en");
-  document.getElementById("esBtn").classList.toggle("active", lang === "es");
+</script>
 
-  localStorage.setItem("ibcLanguage", lang);
-}
-
-
-/* Restore previous language */
-
-const savedLanguage = localStorage.getItem("ibcLanguage");
-
-if (savedLanguage === "es") {
-  setLanguage("es");
-}
-
-</script></body>
+</body>
 </html>
