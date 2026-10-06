@@ -4,20 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IBC Mazatlán | Beverage Discovery & Tasting Laboratory</title>
-
-<meta name="description" content="Immersive Beverage Concepts Mazatlán. A technology-forward beverage discovery and tasting laboratory exploring finished products from Mexico and beyond.">
+<title>IBC Mazatlán | Immersive Beverage Concepts</title>
 
 <style>
 :root {
-  --bg: #082b31;
-  --bg-dark: #041c20;
-  --panel: rgba(8, 43, 49, 0.82);
-  --text: #f4f7f5;
-  --muted: #b9c9c8;
-  --teal: #36b8b0;
-  --copper: #c47a50;
-  --line: rgba(255,255,255,0.14);
+  --teal-dark: #073f47;
+  --teal: #0b6972;
+  --teal-light: #3fa5a8;
+  --copper: #c9825b;
+  --cream: #f5f1e8;
+  --white: #ffffff;
+  --text: #17383d;
 }
 
 * {
@@ -31,9 +28,8 @@ html {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg-dark);
   color: var(--text);
-  line-height: 1.6;
+  background: var(--cream);
 }
 
 a {
@@ -41,87 +37,100 @@ a {
   text-decoration: none;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 20;
-  background: rgba(4, 28, 32, 0.82);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
+  padding: 18px 5%;
 }
 
 .nav {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
-  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
-.logo {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  color: white;
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
 }
 
-.logo span {
-  color: var(--teal);
+.logo-wrap img {
+  display: block;
+  width: auto;
+  max-width: 190px;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  display: none;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: white;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 
-.nav-link {
-  color: var(--muted);
-  font-size: 14px;
+.language {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 30px;
+  background: rgba(5,55,62,.65);
+  backdrop-filter: blur(8px);
 }
 
-.lang-button {
-  border: 1px solid var(--teal);
+.language button {
+  border: 0;
   background: transparent;
   color: white;
-  border-radius: 30px;
-  padding: 8px 14px;
+  padding: 8px 13px;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.lang-button:hover {
-  background: rgba(54,184,176,0.14);
+.language button.active {
+  background: white;
+  color: var(--teal-dark);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-  min-height: 100vh;
+  min-height: 720px;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  overflow: hidden;
-
   background:
     linear-gradient(
-      90deg,
-      rgba(4,28,32,0.97) 0%,
-      rgba(4,28,32,0.88) 35%,
-      rgba(4,28,32,0.48) 65%,
-      rgba(4,28,32,0.70) 100%
+      110deg,
+      rgba(4,55,63,.94) 0%,
+      rgba(5,76,83,.78) 43%,
+      rgba(5,76,83,.38) 72%,
+      rgba(5,55,63,.25) 100%
     ),
-    url("SelfPour.png");
-
-  background-size: cover;
-  background-position: center;
+    url("Self-Pour.jpg") center center / cover no-repeat;
 }
 
 .hero::after {
@@ -131,211 +140,342 @@ header {
   background:
     linear-gradient(
       135deg,
-      rgba(54,184,176,0.08),
-      transparent 45%,
-      rgba(196,122,80,0.12)
+      transparent 0%,
+      rgba(201,130,91,.10) 48%,
+      rgba(63,165,168,.14) 100%
     );
   pointer-events: none;
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 2;
-  width: min(1200px, 100%);
-  margin: auto;
-  padding: 140px 24px 100px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 150px 5% 90px;
 }
 
-.kicker {
+.hero-copy {
+  max-width: 590px;
+}
+
+.eyebrow {
   display: inline-block;
-  color: var(--teal);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   margin-bottom: 20px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 30px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  background: rgba(0,0,0,.12);
 }
 
 h1 {
-  max-width: 850px;
   margin: 0;
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-}
-
-.hero-accent {
-  color: var(--teal);
-}
-
-.hero-subtitle {
-  max-width: 690px;
-  margin-top: 28px;
-  color: var(--muted);
-  font-size: clamp(18px, 2vw, 22px);
-}
-
-.future {
-  margin-top: 34px;
-  color: var(--copper);
-  font-size: 14px;
+  color: white;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: .98;
+  letter-spacing: -2px;
   font-weight: 800;
-  letter-spacing: 0.22em;
 }
 
-/* SECTIONS */
-
-section {
-  padding: 100px 24px;
+.hero-copy h1 span {
+  color: #8ed0cf;
 }
 
-.section-inner {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-label {
-  color: var(--teal);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-h2 {
-  font-size: clamp(32px, 5vw, 54px);
-  line-height: 1.05;
-  margin: 0 0 25px;
-}
-
-.lead {
-  max-width: 800px;
-  color: var(--muted);
+.hero-description {
+  margin: 26px 0 30px;
+  max-width: 560px;
+  color: rgba(255,255,255,.92);
   font-size: 19px;
+  line-height: 1.6;
 }
 
-.dark-section {
-  background: #061f24;
-}
-
-.cards {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.card {
-  padding: 30px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  min-height: 220px;
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-.card p {
-  color: var(--muted);
-}
-
-/* PARTNERS */
-
-.partner-section {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(54,184,176,0.07),
-      transparent 50%,
-      rgba(196,122,80,0.08)
-    ),
-    #082b31;
-}
-
-.partner-box {
-  border: 1px solid var(--line);
-  padding: 45px;
-  background: rgba(4,28,32,0.52);
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .button {
   display: inline-block;
-  margin-top: 25px;
-  padding: 13px 22px;
-  border: 1px solid var(--teal);
-  border-radius: 30px;
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  transition: .2s ease;
+}
+
+.button-primary {
+  background: white;
+  color: var(--teal-dark);
+}
+
+.button-secondary {
+  border: 1px solid rgba(255,255,255,.65);
   color: white;
-  font-weight: 700;
+  background: rgba(255,255,255,.08);
 }
 
 .button:hover {
-  background: rgba(54,184,176,0.14);
+  transform: translateY(-2px);
 }
 
-/* CONTACT */
+/* =========================
+   DISCOVERY STRIP
+========================= */
 
-.contact {
-  background: #041c20;
+.discovery {
+  position: relative;
+  margin-top: -1px;
+  background: var(--white);
+  border-bottom: 1px solid rgba(7,63,71,.12);
 }
 
-.contact-grid {
+.discovery-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.discovery-item {
+  padding: 30px 24px;
+  border-right: 1px solid rgba(7,63,71,.10);
+}
+
+.discovery-item:last-child {
+  border-right: 0;
+}
+
+.discovery-item strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--teal-dark);
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+
+.discovery-item span {
+  color: #527075;
+  font-size: 14px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.section {
+  max-width: 1250px;
+  margin: auto;
+  padding: 95px 5%;
+}
+
+.section-label {
+  margin-bottom: 14px;
+  color: var(--copper);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  color: var(--teal-dark);
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.05;
+}
+
+.section-intro {
+  max-width: 760px;
+  color: #49686c;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.experience {
+  background:
+    linear-gradient(
+      135deg,
+      #e5f1ef 0%,
+      #f5f1e8 55%,
+      #f0e1d7 100%
+    );
+}
+
+.experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 45px;
+  gap: 60px;
+  align-items: center;
 }
 
-.contact-box {
-  border: 1px solid var(--line);
-  padding: 30px;
+.feature-list {
+  margin-top: 32px;
+  display: grid;
+  gap: 18px;
 }
 
-.contact-box strong {
-  color: var(--teal);
+.feature {
+  padding: 20px;
+  background: rgba(255,255,255,.65);
+  border-left: 3px solid var(--teal-light);
 }
 
-footer {
-  padding: 35px 24px;
-  border-top: 1px solid var(--line);
-  color: #91a5a4;
-  font-size: 13px;
+.feature strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--teal-dark);
+  font-size: 15px;
+}
+
+.feature span {
+  color: #557074;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================
+   SUPPLIER CTA
+========================= */
+
+.partner {
+  background: var(--teal-dark);
+  color: white;
   text-align: center;
 }
 
-/* MOBILE */
+.partner h2 {
+  color: white;
+}
 
-@media (max-width: 760px) {
+.partner .section-intro {
+  margin: 0 auto 30px;
+  color: rgba(255,255,255,.78);
+}
 
-  .nav {
-    padding: 15px 18px;
+.partner-button {
+  display: inline-block;
+  padding: 15px 24px;
+  background: var(--copper);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  border-radius: 4px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 30px 5%;
+  background: #042f36;
+  color: rgba(255,255,255,.62);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer strong {
+  color: white;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  header {
+    padding: 14px 5%;
   }
 
-  .logo {
-    font-size: 24px;
+  .logo-wrap img {
+    max-width: 135px;
+    max-height: 48px;
   }
 
-  .nav-link {
-    display: none;
+  .hero {
+    min-height: 680px;
+    background-position: center;
   }
 
-  .hero-content {
-    padding: 125px 20px 80px;
+  .hero-inner {
+    padding-top: 145px;
   }
 
-  section {
-    padding: 75px 20px;
+  .hero-description {
+    font-size: 17px;
   }
 
-  .cards,
-  .contact-grid {
+  .discovery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .discovery-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .discovery-item:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(7,63,71,.10);
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .nav-right {
+    gap: 5px;
+  }
+
+  .language button {
+    padding: 7px 9px;
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-inner {
+    padding-top: 155px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 47px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .discovery-grid {
     grid-template-columns: 1fr;
   }
 
-  .partner-box {
-    padding: 28px;
+  .discovery-item {
+    border-right: 0;
+    border-bottom: 1px solid rgba(7,63,71,.10);
+  }
+
+  .discovery-item:last-child {
+    border-bottom: 0;
+  }
+
+  .section {
+    padding: 70px 7%;
   }
 }
 </style>
@@ -346,273 +486,288 @@ footer {
 <header>
   <nav class="nav">
 
-    <div class="logo">
-      IBC<span>.</span>
-    </div>
+    <a href="index.html" class="logo-wrap" aria-label="IBC Mazatlán">
+
+      <img
+        id="ibcLogo"
+        alt="IBC Mazatlán"
+        onerror="tryNextLogo()"
+      >
+
+      <div id="logoFallback" class="logo-fallback">
+        IBC
+      </div>
+
+    </a>
 
     <div class="nav-right">
-      <a class="nav-link" href="#about" data-en="Discover" data-es="Descubrir">Discover</a>
-      <a class="nav-link" href="#partners" data-en="Partners" data-es="Socios">Partners</a>
-      <button class="lang-button" id="languageToggle">ESPAÑOL</button>
+      <div class="language">
+        <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+        <button id="esBtn" onclick="setLanguage('es')">ES</button>
+      </div>
     </div>
 
   </nav>
 </header>
 
+
 <main>
 
-<!-- HERO -->
+  <!-- HERO -->
 
-<section class="hero">
+  <section class="hero">
 
-  <div class="hero-content">
+    <div class="hero-inner">
 
-    <div class="kicker"
-         data-en="Immersive Beverage Concepts"
-         data-es="Immersive Beverage Concepts">
-      Immersive Beverage Concepts
-    </div>
+      <div class="hero-copy">
 
-    <h1
-      data-en="Beverage Discovery &amp; Tasting <span class='hero-accent'>Laboratory</span>"
-      data-es="Laboratorio de Descubrimiento y <span class='hero-accent'>Degustación</span> de Bebidas">
-      Beverage Discovery &amp; Tasting
-      <span class="hero-accent">Laboratory</span>
-    </h1>
+        <div class="eyebrow" data-en="IMMERSIVE BEVERAGE CONCEPTS"
+             data-es="CONCEPTOS INMERSIVOS DE BEBIDAS">
+          IMMERSIVE BEVERAGE CONCEPTS
+        </div>
 
-    <p class="hero-subtitle"
-       data-en="An immersive environment for discovering finished beverages through sampling, technology and social interaction."
-       data-es="Un entorno inmersivo para descubrir bebidas terminadas mediante degustación, tecnología e interacción social.">
-      An immersive environment for discovering finished beverages through sampling, technology and social interaction.
-    </p>
+        <h1>
+          <span data-en="Discover." data-es="Descubre.">Discover.</span><br>
+          <span data-en="Taste." data-es="Prueba.">Taste.</span><br>
+          <span data-en="Experience." data-es="Experimenta.">Experience.</span>
+        </h1>
 
-    <div class="future">
-      THE FUTURE OF POUR.
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-  <div class="section-inner">
-
-    <div class="section-label"
-         data-en="THE CONCEPT"
-         data-es="EL CONCEPTO">
-      THE CONCEPT
-    </div>
-
-    <h2
-      data-en="Explore. Taste. Discover."
-      data-es="Explora. Degusta. Descubre.">
-      Explore. Taste. Discover.
-    </h2>
-
-    <p class="lead"
-       data-en="IBC creates an immersive setting where consumers can explore a wide range of finished beverage products in a single environment."
-       data-es="IBC crea un entorno inmersivo donde los consumidores pueden explorar una amplia variedad de bebidas terminadas en un solo espacio.">
-      IBC creates an immersive setting where consumers can explore a wide range of finished beverage products in a single environment.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3
-          data-en="Discovery"
-          data-es="Descubrimiento">
-          Discovery
-        </h3>
-
-        <p
-          data-en="Explore beer, wine, cider, hard seltzer, non-alcoholic beverages, coffee and emerging beverage categories."
-          data-es="Explora cerveza, vino, sidra, hard seltzer, bebidas sin alcohol, café y categorías emergentes.">
-          Explore beer, wine, cider, hard seltzer, non-alcoholic beverages, coffee and emerging beverage categories.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3
-          data-en="Immersion"
-          data-es="Inmersión">
-          Immersion
-        </h3>
-
-        <p
-          data-en="Technology and self-pour interaction create a more engaging way to experience finished products."
-          data-es="La tecnología y la interacción de autoservicio crean una forma más atractiva de experimentar productos terminados.">
-          Technology and self-pour interaction create a more engaging way to experience finished products.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3
-          data-en="Community"
-          data-es="Comunidad">
-          Community
-        </h3>
-
-        <p
-          data-en="A social environment where people can discover new beverages together, at their own pace."
-          data-es="Un entorno social donde las personas pueden descubrir nuevas bebidas juntas, a su propio ritmo.">
-          A social environment where people can discover new beverages together, at their own pace.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PARTNERS -->
-
-<section id="partners" class="partner-section">
-
-  <div class="section-inner">
-
-    <div class="section-label"
-         data-en="INDUSTRY PARTNERS"
-         data-es="SOCIOS DE LA INDUSTRIA">
-      INDUSTRY PARTNERS
-    </div>
-
-    <div class="partner-box">
-
-      <h2
-        data-en="Bring the next pour to the table."
-        data-es="Trae la próxima bebida a la mesa.">
-        Bring the next pour to the table.
-      </h2>
-
-      <p class="lead"
-         data-en="IBC is building relationships with beverage producers, equipment suppliers, technology companies and other industry partners."
-         data-es="IBC está desarrollando relaciones con productores de bebidas, proveedores de equipos, empresas de tecnología y otros socios de la industria.">
-        IBC is building relationships with beverage producers, equipment suppliers, technology companies and other industry partners.
-      </p>
-
-      <a href="partners.html"
-         class="button"
-         data-en="Partner With IBC"
-         data-es="Asóciate con IBC">
-        Partner With IBC
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-  <div class="section-inner">
-
-    <div class="section-label"
-         data-en="CONNECT"
-         data-es="CONECTA">
-      CONNECT
-    </div>
-
-    <h2
-      data-en="Stay connected to IBC."
-      data-es="Mantente conectado con IBC.">
-      Stay connected to IBC.
-    </h2>
-
-    <div class="contact-grid">
-
-      <div class="contact-box">
-
-        <strong>IBC Mazatlán</strong>
-
-        <p>
-          Immersive Beverage Concepts
+        <p class="hero-description"
+           data-en="A new way to discover beverages through immersive tasting, self-pour exploration and a constantly evolving selection."
+           data-es="Una nueva forma de descubrir bebidas mediante degustación inmersiva, exploración de autoservicio y una selección en constante evolución.">
+          A new way to discover beverages through immersive tasting, self-pour exploration and a constantly evolving selection.
         </p>
 
-        <p>
-          <a href="mailto:ibc.mzt@gmail.com">
-            ibc.mzt@gmail.com
+        <div class="hero-buttons">
+
+          <a href="#experience"
+             class="button button-primary"
+             data-en="EXPLORE IBC"
+             data-es="EXPLORA IBC">
+            EXPLORE IBC
           </a>
-        </p>
 
-      </div>
+          <a href="partners.html"
+             class="button button-secondary"
+             data-en="SUPPLIER PARTNERS"
+             data-es="SOCIOS PROVEEDORES">
+            SUPPLIER PARTNERS
+          </a>
 
-      <div class="contact-box">
-
-        <strong
-          data-en="Director of Beverage Innovation"
-          data-es="Director de Innovación de Bebidas">
-          Director of Beverage Innovation
-        </strong>
-
-        <p>
-          Michael Burmil
-        </p>
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+
+  <!-- DISCOVERY STRIP -->
+
+  <section class="discovery">
+
+    <div class="discovery-grid">
+
+      <div class="discovery-item">
+        <strong data-en="BEVERAGES" data-es="BEBIDAS">BEVERAGES</strong>
+        <span data-en="Beer, wine, cider, seltzer, cocktails & more"
+              data-es="Cerveza, vino, sidra, seltzer, cócteles y más">
+          Beer, wine, cider, seltzer, cocktails & more
+        </span>
+      </div>
+
+      <div class="discovery-item">
+        <strong data-en="DISCOVERY" data-es="DESCUBRIMIENTO">DISCOVERY</strong>
+        <span data-en="Explore something new"
+              data-es="Explora algo nuevo">
+          Explore something new
+        </span>
+      </div>
+
+      <div class="discovery-item">
+        <strong data-en="SELF-POUR" data-es="AUTOSERVICIO">SELF-POUR</strong>
+        <span data-en="Pour what interests you"
+              data-es="Sirve lo que te interese">
+          Pour what interests you
+        </span>
+      </div>
+
+      <div class="discovery-item">
+        <strong data-en="MEXICO" data-es="MÉXICO">MEXICO</strong>
+        <span data-en="Mexico-forward beverage discovery"
+              data-es="Descubrimiento de bebidas con enfoque en México">
+          Mexico-forward beverage discovery
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience" class="section experience">
+
+    <div class="experience-grid">
+
+      <div>
+
+        <div class="section-label"
+             data-en="THE IBC EXPERIENCE"
+             data-es="LA EXPERIENCIA IBC">
+          THE IBC EXPERIENCE
+        </div>
+
+        <h2 data-en="A different way to discover what you like."
+            data-es="Una nueva forma de descubrir lo que te gusta.">
+          A different way to discover what you like.
+        </h2>
+
+        <p class="section-intro"
+           data-en="IBC brings together an evolving selection of beverages in an environment built for exploration. Sample at your own pace, discover new producers and find something worth coming back for."
+           data-es="IBC reúne una selección de bebidas en evolución dentro de un espacio creado para explorar. Prueba a tu propio ritmo, descubre nuevos productores y encuentra algo a lo que quieras volver.">
+          IBC brings together an evolving selection of beverages in an environment built for exploration. Sample at your own pace, discover new producers and find something worth coming back for.
+        </p>
+
+      </div>
+
+
+      <div class="feature-list">
+
+        <div class="feature">
+          <strong data-en="EXPLORE" data-es="EXPLORA">EXPLORE</strong>
+          <span data-en="Move beyond the usual choices and discover new beverages."
+                data-es="Ve más allá de las opciones habituales y descubre nuevas bebidas.">
+            Move beyond the usual choices and discover new beverages.
+          </span>
+        </div>
+
+        <div class="feature">
+          <strong data-en="POUR" data-es="SIRVE">POUR</strong>
+          <span data-en="Choose what interests you and pour at your own pace."
+                data-es="Elige lo que te interesa y sirve a tu propio ritmo.">
+            Choose what interests you and pour at your own pace.
+          </span>
+        </div>
+
+        <div class="feature">
+          <strong data-en="DISCOVER" data-es="DESCUBRE">DISCOVER</strong>
+          <span data-en="Experience products from established and emerging producers."
+                data-es="Descubre productos de productores establecidos y emergentes.">
+            Experience products from established and emerging producers.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUPPLIER CTA -->
+
+  <section class="section partner">
+
+    <div class="section-label"
+         data-en="FOR PRODUCERS & SUPPLIERS"
+         data-es="PARA PRODUCTORES Y PROVEEDORES">
+      FOR PRODUCERS & SUPPLIERS
+    </div>
+
+    <h2 data-en="Bring your products to IBC."
+        data-es="Lleva tus productos a IBC.">
+      Bring your products to IBC.
+    </h2>
+
+    <p class="section-intro"
+       data-en="We are building relationships with beverage producers, distributors, equipment partners and technology companies."
+       data-es="Estamos construyendo relaciones con productores de bebidas, distribuidores, socios de equipos y empresas de tecnología.">
+      We are building relationships with beverage producers, distributors, equipment partners and technology companies.
+    </p>
+
+    <a href="partners.html"
+       class="partner-button"
+       data-en="BECOME AN IBC SUPPLIER PARTNER"
+       data-es="CONVIÉRTETE EN SOCIO PROVEEDOR DE IBC">
+      BECOME AN IBC SUPPLIER PARTNER
+    </a>
+
+  </section>
 
 </main>
 
 
 <footer>
-  © 2026 Immersive Beverage Concepts · IBC Mazatlán
+  <strong>IBC Mazatlán</strong><br>
+  <span data-en="Immersive Beverage Concepts"
+        data-es="Conceptos Inmersivos de Bebidas">
+    Immersive Beverage Concepts
+  </span>
 </footer>
 
 
 <script>
 
-let currentLanguage = "en";
+/* =========================
+   LOGO LOADER
+   Checks common extensions
+========================= */
 
-const button = document.getElementById("languageToggle");
+const logoCandidates = [
+  "IBC%20logo.png",
+  "IBC%20logo.jpg",
+  "IBC%20logo.jpeg",
+  "IBC%20logo.webp",
+  "IBC%20logo.svg"
+];
 
-function setLanguage(language) {
+let logoIndex = 0;
 
-  currentLanguage = language;
+function tryNextLogo() {
 
-  document.documentElement.lang = language;
+  const logo = document.getElementById("ibcLogo");
 
-  document.querySelectorAll("[data-en]").forEach(function(element) {
-
-    const text = element.getAttribute("data-" + language);
-
-    if (text !== null) {
-      element.innerHTML = text;
-    }
-
-  });
-
-  button.textContent =
-    language === "en"
-      ? "ESPAÑOL"
-      : "ENGLISH";
+  if (logoIndex < logoCandidates.length) {
+    logo.src = logoCandidates[logoIndex];
+    logoIndex++;
+  } else {
+    logo.style.display = "none";
+    document.getElementById("logoFallback").style.display = "block";
+  }
 }
 
-button.addEventListener("click", function() {
+tryNextLogo();
 
-  if (currentLanguage === "en") {
-    setLanguage("es");
-  } else {
-    setLanguage("en");
-  }
 
-});
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
 
-setLanguage("en");
+function setLanguage(lang) {
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + lang);
+  });
+
+  document.getElementById("enBtn").classList.toggle("active", lang === "en");
+  document.getElementById("esBtn").classList.toggle("active", lang === "es");
+
+  localStorage.setItem("ibcLanguage", lang);
+}
+
+
+/* Restore previous language */
+
+const savedLanguage = localStorage.getItem("ibcLanguage");
+
+if (savedLanguage === "es") {
+  setLanguage("es");
+}
 
 </script>
 
