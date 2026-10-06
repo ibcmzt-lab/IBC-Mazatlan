@@ -1,4 +1,4 @@
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,18 +6,18 @@
 
 <title>Immersive Beverage Concepts | IBC Mazatlán</title>
 
-<meta name="description" content="Immersive Beverage Concepts is developing a technology-forward tasting and discovery laboratory in Mazatlán, Mexico, where finished beverage products can be explored in an immersive environment.">
+<meta name="description" content="Immersive Beverage Concepts is developing a technology-forward beverage discovery and tasting laboratory in Mazatlán, Mexico.">
 
 <style>
 :root {
-  --deep: #082b31;
-  --deep2: #0d3d43;
-  --teal: #20b7b5;
-  --blue: #3b9fd8;
-  --copper: #c47b55;
-  --cream: #f4f1e9;
+  --deep: #06272d;
+  --deep2: #0b3940;
+  --teal: #19b7b5;
+  --blue: #3d9fd3;
+  --copper: #c77c55;
+  --cream: #f4f0e8;
   --white: #ffffff;
-  --muted: #b8ccca;
+  --muted: #b7c9c8;
 }
 
 * {
@@ -45,20 +45,23 @@ a {
 /* HEADER */
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(8,43,49,0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgba(3,20,24,.88),
+    rgba(3,20,24,.35),
+    transparent
+  );
 }
 
 .nav {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: auto;
-  padding: 18px 24px;
+  padding: 20px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,175 +70,165 @@ header {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
 }
 
+/* Temporary mark until the actual logo file is inserted */
+
 .logo-mark {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border: 2px solid var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 1px;
-  color: var(--white);
-  position: relative;
-}
-
-.logo-mark::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 2px;
-  background: var(--copper);
-  bottom: 5px;
-  right: 4px;
+  color: white;
+  background: rgba(6,39,45,.55);
 }
 
 .brand-text strong {
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .brand-text span {
   display: block;
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 1.5px;
+  font-size: 10px;
+  color: #d1dcda;
+  letter-spacing: 2px;
   margin-top: 2px;
 }
 
 .nav-links {
   display: flex;
-  gap: 25px;
   align-items: center;
+  gap: 24px;
 }
 
 .nav-links a {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.nav-links a:hover {
-  color: var(--white);
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .language {
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.35);
   border-radius: 20px;
-  font-size: 12px;
+  padding: 7px 11px;
 }
 
 /* HERO */
 
 .hero {
   min-height: 100vh;
-  padding: 150px 24px 90px;
-  display: flex;
-  align-items: center;
   position: relative;
+  display: flex;
+  align-items: flex-end;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 80% 30%, rgba(32,183,181,0.18), transparent 35%),
-    radial-gradient(circle at 20% 80%, rgba(196,123,85,0.13), transparent 30%),
-    linear-gradient(135deg, #061f24, #0d3d43 55%, #082b31);
+  background: #061f24;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(32,183,181,0.16);
-  border-radius: 50%;
-  right: -180px;
-  top: 140px;
-}
+/* THE ACTUAL HERO IMAGE */
 
-.hero::after {
-  content: "";
+.hero-image {
   position: absolute;
-  width: 320px;
-  height: 320px;
-  border: 1px solid rgba(196,123,85,0.14);
-  border-radius: 50%;
-  right: -90px;
-  top: 230px;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4,25,29,.96) 0%,
+      rgba(4,25,29,.78) 30%,
+      rgba(4,25,29,.28) 65%,
+      rgba(4,25,29,.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4,25,29,.88) 0%,
+      rgba(4,25,29,.05) 55%
+    ),
+    url("Self-Pour.jpg");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
-  max-width: 1180px;
-  margin: auto;
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 170px 24px 90px;
 }
 
 .eyebrow {
   color: var(--teal);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-h1 {
-  max-width: 850px;
+.hero h1 {
+  max-width: 800px;
   font-size: clamp(44px, 7vw, 82px);
-  line-height: 0.98;
+  line-height: .96;
   letter-spacing: -3px;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
-.gradient-text {
-  background: linear-gradient(90deg, var(--teal), var(--blue), var(--copper));
+.hero h1 span {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--teal),
+    var(--blue),
+    var(--copper)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.hero p {
-  max-width: 720px;
-  font-size: 20px;
-  color: var(--muted);
-  margin-bottom: 36px;
+.hero-copy {
+  max-width: 690px;
+  font-size: 19px;
+  color: #d1dcda;
+  margin-bottom: 32px;
 }
 
 .buttons {
   display: flex;
-  gap: 14px;
   flex-wrap: wrap;
+  gap: 13px;
 }
 
 .button {
+  display: inline-block;
   padding: 14px 23px;
-  border-radius: 3px;
+  font-size: 13px;
   font-weight: bold;
-  font-size: 14px;
-  transition: 0.2s ease;
+  letter-spacing: .5px;
+  border-radius: 3px;
 }
 
-.button-primary {
+.primary {
   background: var(--teal);
-  color: #062328;
+  color: #06272d;
 }
 
-.button-primary:hover {
-  transform: translateY(-2px);
-}
-
-.button-secondary {
-  border: 1px solid rgba(255,255,255,0.25);
-  color: var(--white);
-}
-
-.button-secondary:hover {
-  border-color: var(--teal);
+.secondary {
+  border: 1px solid rgba(255,255,255,.4);
+  color: white;
+  background: rgba(0,0,0,.15);
 }
 
 /* SECTIONS */
@@ -245,13 +238,13 @@ section {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: auto;
 }
 
-.section-label {
+.label {
   color: var(--copper);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -259,14 +252,14 @@ section {
 }
 
 h2 {
-  font-size: clamp(34px, 5vw, 55px);
-  line-height: 1.05;
-  margin-bottom: 22px;
+  font-size: clamp(35px, 5vw, 57px);
+  line-height: 1.03;
   letter-spacing: -1.5px;
+  margin-bottom: 22px;
 }
 
 .intro {
-  max-width: 760px;
+  max-width: 780px;
   color: var(--muted);
   font-size: 18px;
 }
@@ -274,27 +267,33 @@ h2 {
 /* DISCOVERY */
 
 .discovery {
-  background: #0a3238;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(25,183,181,.12),
+      transparent 30%
+    ),
+    var(--deep2);
 }
 
-.discovery-grid {
-  margin-top: 55px;
+.cards {
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
 }
 
 .card {
   padding: 32px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(255,255,255,0.09);
-  min-height: 230px;
+  min-height: 245px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.09);
 }
 
 .card-number {
   color: var(--teal);
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 3px;
   margin-bottom: 35px;
 }
 
@@ -311,9 +310,7 @@ h2 {
 /* LAB */
 
 .lab {
-  background:
-    linear-gradient(rgba(8,43,49,0.93), rgba(8,43,49,0.97)),
-    radial-gradient(circle at center, rgba(32,183,181,0.16), transparent 55%);
+  background: #071f24;
 }
 
 .lab-grid {
@@ -324,62 +321,69 @@ h2 {
 }
 
 .lab-box {
+  padding: 32px;
   border-left: 3px solid var(--teal);
-  padding: 28px 30px;
-  background: rgba(255,255,255,0.035);
+  background: rgba(255,255,255,.035);
 }
 
 .lab-box p {
   color: var(--muted);
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .lab-box strong {
-  color: var(--white);
+  color: white;
 }
 
 /* PARTNERS */
 
 .partners {
-  background: #071f24;
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(196,123,85,.09),
+      transparent 30%
+    ),
+    var(--deep);
 }
 
 .partner-grid {
   margin-top: 45px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 15px;
+  gap: 14px;
 }
 
 .partner {
-  padding: 25px 18px;
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 25px 15px;
   text-align: center;
+  border: 1px solid rgba(255,255,255,.1);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
-.partner:hover {
-  border-color: var(--teal);
-  color: var(--white);
-}
+/* CONTACT */
 
-/* CTA */
-
-.cta {
+.contact {
   text-align: center;
   background:
-    radial-gradient(circle at center, rgba(32,183,181,0.17), transparent 55%),
-    #0a3238;
+    radial-gradient(
+      circle at center,
+      rgba(25,183,181,.15),
+      transparent 55%
+    ),
+    var(--deep2);
 }
 
-.cta h2 {
-  max-width: 800px;
-  margin: 0 auto 20px;
+.contact h2 {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cta p {
-  max-width: 650px;
+.contact p {
+  max-width: 680px;
   margin: 0 auto 30px;
   color: var(--muted);
 }
@@ -387,27 +391,22 @@ h2 {
 /* FOOTER */
 
 footer {
-  background: #04181c;
   padding: 35px 24px;
+  background: #04181c;
 }
 
 .footer-inner {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 footer p {
   color: #78908e;
-  font-size: 12px;
-}
-
-.footer-brand {
-  color: var(--white);
-  font-weight: bold;
+  font-size: 11px;
 }
 
 /* MOBILE */
@@ -418,29 +417,37 @@ footer p {
     display: none;
   }
 
-  .nav {
-    padding: 14px 18px;
-  }
-
-  .brand-text strong {
-    font-size: 12px;
-  }
-
   .hero {
-    padding-top: 130px;
+    min-height: 850px;
   }
 
-  h1 {
+  .hero-image {
+    background-position: 58% center;
+    background-image:
+      linear-gradient(
+        0deg,
+        rgba(4,25,29,.96) 5%,
+        rgba(4,25,29,.65) 45%,
+        rgba(4,25,29,.15) 100%
+      ),
+      url("Self-Pour.jpg");
+  }
+
+  .hero-content {
+    padding: 150px 20px 65px;
+  }
+
+  .hero h1 {
     letter-spacing: -2px;
   }
 
-  .hero p {
+  .hero-copy {
     font-size: 17px;
   }
 
-  .discovery-grid,
-  .partner-grid,
-  .lab-grid {
+  .cards,
+  .lab-grid,
+  .partner-grid {
     grid-template-columns: 1fr;
   }
 
@@ -457,11 +464,14 @@ footer p {
   <nav class="nav">
 
     <a href="#top" class="brand">
+
       <div class="logo-mark">IBC</div>
+
       <div class="brand-text">
         <strong>Immersive Beverage Concepts</strong>
         <span>IBC Mazatlán</span>
       </div>
+
     </a>
 
     <div class="nav-links">
@@ -478,7 +488,12 @@ footer p {
 
 <main id="top">
 
+<!-- HERO -->
+
 <section class="hero">
+
+  <div class="hero-image"></div>
+
   <div class="hero-content">
 
     <div class="eyebrow">
@@ -486,119 +501,158 @@ footer p {
     </div>
 
     <h1>
-      A new way to
-      <span class="gradient-text">discover beverages.</span>
+      Beverage Discovery
+      <span>& Tasting Laboratory</span>
     </h1>
 
-    <p>
-      Immersive Beverage Concepts is developing a technology-forward
-      tasting and discovery laboratory where finished beverage products
-      can be explored, experienced and enjoyed in an entirely new environment.
+    <p class="hero-copy">
+      An immersive environment for exploring finished beverage products,
+      discovering what comes next, and experiencing the future of beverage
+      sampling.
     </p>
 
     <div class="buttons">
-      <a href="#contact" class="button button-primary">
+
+      <a href="#contact" class="button primary">
         Connect With IBC
       </a>
 
-      <a href="#discovery" class="button button-secondary">
+      <a href="#discovery" class="button secondary">
         Explore the Concept
       </a>
+
     </div>
 
   </div>
+
 </section>
 
 
+<!-- DISCOVERY -->
+
 <section class="discovery" id="discovery">
+
   <div class="container">
 
-    <div class="section-label">The Concept</div>
+    <div class="label">
+      The Concept
+    </div>
 
     <h2>
-      Discovery, not another tasting room.
+      THE FUTURE OF POUR.
     </h2>
 
     <p class="intro">
-      IBC is being created as an immersive environment for discovering
-      finished beverage products across categories, styles and formats.
-      The experience brings people closer to products while giving
-      producers and industry partners a new way to connect with consumers.
+      IBC is being developed as a tasting and discovery laboratory
+      where people can explore finished beverage products in an
+      immersive, interactive environment.
     </p>
 
-    <div class="discovery-grid">
+    <div class="cards">
 
       <div class="card">
-        <div class="card-number">01 / EXPLORE</div>
-        <h3>Finished Products</h3>
+
+        <div class="card-number">
+          01 / EXPLORE
+        </div>
+
+        <h3>
+          Finished Products
+        </h3>
+
         <p>
-          Experience beverages that are already made, packaged and ready
-          for the market, from emerging products to established brands.
+          Discover beverages that have already been developed and are
+          ready to experience, from established brands to emerging products.
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-number">02 / EXPERIENCE</div>
-        <h3>Immersive Sampling</h3>
+
+        <div class="card-number">
+          02 / EXPERIENCE
+        </div>
+
+        <h3>
+          Immersive Sampling
+        </h3>
+
         <p>
           A social environment designed around exploration, interaction
           and the freedom to discover something new.
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-number">03 / CONNECT</div>
-        <h3>Industry Partners</h3>
+
+        <div class="card-number">
+          03 / DISCOVER
+        </div>
+
+        <h3>
+          Beyond Beer
+        </h3>
+
         <p>
-          A platform for beverage producers, technology companies,
-          equipment suppliers and other partners to introduce what comes next.
+          Beer, wine, cider, hard seltzer, non-alcoholic beverages,
+          coffee, caffeinated products, cocktails and whatever comes next.
         </p>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
 
+<!-- LAB -->
+
 <section class="lab" id="lab">
+
   <div class="container">
 
     <div class="lab-grid">
 
       <div>
-        <div class="section-label">The Discovery Laboratory</div>
+
+        <div class="label">
+          The Laboratory
+        </div>
 
         <h2>
-          The laboratory is the environment.
+          The laboratory is the experience.
         </h2>
 
         <p class="intro">
-          IBC isn't a traditional consulting laboratory and isn't about
-          telling a producer how to formulate its product. The products
-          have already been developed.
+          IBC isn't about reformulating a producer's product or telling
+          a brand what its beverage should taste like.
         </p>
+
       </div>
+
 
       <div class="lab-box">
 
         <p>
-          Our focus is creating an environment where people can
-          <strong>experience finished beverages</strong> in a highly
-          interactive setting.
+          The products have already been developed.
+          <strong>Our role is to create an environment where people
+          can experience them.</strong>
         </p>
 
         <p>
-          Beverage categories can extend far beyond beer:
-          wine, cider, hard seltzer, non-alcoholic beverages,
-          coffee and caffeinated products, experimental cocktails
-          and other emerging formats.
+          Technology can make sampling more interactive, personal
+          and measurable while creating new ways for consumers and
+          participating brands to connect.
         </p>
 
         <p>
-          Technology can make the experience more personal,
-          measurable and engaging while creating new opportunities
-          for participating brands.
+          The result is a discovery environment built around
+          curiosity, participation and finished products.
         </p>
 
       </div>
@@ -606,84 +660,114 @@ footer p {
     </div>
 
   </div>
+
 </section>
 
 
+<!-- PARTNERS -->
+
 <section class="partners" id="partners">
+
   <div class="container">
 
-    <div class="section-label">Industry Collaboration</div>
+    <div class="label">
+      Industry Collaboration
+    </div>
 
     <h2>
       We're looking for the people building what comes next.
     </h2>
 
     <p class="intro">
-      IBC is currently connecting with companies whose products,
-      equipment, technology and ideas can help shape the future
-      Discovery Studio in Mazatlán.
+      IBC is currently connecting with beverage producers, equipment
+      companies, technology providers and industry partners as the
+      Discovery Studio develops in Mazatlán.
     </p>
+
 
     <div class="partner-grid">
 
-      <div class="partner">BEVERAGE PRODUCERS</div>
-      <div class="partner">DRAFT & DISPENSE</div>
-      <div class="partner">TECHNOLOGY</div>
-      <div class="partner">EQUIPMENT</div>
-      <div class="partner">PAYMENT SYSTEMS</div>
-      <div class="partner">DATA & ANALYTICS</div>
-      <div class="partner">BRAND EXPERIENCE</div>
-      <div class="partner">EMERGING PRODUCTS</div>
+      <div class="partner">
+        BEVERAGE PRODUCERS
+      </div>
+
+      <div class="partner">
+        DRAFT & DISPENSE
+      </div>
+
+      <div class="partner">
+        TECHNOLOGY
+      </div>
+
+      <div class="partner">
+        EQUIPMENT
+      </div>
+
+      <div class="partner">
+        PAYMENT SYSTEMS
+      </div>
+
+      <div class="partner">
+        DATA & ANALYTICS
+      </div>
+
+      <div class="partner">
+        BRAND EXPERIENCE
+      </div>
+
+      <div class="partner">
+        EMERGING PRODUCTS
+      </div>
 
     </div>
 
   </div>
+
 </section>
 
 
-<section class="cta" id="contact">
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
   <div class="container">
 
-    <div class="section-label">Let's Talk</div>
+    <div class="label">
+      Let's Talk
+    </div>
 
     <h2>
-      Interested in becoming part of the IBC story?
+      Interested in becoming part of IBC?
     </h2>
 
     <p>
-      We're currently meeting with potential beverage,
-      technology, equipment and industry partners as the concept develops.
+      We're currently meeting with potential beverage, technology,
+      equipment and industry partners as the concept develops.
     </p>
 
     <div class="buttons" style="justify-content:center;">
 
       <a
         href="mailto:ibc.mzt@gmail.com"
-        class="button button-primary">
+        class="button primary">
         Email IBC
-      </a>
-
-      <a
-        href="https://wa.me/"
-        class="button button-secondary">
-        WhatsApp
       </a>
 
     </div>
 
   </div>
+
 </section>
 
 </main>
 
 
 <footer>
+
   <div class="footer-inner">
 
     <p>
-      <span class="footer-brand">IBC Mazatlán</span>
-      &nbsp; • &nbsp;
-      Immersive Beverage Concepts
+      IBC Mazatlán • Immersive Beverage Concepts
     </p>
 
     <p>
@@ -695,6 +779,7 @@ footer p {
     </p>
 
   </div>
+
 </footer>
 
 </body>
