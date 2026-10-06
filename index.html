@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>IBC Mazatlán | Immersive Beverage Concepts</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UNA MÁS | An Elevated Drinking Experience | Mazatlán</title><style>
 :root {
   --teal-dark: #073f47;
   --teal: #0b6972;
-  --teal-light: #3fa5a8;
+  --teal-light: #58b8b8;
   --copper: #c9825b;
   --cream: #f5f1e8;
   --white: #ffffff;
   --text: #17383d;
+  --sand: #ead9c7;
 }
 
 * {
@@ -59,26 +55,25 @@ header {
   gap: 20px;
 }
 
-.logo-wrap {
-  display: flex;
-  align-items: center;
-  min-height: 58px;
-}
-
-.logo-wrap img {
-  display: block;
-  width: auto;
-  max-width: 190px;
-  max-height: 62px;
-  object-fit: contain;
-}
-
-.logo-fallback {
-  display: none;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 4px;
+.brand {
   color: white;
+  line-height: .9;
+}
+
+.brand-main {
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.brand-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: .8;
 }
 
 .nav-right {
@@ -117,18 +112,19 @@ header {
 ========================= */
 
 .hero {
-  min-height: 720px;
+  min-height: 760px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
+
   background:
     linear-gradient(
       110deg,
-      rgba(4,55,63,.94) 0%,
-      rgba(5,76,83,.78) 43%,
-      rgba(5,76,83,.38) 72%,
-      rgba(5,55,63,.25) 100%
+      rgba(4,45,51,.90) 0%,
+      rgba(5,65,71,.70) 40%,
+      rgba(5,65,71,.34) 70%,
+      rgba(5,45,51,.18) 100%
     ),
     url("Self-Pour.jpg") center center / cover no-repeat;
 }
@@ -141,8 +137,8 @@ header {
     linear-gradient(
       135deg,
       transparent 0%,
-      rgba(201,130,91,.10) 48%,
-      rgba(63,165,168,.14) 100%
+      rgba(201,130,91,.13) 52%,
+      rgba(88,184,184,.16) 100%
     );
   pointer-events: none;
 }
@@ -153,45 +149,49 @@ header {
   width: 100%;
   max-width: 1250px;
   margin: 0 auto;
-  padding: 150px 5% 90px;
+  padding: 155px 5% 90px;
 }
 
 .hero-copy {
-  max-width: 590px;
+  max-width: 650px;
 }
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 20px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255,255,255,.45);
+  margin-bottom: 22px;
+  padding: 8px 15px;
+  border: 1px solid rgba(255,255,255,.48);
   border-radius: 30px;
   color: white;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 2.5px;
-  background: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.16);
 }
 
 h1 {
   margin: 0;
   color: white;
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: .98;
-  letter-spacing: -2px;
-  font-weight: 800;
+  font-size: clamp(58px, 9vw, 104px);
+  line-height: .88;
+  letter-spacing: -4px;
+  font-weight: 900;
 }
 
-.hero-copy h1 span {
-  color: #8ed0cf;
+.hero-subtitle {
+  margin: 24px 0 18px;
+  color: #9ed9d8;
+  font-size: clamp(21px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: .3px;
 }
 
 .hero-description {
-  margin: 26px 0 30px;
-  max-width: 560px;
+  margin: 0 0 30px;
+  max-width: 590px;
   color: rgba(255,255,255,.92);
-  font-size: 19px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .hero-buttons {
@@ -202,7 +202,7 @@ h1 {
 
 .button {
   display: inline-block;
-  padding: 14px 22px;
+  padding: 15px 23px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
@@ -226,47 +226,42 @@ h1 {
 }
 
 /* =========================
-   DISCOVERY STRIP
+   DRINK STRIP
 ========================= */
 
-.discovery {
+.drink-strip {
   position: relative;
-  margin-top: -1px;
   background: var(--white);
   border-bottom: 1px solid rgba(7,63,71,.12);
 }
 
-.discovery-grid {
+.drink-grid {
   max-width: 1250px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.discovery-item {
-  padding: 30px 24px;
+.drink-item {
+  padding: 26px 14px;
+  text-align: center;
   border-right: 1px solid rgba(7,63,71,.10);
 }
 
-.discovery-item:last-child {
+.drink-item:last-child {
   border-right: 0;
 }
 
-.discovery-item strong {
+.drink-item strong {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   color: var(--teal-dark);
-  font-size: 12px;
-  letter-spacing: 1.8px;
-}
-
-.discovery-item span {
-  color: #527075;
-  font-size: 14px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
 }
 
 /* =========================
-   MAIN CONTENT
+   SECTIONS
 ========================= */
 
 .section {
@@ -286,8 +281,8 @@ h1 {
 .section h2 {
   margin: 0 0 20px;
   color: var(--teal-dark);
-  font-size: clamp(32px, 5vw, 54px);
-  line-height: 1.05;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.02;
 }
 
 .section-intro {
@@ -297,32 +292,43 @@ h1 {
   line-height: 1.7;
 }
 
+/* =========================
+   EXPERIENCE
+========================= */
+
 .experience {
   background:
     linear-gradient(
       135deg,
-      #e5f1ef 0%,
+      #e4f0ee 0%,
       #f5f1e8 55%,
-      #f0e1d7 100%
+      #f0dfd4 100%
     );
 }
 
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 70px;
   align-items: center;
 }
 
+.experience-statement {
+  margin-top: 28px;
+  color: var(--teal-dark);
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.45;
+}
+
 .feature-list {
-  margin-top: 32px;
   display: grid;
-  gap: 18px;
+  gap: 15px;
 }
 
 .feature {
-  padding: 20px;
-  background: rgba(255,255,255,.65);
+  padding: 22px;
+  background: rgba(255,255,255,.72);
   border-left: 3px solid var(--teal-light);
 }
 
@@ -331,6 +337,7 @@ h1 {
   margin-bottom: 6px;
   color: var(--teal-dark);
   font-size: 15px;
+  letter-spacing: .5px;
 }
 
 .feature span {
@@ -340,28 +347,49 @@ h1 {
 }
 
 /* =========================
-   SUPPLIER CTA
+   POUR SECTION
 ========================= */
 
-.partner {
+.pour-section {
   background: var(--teal-dark);
   color: white;
   text-align: center;
 }
 
-.partner h2 {
+.pour-section h2 {
   color: white;
+}
+
+.pour-section .section-intro {
+  margin: 0 auto 34px;
+  color: rgba(255,255,255,.82);
+}
+
+.pour-line {
+  margin: 30px auto 0;
+  color: #9ed9d8;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+/* =========================
+   SUPPLIER
+========================= */
+
+.partner {
+  background: #f0e4d8;
+  text-align: center;
 }
 
 .partner .section-intro {
   margin: 0 auto 30px;
-  color: rgba(255,255,255,.78);
 }
 
 .partner-button {
   display: inline-block;
   padding: 15px 24px;
-  background: var(--copper);
+  background: var(--teal-dark);
   color: white;
   font-size: 12px;
   font-weight: bold;
@@ -374,67 +402,56 @@ h1 {
 ========================= */
 
 footer {
-  padding: 30px 5%;
+  padding: 32px 5%;
   background: #042f36;
   color: rgba(255,255,255,.62);
   text-align: center;
   font-size: 12px;
+  line-height: 1.7;
 }
 
 footer strong {
   color: white;
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-  header {
-    padding: 14px 5%;
+  .drink-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .logo-wrap img {
-    max-width: 135px;
-    max-height: 48px;
-  }
-
-  .hero {
-    min-height: 680px;
-    background-position: center;
-  }
-
-  .hero-inner {
-    padding-top: 145px;
-  }
-
-  .hero-description {
-    font-size: 17px;
-  }
-
-  .discovery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .discovery-item:nth-child(2) {
+  .drink-item:nth-child(3) {
     border-right: 0;
   }
 
-  .discovery-item:nth-child(-n+2) {
+  .drink-item:nth-child(-n+3) {
     border-bottom: 1px solid rgba(7,63,71,.10);
   }
 
   .experience-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 40px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
-  .nav-right {
-    gap: 5px;
+  header {
+    padding: 14px 5%;
+  }
+
+  .brand-main {
+    font-size: 25px;
+  }
+
+  .brand-sub {
+    font-size: 8px;
   }
 
   .language button {
@@ -442,305 +459,286 @@ footer strong {
   }
 
   .hero {
-    min-height: 720px;
+    min-height: 730px;
+    background-position: center;
   }
 
   .hero-inner {
     padding-top: 155px;
   }
 
-  .hero-copy {
-    max-width: 100%;
+  h1 {
+    font-size: 70px;
+    letter-spacing: -3px;
   }
 
-  h1 {
-    font-size: 47px;
+  .hero-subtitle {
+    font-size: 22px;
   }
 
   .hero-description {
     font-size: 16px;
   }
 
-  .discovery-grid {
-    grid-template-columns: 1fr;
+  .drink-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .discovery-item {
-    border-right: 0;
+  .drink-item {
+    border-right: 1px solid rgba(7,63,71,.10);
     border-bottom: 1px solid rgba(7,63,71,.10);
   }
 
-  .discovery-item:last-child {
+  .drink-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .drink-item:nth-last-child(-n+2) {
     border-bottom: 0;
   }
 
   .section {
-    padding: 70px 7%;
+    padding: 72px 7%;
   }
 }
-</style>
-</head>
 
-<body>
+@media (max-width: 400px) {
 
-<header>
-  <nav class="nav">
+  h1 {
+    font-size: 61px;
+  }
 
-    <a href="index.html" class="logo-wrap" aria-label="IBC Mazatlán">
+  .hero-subtitle {
+    font-size: 20px;
+  }
 
-      <img
-        id="ibcLogo"
-        alt="IBC Mazatlán"
-        onerror="tryNextLogo()"
-      >
+  .hero-buttons {
+    flex-direction: column;
+  }
 
-      <div id="logoFallback" class="logo-fallback">
-        IBC
-      </div>
+  .button {
+    text-align: center;
+  }
+}
+</style></head><body><header>
+  <nav class="nav"><a href="index.html" class="brand" aria-label="UNA MÁS">
+  <span class="brand-main">UNA MÁS</span>
+  <span class="brand-sub">BY IMMERSIVE BEVERAGE CONCEPTS</span>
+</a>
 
-    </a>
-
-    <div class="nav-right">
-      <div class="language">
-        <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
-        <button id="esBtn" onclick="setLanguage('es')">ES</button>
-      </div>
-    </div>
+<div class="nav-right">
+  <div class="language">
+    <button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
+    <button id="esBtn" onclick="setLanguage('es')">ES</button>
+  </div>
+</div>
 
   </nav>
-</header>
+</header><main>  <!-- HERO -->  <section class="hero"><div class="hero-inner">
 
+  <div class="hero-copy">
 
-<main>
+    <div class="eyebrow"
+         data-en="MAZATLÁN"
+         data-es="MAZATLÁN">
+      MAZATLÁN
+    </div>
 
-  <!-- HERO -->
+    <h1>UNA<br>MÁS</h1>
 
-  <section class="hero">
+    <div class="hero-subtitle"
+         data-en="An Elevated Drinking Experience"
+         data-es="Una Experiencia de Bebida Elevada">
+      An Elevated Drinking Experience
+    </div>
 
-    <div class="hero-inner">
+    <p class="hero-description"
+       data-en="Come for one. Stay for another. Explore a constantly changing lineup of beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more."
+       data-es="Ven por una. Quédate por otra. Explora una selección en constante cambio de cerveza, vino, sidra, cócteles, seltzer, bebidas sin alcohol, café y más.">
+      Come for one. Stay for another. Explore a constantly changing lineup of beer, wine, cider, cocktails, seltzer, non-alcoholic drinks, coffee and more.
+    </p>
 
-      <div class="hero-copy">
+    <div class="hero-buttons">
 
-        <div class="eyebrow" data-en="IMMERSIVE BEVERAGE CONCEPTS"
-             data-es="CONCEPTOS INMERSIVOS DE BEBIDAS">
-          IMMERSIVE BEVERAGE CONCEPTS
-        </div>
+      <a href="#experience"
+         class="button button-primary"
+         data-en="THE EXPERIENCE"
+         data-es="LA EXPERIENCIA">
+        THE EXPERIENCE
+      </a>
 
-        <h1>
-          <span data-en="Discover." data-es="Descubre.">Discover.</span><br>
-          <span data-en="Taste." data-es="Prueba.">Taste.</span><br>
-          <span data-en="Experience." data-es="Experimenta.">Experience.</span>
-        </h1>
-
-        <p class="hero-description"
-           data-en="A new way to discover beverages through immersive tasting, self-pour exploration and a constantly evolving selection."
-           data-es="Una nueva forma de descubrir bebidas mediante degustación inmersiva, exploración de autoservicio y una selección en constante evolución.">
-          A new way to discover beverages through immersive tasting, self-pour exploration and a constantly evolving selection.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#experience"
-             class="button button-primary"
-             data-en="EXPLORE IBC"
-             data-es="EXPLORA IBC">
-            EXPLORE IBC
-          </a>
-
-          <a href="partners.html"
-             class="button button-secondary"
-             data-en="SUPPLIER PARTNERS"
-             data-es="SOCIOS PROVEEDORES">
-            SUPPLIER PARTNERS
-          </a>
-
-        </div>
-
-      </div>
+      <a href="#pour"
+         class="button button-secondary"
+         data-en="WHAT'S POURING"
+         data-es="QUÉ ESTÁ SIRVIENDO">
+        WHAT'S POURING
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+</div>
 
-  <!-- DISCOVERY STRIP -->
+  </section>  <!-- DRINK CATEGORIES -->  <section class="drink-strip"><div class="drink-grid">
 
-  <section class="discovery">
+  <div class="drink-item">
+    <strong>BEER</strong>
+  </div>
 
-    <div class="discovery-grid">
+  <div class="drink-item">
+    <strong>WINE</strong>
+  </div>
 
-      <div class="discovery-item">
-        <strong data-en="BEVERAGES" data-es="BEBIDAS">BEVERAGES</strong>
-        <span data-en="Beer, wine, cider, seltzer, cocktails & more"
-              data-es="Cerveza, vino, sidra, seltzer, cócteles y más">
-          Beer, wine, cider, seltzer, cocktails & more
-        </span>
-      </div>
+  <div class="drink-item">
+    <strong>CIDER</strong>
+  </div>
 
-      <div class="discovery-item">
-        <strong data-en="DISCOVERY" data-es="DESCUBRIMIENTO">DISCOVERY</strong>
-        <span data-en="Explore something new"
-              data-es="Explora algo nuevo">
-          Explore something new
-        </span>
-      </div>
+  <div class="drink-item">
+    <strong>COCKTAILS</strong>
+  </div>
 
-      <div class="discovery-item">
-        <strong data-en="SELF-POUR" data-es="AUTOSERVICIO">SELF-POUR</strong>
-        <span data-en="Pour what interests you"
-              data-es="Sirve lo que te interese">
-          Pour what interests you
-        </span>
-      </div>
+  <div class="drink-item">
+    <strong>SELTZER</strong>
+  </div>
 
-      <div class="discovery-item">
-        <strong data-en="MEXICO" data-es="MÉXICO">MEXICO</strong>
-        <span data-en="Mexico-forward beverage discovery"
-              data-es="Descubrimiento de bebidas con enfoque en México">
-          Mexico-forward beverage discovery
-        </span>
-      </div>
+  <div class="drink-item">
+    <strong>MORE</strong>
+  </div>
 
-    </div>
+</div>
 
-  </section>
+  </section>  <!-- EXPERIENCE -->  <section id="experience" class="section experience"><div class="experience-grid">
 
-
-  <!-- EXPERIENCE -->
-
-  <section id="experience" class="section experience">
-
-    <div class="experience-grid">
-
-      <div>
-
-        <div class="section-label"
-             data-en="THE IBC EXPERIENCE"
-             data-es="LA EXPERIENCIA IBC">
-          THE IBC EXPERIENCE
-        </div>
-
-        <h2 data-en="A different way to discover what you like."
-            data-es="Una nueva forma de descubrir lo que te gusta.">
-          A different way to discover what you like.
-        </h2>
-
-        <p class="section-intro"
-           data-en="IBC brings together an evolving selection of beverages in an environment built for exploration. Sample at your own pace, discover new producers and find something worth coming back for."
-           data-es="IBC reúne una selección de bebidas en evolución dentro de un espacio creado para explorar. Prueba a tu propio ritmo, descubre nuevos productores y encuentra algo a lo que quieras volver.">
-          IBC brings together an evolving selection of beverages in an environment built for exploration. Sample at your own pace, discover new producers and find something worth coming back for.
-        </p>
-
-      </div>
-
-
-      <div class="feature-list">
-
-        <div class="feature">
-          <strong data-en="EXPLORE" data-es="EXPLORA">EXPLORE</strong>
-          <span data-en="Move beyond the usual choices and discover new beverages."
-                data-es="Ve más allá de las opciones habituales y descubre nuevas bebidas.">
-            Move beyond the usual choices and discover new beverages.
-          </span>
-        </div>
-
-        <div class="feature">
-          <strong data-en="POUR" data-es="SIRVE">POUR</strong>
-          <span data-en="Choose what interests you and pour at your own pace."
-                data-es="Elige lo que te interesa y sirve a tu propio ritmo.">
-            Choose what interests you and pour at your own pace.
-          </span>
-        </div>
-
-        <div class="feature">
-          <strong data-en="DISCOVER" data-es="DESCUBRE">DISCOVER</strong>
-          <span data-en="Experience products from established and emerging producers."
-                data-es="Descubre productos de productores establecidos y emergentes.">
-            Experience products from established and emerging producers.
-          </span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SUPPLIER CTA -->
-
-  <section class="section partner">
+  <div>
 
     <div class="section-label"
-         data-en="FOR PRODUCERS & SUPPLIERS"
-         data-es="PARA PRODUCTORES Y PROVEEDORES">
-      FOR PRODUCERS & SUPPLIERS
+         data-en="THE PLACE"
+         data-es="EL LUGAR">
+      THE PLACE
     </div>
 
-    <h2 data-en="Bring your products to IBC."
-        data-es="Lleva tus productos a IBC.">
-      Bring your products to IBC.
+    <h2 data-en="Come thirsty. Leave curious."
+        data-es="Ven con sed. Sal con curiosidad.">
+      Come thirsty. Leave curious.
     </h2>
 
     <p class="section-intro"
-       data-en="We are building relationships with beverage producers, distributors, equipment partners and technology companies."
-       data-es="Estamos construyendo relaciones con productores de bebidas, distribuidores, socios de equipos y empresas de tecnología.">
-      We are building relationships with beverage producers, distributors, equipment partners and technology companies.
+       data-en="UNA MÁS is a modern drinking destination built around variety, choice and the simple pleasure of trying something you haven't had before."
+       data-es="UNA MÁS es un destino moderno para beber, creado alrededor de la variedad, la elección y el simple placer de probar algo que nunca has probado.">
+      UNA MÁS is a modern drinking destination built around variety, choice and the simple pleasure of trying something you haven't had before.
     </p>
 
-    <a href="partners.html"
-       class="partner-button"
-       data-en="BECOME AN IBC SUPPLIER PARTNER"
-       data-es="CONVIÉRTETE EN SOCIO PROVEEDOR DE IBC">
-      BECOME AN IBC SUPPLIER PARTNER
-    </a>
+    <div class="experience-statement"
+         data-en="Pour what you want. Try something different. Find your favorite."
+         data-es="Sirve lo que quieras. Prueba algo diferente. Encuentra tu favorito.">
+      Pour what you want. Try something different. Find your favorite.
+    </div>
 
-  </section>
-
-</main>
+  </div>
 
 
-<footer>
-  <strong>IBC Mazatlán</strong><br>
-  <span data-en="Immersive Beverage Concepts"
-        data-es="Conceptos Inmersivos de Bebidas">
-    Immersive Beverage Concepts
-  </span>
-</footer>
+  <div class="feature-list">
 
+    <div class="feature">
+      <strong data-en="TRY A LITTLE" data-es="PRUEBA UN POCO">
+        TRY A LITTLE
+      </strong>
 
-<script>
+      <span data-en="Sample something new without committing to a full drink."
+            data-es="Prueba algo nuevo sin comprometerte con una bebida completa.">
+        Sample something new without committing to a full drink.
+      </span>
+    </div>
 
-/* =========================
-   LOGO LOADER
-   Checks common extensions
-========================= */
+    <div class="feature">
+      <strong data-en="POUR YOUR WAY" data-es="SIRVE A TU MANERA">
+        POUR YOUR WAY
+      </strong>
 
-const logoCandidates = [
-  "IBC%20logo.png",
-  "IBC%20logo.jpg",
-  "IBC%20logo.jpeg",
-  "IBC%20logo.webp",
-  "IBC%20logo.svg"
-];
+      <span data-en="Choose what catches your eye and pour at your own pace."
+            data-es="Elige lo que te llame la atención y sirve a tu propio ritmo.">
+        Choose what catches your eye and pour at your own pace.
+      </span>
+    </div>
 
-let logoIndex = 0;
+    <div class="feature">
+      <strong data-en="STAY FOR ANOTHER" data-es="QUÉDATE POR OTRA">
+        STAY FOR ANOTHER
+      </strong>
 
-function tryNextLogo() {
+      <span data-en="Bring friends, compare favorites and keep exploring what's new."
+            data-es="Ven con amigos, compara favoritos y sigue explorando lo nuevo.">
+        Bring friends, compare favorites and keep exploring what's new.
+      </span>
+    </div>
 
-  const logo = document.getElementById("ibcLogo");
+  </div>
 
-  if (logoIndex < logoCandidates.length) {
-    logo.src = logoCandidates[logoIndex];
-    logoIndex++;
-  } else {
-    logo.style.display = "none";
-    document.getElementById("logoFallback").style.display = "block";
-  }
-}
+</div>
 
-tryNextLogo();
+  </section>  <!-- WHAT'S POURING -->  <section id="pour" class="section pour-section"><div class="section-label"
+     data-en="WHAT'S POURING"
+     data-es="QUÉ ESTÁ SIRVIENDO">
+  WHAT'S POURING
+</div>
 
+<h2 data-en="There's always another one to try."
+    data-es="Siempre hay otra para probar.">
+  There's always another one to try.
+</h2>
+
+<p class="section-intro"
+   data-en="The lineup keeps moving. Local favorites, Mexican producers, international finds and experimental pours can all have a place at UNA MÁS."
+   data-es="La selección siempre cambia. Favoritos locales, productores mexicanos, descubrimientos internacionales y bebidas experimentales pueden tener un lugar en UNA MÁS.">
+  The lineup keeps moving. Local favorites, Mexican producers, international finds and experimental pours can all have a place at UNA MÁS.
+</p>
+
+<div class="pour-line"
+     data-en="Pour. Taste. Enjoy. Repeat."
+     data-es="Sirve. Prueba. Disfruta. Repite.">
+  Pour. Taste. Enjoy. Repeat.
+</div>
+
+  </section>  <!-- SUPPLIER CTA -->  <section class="section partner"><div class="section-label"
+     data-en="BEHIND UNA MÁS"
+     data-es="DETRÁS DE UNA MÁS">
+  BEHIND UNA MÁS
+</div>
+
+<h2 data-en="Created by Immersive Beverage Concepts."
+    data-es="Creado por Immersive Beverage Concepts.">
+  Created by Immersive Beverage Concepts.
+</h2>
+
+<p class="section-intro"
+   data-en="IBC develops the beverage concepts, technology and partnerships that make UNA MÁS different."
+   data-es="IBC desarrolla los conceptos de bebidas, la tecnología y las alianzas que hacen diferente a UNA MÁS.">
+  IBC develops the beverage concepts, technology and partnerships that make UNA MÁS different.
+</p>
+
+<a href="partners.html"
+   class="partner-button"
+   data-en="IBC SUPPLIER PARTNERS"
+   data-es="SOCIOS PROVEEDORES DE IBC">
+  IBC SUPPLIER PARTNERS
+</a>
+
+  </section></main><footer><strong>UNA MÁS</strong><br>
+
+<span data-en="An Elevated Drinking Experience"
+data-es="Una Experiencia de Bebida Elevada">
+An Elevated Drinking Experience
+</span>
+
+<br><br>
+
+<span data-en="Created by Immersive Beverage Concepts"
+data-es="Creado por Immersive Beverage Concepts">
+Created by Immersive Beverage Concepts
+</span>
+
+</footer><script>
 
 /* =========================
    LANGUAGE SWITCHER
@@ -769,7 +767,5 @@ if (savedLanguage === "es") {
   setLanguage("es");
 }
 
-</script>
-
-</body>
+</script></body>
 </html>
