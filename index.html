@@ -8,18 +8,24 @@
 
 <meta name="description" content="UNA MÁS is an elevated drinking experience in Mazatlán, created by Immersive Beverage Concepts. Discover beer, wine, cider, cocktails, seltzer, non-alcoholic drinks and more.">
 
+<!-- PREMIUM TYPOGRAPHY -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 :root {
   --ivory: #f4efe6;
-  --cream: #ebe3d5;
+  --cream: #e9dfd0;
   --teal: #123f43;
-  --deep-teal: #0b3033;
-  --copper: #b86f4b;
-  --copper-dark: #945238;
-  --sand: #d8c8b2;
+  --deep-teal: #092f32;
+  --copper: #b66d49;
+  --copper-dark: #8f5038;
   --white: #fffaf2;
   --text: #17383a;
-  --muted: #667879;
+  --muted: #667779;
+  --line: rgba(18,63,67,0.14);
 }
 
 * {
@@ -33,9 +39,9 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background: var(--ivory);
   color: var(--text);
+  font-family: "DM Sans", Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -44,28 +50,31 @@ a {
   text-decoration: none;
 }
 
-/* LANGUAGE SWITCH */
+/* =========================
+   LANGUAGE SWITCH
+========================= */
 
 .language-switch {
-  position: fixed;
-  top: 18px;
-  right: 22px;
-  z-index: 1000;
+  position: absolute;
+  top: 21px;
+  right: 6%;
+  z-index: 20;
   display: flex;
-  background: rgba(255,250,242,0.94);
-  border: 1px solid rgba(18,63,67,0.15);
+  border: 1px solid rgba(18,63,67,0.20);
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+  background: rgba(244,239,230,0.94);
 }
 
 .language-switch button {
-  border: none;
+  border: 0;
   background: transparent;
   color: var(--teal);
-  padding: 8px 12px;
-  font-size: 12px;
+  padding: 7px 11px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.08em;
   cursor: pointer;
 }
 
@@ -74,44 +83,50 @@ a {
   color: var(--white);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
+  min-height: 82px;
+  padding: 18px 6%;
   background: var(--ivory);
-  padding: 28px 7%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(18,63,67,0.10);
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  letter-spacing: 0.16em;
   color: var(--teal);
 }
 
 .brand-name {
-  font-size: 25px;
-  font-weight: 800;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 .brand-sub {
   display: block;
-  margin-top: 3px;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  color: var(--copper-dark);
+  margin-top: 5px;
+  font-size: 8px;
   font-weight: 700;
+  letter-spacing: 0.21em;
+  color: var(--copper-dark);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
   position: relative;
-  min-height: 700px;
+  min-height: 680px;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
-  overflow: hidden;
   background: var(--deep-teal);
 }
 
@@ -121,10 +136,10 @@ header {
   background-image:
     linear-gradient(
       90deg,
-      rgba(11,48,51,0.90) 0%,
-      rgba(11,48,51,0.60) 42%,
-      rgba(11,48,51,0.18) 75%,
-      rgba(11,48,51,0.20) 100%
+      rgba(9,47,50,0.91) 0%,
+      rgba(9,47,50,0.70) 36%,
+      rgba(9,47,50,0.28) 68%,
+      rgba(9,47,50,0.18) 100%
     ),
     url("Self-Pour.jpg");
   background-size: cover;
@@ -135,49 +150,49 @@ header {
   position: relative;
   z-index: 2;
   max-width: 780px;
-  padding: 90px 7% 85px;
+  padding: 90px 6% 82px;
   color: var(--white);
 }
 
 .hero-kicker {
-  color: #e5b18f;
-  font-size: 13px;
+  margin-bottom: 20px;
+  color: #e5ad89;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
 }
 
 .hero h1 {
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 0.98;
-  letter-spacing: -0.025em;
-  font-weight: 800;
+  max-width: 720px;
   margin-bottom: 24px;
-  max-width: 700px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(46px, 7vw, 82px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
 }
 
 .hero p {
-  font-size: clamp(18px, 2vw, 23px);
-  line-height: 1.5;
-  max-width: 650px;
-  color: rgba(255,250,242,0.94);
+  max-width: 640px;
   margin-bottom: 34px;
+  color: rgba(255,250,242,0.91);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.6;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 14px;
+  gap: 13px;
   flex-wrap: wrap;
 }
 
 .button {
   display: inline-block;
-  padding: 15px 25px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  padding: 14px 23px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   transition: 0.25s ease;
 }
 
@@ -199,32 +214,36 @@ header {
   background: rgba(255,250,242,0.12);
 }
 
-/* DRINK STRIP */
+/* =========================
+   DRINK STRIP
+========================= */
 
 .drink-strip {
-  background: var(--teal);
-  color: var(--white);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  background: var(--teal);
+  color: var(--white);
 }
 
 .drink-item {
-  padding: 22px 10px;
+  padding: 19px 8px;
   text-align: center;
-  font-size: 12px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  border-right: 1px solid rgba(255,255,255,0.13);
+  letter-spacing: 0.16em;
 }
 
 .drink-item:last-child {
   border-right: none;
 }
 
-/* EXPERIENCE */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section {
-  padding: 105px 7%;
+  padding: 105px 6%;
 }
 
 .section-light {
@@ -235,114 +254,128 @@ header {
   background: var(--cream);
 }
 
-.section-teal {
-  background: var(--teal);
-  color: var(--white);
-}
-
 .section-heading {
-  max-width: 780px;
+  max-width: 790px;
 }
 
 .eyebrow {
+  margin-bottom: 16px;
   color: var(--copper-dark);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.section-teal .eyebrow {
-  color: #e4aa86;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
 }
 
 .section h2 {
-  font-size: clamp(36px, 5vw, 62px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  margin-bottom: 22px;
+  max-width: 850px;
+  margin-bottom: 24px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(39px, 5.4vw, 67px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .section-heading p {
-  font-size: 19px;
+  max-width: 700px;
   color: var(--muted);
-  max-width: 690px;
+  font-size: 17px;
+  line-height: 1.75;
 }
 
-.section-teal .section-heading p {
-  color: rgba(255,250,242,0.78);
-}
-
-/* EXPERIENCE CARDS */
+/* =========================
+   EXPERIENCE
+========================= */
 
 .experience-grid {
-  margin-top: 60px;
+  margin-top: 62px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 0;
+  border-top: 1px solid var(--line);
 }
 
 .experience-card {
-  background: var(--white);
-  padding: 38px 30px;
-  border-top: 4px solid var(--copper);
+  position: relative;
+  padding: 34px 34px 30px 0;
+  border-right: 1px solid var(--line);
+}
+
+.experience-card:not(:first-child) {
+  padding-left: 34px;
+}
+
+.experience-card:last-child {
+  border-right: none;
+}
+
+.experience-number {
+  margin-bottom: 25px;
+  color: var(--copper);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
 }
 
 .experience-card h3 {
-  font-size: 21px;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   color: var(--teal);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  font-weight: 600;
 }
 
 .experience-card p {
+  max-width: 270px;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
-/* POURING */
+/* =========================
+   POURING
+========================= */
 
 .pouring-grid {
-  margin-top: 55px;
+  margin-top: 58px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 1px;
+  background: rgba(18,63,67,0.16);
+  border: 1px solid rgba(18,63,67,0.16);
 }
 
 .pouring-card {
   min-height: 190px;
-  background: var(--white);
-  padding: 30px;
-  border: 1px solid rgba(18,63,67,0.10);
+  padding: 29px;
+  background: var(--ivory);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 .pouring-card span {
-  color: var(--copper-dark);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   margin-bottom: 8px;
+  color: var(--copper-dark);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
 
 .pouring-card h3 {
-  font-size: 27px;
   color: var(--teal);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 29px;
+  font-weight: 600;
 }
 
-/* PARTNER SECTION */
+/* =========================
+   PARTNER SECTION
+========================= */
 
 .partner-section {
-  padding: 100px 7%;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(11,48,51,0.97),
-      rgba(18,63,67,0.94)
-    );
+  padding: 105px 6%;
+  background: var(--teal);
   color: var(--white);
 }
 
@@ -350,55 +383,73 @@ header {
   max-width: 850px;
 }
 
+.partner-section .eyebrow {
+  color: #e5ad89;
+}
+
 .partner-section h2 {
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 1.05;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 600;
+  line-height: 1.06;
 }
 
 .partner-section p {
-  font-size: 19px;
-  color: rgba(255,250,242,0.80);
   max-width: 720px;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
+  color: rgba(255,250,242,0.79);
+  font-size: 17px;
+  line-height: 1.75;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
+  padding: 38px 6%;
   background: var(--deep-teal);
-  color: rgba(255,250,242,0.72);
-  padding: 42px 7%;
+  color: rgba(255,250,242,0.65);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .footer-brand {
   color: var(--white);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .footer-small {
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
 
   header {
-    padding: 22px 5%;
+    min-height: 72px;
+    padding: 17px 5%;
   }
 
   .brand-name {
-    font-size: 21px;
+    font-size: 23px;
+  }
+
+  .language-switch {
+    top: 17px;
+    right: 5%;
   }
 
   .hero {
@@ -410,15 +461,15 @@ footer {
   }
 
   .hero-content {
-    padding: 80px 6% 65px;
+    padding: 75px 6% 65px;
   }
 
   .hero h1 {
-    font-size: clamp(40px, 12vw, 60px);
+    font-size: clamp(43px, 12vw, 61px);
   }
 
   .hero p {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .drink-strip {
@@ -426,35 +477,46 @@ footer {
   }
 
   .drink-item {
-    border-bottom: 1px solid rgba(255,255,255,0.13);
+    padding: 16px 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
   .section {
-    padding: 75px 6%;
+    padding: 76px 6%;
   }
 
-  .experience-grid,
+  .section h2 {
+    font-size: 42px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card,
+  .experience-card:not(:first-child) {
+    padding: 30px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .experience-card:last-child {
+    border-bottom: none;
+  }
+
   .pouring-grid {
     grid-template-columns: 1fr;
   }
 
-  .experience-card {
-    padding: 30px 25px;
-  }
-
   .partner-section {
-    padding: 75px 6%;
+    padding: 76px 6%;
   }
 
   footer {
-    padding: 35px 6%;
-  }
-
-  .language-switch {
-    top: 12px;
-    right: 12px;
+    padding: 34px 6%;
   }
 }
+
 </style>
 </head>
 
@@ -468,22 +530,26 @@ footer {
 
 <!-- HEADER -->
 <header>
+
   <div class="brand">
     <div class="brand-name">UNA MÁS</div>
     <span class="brand-sub">BY IMMERSIVE BEVERAGE CONCEPTS</span>
   </div>
+
 </header>
 
+
 <!-- HERO -->
-<section class="hero" id="top">
+<section class="hero">
 
   <div class="hero-image"></div>
 
   <div class="hero-content">
 
-    <div class="hero-kicker"
-         data-en="MAZATLÁN • COMING SOON"
-         data-es="MAZATLÁN • PRÓXIMAMENTE">
+    <div
+      class="hero-kicker"
+      data-en="MAZATLÁN • COMING SOON"
+      data-es="MAZATLÁN • PRÓXIMAMENTE">
       MAZATLÁN • COMING SOON
     </div>
 
@@ -500,42 +566,81 @@ footer {
     </p>
 
     <div class="hero-buttons">
-      <a href="#experience"
-         class="button button-primary"
-         data-en="THE EXPERIENCE"
-         data-es="LA EXPERIENCIA">
+
+      <a
+        href="#experience"
+        class="button button-primary"
+        data-en="THE EXPERIENCE"
+        data-es="LA EXPERIENCIA">
         THE EXPERIENCE
       </a>
 
-      <a href="#pouring"
-         class="button button-secondary"
-         data-en="WHAT'S POURING"
-         data-es="QUÉ ESTÁ SIRVIENDO">
+      <a
+        href="#pouring"
+        class="button button-secondary"
+        data-en="WHAT'S POURING"
+        data-es="QUÉ ESTÁ SIRVIENDO">
         WHAT'S POURING
       </a>
+
     </div>
 
   </div>
+
 </section>
+
 
 <!-- DRINK CATEGORIES -->
 <section class="drink-strip">
-  <div class="drink-item" data-en="BEER" data-es="CERVEZA">BEER</div>
-  <div class="drink-item" data-en="WINE" data-es="VINO">WINE</div>
-  <div class="drink-item" data-en="CIDER" data-es="SIDRA">CIDER</div>
-  <div class="drink-item" data-en="COCKTAILS" data-es="CÓCTELES">COCKTAILS</div>
-  <div class="drink-item" data-en="SELTZER" data-es="SELTZER">SELTZER</div>
-  <div class="drink-item" data-en="MORE" data-es="MÁS">MORE</div>
+
+  <div class="drink-item"
+       data-en="BEER"
+       data-es="CERVEZA">
+    BEER
+  </div>
+
+  <div class="drink-item"
+       data-en="WINE"
+       data-es="VINO">
+    WINE
+  </div>
+
+  <div class="drink-item"
+       data-en="CIDER"
+       data-es="SIDRA">
+    CIDER
+  </div>
+
+  <div class="drink-item"
+       data-en="COCKTAILS"
+       data-es="CÓCTELES">
+    COCKTAILS
+  </div>
+
+  <div class="drink-item"
+       data-en="SELTZER"
+       data-es="SELTZER">
+    SELTZER
+  </div>
+
+  <div class="drink-item"
+       data-en="MORE"
+       data-es="MÁS">
+    MORE
+  </div>
+
 </section>
+
 
 <!-- EXPERIENCE -->
 <section class="section section-light" id="experience">
 
   <div class="section-heading">
 
-    <div class="eyebrow"
-         data-en="THE EXPERIENCE"
-         data-es="LA EXPERIENCIA">
+    <div
+      class="eyebrow"
+      data-en="THE EXPERIENCE"
+      data-es="LA EXPERIENCIA">
       THE EXPERIENCE
     </div>
 
@@ -553,9 +658,13 @@ footer {
 
   </div>
 
+
   <div class="experience-grid">
 
     <div class="experience-card">
+
+      <div class="experience-number">01</div>
+
       <h3
         data-en="TRY A LITTLE"
         data-es="PRUEBA UN POCO">
@@ -563,13 +672,18 @@ footer {
       </h3>
 
       <p
-        data-en="Explore a wide variety without committing to a full drink."
-        data-es="Explora una gran variedad sin comprometerte con una bebida completa.">
-        Explore a wide variety without committing to a full drink.
+        data-en="Explore. Taste. Discover something new."
+        data-es="Explora. Prueba. Descubre algo nuevo.">
+        Explore. Taste. Discover something new.
       </p>
+
     </div>
 
+
     <div class="experience-card">
+
+      <div class="experience-number">02</div>
+
       <h3
         data-en="POUR YOUR WAY"
         data-es="SIRVE A TU MANERA">
@@ -577,13 +691,18 @@ footer {
       </h3>
 
       <p
-        data-en="Choose what interests you, pour what you want, and make the experience your own."
-        data-es="Elige lo que te interesa, sirve lo que quieras y haz tuya la experiencia.">
-        Choose what interests you, pour what you want, and make the experience your own.
+        data-en="Your pace. Your choice. Your experience."
+        data-es="Tu ritmo. Tu elección. Tu experiencia.">
+        Your pace. Your choice. Your experience.
       </p>
+
     </div>
 
+
     <div class="experience-card">
+
+      <div class="experience-number">03</div>
+
       <h3
         data-en="STAY FOR ANOTHER"
         data-es="QUÉDATE POR OTRA">
@@ -591,23 +710,27 @@ footer {
       </h3>
 
       <p
-        data-en="The best part is discovering something you didn't expect to love."
-        data-es="La mejor parte es descubrir algo que no esperabas que te encantara.">
-        The best part is discovering something you didn't expect to love.
+        data-en="Because sometimes one becomes two."
+        data-es="Porque a veces una se convierte en dos.">
+        Because sometimes one becomes two.
       </p>
+
     </div>
 
   </div>
+
 </section>
+
 
 <!-- WHAT'S POURING -->
 <section class="section section-cream" id="pouring">
 
   <div class="section-heading">
 
-    <div class="eyebrow"
-         data-en="WHAT'S POURING"
-         data-es="QUÉ ESTÁ SIRVIENDO">
+    <div
+      class="eyebrow"
+      data-en="WHAT'S POURING"
+      data-es="QUÉ ESTÁ SIRVIENDO">
       WHAT'S POURING
     </div>
 
@@ -625,49 +748,124 @@ footer {
 
   </div>
 
+
   <div class="pouring-grid">
 
     <div class="pouring-card">
-      <span data-en="COLD & CRISP" data-es="FRÍO Y REFRESCANTE">COLD & CRISP</span>
-      <h3 data-en="Beer" data-es="Cerveza">Beer</h3>
+
+      <span
+        data-en="COLD & CRISP"
+        data-es="FRÍO Y REFRESCANTE">
+        COLD & CRISP
+      </span>
+
+      <h3
+        data-en="Beer"
+        data-es="Cerveza">
+        Beer
+      </h3>
+
     </div>
 
-    <div class="pouring-card">
-      <span data-en="POUR & DISCOVER" data-es="SIRVE Y DESCUBRE">POUR & DISCOVER</span>
-      <h3 data-en="Wine" data-es="Vino">Wine</h3>
-    </div>
 
     <div class="pouring-card">
-      <span data-en="BRIGHT & FRESH" data-es="FRESCO Y VIBRANTE">BRIGHT & FRESH</span>
-      <h3 data-en="Cider" data-es="Sidra">Cider</h3>
+
+      <span
+        data-en="POUR & DISCOVER"
+        data-es="SIRVE Y DESCUBRE">
+        POUR & DISCOVER
+      </span>
+
+      <h3
+        data-en="Wine"
+        data-es="Vino">
+        Wine
+      </h3>
+
     </div>
 
-    <div class="pouring-card">
-      <span data-en="SHAKEN & STIRRED" data-es="AGITADO Y MEZCLADO">SHAKEN & STIRRED</span>
-      <h3 data-en="Cocktails" data-es="Cócteles">Cocktails</h3>
-    </div>
 
     <div class="pouring-card">
-      <span data-en="LIGHT & REFRESHING" data-es="LIGERO Y REFRESCANTE">LIGHT & REFRESHING</span>
-      <h3 data-en="Seltzer" data-es="Seltzer">Seltzer</h3>
+
+      <span
+        data-en="BRIGHT & FRESH"
+        data-es="FRESCO Y VIBRANTE">
+        BRIGHT & FRESH
+      </span>
+
+      <h3
+        data-en="Cider"
+        data-es="Sidra">
+        Cider
+      </h3>
+
     </div>
 
+
     <div class="pouring-card">
-      <span data-en="AND MORE" data-es="Y MUCHO MÁS">AND MORE</span>
-      <h3 data-en="Something New" data-es="Algo Nuevo">Something New</h3>
+
+      <span
+        data-en="SHAKEN & STIRRED"
+        data-es="AGITADO Y MEZCLADO">
+        SHAKEN & STIRRED
+      </span>
+
+      <h3
+        data-en="Cocktails"
+        data-es="Cócteles">
+        Cocktails
+      </h3>
+
+    </div>
+
+
+    <div class="pouring-card">
+
+      <span
+        data-en="LIGHT & REFRESHING"
+        data-es="LIGERO Y REFRESCANTE">
+        LIGHT & REFRESHING
+      </span>
+
+      <h3
+        data-en="Seltzer"
+        data-es="Seltzer">
+        Seltzer
+      </h3>
+
+    </div>
+
+
+    <div class="pouring-card">
+
+      <span
+        data-en="AND MORE"
+        data-es="Y MUCHO MÁS">
+        AND MORE
+      </span>
+
+      <h3
+        data-en="Something New"
+        data-es="Algo Nuevo">
+        Something New
+      </h3>
+
     </div>
 
   </div>
+
 </section>
+
 
 <!-- PARTNER STORY -->
 <section class="partner-section">
 
   <div class="partner-inner">
 
-    <div class="eyebrow"
-         data-en="BEHIND THE EXPERIENCE"
-         data-es="DETRÁS DE LA EXPERIENCIA">
+    <div
+      class="eyebrow"
+      data-en="BEHIND THE EXPERIENCE"
+      data-es="DETRÁS DE LA EXPERIENCIA">
       BEHIND THE EXPERIENCE
     </div>
 
@@ -683,24 +881,32 @@ footer {
       UNA MÁS is created by Immersive Beverage Concepts, connecting the consumer experience with beverage partners through discovery, choice and real-time insight.
     </p>
 
-    <a href="partners.html"
-       class="button button-primary"
-       data-en="PARTNER WITH US"
-       data-es="CONVIÉRTETE EN SOCIO">
+    <a
+      href="partners.html"
+      class="button button-primary"
+      data-en="PARTNER WITH US"
+      data-es="CONVIÉRTETE EN SOCIO">
       PARTNER WITH US
     </a>
 
   </div>
+
 </section>
+
 
 <!-- FOOTER -->
 <footer>
 
   <div>
-    <div class="footer-brand">UNA MÁS</div>
+
+    <div class="footer-brand">
+      UNA MÁS
+    </div>
+
     <div class="footer-small">
       An Elevated Drinking Experience
     </div>
+
   </div>
 
   <div class="footer-small">
@@ -709,7 +915,9 @@ footer {
 
 </footer>
 
+
 <script>
+
 function setLanguage(lang) {
 
   document.querySelectorAll("[data-en]").forEach(function(element) {
@@ -724,11 +932,13 @@ function setLanguage(lang) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  const savedLanguage = localStorage.getItem("unaMasLanguage") || "en";
+  const savedLanguage =
+    localStorage.getItem("unaMasLanguage") || "en";
 
   setLanguage(savedLanguage);
 
 });
+
 </script>
 
 </body>
