@@ -1,29 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>IBC Mazatlán | Experiencia de Bebidas</title>
-<meta name="description" content="IBC Mazatlán es una experiencia inmersiva para descubrir, probar y disfrutar bebidas nuevas de México y del mundo.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#0b272b;
-  --bg2:#10363a;
-  --panel:#164146;
-  --panel2:#1a4b50;
-  --text:#f5f1e8;
-  --muted:#c1d0cf;
+  --bg2:#10383c;
+  --panel:#16454a;
+  --panel2:#1b5055;
+  --text:#f6f2e9;
+  --muted:#c8d7d5;
   --aqua:#6ed8ca;
-  --copper:#e2a45a;
-  --line:#ffffff20;
+  --copper:#e3a35d;
+  --line:rgba(255,255,255,.12);
+  --shadow:0 18px 50px rgba(0,0,0,.22);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
@@ -32,802 +35,800 @@ html{
 body{
   margin:0;
   background:
-    radial-gradient(circle at 85% 5%,#24636a 0,transparent 30%),
-    radial-gradient(circle at 5% 55%,#123b40 0,transparent 35%),
-    var(--bg);
+    radial-gradient(circle at 85% 15%,rgba(110,216,202,.10),transparent 28%),
+    linear-gradient(145deg,var(--bg),var(--bg2));
   color:var(--text);
-  font-family:"DM Sans",Arial,sans-serif;
+  font-family:"DM Sans",sans-serif;
+  font-size:18px;
+  line-height:1.65;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+.container{
+  width:min(1180px,92%);
+  margin:0 auto;
 }
 
-.wrap{
-  width:min(1180px,91%);
-  margin:auto;
-}
+/* HEADER */
 
-nav{
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+header{
+  position:relative;
+  padding:28px 0 20px;
   border-bottom:1px solid var(--line);
 }
 
-.logo{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:.13em;
-}
-
-.logo span{
-  color:var(--copper);
-}
-
-.navlinks{
+.header-inner{
   display:flex;
   align-items:center;
-  gap:24px;
+  justify-content:space-between;
+  gap:25px;
 }
 
-.navlinks a{
-  font-size:12px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.brand img{
+  width:62px;
+  height:auto;
+}
+
+.brand-name{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:24px;
   font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--muted);
+  letter-spacing:.04em;
 }
 
-.lang{
-  padding:10px 15px;
-  border:1px solid #ffffff35;
-  border-radius:30px;
-  color:var(--aqua)!important;
+.language{
+  border:1px solid rgba(110,216,202,.55);
+  background:rgba(110,216,202,.08);
+  color:var(--text);
+  padding:10px 17px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
 }
+
+.language:hover{
+  background:rgba(110,216,202,.17);
+}
+
+/* HERO */
 
 .hero{
-  min-height:720px;
   position:relative;
-  overflow:hidden;
+  min-height:610px;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(115deg,#0c2a2e 5%,#17474b 52%,#0c282c 100%);
+  overflow:hidden;
 }
 
-.hero:before{
+.hero::before{
   content:"";
   position:absolute;
-  width:620px;
-  height:620px;
-  right:-230px;
-  top:30px;
+  width:520px;
+  height:520px;
+  right:-170px;
+  top:-140px;
   border-radius:50%;
-  border:1px solid #6ed8ca45;
-  box-shadow:
-    0 0 0 55px #6ed8ca0d,
-    0 0 0 110px #e2a45a08,
-    0 0 0 170px #6ed8ca06;
+  background:rgba(110,216,202,.10);
+  filter:blur(4px);
 }
 
-.hero:after{
-  content:"IBC";
-  position:absolute;
-  right:4%;
-  bottom:-55px;
-  font-family:"Space Grotesk",sans-serif;
-  font-size:260px;
-  font-weight:700;
-  color:#ffffff05;
-  letter-spacing:-.1em;
-}
-
-.hero-inner{
+.hero-content{
   position:relative;
   z-index:2;
-  padding:105px 0 115px;
-  max-width:850px;
+  max-width:820px;
+  padding:90px 0 100px;
 }
 
 .eyebrow{
-  color:var(--aqua);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.eyebrow:before{
-  content:"";
   display:inline-block;
-  width:38px;
-  height:2px;
-  margin-right:12px;
-  vertical-align:middle;
-  background:var(--copper);
+  margin-bottom:24px;
+  color:var(--copper);
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
 }
 
 h1{
-  margin:25px 0 30px;
+  margin:0;
   font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(64px,10vw,122px);
-  line-height:.82;
-  letter-spacing:-.07em;
-  font-weight:600;
+  font-size:clamp(48px,7vw,82px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  max-width:900px;
 }
 
-h1 span{
+.hero-lead{
+  margin:32px 0 0;
+  max-width:760px;
+  color:var(--muted);
+  font-size:clamp(21px,2.2vw,27px);
+  line-height:1.5;
+  font-weight:500;
+}
+
+.hero-accent{
   color:var(--aqua);
 }
 
-.hero-copy{
-  max-width:720px;
-  font-size:23px;
-  line-height:1.45;
-  color:#edf3f1;
-  margin:0 0 18px;
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:38px;
 }
 
-.hero-sub{
-  max-width:680px;
-  font-size:16px;
-  line-height:1.7;
-  color:var(--muted);
-}
-
-.buttons{
-  margin-top:32px;
-}
-
-.btn{
+.button{
   display:inline-block;
-  padding:16px 25px;
-  margin:0 9px 10px 0;
-  border-radius:30px;
-  background:var(--copper);
-  color:#102124;
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.06em;
-  text-transform:uppercase;
+  padding:15px 25px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:17px;
 }
 
-.btn.alt{
-  background:transparent;
-  color:var(--text);
-  border:1px solid #ffffff40;
+.button-primary{
+  background:var(--aqua);
+  color:#082326;
 }
+
+.button-secondary{
+  border:1px solid rgba(255,255,255,.25);
+  color:var(--text);
+  background:rgba(255,255,255,.05);
+}
+
+/* SECTIONS */
 
 section{
-  padding:100px 0;
-  border-top:1px solid var(--line);
+  padding:92px 0;
 }
 
-.section-head{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:60px;
-  align-items:end;
-  margin-bottom:48px;
+.section-label{
+  color:var(--copper);
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:14px;
 }
 
 h2{
   margin:0;
   font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(50px,7vw,82px);
-  line-height:.86;
-  letter-spacing:-.065em;
-  font-weight:600;
+  font-size:clamp(36px,5vw,58px);
+  line-height:1.08;
+  letter-spacing:-.035em;
 }
 
-.lead{
-  margin:0;
-  font-size:20px;
-  line-height:1.65;
+.section-intro{
+  max-width:820px;
+  margin:22px 0 0;
   color:var(--muted);
+  font-size:21px;
+  line-height:1.6;
 }
 
-.grid{
+/* CARDS */
+
+.cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:46px;
 }
 
 .card{
-  min-height:285px;
-  padding:30px;
-  border-radius:20px;
-  background:
-    linear-gradient(145deg,#1a4a4f,#12373b);
-  border:1px solid #ffffff18;
-  box-shadow:0 15px 40px #03121430;
+  padding:34px 30px;
+  background:linear-gradient(145deg,var(--panel),var(--panel2));
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:var(--shadow);
 }
 
-.number{
-  font-family:"Space Grotesk",sans-serif;
+.card-number{
   color:var(--copper);
-  font-size:13px;
+  font-family:"Space Grotesk",sans-serif;
+  font-size:18px;
   font-weight:700;
-  letter-spacing:.15em;
 }
 
 .card h3{
-  margin:70px 0 14px;
+  margin:20px 0 13px;
   font-family:"Space Grotesk",sans-serif;
-  font-size:25px;
-  font-weight:600;
+  font-size:27px;
+  line-height:1.15;
 }
 
 .card p{
   margin:0;
-  color:#c4d1d0;
-  font-size:16px;
+  color:var(--muted);
+  font-size:18px;
   line-height:1.65;
 }
 
-.statement{
-  padding:30px 0;
-  text-align:center;
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(45px,8vw,100px);
-  line-height:.9;
-  letter-spacing:-.065em;
+/* BEVERAGES */
+
+.beverage-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:34px;
+}
+
+.beverage{
+  padding:12px 18px;
+  border:1px solid rgba(110,216,202,.30);
+  border-radius:999px;
+  background:rgba(110,216,202,.06);
+  font-size:17px;
   font-weight:600;
 }
 
-.statement span{
-  color:var(--aqua);
+/* PARTNERS */
+
+.partner-box{
+  margin-top:42px;
+  padding:42px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg,rgba(226,163,93,.12),rgba(110,216,202,.08)),
+    var(--panel);
+  border:1px solid var(--line);
 }
 
-.partner-grid,
+.partner-box h3{
+  margin:0 0 15px;
+  font-family:"Space Grotesk",sans-serif;
+  font-size:32px;
+}
+
+.partner-box p{
+  margin:0;
+  color:var(--muted);
+  font-size:20px;
+  line-height:1.65;
+  max-width:850px;
+}
+
+/* CONTACT */
+
 .contact{
+  border-top:1px solid var(--line);
+}
+
+.contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:30px;
+  margin-top:45px;
 }
 
-.box{
-  padding:38px;
+.contact-card{
+  padding:32px;
+  background:rgba(255,255,255,.045);
+  border:1px solid var(--line);
   border-radius:22px;
-  background:linear-gradient(145deg,#174349,#12363a);
-  border:1px solid #ffffff18;
 }
 
-.box h3{
-  margin:0 0 18px;
+.contact-card h3{
+  margin:0 0 12px;
   font-family:"Space Grotesk",sans-serif;
-  font-size:30px;
-  font-weight:600;
+  font-size:26px;
 }
 
-.box p{
+.contact-card p{
+  margin:0;
   color:var(--muted);
-  font-size:17px;
-  line-height:1.65;
+  font-size:18px;
 }
 
-.tags{
-  margin-top:25px;
-}
-
-.tag{
-  display:inline-block;
-  margin:4px 4px 4px 0;
-  padding:9px 13px;
-  border:1px solid #ffffff25;
-  border-radius:30px;
+.contact-card a{
   color:var(--aqua);
-  font-size:12px;
   font-weight:700;
+  text-decoration:none;
 }
 
-.form{
-  display:grid;
-  gap:13px;
-}
-
-.form input,
-.form textarea{
-  width:100%;
-  padding:15px;
-  border-radius:10px;
-  border:1px solid #ffffff25;
-  background:#092326;
-  color:white;
-  font:inherit;
-  font-size:16px;
-}
-
-.form textarea{
-  min-height:125px;
-  resize:vertical;
-}
-
-.form button{
-  border:0;
-  cursor:pointer;
-  font:inherit;
-}
-
-.contact .box strong{
-  color:var(--aqua);
-}
+/* FOOTER */
 
 footer{
-  padding:30px 0;
+  padding:35px 0 45px;
   border-top:1px solid var(--line);
+  color:#9eb4b2;
+  font-size:15px;
+}
+
+.footer-inner{
   display:flex;
   justify-content:space-between;
-  color:#9aacab;
-  font-size:13px;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-[lang="en"] .es{
+/* LANGUAGE */
+
+.lang-en{
   display:none;
 }
 
-[lang="es"] .en{
+html[lang="en"] .lang-es{
   display:none;
 }
 
-@media(max-width:900px){
-
-  .navlinks a:not(.lang){
-    display:none;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .section-head{
-    grid-template-columns:1fr;
-    gap:25px;
-  }
-
-  .partner-grid,
-  .contact{
-    grid-template-columns:1fr;
-  }
-
+html[lang="en"] .lang-en{
+  display:block;
 }
 
-@media(max-width:560px){
+/* MOBILE */
 
-  .wrap{
-    width:90%;
+@media(max-width:800px){
+
+  body{
+    font-size:17px;
   }
 
-  nav{
-    min-height:70px;
+  header{
+    padding:22px 0 18px;
   }
 
-  .logo{
-    font-size:15px;
+  .brand img{
+    width:52px;
   }
 
-  .hero{
-    min-height:670px;
-  }
-
-  .hero-inner{
-    padding:75px 0 90px;
-  }
-
-  h1{
-    font-size:clamp(57px,17vw,88px);
-  }
-
-  .hero-copy{
+  .brand-name{
     font-size:20px;
   }
 
-  .hero-sub{
-    font-size:15px;
+  .hero{
+    min-height:auto;
+  }
+
+  .hero-content{
+    padding:72px 0 78px;
+  }
+
+  h1{
+    font-size:clamp(44px,12vw,65px);
+  }
+
+  .hero-lead{
+    font-size:21px;
+    line-height:1.55;
   }
 
   section{
-    padding:75px 0;
+    padding:70px 0;
   }
 
-  .grid{
+  h2{
+    font-size:40px;
+  }
+
+  .section-intro{
+    font-size:19px;
+  }
+
+  .cards{
     grid-template-columns:1fr;
+    margin-top:34px;
   }
 
   .card{
-    min-height:230px;
+    padding:30px 26px;
   }
 
   .card h3{
-    margin-top:45px;
+    font-size:26px;
   }
 
-  .box{
-    padding:27px;
+  .card p{
+    font-size:18px;
   }
 
-  footer{
-    display:block;
+  .partner-box{
+    padding:30px 25px;
   }
 
-  footer span{
-    display:block;
-    margin:7px 0;
+  .partner-box h3{
+    font-size:28px;
   }
 
+  .partner-box p{
+    font-size:18px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .language{
+    padding:9px 13px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
-<nav>
+<header>
+  <div class="container header-inner">
 
-<div class="logo">IBC<span>.</span>MAZATLÁN</div>
+    <div class="brand">
+      <img src="IBC%20logo" alt="IBC Mazatlán">
+      <div class="brand-name">IBC Mazatlán</div>
+    </div>
 
-<div class="navlinks">
+    <button class="language" onclick="toggleLang()">
+      <span class="lang-es">English</span>
+      <span class="lang-en">Español</span>
+    </button>
 
-<a href="#experiencia">
-<span class="es">EXPERIENCIA</span>
-<span class="en">EXPERIENCE</span>
-</a>
-
-<a href="#socios">
-<span class="es">PRODUCTORES</span>
-<span class="en">PRODUCERS</span>
-</a>
-
-<a href="#contacto">
-<span class="es">CONTACTO</span>
-<span class="en">CONTACT</span>
-</a>
-
-<a class="lang" href="#" onclick="toggleLang();return false">
-<span class="es">ENGLISH 🇺🇸</span>
-<span class="en">ESPAÑOL 🇲🇽</span>
-</a>
-
-</div>
-</nav>
-</div>
-
-
-<header class="hero">
-
-<div class="wrap">
-
-<div class="hero-inner">
-
-<div class="eyebrow">
-<span class="es">DESCUBRIMIENTO DE BEBIDAS · MAZATLÁN</span>
-<span class="en">BEVERAGE DISCOVERY · MAZATLÁN</span>
-</div>
-
-<h1 class="es">
-DESCUBRE.<br>
-<span>PRUEBA.</span><br>
-DISFRUTA.
-</h1>
-
-<h1 class="en">
-DISCOVER.<br>
-<span>TASTE.</span><br>
-ENJOY.
-</h1>
-
-<p class="hero-copy es">
-Una nueva forma de descubrir bebidas.
-</p>
-
-<p class="hero-copy en">
-A new way to discover beverages.
-</p>
-
-<p class="hero-sub es">
-Un espacio inmersivo donde cerveza, vino, sidra, hard seltzer, opciones sin alcohol, café y bebidas experimentales se encuentran en un solo lugar.
-</p>
-
-<p class="hero-sub en">
-An immersive space where beer, wine, cider, hard seltzer, non-alcoholic options, coffee and experimental beverages come together in one place.
-</p>
-
-<div class="buttons">
-
-<a class="btn es" href="#experiencia">
-CONOCE IBC →
-</a>
-
-<a class="btn en" href="#experiencia">
-EXPLORE IBC →
-</a>
-
-<a class="btn alt es" href="#socios">
-PRODUCTORES Y SOCIOS
-</a>
-
-<a class="btn alt en" href="#socios">
-PRODUCERS & PARTNERS
-</a>
-
-</div>
-
-</div>
-</div>
+  </div>
 </header>
 
 
-<main class="wrap">
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="lang-es">
+        <div class="eyebrow">Immersive Beverage Concepts</div>
+
+        <h1>
+          Descubre.<br>
+          Prueba.<br>
+          <span class="hero-accent">Disfruta.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Una nueva forma de descubrir bebidas.
+          Explora sabores, estilos y conceptos nuevos
+          en una experiencia social, interactiva y diferente.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#experiencia">Conoce IBC</a>
+          <a class="button button-secondary" href="#contacto">Contáctanos</a>
+        </div>
+      </div>
+
+
+      <div class="lang-en">
+        <div class="eyebrow">Immersive Beverage Concepts</div>
+
+        <h1>
+          Discover.<br>
+          Taste.<br>
+          <span class="hero-accent">Enjoy.</span>
+        </h1>
+
+        <p class="hero-lead">
+          A new way to discover beverages.
+          Explore flavors, styles and new concepts
+          in a social, interactive experience unlike anything else.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#experiencia">Discover IBC</a>
+          <a class="button button-secondary" href="#contacto">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
 
 <section id="experiencia">
+  <div class="container">
 
-<div class="section-head">
+    <div class="lang-es">
 
-<h2 class="es">
-LA<br>
-EXPERIENCIA
-</h2>
+      <div class="section-label">La experiencia</div>
 
-<h2 class="en">
-THE<br>
-EXPERIENCE
-</h2>
+      <h2>Más que una bebida.</h2>
 
-<p class="lead es">
-IBC reúne una selección cambiante de bebidas de México y más allá. Ven a descubrir algo nuevo, probar tus favoritos y encontrar lo que sigue.
-</p>
+      <p class="section-intro">
+        IBC Mazatlán es un espacio creado para descubrir,
+        probar y compartir. Una experiencia de bebidas
+        pensada para curiosos, aficionados y cualquiera
+        que quiera encontrar algo nuevo.
+      </p>
 
-<p class="lead en">
-IBC brings together a changing selection of beverages from Mexico and beyond. Come discover something new, taste your favorites and find what's next.
-</p>
+      <div class="cards">
 
-</div>
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Explora</h3>
+          <p>
+            Descubre una selección en constante evolución,
+            desde cervezas y vinos hasta sidras, hard seltzers,
+            bebidas sin alcohol, café y conceptos experimentales.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Prueba</h3>
+          <p>
+            Prueba diferentes opciones a tu propio ritmo.
+            El formato de degustación convierte cada visita
+            en una oportunidad para descubrir algo nuevo.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Comparte</h3>
+          <p>
+            Comenta, califica y descubre qué está disfrutando
+            la comunidad. Tus opiniones ayudan a dar forma
+            a lo que viene después.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
 
 
-<div class="grid">
+    <div class="lang-en">
 
-<article class="card">
-<div class="number">01</div>
-<h3 class="es">Descubre</h3>
-<h3 class="en">Discover</h3>
-<p class="es">Productores, estilos y sabores que quizá nunca habías encontrado.</p>
-<p class="en">Producers, styles and flavors you may never have discovered before.</p>
-</article>
+      <div class="section-label">The experience</div>
 
-<article class="card">
-<div class="number">02</div>
-<h3 class="es">Prueba</h3>
-<h3 class="en">Taste</h3>
-<p class="es">Prueba lo que te interese y decide por ti mismo qué merece otro trago.</p>
-<p class="en">Taste what interests you and decide for yourself what deserves another pour.</p>
-</article>
+      <h2>More than a drink.</h2>
 
-<article class="card">
-<div class="number">03</div>
-<h3 class="es">Explora</h3>
-<h3 class="en">Explore</h3>
-<p class="es">Desde cerveza y vino hasta sidra, seltzer, NA, café y conceptos experimentales.</p>
-<p class="en">From beer and wine to cider, seltzer, NA, coffee and experimental concepts.</p>
-</article>
+      <p class="section-intro">
+        IBC Mazatlán is a space created for discovering,
+        tasting and sharing. A beverage experience for
+        curious people, enthusiasts and anyone looking
+        to find something new.
+      </p>
 
-<article class="card">
-<div class="number">04</div>
-<h3 class="es">Comparte</h3>
-<h3 class="en">Share</h3>
-<p class="es">Un lugar para conversar, descubrir favoritos y disfrutar juntos.</p>
-<p class="en">A place to talk, discover favorites and enjoy them together.</p>
-</article>
+      <div class="cards">
 
-</div>
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Explore</h3>
+          <p>
+            Discover an evolving selection ranging from beer
+            and wine to cider, hard seltzer, non-alcoholic
+            beverages, coffee and experimental concepts.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Taste</h3>
+          <p>
+            Try different options at your own pace.
+            The tasting format turns every visit into
+            an opportunity to discover something new.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Share</h3>
+          <p>
+            Comment, rate and discover what the community
+            is enjoying. Your feedback helps shape
+            what comes next.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
+
+<!-- BEVERAGES -->
 
 <section>
+  <div class="container">
 
-<div class="statement es">
-DESCUBRE. <span>PRUEBA. DISFRUTA.</span>
-</div>
+    <div class="lang-es">
 
-<div class="statement en">
-DISCOVER. <span>TASTE. ENJOY.</span>
-</div>
+      <div class="section-label">Descubre México</div>
 
+      <h2>Una selección que sigue evolucionando.</h2>
+
+      <p class="section-intro">
+        Buscamos productos interesantes de productores
+        mexicanos y de todo el mundo. Lo conocido,
+        lo nuevo y lo que todavía no sabes que te gusta.
+      </p>
+
+      <div class="beverage-list">
+        <span class="beverage">Cerveza</span>
+        <span class="beverage">Vino</span>
+        <span class="beverage">Sidra</span>
+        <span class="beverage">Hard Seltzer</span>
+        <span class="beverage">Sin Alcohol</span>
+        <span class="beverage">Café</span>
+        <span class="beverage">Cócteles Experimentales</span>
+      </div>
+
+    </div>
+
+
+    <div class="lang-en">
+
+      <div class="section-label">Discover Mexico</div>
+
+      <h2>A selection that keeps evolving.</h2>
+
+      <p class="section-intro">
+        We look for interesting products from Mexican
+        producers and around the world. The familiar,
+        the new and the things you don't yet know you like.
+      </p>
+
+      <div class="beverage-list">
+        <span class="beverage">Beer</span>
+        <span class="beverage">Wine</span>
+        <span class="beverage">Cider</span>
+        <span class="beverage">Hard Seltzer</span>
+        <span class="beverage">Non-Alcoholic</span>
+        <span class="beverage">Coffee</span>
+        <span class="beverage">Experimental Cocktails</span>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 
-<section id="socios">
+<!-- PRODUCERS -->
 
-<div class="section-head">
+<section>
+  <div class="container">
 
-<h2 class="es">
-PRODUCTORES<br>
-Y SOCIOS
-</h2>
+    <div class="lang-es">
 
-<h2 class="en">
-PRODUCERS<br>
-& PARTNERS
-</h2>
+      <div class="section-label">Para productores y marcas</div>
 
-<p class="lead es">
-¿Tienes una bebida que merece ser descubierta? Queremos conocerla. Buscamos productores, distribuidores e importadores de todo México.
-</p>
+      <h2>¿Tienes algo que deberíamos probar?</h2>
 
-<p class="lead en">
-Have a beverage that deserves to be discovered? We want to hear about it. We are looking for producers, distributors and importers from across Mexico.
-</p>
+      <div class="partner-box">
 
-</div>
+        <h3>Queremos descubrirlo.</h3>
 
+        <p>
+          IBC trabaja con productores, distribuidores e
+          importadores que buscan presentar productos,
+          lanzamientos, ediciones especiales y nuevos conceptos
+          a consumidores curiosos. Envíanos tu lista de precios,
+          muestras, novedades o información de tus productos.
+        </p>
 
-<div class="partner-grid">
+      </div>
 
-<div class="box">
-
-<h3 class="es">
-Trae algo interesante.
-</h3>
-
-<h3 class="en">
-Bring us something interesting.
-</h3>
-
-<p class="es">
-Nuevos lanzamientos, ediciones especiales, productos experimentales, colaboraciones y favoritos establecidos son bienvenidos.
-</p>
-
-<p class="en">
-New releases, special editions, experimental products, collaborations and established favorites are welcome.
-</p>
-
-<div class="tags">
-<span class="tag">Cerveza / Beer</span>
-<span class="tag">Vino / Wine</span>
-<span class="tag">Sidra / Cider</span>
-<span class="tag">Seltzer</span>
-<span class="tag">NA</span>
-<span class="tag">Café</span>
-<span class="tag">Cocktails</span>
-</div>
-
-</div>
+    </div>
 
 
-<div class="box">
+    <div class="lang-en">
 
-<h3 class="es">
-Envíanos información.
-</h3>
+      <div class="section-label">For producers & brands</div>
 
-<h3 class="en">
-Send us your information.
-</h3>
+      <h2>Have something we should try?</h2>
 
-<form class="form" action="mailto:ibc.mzt@gmail.com" method="post" enctype="text/plain">
+      <div class="partner-box">
 
-<input name="name" placeholder="Nombre / Empresa" required>
+        <h3>We want to discover it.</h3>
 
-<input name="contact" placeholder="Email o WhatsApp" required>
+        <p>
+          IBC works with producers, distributors and importers
+          looking to introduce products, launches, special
+          releases and new concepts to curious consumers.
+          Send us your price list, samples, new releases
+          or product information.
+        </p>
 
-<textarea name="message" placeholder="Cuéntanos sobre tus productos / Tell us about your products"></textarea>
+      </div>
 
-<button class="btn" type="submit">
+    </div>
 
-<span class="es">
-CONTACTAR IBC →
-</span>
-
-<span class="en">
-CONTACT IBC →
-</span>
-
-</button>
-
-</form>
-
-</div>
-
-</div>
+  </div>
 </section>
 
 
-<section id="contacto">
+<!-- CONTACT -->
 
-<div class="section-head">
+<section id="contacto" class="contact">
+  <div class="container">
 
-<h2 class="es">
-VAMOS A<br>
-PLATICAR.
-</h2>
+    <div class="lang-es">
 
-<h2 class="en">
-LET'S<br>
-TALK.
-</h2>
+      <div class="section-label">Mantente conectado</div>
 
-<p class="lead es">
-IBC Mazatlán está construyendo una nueva forma de descubrir bebidas. Síguenos y sé parte de lo que viene.
-</p>
+      <h2>Ven a descubrir algo nuevo.</h2>
 
-<p class="lead en">
-IBC Mazatlán is building a new way to discover beverages. Follow us and be part of what's coming.
-</p>
+      <p class="section-intro">
+        IBC Mazatlán está creando una nueva forma
+        de experimentar bebidas en Mazatlán.
+        Síguenos para conocer lo que viene.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="contact">
+    <div class="lang-en">
 
-<div class="box">
+      <div class="section-label">Stay connected</div>
 
-<h3>
-Immersive Beverage Concepts
-</h3>
+      <h2>Come discover something new.</h2>
 
-<p>
-Mazatlán, Sinaloa, México
-</p>
+      <p class="section-intro">
+        IBC Mazatlán is creating a new way to experience
+        beverages in Mazatlán. Follow us to see what's coming.
+      </p>
 
-<p>
-<strong>WhatsApp:</strong> 669-332-2789
-</p>
-
-<p>
-<strong>Email:</strong> ibc.mzt@gmail.com
-</p>
-
-</div>
+    </div>
 
 
-<div class="box">
+    <div class="contact-grid">
 
-<h3>
-IBCMazatlan.com
-</h3>
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a>
+        </p>
+      </div>
 
-<p>
-Instagram · Facebook · X
-</p>
+      <div class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>
+          <a href="https://wa.me/526693322789">
+            +52 669 332 2789
+          </a>
+        </p>
+      </div>
 
-<p class="es">
-Síguenos para conocer próximos eventos, nuevas bebidas, productores y novedades.
-</p>
+    </div>
 
-<p class="en">
-Follow us for upcoming events, new beverages, producers and updates.
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 </main>
 
 
-<div class="wrap">
-
 <footer>
-<span>© 2026 Immersive Beverage Concepts</span>
-<span>IBCMazatlan.com</span>
+  <div class="container footer-inner">
+    <div>IBC Mazatlán · Immersive Beverage Concepts</div>
+    <div>© 2026 IBC Mazatlán</div>
+  </div>
 </footer>
-
-</div>
 
 
 <script>
 function toggleLang(){
-  const root=document.documentElement;
-  const next=root.lang==="es"?"en":"es";
-  root.lang=next;
-  document.title=next==="es"
-    ?"IBC Mazatlán | Experiencia de Bebidas"
-    :"IBC Mazatlán | Beverage Discovery";
+  const root = document.documentElement;
+
+  const next = root.lang === "es" ? "en" : "es";
+
+  root.lang = next;
+
+  document.title =
+    next === "es"
+      ? "IBC Mazatlán | Experiencia de Bebidas"
+      : "IBC Mazatlán | Beverage Discovery";
 }
 </script>
 
