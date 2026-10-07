@@ -33,9 +33,7 @@ html{
 
 body{
   margin:0;
-  background:
-    radial-gradient(circle at 15% 5%,rgba(115,221,208,.16),transparent 30%),
-    linear-gradient(135deg,#082f34 0%,#0d454a 52%,#092d32 100%);
+  background:#082f34;
   color:var(--cream);
   font-family:"DM Sans",sans-serif;
   font-size:19px;
@@ -52,7 +50,9 @@ a{
   margin:auto;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   position:absolute;
@@ -63,7 +63,7 @@ nav{
   padding:22px 0;
   background:linear-gradient(
     to bottom,
-    rgba(5,31,35,.72),
+    rgba(5,31,35,.85),
     rgba(5,31,35,0)
   );
 }
@@ -95,7 +95,7 @@ nav{
 
 .lang-btn{
   border:1px solid rgba(115,221,208,.65);
-  background:rgba(8,47,52,.72);
+  background:rgba(8,47,52,.78);
   color:#fff;
   padding:10px 17px;
   border-radius:30px;
@@ -104,7 +104,9 @@ nav{
   font-size:15px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:780px;
@@ -112,25 +114,15 @@ nav{
   overflow:hidden;
   display:flex;
   align-items:center;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(115,221,208,.18),
-      transparent 48%
-    ),
-    linear-gradient(
-      135deg,
-      #0a353a 0%,
-      #0d4a50 55%,
-      #092d32 100%
-    );
+  background:#082f34;
 }
 
-/* HERO IMAGE */
+/* THE HERO IMAGE */
 
 .hero-image{
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
   display:block;
@@ -140,18 +132,21 @@ nav{
   opacity:1;
 }
 
-/* DARK/TINT LAYER OVER IMAGE */
+/* LIGHT OVERLAY SO TEXT REMAINS READABLE */
 
 .hero-overlay{
   position:absolute;
-  inset:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   z-index:1;
   background:
     linear-gradient(
       90deg,
-      rgba(7,43,47,.82) 0%,
-      rgba(7,43,47,.55) 35%,
-      rgba(7,43,47,.22) 63%,
+      rgba(7,43,47,.78) 0%,
+      rgba(7,43,47,.48) 35%,
+      rgba(7,43,47,.18) 65%,
       rgba(7,43,47,.08) 100%
     );
 }
@@ -161,7 +156,7 @@ nav{
   z-index:2;
   width:min(1180px,92%);
   margin:auto;
-  padding:130px 0 100px;
+  padding:150px 0 110px;
 }
 
 .eyebrow{
@@ -213,11 +208,13 @@ h1{
 
 .button-secondary{
   border:1px solid rgba(115,221,208,.7);
-  background:rgba(8,47,52,.6);
+  background:rgba(8,47,52,.65);
   color:#fff;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section{
   padding:105px 0;
@@ -247,7 +244,9 @@ h2{
   line-height:1.55;
 }
 
-/* EXPERIENCE */
+/* =========================
+   EXPERIENCE
+========================= */
 
 .experience{
   background:
@@ -296,7 +295,9 @@ h2{
   margin:0;
 }
 
-/* BEVERAGES */
+/* =========================
+   BEVERAGES
+========================= */
 
 .beverages{
   background:#082f34;
@@ -318,7 +319,9 @@ h2{
   font-weight:600;
 }
 
-/* PRODUCERS */
+/* =========================
+   PRODUCERS
+========================= */
 
 .producers{
   background:
@@ -348,7 +351,9 @@ h2{
   color:#fff;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
   background:#082f34;
@@ -385,7 +390,9 @@ h2{
   font-size:19px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:35px 0;
@@ -401,7 +408,9 @@ footer{
   flex-wrap:wrap;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
@@ -431,9 +440,9 @@ footer{
     background:
       linear-gradient(
         180deg,
-        rgba(7,43,47,.70) 0%,
-        rgba(7,43,47,.45) 48%,
-        rgba(7,43,47,.78) 100%
+        rgba(7,43,47,.68) 0%,
+        rgba(7,43,47,.40) 45%,
+        rgba(7,43,47,.76) 100%
       );
   }
 
@@ -464,7 +473,9 @@ footer{
 
 }
 
-/* SMALL PHONES */
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media(max-width:480px){
 
@@ -482,8 +493,8 @@ footer{
   }
 
   .hero-image{
-    opacity:1;
     object-position:center center;
+    opacity:1;
   }
 
   .hero-content{
@@ -511,6 +522,10 @@ footer{
 
 <body>
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
   <div class="container nav-inner">
 
@@ -521,17 +536,46 @@ footer{
     >
 
     <div class="nav-right">
-      <a class="nav-link" href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
-      <a class="nav-link" href="#bebidas" data-es="Bebidas" data-en="Beverages">Bebidas</a>
-      <a class="nav-link" href="#productores" data-es="Productores" data-en="Producers">Productores</a>
-      <button class="lang-btn" onclick="toggleLang()">English</button>
+
+      <a
+        class="nav-link"
+        href="#experiencia"
+        data-es="Experiencia"
+        data-en="Experience">
+        Experiencia
+      </a>
+
+      <a
+        class="nav-link"
+        href="#bebidas"
+        data-es="Bebidas"
+        data-en="Beverages">
+        Bebidas
+      </a>
+
+      <a
+        class="nav-link"
+        href="#productores"
+        data-es="Productores"
+        data-en="Producers">
+        Productores
+      </a>
+
+      <button
+        class="lang-btn"
+        onclick="toggleLang()">
+        English
+      </button>
+
     </div>
 
   </div>
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
@@ -545,7 +589,8 @@ footer{
 
   <div class="hero-content">
 
-    <div class="eyebrow"
+    <div
+      class="eyebrow"
       data-es="Mazatlán • Próximamente"
       data-en="Mazatlán • Coming Soon">
       Mazatlán • Próximamente
@@ -557,7 +602,8 @@ footer{
       Descubre.<br>Prueba.<br>Disfruta.
     </h1>
 
-    <p class="hero-copy"
+    <p
+      class="hero-copy"
       data-es="Una nueva forma de descubrir bebidas, conocer productores y disfrutar juntos de lo mejor que México tiene para ofrecer."
       data-en="A new way to discover beverages, meet producers, and experience the best Mexico has to offer.">
       Una nueva forma de descubrir bebidas, conocer productores y disfrutar juntos de lo mejor que México tiene para ofrecer.
@@ -588,13 +634,18 @@ footer{
 </header>
 
 
-<!-- EXPERIENCE -->
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
-<section class="experience" id="experiencia">
+<section
+  class="experience"
+  id="experiencia">
 
   <div class="container">
 
-    <div class="section-label"
+    <div
+      class="section-label"
       data-es="La experiencia"
       data-en="The Experience">
       La experiencia
@@ -606,7 +657,8 @@ footer{
       Un destino para beber, descubrir y conectar.
     </h2>
 
-    <p class="lead"
+    <p
+      class="lead"
       data-es="IBC Mazatlán reúne una selección cambiante de bebidas en un espacio social, moderno y divertido. Ven por algo conocido. Quédate para descubrir algo nuevo."
       data-en="IBC Mazatlán brings together a changing selection of beverages in a modern, social, engaging space. Come for something familiar. Stay to discover something new.">
       IBC Mazatlán reúne una selección cambiante de bebidas en un espacio social, moderno y divertido. Ven por algo conocido. Quédate para descubrir algo nuevo.
@@ -615,45 +667,65 @@ footer{
     <div class="cards">
 
       <div class="card">
-        <div class="card-number">01</div>
+
+        <div class="card-number">
+          01
+        </div>
+
         <h3
           data-es="Explora"
           data-en="Explore">
           Explora
         </h3>
+
         <p
           data-es="Descubre bebidas que quizá nunca hayas probado, desde productores mexicanos hasta nuevos conceptos."
           data-en="Discover beverages you may have never tried, from Mexican producers to entirely new concepts.">
           Descubre bebidas que quizá nunca hayas probado, desde productores mexicanos hasta nuevos conceptos.
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-number">02</div>
+
+        <div class="card-number">
+          02
+        </div>
+
         <h3
           data-es="Prueba"
           data-en="Taste">
           Prueba
         </h3>
+
         <p
           data-es="Una experiencia de degustación diseñada para que probar algo diferente sea parte de la diversión."
           data-en="A tasting experience designed to make trying something different part of the fun.">
           Una experiencia de degustación diseñada para que probar algo diferente sea parte de la diversión.
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-number">03</div>
+
+        <div class="card-number">
+          03
+        </div>
+
         <h3
           data-es="Conecta"
           data-en="Connect">
           Conecta
         </h3>
+
         <p
           data-es="Comparte la experiencia con amigos, productores y otros amantes de las bebidas."
           data-en="Share the experience with friends, producers, and fellow beverage enthusiasts.">
           Comparte la experiencia con amigos, productores y otros amantes de las bebidas.
         </p>
+
       </div>
 
     </div>
@@ -663,13 +735,18 @@ footer{
 </section>
 
 
-<!-- BEVERAGES -->
+<!-- =========================
+     BEVERAGES
+========================= -->
 
-<section class="beverages" id="bebidas">
+<section
+  class="beverages"
+  id="bebidas">
 
   <div class="container">
 
-    <div class="section-label"
+    <div
+      class="section-label"
       data-es="Más que cerveza"
       data-en="More Than Beer">
       Más que cerveza
@@ -681,7 +758,8 @@ footer{
       Bienvenido a todo México en un solo lugar.
     </h2>
 
-    <p class="lead"
+    <p
+      class="lead"
       data-es="IBC está pensado para celebrar la diversidad de bebidas que México y el mundo pueden ofrecer."
       data-en="IBC is designed to celebrate the diversity of beverages Mexico and the world have to offer.">
       IBC está pensado para celebrar la diversidad de bebidas que México y el mundo pueden ofrecer.
@@ -689,14 +767,37 @@ footer{
 
     <div class="beverage-list">
 
-      <div class="beverage">🍺 Cerveza</div>
-      <div class="beverage">🍷 Vino</div>
-      <div class="beverage">🥂 Hard Seltzer</div>
-      <div class="beverage">🍎 Cider</div>
-      <div class="beverage">🍹 Cocktails</div>
-      <div class="beverage">🌵 Agave</div>
-      <div class="beverage">☕ Café</div>
-      <div class="beverage">✨ Sin Alcohol</div>
+      <div class="beverage">
+        🍺 Cerveza
+      </div>
+
+      <div class="beverage">
+        🍷 Vino
+      </div>
+
+      <div class="beverage">
+        🥂 Hard Seltzer
+      </div>
+
+      <div class="beverage">
+        🍎 Cider
+      </div>
+
+      <div class="beverage">
+        🍹 Cocktails
+      </div>
+
+      <div class="beverage">
+        🌵 Agave
+      </div>
+
+      <div class="beverage">
+        ☕ Café
+      </div>
+
+      <div class="beverage">
+        ✨ Sin Alcohol
+      </div>
 
     </div>
 
@@ -705,13 +806,18 @@ footer{
 </section>
 
 
-<!-- PRODUCERS -->
+<!-- =========================
+     PRODUCERS
+========================= -->
 
-<section class="producers" id="productores">
+<section
+  class="producers"
+  id="productores">
 
   <div class="container">
 
-    <div class="section-label"
+    <div
+      class="section-label"
       data-es="Para productores"
       data-en="For Producers">
       Para productores
@@ -746,13 +852,16 @@ footer{
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="contact">
 
   <div class="container">
 
-    <div class="section-label"
+    <div
+      class="section-label"
       data-es="Mantente conectado"
       data-en="Stay Connected">
       Mantente conectado
@@ -780,7 +889,9 @@ footer{
           Envíanos tu información, novedades, precios, muestras o simplemente dinos qué estás creando.
         </p>
 
-        <a class="contact-link" href="mailto:ibc.mzt@gmail.com">
+        <a
+          class="contact-link"
+          href="mailto:ibc.mzt@gmail.com">
           ibc.mzt@gmail.com
         </a>
 
@@ -818,6 +929,10 @@ footer{
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
   <div class="container footer-inner">
@@ -834,6 +949,10 @@ footer{
 
 </footer>
 
+
+<!-- =========================
+     LANGUAGE SWITCHER
+========================= -->
 
 <script>
 
@@ -852,7 +971,9 @@ function toggleLang(){
   });
 
   document.querySelector(".lang-btn").textContent =
-    currentLang === "es" ? "English" : "Español";
+    currentLang === "es"
+      ? "English"
+      : "Español";
 
   document.title =
     currentLang === "es"
