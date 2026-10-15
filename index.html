@@ -1,5 +1,3 @@
-Here is the complete, final HTML code for your landing page with the exact SelfPour.png hero image integrated right at the top, followed by your headline, the "Próximamente en Mazatlán" badge, the Spanish-first layout, and the live English toggle.
-You can copy and paste this directly into your GitHub repository's index.html file:
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -111,13 +109,13 @@ You can copy and paste this directly into your GitHub repository's index.html fi
         </div>
     </header>
 
-    <!-- Hero Section featuring SelfPour.png -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+    <!-- Hero Section featuring SelfPour.png with optimized top spacing -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
         
         <!-- Hero Image Container (SelfPour.png prominently displayed at the top) -->
-        <div class="relative w-full max-w-5xl mx-auto mb-12 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark">
+        <div class="relative w-full max-w-5xl mx-auto mb-10 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark">
             <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60 z-10"></div>
-            <img src="./SelfPour.png" alt="Uno Más Self-Pour Wall Hero" class="w-full h-[350px] md:h-[500px] object-cover object-center transform hover:scale-105 transition-transform duration-700">
+            <img src="./SelfPour.png" alt="Uno Más Self-Pour Wall Hero" class="w-full h-[320px] md:h-[480px] object-cover object-center transform hover:scale-105 transition-transform duration-700">
         </div>
 
         <!-- Headline & Content Positioned Below the Hero Image -->
@@ -146,14 +144,14 @@ You can copy and paste this directly into your GitHub repository's index.html fi
         </div>
     </section>
 
-    <!-- El Concepto Section -->
+    <!-- El Concepto Section with Refined Editorial Font & Hierarchy -->
     <section id="concepto" class="py-28 px-6 bg-navy-dark/70 border-t border-navy-light/30">
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <span class="text-gold text-xs uppercase tracking-[0.3em] font-bold block mb-3" data-es="Filosofía del Proyecto" data-en="Project Philosophy">Filosofía del Proyecto</span>
                 <h2 class="text-4xl md:text-6xl font-serif font-bold text-cream mb-6" data-es="El Concepto" data-en="The Concept">El Concepto</h2>
                 <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
-                <p class="text-cream/80 text-lg md:text-xl font-light leading-relaxed" data-es="Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores." data-en="Uno Más redefines tasting culture by fusing precision self-serve technology with independent, innovative liquid profiles.">
+                <p class="text-cream/80 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-2xl mx-auto font-sans" data-es="Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores." data-en="Uno Más redefines tasting culture by fusing precision self-serve technology with independent, innovative liquid profiles.">
                     Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores.
                 </p>
             </div>
@@ -164,7 +162,7 @@ You can copy and paste this directly into your GitHub repository's index.html fi
                         ⚡
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Autoservicio Inteligente" data-en="Smart Self-Service">Autoservicio Inteligente</h3>
-                    <p class="text-cream/70 font-light leading-relaxed" data-es="Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida." data-en="Flow systems with millimeter temperature control and ounce-by-ounce measurement, allowing explorers to design their own custom tasting flight.">
+                    <p class="text-cream/70 font-light text-sm md:text-base leading-relaxed" data-es="Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida." data-en="Flow systems with millimeter temperature control and ounce-by-ounce measurement, allowing explorers to design their own custom tasting flight.">
                         Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida.
                     </p>
                 </div>
@@ -174,7 +172,7 @@ You can copy and paste this directly into your GitHub repository's index.html fi
                         🧪
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Laboratorio de Sabores" data-en="Flavor Laboratory">Laboratorio de Sabores</h3>
-                    <p class="text-cream/70 font-light leading-relaxed" data-es="Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas." data-en="A dynamic space dedicated to classic European styles, hop experimentation, wild ferments, and exclusive botanical creations.">
+                    <p class="text-cream/70 font-light text-sm md:text-base leading-relaxed" data-es="Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas." data-en="A dynamic space dedicated to classic European styles, hop experimentation, wild ferments, and exclusive botanical creations.">
                         Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas.
                     </p>
                 </div>
@@ -184,7 +182,7 @@ You can copy and paste this directly into your GitHub repository's index.html fi
                         🌐
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Experiencia Cashless" data-en="Cashless Experience">Experiencia Cashless</h3>
-                    <p class="text-cream/70 font-light leading-relaxed" data-es="Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo." data-en="Fully integrated RFID and mobile platform designed for seamless exploration, with no lines or friction between pours.">
+                    <p class="text-cream/70 font-light text-sm md:text-base leading-relaxed" data-es="Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo." data-en="Fully integrated RFID and mobile platform designed for seamless exploration, with no lines or friction between pours.">
                         Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo.
                     </p>
                 </div>
@@ -338,4 +336,3 @@ You can copy and paste this directly into your GitHub repository's index.html fi
     </script>
 </body>
 </html>
-
