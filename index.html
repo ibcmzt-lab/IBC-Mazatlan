@@ -1,858 +1,584 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>IBC Mazatlán | Experiencia de Bebidas</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --teal-deep:#082f34;
-  --teal:#0d454a;
-  --teal-light:#176068;
-  --aqua:#73ddd0;
-  --copper:#e4a15d;
-  --cream:#f8f4eb;
-  --soft:#d3e1de;
-  --card:#145158;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at 15% 5%,rgba(115,221,208,.16),transparent 30%),
-    linear-gradient(135deg,#082f34 0%,#0d454a 52%,#092d32 100%);
-  color:var(--cream);
-  font-family:"DM Sans",sans-serif;
-  font-size:19px;
-  line-height:1.6;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-/* NAVIGATION */
-
-nav{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  z-index:20;
-  padding:22px 0;
-  background:linear-gradient(
-    to bottom,
-    rgba(5,31,35,.72),
-    rgba(5,31,35,0)
-  );
-}
-
-.nav-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-.logo{
-  height:62px;
-  width:auto;
-  object-fit:contain;
-}
-
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:24px;
-}
-
-.nav-link{
-  font-weight:600;
-  font-size:16px;
-  color:#fff;
-}
-
-.lang-btn{
-  border:1px solid rgba(115,221,208,.65);
-  background:rgba(8,47,52,.72);
-  color:#fff;
-  padding:10px 17px;
-  border-radius:30px;
-  font-weight:700;
-  cursor:pointer;
-  font-size:15px;
-}
-
-/* HERO */
-
-.hero{
-  min-height:780px;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(115,221,208,.18),
-      transparent 48%
-    ),
-    linear-gradient(
-      135deg,
-      #0a353a 0%,
-      #0d4a50 55%,
-      #092d32 100%
-    );
-}
-
-.hero-image{
-  position:absolute;
-  top:80px;
-  left:0;
-  width:100%;
-  height:680px;
-  object-fit:contain;
-  object-position:center top;
-  z-index:0;
-  opacity:1;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7,43,47,.82) 0%,
-      rgba(7,43,47,.48) 35%,
-      rgba(7,43,47,.12) 63%,
-      rgba(7,43,47,.04) 100%
-    );
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:min(1180px,92%);
-  margin:auto;
-  padding:410px 0 80px;
-}
-
-.eyebrow{
-  display:inline-block;
-  color:var(--aqua);
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-h1{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(58px,8vw,104px);
-  line-height:.95;
-  letter-spacing:-4px;
-  margin:0 0 28px;
-  max-width:760px;
-}
-
-.hero-copy{
-  font-size:clamp(21px,2.2vw,29px);
-  line-height:1.4;
-  max-width:670px;
-  color:#f2f5f0;
-  margin:0 0 35px;
-}
-
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
-
-.button{
-  display:inline-block;
-  padding:15px 24px;
-  border-radius:40px;
-  font-size:17px;
-  font-weight:700;
-  transition:.2s ease;
-}
-
-.button-primary{
-  background:var(--copper);
-  color:#172a2b;
-}
-
-.button-secondary{
-  border:1px solid rgba(115,221,208,.7);
-  background:rgba(8,47,52,.6);
-  color:#fff;
-}
-
-/* SECTIONS */
-
-section{
-  padding:105px 0;
-}
-
-.section-label{
-  color:var(--aqua);
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-h2{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(40px,5vw,64px);
-  line-height:1.05;
-  letter-spacing:-2px;
-  margin:0 0 25px;
-}
-
-.lead{
-  font-size:22px;
-  color:var(--soft);
-  max-width:780px;
-  line-height:1.55;
-}
-
-/* EXPERIENCE */
-
-.experience{
-  background:
-    linear-gradient(
-      180deg,
-      #0d454a,
-      #103f44
-    );
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  margin-top:55px;
-}
-
-.card{
-  background:linear-gradient(
-    145deg,
-    rgba(23,96,104,.9),
-    rgba(13,69,74,.92)
-  );
-  border:1px solid rgba(115,221,208,.18);
-  border-radius:22px;
-  padding:32px;
-}
-
-.card-number{
-  color:var(--copper);
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:18px;
-}
-
-.card h3{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:29px;
-  margin:0 0 13px;
-}
-
-.card p{
-  color:var(--soft);
-  font-size:18px;
-  margin:0;
-}
-
-/* BEVERAGES */
-
-.beverages{
-  background:#082f34;
-}
-
-.beverage-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:13px;
-  margin-top:38px;
-}
-
-.beverage{
-  border:1px solid rgba(115,221,208,.35);
-  background:rgba(23,96,104,.42);
-  padding:13px 20px;
-  border-radius:40px;
-  font-size:18px;
-  font-weight:600;
-}
-
-/* PRODUCERS */
-
-.producers{
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(228,161,93,.11),
-      transparent 30%
-    ),
-    #0d454a;
-}
-
-.producer-box{
-  margin-top:45px;
-  background:rgba(8,47,52,.58);
-  border:1px solid rgba(115,221,208,.22);
-  border-radius:24px;
-  padding:42px;
-}
-
-.producer-box p{
-  font-size:20px;
-  color:var(--soft);
-  max-width:850px;
-}
-
-.producer-box strong{
-  color:#fff;
-}
-
-/* CONTACT */
-
-.contact{
-  background:#082f34;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  margin-top:45px;
-}
-
-.contact-card{
-  background:#103f44;
-  border:1px solid rgba(115,221,208,.18);
-  border-radius:22px;
-  padding:32px;
-}
-
-.contact-card h3{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:28px;
-  margin:0 0 12px;
-}
-
-.contact-card p{
-  color:var(--soft);
-  font-size:18px;
-}
-
-.contact-link{
-  color:var(--aqua);
-  font-weight:700;
-  font-size:19px;
-}
-
-/* FOOTER */
-
-footer{
-  padding:35px 0;
-  background:#061f23;
-  color:#9eb5b2;
-  font-size:15px;
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  body{
-    font-size:18px;
-  }
-
-  .logo{
-    height:50px;
-  }
-
-  .nav-link{
-    display:none;
-  }
-
-  .hero{
-    min-height:720px;
-  }
-
-  .hero-image{
-    top:75px;
-    height:600px;
-    object-fit:contain;
-    object-position:center top;
-    opacity:1;
-  }
-
-  .hero-overlay{
-    background:
-      linear-gradient(
-        180deg,
-        rgba(7,43,47,.45) 0%,
-        rgba(7,43,47,.18) 42%,
-        rgba(7,43,47,.78) 75%,
-        rgba(7,43,47,.90) 100%
-      );
-  }
-
-  .hero-content{
-    padding:390px 0 80px;
-  }
-
-  h1{
-    font-size:clamp(54px,15vw,78px);
-    letter-spacing:-3px;
-  }
-
-  .hero-copy{
-    font-size:22px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:80px 0;
-  }
-
-}
-
-/* SMALL PHONES */
-
-@media(max-width:480px){
-
-  .nav-inner{
-    align-items:flex-start;
-  }
-
-  .lang-btn{
-    padding:8px 13px;
-    font-size:14px;
-  }
-
-  .hero{
-    min-height:700px;
-  }
-
-  .hero-image{
-    top:70px;
-    height:560px;
-    opacity:1;
-  }
-
-  .hero-content{
-    padding-top:365px;
-  }
-
-  h1{
-    font-size:56px;
-  }
-
-  .hero-copy{
-    font-size:20px;
-  }
-
-  .card,
-  .producer-box,
-  .contact-card{
-    padding:26px;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno Más by IBC | Coming Soon to Mazatlán</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for Serifs & Inter for Clean Sans UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0F2B3C',
+                            dark: '#0A1C28',
+                            light: '#183D54'
+                        },
+                        terracotta: {
+                            DEFAULT: '#C2593F',
+                            hover: '#A94B34',
+                            light: '#D9735A'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB'
+                        },
+                        offwhite: '#F7F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Glassmorphism & Custom Styling */
+        .glass-nav {
+            background: rgba(15, 43, 60, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .glass-card {
+            background: rgba(24, 61, 84, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(194, 89, 63, 0.18) 0%, rgba(15, 43, 60, 0) 70%);
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+    </style>
 </head>
-
-<body>
-
-<nav>
-  <div class="container nav-inner">
-
-    <img
-      src="IBC%20logo"
-      alt="IBC Mazatlán"
-      class="logo"
-    >
-
-    <div class="nav-right">
-      <a class="nav-link" href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
-      <a class="nav-link" href="#bebidas" data-es="Bebidas" data-en="Beverages">Bebidas</a>
-      <a class="nav-link" href="#productores" data-es="Productores" data-en="Producers">Productores</a>
-      <button class="lang-btn" onclick="toggleLang()">English</button>
-    </div>
-
-  </div>
-</nav>
-
-<!-- HERO -->
-
-<header class="hero">
-
-  <img
-    src="SelfPour.png"
-    alt="IBC Mazatlán beverage wall"
-    class="hero-image"
-  >
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <div class="eyebrow"
-      data-es="Mazatlán • Próximamente"
-      data-en="Mazatlán • Coming Soon">
-      Mazatlán • Próximamente
-    </div>
-
-    <h1
-      data-es="Descubre.<br>Prueba.<br>Disfruta."
-      data-en="Discover.<br>Taste.<br>Enjoy.">
-      Descubre.<br>Prueba.<br>Disfruta.
-    </h1>
-
-    <p class="hero-copy"
-      data-es="Una nueva forma de descubrir bebidas, conocer productores y disfrutar juntos de lo mejor que México tiene para ofrecer."
-      data-en="A new way to discover beverages, meet producers, and experience the best Mexico has to offer.">
-      Una nueva forma de descubrir bebidas, conocer productores y disfrutar juntos de lo mejor que México tiene para ofrecer.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a
-        class="button button-primary"
-        href="#experiencia"
-        data-es="Conoce IBC"
-        data-en="Discover IBC">
-        Conoce IBC
-      </a>
-
-      <a
-        class="button button-secondary"
-        href="mailto:ibc.mzt@gmail.com"
-        data-es="Hablemos"
-        data-en="Let's Talk">
-        Hablemos
-      </a>
-
-    </div>
-
-  </div>
-
-</header>
-
-<!-- EXPERIENCE -->
-
-<section class="experience" id="experiencia">
-
-  <div class="container">
-
-    <div class="section-label"
-      data-es="La experiencia"
-      data-en="The Experience">
-      La experiencia
-    </div>
-
-    <h2
-      data-es="Un destino para beber, descubrir y conectar."
-      data-en="A destination to drink, discover, and connect.">
-      Un destino para beber, descubrir y conectar.
-    </h2>
-
-    <p class="lead"
-      data-es="IBC Mazatlán reúne una selección cambiante de bebidas en un espacio social, moderno y divertido. Ven por algo conocido. Quédate para descubrir algo nuevo."
-      data-en="IBC Mazatlán brings together a changing selection of beverages in a modern, social, engaging space. Come for something familiar. Stay to discover something new.">
-      IBC Mazatlán reúne una selección cambiante de bebidas en un espacio social, moderno y divertido. Ven por algo conocido. Quédate para descubrir algo nuevo.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-number">01</div>
-        <h3
-          data-es="Explora"
-          data-en="Explore">
-          Explora
-        </h3>
-        <p
-          data-es="Descubre bebidas que quizá nunca hayas probado, desde productores mexicanos hasta nuevos conceptos."
-          data-en="Discover beverages you may have never tried, from Mexican producers to entirely new concepts.">
-          Descubre bebidas que quizá nunca hayas probado, desde productores mexicanos hasta nuevos conceptos.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="card-number">02</div>
-        <h3
-          data-es="Prueba"
-          data-en="Taste">
-          Prueba
-        </h3>
-        <p
-          data-es="Una experiencia de degustación diseñada para que probar algo diferente sea parte de la diversión."
-          data-en="A tasting experience designed to make trying something different part of the fun.">
-          Una experiencia de degustación diseñada para que probar algo diferente sea parte de la diversión.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="card-number">03</div>
-        <h3
-          data-es="Conecta"
-          data-en="Connect">
-          Conecta
-        </h3>
-        <p
-          data-es="Comparte la experiencia con amigos, productores y otros amantes de las bebidas."
-          data-en="Share the experience with friends, producers, and fellow beverage enthusiasts.">
-          Comparte la experiencia con amigos, productores y otros amantes de las bebidas.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- BEVERAGES -->
-
-<section class="beverages" id="bebidas">
-
-  <div class="container">
-
-    <div class="section-label"
-      data-es="Más que cerveza"
-      data-en="More Than Beer">
-      Más que cerveza
-    </div>
-
-    <h2
-      data-es="Bienvenido a todo México en un solo lugar."
-      data-en="Welcome to all of Mexico in one place.">
-      Bienvenido a todo México en un solo lugar.
-    </h2>
-
-    <p class="lead"
-      data-es="IBC está pensado para celebrar la diversidad de bebidas que México y el mundo pueden ofrecer."
-      data-en="IBC is designed to celebrate the diversity of beverages Mexico and the world have to offer.">
-      IBC está pensado para celebrar la diversidad de bebidas que México y el mundo pueden ofrecer.
-    </p>
-
-    <div class="beverage-list">
-
-      <div class="beverage">🍺 Cerveza</div>
-      <div class="beverage">🍷 Vino</div>
-      <div class="beverage">🥂 Hard Seltzer</div>
-      <div class="beverage">🍎 Cider</div>
-      <div class="beverage">🍹 Cocktails</div>
-      <div class="beverage">🌵 Agave</div>
-      <div class="beverage">☕ Café</div>
-      <div class="beverage">✨ Sin Alcohol</div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- PRODUCERS -->
-
-<section class="producers" id="productores">
-
-  <div class="container">
-
-    <div class="section-label"
-      data-es="Para productores"
-      data-en="For Producers">
-      Para productores
-    </div>
-
-    <h2
-      data-es="Queremos descubrir lo que estás creando."
-      data-en="We want to discover what you're creating.">
-      Queremos descubrir lo que estás creando.
-    </h2>
-
-    <div class="producer-box">
-
-      <p
-        data-es="IBC está construyendo relaciones con productores y proveedores de bebidas, equipos y tecnología. Si tienes un producto interesante, una nueva línea, una colaboración o algo que crees que debemos probar, queremos saber de ti."
-        data-en="IBC is building relationships with beverage producers and suppliers, equipment companies, and technology partners. If you have an interesting product, new release, collaboration, or something you think we should try, we want to hear from you.">
-        IBC está construyendo relaciones con productores y proveedores de bebidas, equipos y tecnología. Si tienes un producto interesante, una nueva línea, una colaboración o algo que crees que debemos probar, queremos saber de ti.
-      </p>
-
-      <a
-        class="button button-primary"
-        href="mailto:ibc.mzt@gmail.com"
-        data-es="Conectar con IBC"
-        data-en="Connect with IBC">
-        Conectar con IBC
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-  <div class="container">
-
-    <div class="section-label"
-      data-es="Mantente conectado"
-      data-en="Stay Connected">
-      Mantente conectado
-    </div>
-
-    <h2
-      data-es="Mazatlán, nos vemos pronto."
-      data-en="Mazatlán, see you soon.">
-      Mazatlán, nos vemos pronto.
-    </h2>
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-
-        <h3
-          data-es="Productores y proveedores"
-          data-en="Producers & Suppliers">
-          Productores y proveedores
-        </h3>
-
-        <p
-          data-es="Envíanos tu información, novedades, precios, muestras o simplemente dinos qué estás creando."
-          data-en="Send us your information, updates, pricing, samples, or simply tell us what you're creating.">
-          Envíanos tu información, novedades, precios, muestras o simplemente dinos qué estás creando.
-        </p>
-
-        <a class="contact-link" href="mailto:ibc.mzt@gmail.com">
-          ibc.mzt@gmail.com
-        </a>
-
-      </div>
-
-      <div class="contact-card">
-
-        <h3
-          data-es="Síguenos"
-          data-en="Follow Us">
-          Síguenos
-        </h3>
-
-        <p
-          data-es="Sigue el desarrollo de IBC Mazatlán y descubre lo que viene."
-          data-en="Follow the development of IBC Mazatlán and see what's coming.">
-          Sigue el desarrollo de IBC Mazatlán y descubre lo que viene.
-        </p>
-
-        <a
-          class="contact-link"
-          href="https://instagram.com/IBCMazatlan"
-          target="_blank">
-          @IBCMazatlan
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <div class="container footer-inner">
-
-    <div>
-      © 2026 Immersive Beverage Concepts
-    </div>
-
-    <div>
-      Mazatlán, Sinaloa, México
-    </div>
-
-  </div>
-
-</footer>
-
-<script>
-
-let currentLang = "es";
-
-function toggleLang(){
-
-  currentLang = currentLang === "es" ? "en" : "es";
-
-  document.documentElement.lang = currentLang;
-
-  document.querySelectorAll("[data-es]").forEach(function(el){
-
-    el.innerHTML = el.getAttribute("data-" + currentLang);
-
-  });
-
-  document.querySelector(".lang-btn").textContent =
-    currentLang === "es" ? "English" : "Español";
-
-  document.title =
-    currentLang === "es"
-      ? "IBC Mazatlán | Experiencia de Bebidas"
-      : "IBC Mazatlán | Beverage Discovery";
-
-}
-
-</script>
-
+<body class="bg-navy-dark text-offwhite font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- NAVIGATION HEADER WITH LOGO BADGE -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                
+                <!-- BRAND LOGO BADGE (Matching reference specifications) -->
+                <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-slate-50 p-1 shadow-lg transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
+                        <svg viewBox="0 0 500 500" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer Double Rings -->
+                            <circle cx="250" cy="250" r="238" fill="#F8FAFC" stroke="#0F2B3C" stroke-width="8"/>
+                            <circle cx="250" cy="250" r="226" fill="none" stroke="#0F2B3C" stroke-width="3"/>
+                            
+                            <!-- Side Notch Indicators -->
+                            <path d="M 12,250 L 38,250 M 462,250 L 488,250" stroke="#0F2B3C" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 38,235 L 38,265 M 462,235 L 462,265" stroke="#D4AF37" stroke-width="3"/>
+
+                            <!-- Bottom Ocean Waves (Dark Navy & Terracotta) -->
+                            <g>
+                                <!-- Navy Bottom Wave -->
+                                <path d="M 40,340 Q 150,430 250,380 T 460,340 C 420,430 350,470 250,470 C 150,470 80,430 40,340 Z" fill="#0F2B3C" />
+                                <!-- Secondary Navy Wave Cut -->
+                                <path d="M 45,330 Q 180,410 280,360 T 455,330 Q 360,450 250,450 Q 140,450 45,330 Z" fill="#183D54" opacity="0.8"/>
+                                <!-- Terracotta Accent Wave -->
+                                <path d="M 90,410 Q 200,475 290,430 T 410,410 C 370,465 310,480 250,480 C 190,480 130,465 90,410 Z" fill="#C2593F" />
+                            </g>
+
+                            <!-- Glencairn Glass Icon (Left side) -->
+                            <g transform="translate(70, 105) scale(0.72)">
+                                <!-- Glass Base -->
+                                <path d="M 50,300 C 50,310 110,310 110,300 L 100,285 C 90,280 70,280 60,285 Z" fill="#E2E8F0" stroke="#0F2B3C" stroke-width="4"/>
+                                <!-- Pedestal Base Fill -->
+                                <path d="M 60,285 L 100,285 L 95,260 L 65,260 Z" fill="#CBD5E1" stroke="#0F2B3C" stroke-width="4"/>
+                                <!-- Main Bowl Body -->
+                                <path d="M 65,260 C 20,220 20,130 50,80 C 58,65 65,40 65,20 L 95,20 C 95,40 102,65 110,80 C 140,130 140,220 95,260 Z" fill="none" stroke="#0F2B3C" stroke-width="5" stroke-linejoin="round"/>
+                                <!-- Amber Liquid Fill -->
+                                <path d="M 33,180 C 40,230 120,230 127,180 C 115,160 45,160 33,180 Z" fill="#C2593F" opacity="0.9"/>
+                                <path d="M 33,180 Q 80,205 127,180 Q 80,165 33,180 Z" fill="#D4AF37"/>
+                                <!-- Liquid Swirl Curve -->
+                                <path d="M 36,170 Q 80,140 120,168" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Glass Highlights -->
+                                <path d="M 45,70 C 35,110 35,180 50,220" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                                <circle cx="120" cy="150" r="3" fill="#FFFFFF"/>
+                                <circle cx="114" cy="138" r="2" fill="#FFFFFF"/>
+                            </g>
+
+                            <!-- Typography Group -->
+                            <!-- "Una" -->
+                            <text x="220" y="150" font-family="'Playfair Display', Georgia, serif" font-size="76" font-weight="700" fill="#0F2B3C">Una</text>
+                            
+                            <!-- "Más" -->
+                            <text x="218" y="240" font-family="'Playfair Display', Georgia, serif" font-size="82" font-weight="700" fill="#C2593F">Más</text>
+                            
+                            <!-- "by" with decorative side rules -->
+                            <line x1="218" y1="268" x2="260" y2="268" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="288" y="275" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="30" fill="#D4AF37" text-anchor="middle">by</text>
+                            <line x1="316" y1="268" x2="358" y2="268" stroke="#D4AF37" stroke-width="2"/>
+                            
+                            <!-- "IBC" -->
+                            <text x="288" y="325" font-family="'Inter', sans-serif" font-size="44" font-weight="800" letter-spacing="4" fill="#0F2B3C" text-anchor="middle">IBC</text>
+                            
+                            <!-- Gold Subtext Divider Line with Center Star -->
+                            <line x1="218" y1="336" x2="358" y2="336" stroke="#D4AF37" stroke-width="1.5"/>
+                            <polygon points="288,332 291,336 288,340 285,336" fill="#D4AF37"/>
+
+                            <!-- Subtext: "IMMERSIVE BEVERAGE CONCEPTS" -->
+                            <text x="288" y="352" font-family="'Inter', sans-serif" font-size="13" font-weight="600" letter-spacing="1.5" fill="#0F2B3C" text-anchor="middle">IMMERSIVE BEVERAGE CONCEPTS</text>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block text-left">
+                        <span class="block text-xl font-serif font-bold text-white tracking-tight">Uno Más</span>
+                        <span class="block text-xs font-sans tracking-widest text-gold uppercase">By IBC Mazatlán</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#concept" class="text-slate-300 hover:text-gold transition-colors">Concept</a>
+                    <a href="#tasting-wall" class="text-slate-300 hover:text-gold transition-colors">Tap Matrix</a>
+                    <a href="#incubator" class="text-slate-300 hover:text-gold transition-colors">Brand Incubator</a>
+                    <a href="#contact" class="text-slate-300 hover:text-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="#early-access" class="px-6 py-2.5 rounded-full bg-terracotta hover:bg-terracotta-hover text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-lg shadow-terracotta/20">
+                        Get Early Access
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-dark/95 border-b border-gold/20 px-4 pt-2 pb-6 space-y-4">
+            <a href="#concept" class="mobile-link block text-base font-medium text-slate-200 hover:text-gold py-2">Concept</a>
+            <a href="#tasting-wall" class="mobile-link block text-base font-medium text-slate-200 hover:text-gold py-2">Tap Matrix</a>
+            <a href="#incubator" class="mobile-link block text-base font-medium text-slate-200 hover:text-gold py-2">Brand Incubator</a>
+            <a href="#contact" class="mobile-link block text-base font-medium text-slate-200 hover:text-gold py-2">Contact</a>
+            <div class="pt-2">
+                <a href="#early-access" class="mobile-link text-center block w-full py-3 rounded-xl bg-terracotta text-white font-semibold text-sm">
+                    Get Early Access
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center hero-glow overflow-hidden">
+            <!-- Background Accent Pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(#183D54_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
+            
+            <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center z-10">
+                
+                <!-- Status Teaser Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/80 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-widest mb-8 shadow-xl">
+                    <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+                    Coming Soon to Mazatlán | Location TBA
+                </div>
+
+                <!-- Main Headline & Motto -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white tracking-tight leading-tight mb-6">
+                    Come thirsty. <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-terracotta via-gold to-amber-200">
+                        Leave curious.
+                    </span>
+                </h1>
+
+                <!-- Concept Introduction -->
+                <p class="max-w-2xl mx-auto text-slate-300 text-lg sm:text-xl font-light leading-relaxed mb-10">
+                    Mazatlán’s upcoming self-serve flavor laboratory and brand incubator. An interactive tasting studio bringing small-batch craft beer, fermented drinks, and artisanal taps directly to your glass.
+                </p>
+
+                <!-- Hero CTAs -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#early-access" class="w-full sm:w-auto px-8 py-4 rounded-full bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm uppercase tracking-wider transition-all shadow-xl shadow-terracotta/25 flex items-center justify-center gap-3 group">
+                        <span>Join Opening Guest List</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="#concept" class="w-full sm:w-auto px-8 py-4 rounded-full glass-card hover:bg-navy-light text-slate-200 border border-slate-700 hover:border-gold/50 font-semibold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-flask text-gold"></i>
+                        <span>Explore Concept</span>
+                    </a>
+                </div>
+
+                <!-- Feature Highlights -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="p-4 rounded-2xl glass-card text-center">
+                        <span class="block text-2xl font-serif font-bold text-gold">Self-Pour</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Pay By Ounce</span>
+                    </div>
+                    <div class="p-4 rounded-2xl glass-card text-center">
+                        <span class="block text-2xl font-serif font-bold text-terracotta">Precision</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Temp & Foam Control</span>
+                    </div>
+                    <div class="p-4 rounded-2xl glass-card text-center">
+                        <span class="block text-2xl font-serif font-bold text-gold">Incubator</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">Small-Batch Lab</span>
+                    </div>
+                    <div class="p-4 rounded-2xl glass-card text-center">
+                        <span class="block text-2xl font-serif font-bold text-terracotta">Cashless</span>
+                        <span class="text-xs text-slate-400 uppercase tracking-wider">RFID Tech</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONCEPT & OVERVIEW -->
+        <section id="concept" class="py-24 bg-navy relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-xs font-semibold text-gold uppercase tracking-widest mb-3">The Concept</h2>
+                    <p class="text-3xl sm:text-5xl font-serif font-bold text-white mb-6">A New Way to Experience Craft Beverages</p>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Created by <strong>Immersive Beverage Concepts (IBC)</strong>, Uno Más bridges the gap between craft culture and self-guided tasting technology. Explore small-batch brews at your own pace without waiting for a server.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-3xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-terracotta/20 text-terracotta flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Total Pour Freedom</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Taste an ounce or pour a full glass. Discover your personal preferences through sample-sized exploration across diverse beverage styles.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-gold/20 text-gold flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Seamless Cashless Tech</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Check in, receive your RFID tasting pass, and unlock draft lines effortlessly. Your tab tracks precisely what you pour down to the milliliter.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mx-auto mb-6">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Interactive Tasting Wall</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Digital screens displaying ABV, flavor profiles, brewer notes, and real-time tap levels right above every single faucet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAP MATRIX SECTION -->
+        <section id="tasting-wall" class="py-24 bg-navy-dark relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-semibold text-gold uppercase tracking-widest mb-3">Self-Serve Lineup</h2>
+                    <p class="text-3xl sm:text-5xl font-serif font-bold text-white mb-6">The Draft Tap Matrix</p>
+                    <p class="text-slate-300 text-base">
+                        A curated selection calibrated for proper head presentation and serving temperatures across multiple liquid categories.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Craft Beer -->
+                    <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta/20 text-terracotta flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-beer-mug-empty"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Craft Lager & Ale</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            From clean Bavarian-style helles and Kellerbiers to bold IPAs and Belgian monk ales. Feature selections alongside local Mexican microbreweries.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Classic European Benchmark Lagers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Trappist Ales & Rauchbiers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Local Small-Batch IPAs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hard Seltzers & Ferments -->
+                    <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-wine-bottle"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Seltzers & Ferments</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Crisp hard seltzers infused with local fruit profiles, fermented kombuchas, botanical elixirs, and sparkling ciders.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Natural Fruit Botanical Seltzers</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Fermented Tepache & Kombuchas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Low-ABV Refreshers</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cold Brew & Nitro -->
+                    <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-temperature-arrow-down"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Nitro & Cold Drafts</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Creamy nitrogen-infused dark brews, experimental stouts, artisanal cold brew coffee, and sparkling infused teas.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Velvet Nitro Pour Stouts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Cold Brew Draft Taps</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold"></i> Barrel-Aged Single Batches</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND INCUBATOR SECTION -->
+        <section id="incubator" class="py-24 bg-navy relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Left Column -->
+                    <div>
+                        <span class="text-xs font-semibold text-terracotta uppercase tracking-widest block mb-3">For Independent Producers</span>
+                        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight mb-6">
+                            A Testing Ground for Beverage Creators
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed mb-6">
+                            Uno Más operates as a brand incubator for craft breweries, spirit makers, and beverage innovators. Test new recipes, measure pour data in real time, and gather direct guest feedback before commercial scaling.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-chart-pie text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Pour-Data & Consumer Feedback</h4>
+                                    <p class="text-slate-400 text-xs mt-1">Track pour velocity, volume per session, and real-time consumer ratings.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-flask text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Limited-Run Test Batches</h4>
+                                    <p class="text-slate-400 text-xs mt-1">Feature small-batch recipes on rotating taps for immediate market validation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border border-gold/30 bg-navy-dark flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">Director of Beverage Innovation</p>
+                                <p class="text-sm font-semibold text-white mt-0.5">Michael Burmil</p>
+                            </div>
+                            <a href="#contact" class="text-xs text-gold hover:underline font-semibold flex items-center gap-1">
+                                Producer Inquiries <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Incubator Graphic Card -->
+                    <div class="relative">
+                        <div class="glass-card rounded-3xl p-8 sm:p-10 border border-gold/20 relative z-10 gold-border-glow">
+                            <div class="flex items-center justify-between border-b border-slate-700/60 pb-6 mb-6">
+                                <div>
+                                    <span class="text-xs text-gold uppercase tracking-wider font-semibold">Incubator Model</span>
+                                    <h3 class="text-xl font-serif font-bold text-white mt-1">Recipe Validation Engine</h3>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-terracotta/20 text-terracotta text-xs font-bold uppercase">Active Lab</span>
+                            </div>
+
+                            <div class="space-y-6 text-sm text-slate-300">
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-navy/60 border border-slate-800">
+                                    <span class="font-medium">1. Small-Batch Tap Placement</span>
+                                    <span class="text-gold font-semibold">Tap Matrix</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-navy/60 border border-slate-800">
+                                    <span class="font-medium">2. Guest Sampling & Ratings</span>
+                                    <span class="text-gold font-semibold">Live Metrics</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-navy/60 border border-slate-800">
+                                    <span class="font-medium">3. Commercial Feedback Report</span>
+                                    <span class="text-gold font-semibold">Scale Strategy</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-slate-700/60 text-center">
+                                <p class="text-xs text-slate-400 italic">
+                                    "Accelerating beverage innovation through direct consumer tasting."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-terracotta/20 to-gold/20 blur-xl z-0 opacity-60"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EARLY ACCESS / VIP SIGNUP SECTION -->
+        <section id="early-access" class="py-24 bg-navy-dark relative border-t border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                
+                <div class="w-16 h-16 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mx-auto mb-6">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white mb-4">
+                    Be First to Know When We Open
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10">
+                    We are finalizing our Mazatlán location. Sign up to receive exclusive invitations to our private launch tastings, location reveal, and early guest wristband credits.
+                </p>
+
+                <form onsubmit="event.preventDefault(); document.getElementById('signup-success').classList.remove('hidden'); this.reset();" class="max-w-xl mx-auto space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" required placeholder="Enter your email address" class="w-full px-5 py-4 rounded-full bg-navy border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold">
+                        <button type="submit" class="px-8 py-4 rounded-full bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-xs uppercase tracking-wider transition-all flex-shrink-0 shadow-lg shadow-terracotta/20">
+                            Request Invite
+                        </button>
+                    </div>
+                    <p class="text-xs text-slate-500">We respect your privacy. No spam, only launch announcements.</p>
+                </form>
+
+                <div id="signup-success" class="hidden mt-6 p-4 rounded-2xl bg-gold/10 border border-gold/30 text-gold text-sm font-medium">
+                    <i class="fa-solid fa-circle-check mr-2"></i> You're on the list! We will notify you as soon as the Mazatlán location is officially revealed.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-navy border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div>
+                        <span class="text-xs font-semibold text-gold uppercase tracking-widest block mb-3">Get In Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
+                            Connect With Immersive Beverage Concepts
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed mb-8">
+                            Whether you are a craft brewer looking to join our incubator, a vendor interested in partnership, or a craft enthusiast with questions, we’d love to hear from you.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-2xl glass-card flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase font-semibold">Email</p>
+                                    <p class="text-white text-sm font-medium">ibc.mzt@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl glass-card flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-terracotta/20 text-terracotta flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase font-semibold">Direct / WhatsApp</p>
+                                    <p class="text-white text-sm font-medium">+52 669-332-2789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Message Form -->
+                    <div class="glass-card p-8 rounded-3xl border border-slate-700/60">
+                        <h3 class="text-xl font-serif font-bold text-white mb-2">Send a Direct Message</h3>
+                        <p class="text-slate-400 text-xs mb-6">Drop us a line and team IBC will respond within 24 hours.</p>
+
+                        <form onsubmit="event.preventDefault(); alert('Message sent! We will reach out shortly.'); this.reset();" class="space-y-4">
+                            <div>
+                                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Your Name</label>
+                                <input type="text" required placeholder="Name" class="w-full px-4 py-3 rounded-xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Email Address</label>
+                                <input type="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-semibold text-slate-300 mb-1">Message</label>
+                                <textarea rows="3" required placeholder="How can we help you?" class="w-full px-4 py-3 rounded-xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-lg shadow-terracotta/20">
+                                Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-dark py-12 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <span class="text-lg font-serif font-bold text-white">Uno Más</span>
+                    <span class="text-xs text-gold">by Immersive Beverage Concepts</span>
+                </div>
+
+                <p class="text-xs text-slate-500 text-center">
+                    &copy; 2026 Immersive Beverage Concepts (IBC). All rights reserved. Mazatlán, Sinaloa, México.
+                </p>
+
+                <div class="flex items-center space-x-5 text-slate-400">
+                    <a href="https://ibcmazatlan.com" target="_blank" class="hover:text-gold text-sm transition-colors" title="IBC Website"><i class="fa-solid fa-globe"></i></a>
+                    <a href="https://www.instagram.com/ibcmazatlan" target="_blank" class="hover:text-gold text-sm transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/526693322789" target="_blank" class="hover:text-gold text-sm transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
