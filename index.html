@@ -1,5 +1,5 @@
-My apologies! Here is the complete, updated HTML code for your landing page. It features your larger circular logo badge, Spanish set as the default language with a working ES | EN toggle in the header, the self-pour tap wall hero aesthetic, and refined typography across all sections (El Concepto, Tap Matrix, Brand Incubator, and Contacto).
-You can copy the code below directly into your GitHub repository's index.html file:
+Here is the complete, final HTML code for your landing page with the exact SelfPour.png hero image integrated right at the top, followed by your headline, the "Próximamente en Mazatlán" badge, the Spanish-first layout, and the live English toggle.
+You can copy and paste this directly into your GitHub repository's index.html file:
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -111,15 +111,16 @@ You can copy the code below directly into your GitHub repository's index.html fi
         </div>
     </header>
 
-    <!-- Hero Section with Self-Pour Tap Wall Aesthetic -->
-    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
-        <!-- Atmospheric Background Overlay -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy-dark/90 z-10"></div>
-            <!-- High-end architectural tap wall moody photographic background -->
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30 scale-105 transform"></div>
+    <!-- Hero Section featuring SelfPour.png -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+        
+        <!-- Hero Image Container (SelfPour.png prominently displayed at the top) -->
+        <div class="relative w-full max-w-5xl mx-auto mb-12 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60 z-10"></div>
+            <img src="./SelfPour.png" alt="Uno Más Self-Pour Wall Hero" class="w-full h-[350px] md:h-[500px] object-cover object-center transform hover:scale-105 transition-transform duration-700">
         </div>
 
+        <!-- Headline & Content Positioned Below the Hero Image -->
         <div class="relative z-10 max-w-5xl mx-auto text-center">
             <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-terracotta/20 border border-terracotta/40 text-terracotta-light text-xs uppercase tracking-[0.25em] font-semibold mb-8 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
