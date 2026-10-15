@@ -1,834 +1,340 @@
+My apologies! Here is the complete, updated HTML code for your landing page. It features your larger circular logo badge, Spanish set as the default language with a working ES | EN toggle in the header, the self-pour tap wall hero aesthetic, and refined typography across all sections (El Concepto, Tap Matrix, Brand Incubator, and Contacto).
+You can copy the code below directly into your GitHub repository's index.html file:
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uno Más by IBC | Laboratorio de Sabores y Catas | Mazatlán</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cormorant Garamond for luxury serif editorial typography & Plus Jakarta Sans for UI -->
+    <title>Uno Más | Immersive Beverage Concepts</title>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome 6 for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         navy: {
-                            DEFAULT: '#0B1D28',
-                            dark: '#061118',
-                            card: 'rgba(15, 38, 54, 0.75)',
-                            light: '#143144'
+                            DEFAULT: '#0F2B3C',
+                            dark: '#081721',
+                            light: '#1A455E'
                         },
                         terracotta: {
                             DEFAULT: '#C2593F',
-                            hover: '#A84830',
-                            glow: 'rgba(194, 89, 63, 0.35)'
+                            light: '#D9735A',
+                            dark: '#A3422A'
                         },
                         gold: {
                             DEFAULT: '#D4AF37',
-                            light: '#F5E6AB',
-                            dark: '#AA8822',
-                            glow: 'rgba(212, 175, 55, 0.25)'
+                            light: '#E6C657',
+                            dark: '#B08D22'
                         },
-                        offwhite: '#F4F6F8'
+                        cream: '#F9F8F6'
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif']
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* High-End Glassmorphism & Visual Aesthetics */
-        .glass-nav {
-            background: rgba(6, 17, 24, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0F2B3C;
+            color: #F9F8F6;
         }
-        .glass-card {
-            background: rgba(15, 38, 54, 0.65);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
-            transform: translateY(-4px);
-        }
-        .hero-overlay {
-            background: linear-gradient(180deg, rgba(6,17,24,0.7) 0%, rgba(6,17,24,0.85) 60%, rgba(6,17,24,1) 100%);
-        }
-        .gold-text-gradient {
-            background: linear-gradient(135deg, #FFF 0%, #F5E6AB 50%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .terracotta-text-gradient {
-            background: linear-gradient(135deg, #E67E65 0%, #C2593F 60%, #94331C 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-border-glow {
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #061118;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #143144;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
+        h1, h2, h3, h4, .font-serif-custom {
+            font-family: 'Cormorant Garamond', serif;
         }
     </style>
 </head>
-<body class="bg-navy-dark text-offwhite font-sans antialiased selection:bg-terracotta selection:text-white">
+<body class="bg-navy text-cream antialiased selection:bg-terracotta selection:text-white">
 
-    <!-- NAVIGATION HEADER WITH PROMINENT LOGO & LANGUAGE TOGGLE -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24 sm:h-28">
-                
-                <!-- PROMINENT LARGE BRAND LOGO BADGE (Replicating exact SVG specifications) -->
-                <a href="#hero" class="flex items-center gap-4 group focus:outline-none">
-                    <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-slate-50 p-1.5 shadow-2xl transition-transform duration-300 group-hover:scale-105 flex-shrink-0 border-2 border-gold/40">
-                        <svg viewBox="0 0 500 500" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Outer Double Rings -->
-                            <circle cx="250" cy="250" r="238" fill="#F8FAFC" stroke="#0F2B3C" stroke-width="8"/>
-                            <circle cx="250" cy="250" r="226" fill="none" stroke="#0F2B3C" stroke-width="3"/>
-                            
-                            <!-- Side Notch Indicators -->
-                            <path d="M 12,250 L 38,250 M 462,250 L 488,250" stroke="#0F2B3C" stroke-width="4" stroke-linecap="round"/>
-                            <path d="M 38,235 L 38,265 M 462,235 L 462,265" stroke="#D4AF37" stroke-width="3"/>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-navy-light/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="w-20 h-20 rounded-full bg-cream p-1 shadow-xl flex items-center justify-center border-2 border-gold/60 group-hover:border-gold transition-all duration-300">
+                    <!-- Circular Vector Logo -->
+                    <svg viewBox="0 0 400 400" class="w-full h-full rounded-full overflow-hidden" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="190" fill="#F9F8F6" stroke="#0F2B3C" stroke-width="6"/>
+                        <circle cx="200" cy="200" r="175" fill="none" stroke="#0F2B3C" stroke-width="2"/>
+                        <!-- Side notch indicators -->
+                        <path d="M 10 190 L 30 190 M 10 210 L 30 210 M 370 190 L 390 190 M 370 210 L 390 210" stroke="#0F2B3C" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Glencairn glass -->
+                        <path d="M 90 95 C 100 135 105 170 115 210 C 120 230 130 240 145 240 L 175 240 C 190 240 200 230 205 210 C 215 170 220 135 230 95 Z" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="5"/>
+                        <ellipse cx="160" cy="95" rx="70" ry="12" fill="#F5F3EF" stroke="#0F2B3C" stroke-width="4"/>
+                        <rect x="135" y="240" width="50" height="25" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="4"/>
+                        <ellipse cx="160" cy="265" rx="45" ry="10" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="4"/>
+                        <!-- Amber liquid -->
+                        <path d="M 108 175 C 125 185 145 165 170 180 C 195 195 204 185 212 175 C 218 215 200 235 175 235 L 145 235 C 125 235 110 215 108 175 Z" fill="#C2593F" opacity="0.9"/>
+                        <!-- Waves at bottom -->
+                        <path d="M 50 330 Q 120 305 200 330 T 350 330 L 370 380 Q 200 380 30 380 Z" fill="#0F2B3C"/>
+                        <path d="M 30 345 Q 110 320 215 350 T 380 340 L 370 380 Q 200 380 30 380 Z" fill="#C2593F"/>
+                        <!-- Typography -->
+                        <text x="290" y="115" font-family="'Cormorant Garamond', serif" font-size="62" font-weight="700" fill="#0F2B3C" text-anchor="middle">Una</text>
+                        <text x="290" y="175" font-family="'Cormorant Garamond', serif" font-size="64" font-weight="600" fill="#C2593F" text-anchor="middle">Más</text>
+                        <line x1="235" y1="200" x2="345" y2="200" stroke="#D4AF37" stroke-width="2"/>
+                        <text x="290" y="215" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="500" fill="#D4AF37" letter-spacing="4" text-anchor="middle">by</text>
+                        <line x1="235" y1="230" x2="345" y2="230" stroke="#D4AF37" stroke-width="2"/>
+                        <text x="290" y="280" font-family="'Cormorant Garamond', serif" font-size="52" font-weight="700" fill="#0F2B3C" letter-spacing="3" text-anchor="middle">IBC</text>
+                        <text x="290" y="302" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#0F2B3C" letter-spacing="2" text-anchor="middle">IMMERSIVE BEVERAGE CONCEPTS</text>
+                    </svg>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="text-2xl font-serif tracking-wide font-bold block text-cream">Uno Más</span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-gold font-medium">Immersive Beverage Concepts</span>
+                </div>
+            </a>
 
-                            <!-- Bottom Ocean Waves (Dark Navy & Terracotta) -->
-                            <g>
-                                <path d="M 40,340 Q 150,430 250,380 T 460,340 C 420,430 350,470 250,470 C 150,470 80,430 40,340 Z" fill="#0F2B3C" />
-                                <path d="M 45,330 Q 180,410 280,360 T 455,330 Q 360,450 250,450 Q 140,450 45,330 Z" fill="#183D54" opacity="0.85"/>
-                                <path d="M 90,410 Q 200,475 290,430 T 410,410 C 370,465 310,480 250,480 C 190,480 130,465 90,410 Z" fill="#C2593F" />
-                            </g>
-
-                            <!-- Glencairn Glass Icon (Left side) -->
-                            <g transform="translate(70, 105) scale(0.72)">
-                                <path d="M 50,300 C 50,310 110,310 110,300 L 100,285 C 90,280 70,280 60,285 Z" fill="#E2E8F0" stroke="#0F2B3C" stroke-width="4"/>
-                                <path d="M 60,285 L 100,285 L 95,260 L 65,260 Z" fill="#CBD5E1" stroke="#0F2B3C" stroke-width="4"/>
-                                <path d="M 65,260 C 20,220 20,130 50,80 C 58,65 65,40 65,20 L 95,20 C 95,40 102,65 110,80 C 140,130 140,220 95,260 Z" fill="none" stroke="#0F2B3C" stroke-width="5" stroke-linejoin="round"/>
-                                <path d="M 33,180 C 40,230 120,230 127,180 C 115,160 45,160 33,180 Z" fill="#C2593F" opacity="0.9"/>
-                                <path d="M 33,180 Q 80,205 127,180 Q 80,165 33,180 Z" fill="#D4AF37"/>
-                                <path d="M 36,170 Q 80,140 120,168" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-                                <path d="M 45,70 C 35,110 35,180 50,220" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-                                <circle cx="120" cy="150" r="3" fill="#FFFFFF"/>
-                                <circle cx="114" cy="138" r="2" fill="#FFFFFF"/>
-                            </g>
-
-                            <!-- Typography Group -->
-                            <text x="220" y="150" font-family="'Cormorant Garamond', Georgia, serif" font-size="78" font-weight="700" fill="#0F2B3C">Una</text>
-                            <text x="218" y="240" font-family="'Cormorant Garamond', Georgia, serif" font-size="84" font-weight="700" fill="#C2593F">Más</text>
-                            
-                            <line x1="218" y1="268" x2="260" y2="268" stroke="#D4AF37" stroke-width="2"/>
-                            <text x="288" y="275" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="32" fill="#D4AF37" text-anchor="middle">by</text>
-                            <line x1="316" y1="268" x2="358" y2="268" stroke="#D4AF37" stroke-width="2"/>
-                            
-                            <text x="288" y="325" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800" letter-spacing="4" fill="#0F2B3C" text-anchor="middle">IBC</text>
-                            
-                            <line x1="218" y1="336" x2="358" y2="336" stroke="#D4AF37" stroke-width="1.5"/>
-                            <polygon points="288,332 291,336 288,340 285,336" fill="#D4AF37"/>
-
-                            <text x="288" y="352" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#0F2B3C" text-anchor="middle">IMMERSIVE BEVERAGE CONCEPTS</text>
-                        </svg>
-                    </div>
-                    <div class="hidden sm:block text-left">
-                        <span class="block text-2xl font-serif font-bold tracking-tight text-white leading-none">Uno Más</span>
-                        <span class="block text-xs font-sans font-semibold tracking-widest text-gold uppercase mt-1">by IBC Mazatlán</span>
-                    </div>
-                </a>
-
-                <!-- Navigation Links (Larger, High Contrast) -->
-                <nav class="hidden md:flex items-center space-x-10 text-base font-medium">
-                    <a href="#concept" data-i18n="nav_concept" class="text-slate-200 hover:text-gold transition-colors">El Concepto</a>
-                    <a href="#tasting-wall" data-i18n="nav_taps" class="text-slate-200 hover:text-gold transition-colors">Matriz de Grifos</a>
-                    <a href="#incubator" data-i18n="nav_incubator" class="text-slate-200 hover:text-gold transition-colors">Incubadora</a>
-                    <a href="#contact" data-i18n="nav_contact" class="text-slate-200 hover:text-gold transition-colors">Contacto</a>
+            <!-- Navigation Links & Controls -->
+            <div class="flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                    <a href="#concepto" class="hover:text-gold transition-colors" data-es="El Concepto" data-en="The Concept">El Concepto</a>
+                    <a href="#matrix" class="hover:text-gold transition-colors" data-es="Tap Matrix" data-en="Tap Matrix">Tap Matrix</a>
+                    <a href="#incubator" class="hover:text-gold transition-colors" data-es="Brand Incubator" data-en="Brand Incubator">Brand Incubator</a>
+                    <a href="#contacto" class="hover:text-gold transition-colors" data-es="Contacto" data-en="Contact">Contacto</a>
                 </nav>
 
-                <!-- Actions: Language Toggle & VIP CTA -->
-                <div class="flex items-center space-x-5">
-                    
-                    <!-- Language Switcher Switch -->
-                    <div class="relative inline-flex items-center p-1 rounded-full bg-navy-light/80 border border-gold/30">
-                        <button id="lang-es" onclick="switchLanguage('es')" class="px-3 py-1 rounded-full text-xs font-bold transition-all bg-terracotta text-white shadow-md">
-                            ES
-                        </button>
-                        <button id="lang-en" onclick="switchLanguage('en')" class="px-3 py-1 rounded-full text-xs font-bold transition-all text-slate-300 hover:text-white">
-                            EN
-                        </button>
-                    </div>
-
-                    <!-- CTA Button -->
-                    <a href="#early-access" data-i18n="cta_vip" class="hidden lg:inline-flex px-7 py-3 rounded-full bg-gradient-to-r from-terracotta to-amber-700 hover:from-terracotta-hover hover:to-amber-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-terracotta/30 border border-terracotta/50">
-                        Acceso VIP
-                    </a>
-
-                    <!-- Mobile Drawer Toggle Button -->
-                    <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-200 hover:text-gold focus:outline-none p-2 text-2xl">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-dark/98 border-b border-gold/30 px-6 pt-4 pb-8 space-y-5">
-            <a href="#concept" data-i18n="nav_concept" class="mobile-link block text-lg font-medium text-slate-100 hover:text-gold py-1">El Concepto</a>
-            <a href="#tasting-wall" data-i18n="nav_taps" class="mobile-link block text-lg font-medium text-slate-100 hover:text-gold py-1">Matriz de Grifos</a>
-            <a href="#incubator" data-i18n="nav_incubator" class="mobile-link block text-lg font-medium text-slate-100 hover:text-gold py-1">Incubadora</a>
-            <a href="#contact" data-i18n="nav_contact" class="mobile-link block text-lg font-medium text-slate-100 hover:text-gold py-1">Contacto</a>
-            <div class="pt-2">
-                <a href="#early-access" data-i18n="cta_vip" class="mobile-link text-center block w-full py-4 rounded-full bg-terracotta text-white font-bold text-sm tracking-wider uppercase">
-                    Acceso VIP
-                </a>
+                <!-- Language Toggle Button -->
+                <button id="langToggle" onclick="toggleLanguage()" class="px-4 py-2 rounded-full border border-gold/40 hover:border-gold bg-navy-light/50 text-gold text-xs font-semibold tracking-widest transition-all shadow-sm">
+                    EN
+                </button>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- RICH ATMOSPHERIC HERO SECTION WITH HERO BACKGROUND -->
-        <section id="hero" class="relative min-h-screen pt-40 pb-28 flex items-center justify-center overflow-hidden">
-            
-            <!-- Dark Atmospheric Beverage Background Image with Gradient Overlay -->
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2000&q=85" alt="Craft Beverage Tasting Studio" class="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-125">
-                <div class="absolute inset-0 hero-overlay"></div>
-                <!-- Ambient Glow Accents -->
-                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-terracotta/20 rounded-full blur-[140px] pointer-events-none"></div>
-                <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-gold/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- Hero Section with Self-Pour Tap Wall Aesthetic -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
+        <!-- Atmospheric Background Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy-dark/90 z-10"></div>
+            <!-- High-end architectural tap wall moody photographic background -->
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30 scale-105 transform"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-terracotta/20 border border-terracotta/40 text-terracotta-light text-xs uppercase tracking-[0.25em] font-semibold mb-8 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+                <span data-es="Próximamente en Mazatlán • Ubicación por Anunciar" data-en="Coming Soon to Mazatlán • Location TBA">Próximamente en Mazatlán • Ubicación por Anunciar</span>
             </div>
 
-            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-                
-                <!-- Teaser Status Pill -->
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-navy-card border border-gold/40 text-gold text-xs sm:text-sm font-semibold uppercase tracking-widest mb-10 shadow-2xl backdrop-blur-md">
-                    <span class="w-2.5 h-2.5 rounded-full bg-terracotta animate-ping"></span>
-                    <span data-i18n="hero_badge">Próximamente en Mazatlán | Ubicación por Anunciar</span>
-                </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-cream tracking-tight mb-8 leading-[1.1]">
+                <span data-es="Come thirsty.<br><span class='italic text-gold font-normal'>Leave curious.</span>" data-en="Come thirsty.<br><span class='italic text-gold font-normal'>Leave curious.</span>">Come thirsty.<br><span class="italic text-gold font-normal">Leave curious.</span></span>
+            </h1>
 
-                <!-- Main Editorial Headline -->
-                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-bold tracking-tight text-white leading-[1.08] mb-8 drop-shadow-md">
-                    <span data-i18n="hero_title_1">El Lab de Sabores</span> <br/>
-                    <span data-i18n="hero_title_2" class="gold-text-gradient">y Catas del Futuro</span>
-                </h1>
+            <p class="text-lg md:text-2xl text-cream/80 max-w-3xl mx-auto font-light leading-relaxed mb-12" data-es="Un laboratorio experimental de sabores y estudio de degustación automatizado. Descubre la siguiente ola de bebidas artesanales a través de una experiencia sensorial sin precedentes." data-en="An experimental flavor laboratory and automated tasting studio. Discover the next wave of craft beverages through an unprecedented sensory experience.">
+                Un laboratorio experimental de sabores y estudio de degustación automatizado. Descubre la siguiente ola de bebidas artesanales a través de una experiencia sensorial sin precedentes.
+            </p>
 
-                <!-- Subtitle Narrative -->
-                <p data-i18n="hero_subtitle" class="max-w-3xl mx-auto text-slate-200 text-xl sm:text-2xl font-light leading-relaxed mb-12 drop-shadow">
-                    Una experiencia interactiva de autoservicio para los amantes del sabor artesanal. Cervezas de especialidad, bebidas fermentadas y creaciones únicas servidas por pulgada.
-                </p>
-
-                <!-- High Impact Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-xl mx-auto">
-                    <a href="#early-access" class="w-full sm:w-auto px-10 py-5 rounded-full bg-gradient-to-r from-terracotta via-amber-600 to-terracotta hover:opacity-95 text-white font-bold text-sm uppercase tracking-widest transition-all shadow-2xl shadow-terracotta/40 flex items-center justify-center gap-3 group border border-terracotta/40">
-                        <span data-i18n="hero_cta_primary">Obtener Acceso VIP</span>
-                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1.5"></i>
-                    </a>
-                    <a href="#concept" class="w-full sm:w-auto px-10 py-5 rounded-full glass-card hover:bg-navy-light/80 text-white border border-gold/40 font-bold text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-flask text-gold"></i>
-                        <span data-i18n="hero_cta_secondary">Explorar Concepto</span>
-                    </a>
-                </div>
-
-                <!-- Feature Metric Cards -->
-                <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-                    <div class="p-6 rounded-3xl glass-card text-center">
-                        <span data-i18n="metric_1_val" class="block text-3xl sm:text-4xl font-serif font-bold text-gold mb-1">Autoservicio</span>
-                        <span data-i18n="metric_1_lbl" class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Pago por Onza</span>
-                    </div>
-                    <div class="p-6 rounded-3xl glass-card text-center">
-                        <span data-i18n="metric_2_val" class="block text-3xl sm:text-4xl font-serif font-bold text-terracotta mb-1">Precisión</span>
-                        <span data-i18n="metric_2_lbl" class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Térmica y Espuma</span>
-                    </div>
-                    <div class="p-6 rounded-3xl glass-card text-center">
-                        <span data-i18n="metric_3_val" class="block text-3xl sm:text-4xl font-serif font-bold text-gold mb-1">Incubadora</span>
-                        <span data-i18n="metric_3_lbl" class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Lotes Exclusivos</span>
-                    </div>
-                    <div class="p-6 rounded-3xl glass-card text-center">
-                        <span data-i18n="metric_4_val" class="block text-3xl sm:text-4xl font-serif font-bold text-terracotta mb-1">Tecnología</span>
-                        <span data-i18n="metric_4_lbl" class="text-xs font-semibold text-slate-300 uppercase tracking-widest">Acceso RFID Sin Efectivo</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CONCEPT & VISION SECTION -->
-        <section id="concept" class="py-32 bg-navy relative border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="max-w-4xl mx-auto text-center mb-20">
-                    <h2 data-i18n="concept_tag" class="text-xs font-bold text-gold uppercase tracking-widest mb-4">Nuestra Visión</h2>
-                    <p data-i18n="concept_title" class="text-4xl sm:text-6xl font-serif font-bold text-white mb-8">Redefiniendo la Cultura de la Bebida</p>
-                    <p data-i18n="concept_desc" class="text-slate-300 text-lg sm:text-xl leading-relaxed font-light">
-                        Diseñado por <strong>Immersive Beverage Concepts (IBC)</strong>, Uno Más es un laboratorio experimental donde la alta coctelería, la cerveza artesanal de referencia mundial y el diseño interactivo convergen bajo la premisa: <em>"Llega con sed, vete con curiosidad."</em>
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <div class="glass-card p-10 rounded-3xl text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-terracotta/20 text-terracotta flex items-center justify-center text-3xl mx-auto mb-8 border border-terracotta/30">
-                            <i class="fa-solid fa-beer-mug-empty"></i>
-                        </div>
-                        <h3 data-i18n="card1_title" class="text-2xl font-serif font-bold text-white mb-4">Libertad de Cata</h3>
-                        <p data-i18n="card1_desc" class="text-slate-300 text-base leading-relaxed">
-                            Sirve desde un sorbo hasta una copa completa. Explora estilos raros e innovadores a tu propio ritmo sin depender de un servicio tradicional.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-10 rounded-3xl text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-gold/20 text-gold flex items-center justify-center text-3xl mx-auto mb-8 border border-gold/30">
-                            <i class="fa-solid fa-wifi"></i>
-                        </div>
-                        <h3 data-i18n="card2_title" class="text-2xl font-serif font-bold text-white mb-4">Experiencia Digital</h3>
-                        <p data-i18n="card2_desc" class="text-slate-300 text-base leading-relaxed">
-                            Check-in rápido, pulseras inteligentes RFID y monitoreo en tiempo real de tu consumo para una experiencia fluida y sin interrupciones.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-10 rounded-3xl text-center">
-                        <div class="w-16 h-16 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-3xl mx-auto mb-8 border border-amber-500/30">
-                            <i class="fa-solid fa-flask-vial"></i>
-                        </div>
-                        <h3 data-i18n="card3_title" class="text-2xl font-serif font-bold text-white mb-4">Pared de Grifos Interactiva</h3>
-                        <p data-i18n="card3_desc" class="text-slate-300 text-base leading-relaxed">
-                            Pantallas digitales con perfiles de sabor, gradación alcohólica, origen de los ingredientes y recomendaciones del sommelier.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- TAP MATRIX / SELECTIONS SECTION -->
-        <section id="tasting-wall" class="py-32 bg-navy-dark relative border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-4xl mx-auto mb-20">
-                    <h2 data-i18n="taps_tag" class="text-xs font-bold text-gold uppercase tracking-widest mb-4">Catálogo de Autoservicio</h2>
-                    <p data-i18n="taps_title" class="text-4xl sm:text-6xl font-serif font-bold text-white mb-8">La Matriz de Grifos</p>
-                    <p data-i18n="taps_desc" class="text-slate-300 text-lg">
-                        Selecciones calibradas con precisión térmica y flujo optimizado para garantizar la presentación ideal de cada bebida.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- European & Local Craft -->
-                    <div class="glass-card rounded-3xl p-10 relative overflow-hidden">
-                        <div class="w-14 h-14 rounded-2xl bg-terracotta/20 text-terracotta flex items-center justify-center text-2xl mb-8 border border-terracotta/30">
-                            <i class="fa-solid fa-wine-glass"></i>
-                        </div>
-                        <h3 data-i18n="tap1_title" class="text-3xl font-serif font-bold text-white mb-4">Cerveza Artesanal y Trapense</h3>
-                        <p data-i18n="tap1_desc" class="text-slate-300 text-base leading-relaxed mb-8">
-                            Desde Helles bávaras tradicionales, Kellerbiers y Rauchbiers humeadas hasta ales trapenses belgas y microcervecerías mexicanas.
-                        </p>
-                        <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap1_item1">Lagers europeas de referencia mundial</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap1_item2">Cervezas de abadía y IPAs locales</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap1_item3">Ediciones especiales en barrica</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Hard Seltzers & Ferments -->
-                    <div class="glass-card rounded-3xl p-10 relative overflow-hidden">
-                        <div class="w-14 h-14 rounded-2xl bg-gold/20 text-gold flex items-center justify-center text-2xl mb-8 border border-gold/30">
-                            <i class="fa-solid fa-leaf"></i>
-                        </div>
-                        <h3 data-i18n="tap2_title" class="text-3xl font-serif font-bold text-white mb-4">Fermentados y Seltzers</h3>
-                        <p data-i18n="tap2_desc" class="text-slate-300 text-base leading-relaxed mb-8">
-                            Hard seltzers con extractos botánicos naturales, tepaches artesanales, kombuchas y sidras espumosas de producción limitada.
-                        </p>
-                        <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap2_item1">Seltzers infundidos con fruta regional</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap2_item2">Tepache y elixires botánicos</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap2_item3">Bebidas refrescantes de bajo ABV</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Nitro & Cold Brew -->
-                    <div class="glass-card rounded-3xl p-10 relative overflow-hidden">
-                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-8 border border-cyan-500/30">
-                            <i class="fa-solid fa-snowflake"></i>
-                        </div>
-                        <h3 data-i18n="tap3_title" class="text-3xl font-serif font-bold text-white mb-4">Bebidas Nitro y Cold Brew</h3>
-                        <p data-i18n="tap3_desc" class="text-slate-300 text-base leading-relaxed mb-8">
-                            Texturas sedosas infundidas con nitrógeno, stouts de cuerpo denso, café de extracción en frío y tés artesanales nitrogenados.
-                        </p>
-                        <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap3_item1">Servicio nitrogenado de alta cremosidad</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap3_item2">Cold Brew artesanal a presión de grifo</span></li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span data-i18n="tap3_item3">Creaciones exclusivas de temporada</span></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- BRAND INCUBATOR SECTION -->
-        <section id="incubator" class="py-32 bg-navy relative border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    
-                    <div>
-                        <span data-i18n="inc_tag" class="text-xs font-bold text-terracotta uppercase tracking-widest block mb-4">Para Productores Independientes</span>
-                        <h2 data-i18n="inc_title" class="text-4xl sm:text-6xl font-serif font-bold text-white leading-tight mb-8">
-                            Una Incubadora para Creadores de Bebidas
-                        </h2>
-                        <p data-i18n="inc_desc" class="text-slate-300 text-lg leading-relaxed mb-10 font-light">
-                            Uno Más funciona como una plataforma de pruebas en vivo para cervecerías artesanales, productores independientes e innovadores del sector. Prueba nuevas recetas y analiza datos de consumo en tiempo real.
-                        </p>
-                        
-                        <div class="space-y-6 mb-10">
-                            <div class="flex items-start gap-5">
-                                <div class="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold text-xl flex-shrink-0 border border-gold/30">
-                                    <i class="fa-solid fa-chart-line"></i>
-                                </div>
-                                <div>
-                                    <h4 data-i18n="inc_feat1_title" class="text-xl font-serif font-bold text-white">Métricas de Consumo Real</h4>
-                                    <p data-i18n="inc_feat1_desc" class="text-slate-400 text-sm mt-1">Registra volúmenes servidos, velocidad de consumo y calificaciones de clientes.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-5">
-                                <div class="w-12 h-12 rounded-2xl bg-terracotta/10 flex items-center justify-center text-terracotta text-xl flex-shrink-0 border border-terracotta/30">
-                                    <i class="fa-solid fa-flask"></i>
-                                </div>
-                                <div>
-                                    <h4 data-i18n="inc_feat2_title" class="text-xl font-serif font-bold text-white">Pruebas de Lotes Pequeños</h4>
-                                    <p data-i18n="inc_feat2_desc" class="text-slate-400 text-sm mt-1">Valida recetas de edición limitada antes de su lanzamiento comercial a gran escala.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Attribution Card -->
-                        <div class="p-6 rounded-3xl glass-card border border-gold/30 flex items-center justify-between">
-                            <div>
-                                <p data-i18n="inc_dir_title" class="text-xs text-gold uppercase tracking-wider font-bold">Director de Innovación en Bebidas</p>
-                                <p class="text-lg font-serif font-bold text-white mt-1">Michael Burmil</p>
-                            </div>
-                            <a href="#contact" data-i18n="inc_dir_cta" class="text-xs text-slate-200 hover:text-gold font-bold uppercase tracking-wider flex items-center gap-2">
-                                Contactar <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Incubator Model Feature Board -->
-                    <div class="relative">
-                        <div class="glass-card rounded-3xl p-10 sm:p-12 border border-gold/30 relative z-10 gold-border-glow">
-                            <div class="flex items-center justify-between border-b border-slate-700/80 pb-6 mb-8">
-                                <div>
-                                    <span data-i18n="inc_model_tag" class="text-xs text-gold uppercase tracking-wider font-bold">Modelo de Incubación</span>
-                                    <h3 data-i18n="inc_model_title" class="text-2xl font-serif font-bold text-white mt-1">Laboratorio de Validación</h3>
-                                </div>
-                                <span class="px-4 py-1.5 rounded-full bg-terracotta/20 text-terracotta text-xs font-bold uppercase tracking-wider border border-terracotta/40">Activo</span>
-                            </div>
-
-                            <div class="space-y-6 text-base text-slate-200">
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-navy/80 border border-slate-800">
-                                    <span data-i18n="step_1" class="font-medium">1. Colocación de Lote en Grifo</span>
-                                    <span class="text-gold font-bold">Tap Matrix</span>
-                                </div>
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-navy/80 border border-slate-800">
-                                    <span data-i18n="step_2" class="font-medium">2. Cata Directa y Retroalimentación</span>
-                                    <span class="text-gold font-bold">Métricas Vivo</span>
-                                </div>
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-navy/80 border border-slate-800">
-                                    <span data-i18n="step_3" class="font-medium">3. Reporte de Viabilidad Comercial</span>
-                                    <span class="text-gold font-bold">Escalamiento</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-10 pt-8 border-t border-slate-700/80 text-center">
-                                <p data-i18n="inc_quote" class="text-sm text-slate-300 italic font-serif">
-                                    "Acelerando la innovación artesanal mediante la experiencia directa del consumidor."
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-terracotta/20 via-gold/20 to-terracotta/20 blur-2xl z-0 opacity-50"></div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- VIP EARLY ACCESS SECTION -->
-        <section id="early-access" class="py-32 bg-navy-dark relative border-t border-slate-800">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                
-                <div class="w-20 h-20 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold text-3xl mx-auto mb-8 shadow-2xl">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                </div>
-
-                <h2 data-i18n="vip_title" class="text-4xl sm:text-6xl font-serif font-bold text-white mb-6">
-                    Sé el Primero en Experimentarlo
-                </h2>
-                <p data-i18n="vip_desc" class="text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-                    Estamos finalizando los detalles de nuestra ubicación en Mazatlán. Regístrate para recibir invitaciones exclusivas a nuestras catas privadas de inauguración y revelar la ubicación antes que nadie.
-                </p>
-
-                <form onsubmit="event.preventDefault(); document.getElementById('signup-success').classList.remove('hidden'); this.reset();" class="max-w-2xl mx-auto space-y-4">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" required placeholder="Tu correo electrónico" class="w-full px-6 py-5 rounded-full bg-navy border border-slate-700 text-white placeholder-slate-500 text-base focus:outline-none focus:border-gold transition-colors">
-                        <button type="submit" class="px-10 py-5 rounded-full bg-gradient-to-r from-terracotta to-amber-700 hover:from-terracotta-hover hover:to-amber-800 text-white font-bold text-xs uppercase tracking-widest transition-all flex-shrink-0 shadow-xl shadow-terracotta/30 border border-terracotta/50">
-                            <span data-i18n="vip_btn">Solicitar Invitación</span>
-                        </button>
-                    </div>
-                    <p data-i18n="vip_privacy" class="text-xs text-slate-400">Respetamos tu privacidad. Solo enviaremos invitaciones oficiales y lanzamientos exclusivos.</p>
-                </form>
-
-                <div id="signup-success" class="hidden mt-8 p-6 rounded-3xl bg-gold/10 border border-gold/40 text-gold text-base font-semibold">
-                    <i class="fa-solid fa-circle-check mr-2"></i> <span data-i18n="vip_success">¡Registro completado! Te notificaremos de inmediato cuando se revele la ubicación en Mazatlán.</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="py-28 bg-navy border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    
-                    <div>
-                        <span data-i18n="contact_tag" class="text-xs font-bold text-gold uppercase tracking-widest block mb-4">Contacto Directo</span>
-                        <h2 data-i18n="contact_title" class="text-4xl sm:text-5xl font-serif font-bold text-white mb-8">
-                            Conecta con Immersive Beverage Concepts
-                        </h2>
-                        <p data-i18n="contact_desc" class="text-slate-300 text-lg leading-relaxed mb-10 font-light">
-                            Ya sea que seas un productor interesado en ingresar a la incubadora o desees más información sobre el proyecto Uno Más, estamos a tu disposición.
-                        </p>
-
-                        <div class="space-y-6">
-                            <a href="mailto:ibc.mzt@gmail.com" class="p-6 rounded-3xl glass-card flex items-center gap-6 block hover:border-gold/50">
-                                <div class="w-14 h-14 rounded-2xl bg-gold/20 text-gold flex items-center justify-center text-2xl flex-shrink-0 border border-gold/30">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <p data-i18n="contact_email_lbl" class="text-xs text-slate-400 uppercase font-bold tracking-wider">Correo Electrónico</p>
-                                    <p class="text-white text-lg font-semibold mt-1">ibc.mzt@gmail.com</p>
-                                </div>
-                            </a>
-
-                            <a href="https://wa.me/526693322789" target="_blank" class="p-6 rounded-3xl glass-card flex items-center gap-6 block hover:border-terracotta/50">
-                                <div class="w-14 h-14 rounded-2xl bg-terracotta/20 text-terracotta flex items-center justify-center text-2xl flex-shrink-0 border border-terracotta/30">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </div>
-                                <div>
-                                    <p data-i18n="contact_phone_lbl" class="text-xs text-slate-400 uppercase font-bold tracking-wider">Directo / WhatsApp</p>
-                                    <p class="text-white text-lg font-semibold mt-1">+52 669-332-2789</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Direct Message Form -->
-                    <div class="glass-card p-10 sm:p-12 rounded-3xl border border-slate-700">
-                        <h3 data-i18n="form_title" class="text-2xl font-serif font-bold text-white mb-3">Enviar Mensaje Directo</h3>
-                        <p data-i18n="form_desc" class="text-slate-400 text-sm mb-8">Escríbenos y nuestro equipo te responderá a la brevedad.</p>
-
-                        <form onsubmit="event.preventDefault(); alert(currentLang === 'es' ? 'Mensaje enviado. Nos pondremos en contacto pronto.' : 'Message sent! We will reach out shortly.'); this.reset();" class="space-y-5">
-                            <div>
-                                <label data-i18n="form_name" class="block text-xs uppercase font-bold tracking-wider text-slate-300 mb-2">Nombre Completo</label>
-                                <input type="text" required placeholder="Nombre" class="w-full px-5 py-4 rounded-2xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold">
-                            </div>
-                            <div>
-                                <label data-i18n="form_email" class="block text-xs uppercase font-bold tracking-wider text-slate-300 mb-2">Correo Electrónico</label>
-                                <input type="email" required placeholder="tu@ejemplo.com" class="w-full px-5 py-4 rounded-2xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold">
-                            </div>
-                            <div>
-                                <label data-i18n="form_msg" class="block text-xs uppercase font-bold tracking-wider text-slate-300 mb-2">Mensaje</label>
-                                <textarea rows="3" required placeholder="¿En qué podemos ayudarte?" class="w-full px-5 py-4 rounded-2xl bg-navy-dark border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold"></textarea>
-                            </div>
-                            <button type="submit" class="w-full py-5 rounded-2xl bg-gradient-to-r from-terracotta to-amber-700 hover:from-terracotta-hover hover:to-amber-800 text-white font-bold text-xs uppercase tracking-widest transition-all shadow-lg shadow-terracotta/30 border border-terracotta/40">
-                                <span data-i18n="form_btn">Enviar Mensaje</span>
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-navy-dark py-14 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                
-                <div class="flex items-center gap-4">
-                    <span class="text-2xl font-serif font-bold text-white">Uno Más</span>
-                    <span class="text-xs text-gold uppercase tracking-wider font-semibold">by Immersive Beverage Concepts</span>
-                </div>
-
-                <p class="text-xs text-slate-400 text-center">
-                    &copy; 2026 Immersive Beverage Concepts (IBC). Todos los derechos reservados. Mazatlán, Sinaloa, México.
-                </p>
-
-                <div class="flex items-center space-x-6 text-slate-300">
-                    <a href="https://ibcmazatlan.com" target="_blank" class="hover:text-gold text-lg transition-colors" title="IBC Website"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://www.instagram.com/ibcmazatlan" target="_blank" class="hover:text-gold text-lg transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/526693322789" target="_blank" class="hover:text-gold text-lg transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#contacto" class="w-full sm:w-auto px-9 py-4 rounded-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold tracking-wider text-sm uppercase transition-all duration-300 shadow-xl shadow-terracotta/20 hover:scale-105" data-es="Acceso Anticipado VIP" data-en="VIP Early Access">
+                    Acceso Anticipado VIP
+                </a>
+                <a href="#matrix" class="w-full sm:w-auto px-9 py-4 rounded-full bg-navy-light/60 hover:bg-navy-light border border-gold/30 hover:border-gold text-cream font-semibold tracking-wider text-sm uppercase transition-all duration-300 backdrop-blur-md" data-es="Explorar Tap Matrix" data-en="Explore Tap Matrix">
+                    Explorar Tap Matrix
+                </a>
             </div>
         </div>
+    </section>
+
+    <!-- El Concepto Section -->
+    <section id="concepto" class="py-28 px-6 bg-navy-dark/70 border-t border-navy-light/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-gold text-xs uppercase tracking-[0.3em] font-bold block mb-3" data-es="Filosofía del Proyecto" data-en="Project Philosophy">Filosofía del Proyecto</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-cream mb-6" data-es="El Concepto" data-en="The Concept">El Concepto</h2>
+                <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
+                <p class="text-cream/80 text-lg md:text-xl font-light leading-relaxed" data-es="Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores." data-en="Uno Más redefines tasting culture by fusing precision self-serve technology with independent, innovative liquid profiles.">
+                    Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-navy p-10 rounded-2xl border border-navy-light/50 hover:border-gold/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-terracotta-light text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        ⚡
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Autoservicio Inteligente" data-en="Smart Self-Service">Autoservicio Inteligente</h3>
+                    <p class="text-cream/70 font-light leading-relaxed" data-es="Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida." data-en="Flow systems with millimeter temperature control and ounce-by-ounce measurement, allowing explorers to design their own custom tasting flight.">
+                        Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida.
+                    </p>
+                </div>
+
+                <div class="bg-navy p-10 rounded-2xl border border-navy-light/50 hover:border-gold/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        🧪
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Laboratorio de Sabores" data-en="Flavor Laboratory">Laboratorio de Sabores</h3>
+                    <p class="text-cream/70 font-light leading-relaxed" data-es="Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas." data-en="A dynamic space dedicated to classic European styles, hop experimentation, wild ferments, and exclusive botanical creations.">
+                        Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas.
+                    </p>
+                </div>
+
+                <div class="bg-navy p-10 rounded-2xl border border-navy-light/50 hover:border-gold/50 transition-all duration-300 shadow-xl group">
+                    <div class="w-14 h-14 rounded-xl bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-terracotta-light text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        🌐
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-cream mb-4" data-es="Experiencia Cashless" data-en="Cashless Experience">Experiencia Cashless</h3>
+                    <p class="text-cream/70 font-light leading-relaxed" data-es="Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo." data-en="Fully integrated RFID and mobile platform designed for seamless exploration, with no lines or friction between pours.">
+                        Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tap Matrix Section -->
+    <section id="matrix" class="py-28 px-6 bg-navy">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-gold text-xs uppercase tracking-[0.3em] font-bold block mb-3" data-es="Ingeniería de Líquidos" data-en="Liquid Engineering">Ingeniería de Líquidos</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-cream mb-6" data-es="Tap Matrix" data-en="Tap Matrix">Tap Matrix</h2>
+                    <p class="text-cream/80 text-lg font-light leading-relaxed mb-8" data-es="Nuestra matriz de múltiples líneas de servicio está optimizada con grifos de precisión lateral (LUKR) y controles independientes de presión para garantizar la espuma perfecta y la integridad absoluta de cada estilo." data-en="Our multi-line dispensing matrix is optimized with side-pour precision faucets (LUKR) and independent pressure controls to guarantee the perfect foam head and absolute integrity of every style.">
+                        Nuestra matriz de múltiples líneas de servicio está optimizada con grifos de precisión lateral (LUKR) y controles independientes de presión para garantizar la espuma perfecta y la integridad absoluta de cada estilo.
+                    </p>
+                    <ul class="space-y-4 text-cream/90 font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-gold"></span>
+                            <span data-es="Lagers Checas de baja fermentación y servicio tradicional de Hladinka" data-en="Czech low-fermentation lagers with traditional Hladinka pouring">Lagers Checas de baja fermentación y servicio tradicional de Hladinka</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-gold"></span>
+                            <span data-es="IPAs artesanales de perfil fresco y rotación estacional" data-en="Craft IPAs with fresh profile and seasonal rotation">IPAs artesanales de perfil fresco y rotación estacional</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-gold"></span>
+                            <span data-es="Bebidas experimentales, fermentos y especialidades botánicas" data-en="Experimental beverages, ferments, and botanical specialties">Bebidas experimentales, fermentos y especialidades botánicas</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative bg-navy-light/40 border border-gold/30 p-8 rounded-3xl backdrop-blur-xl shadow-2xl">
+                    <div class="absolute -top-4 -right-4 bg-terracotta text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
+                        Multi-Line Matrix
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-navy border border-navy-light">
+                            <span class="font-serif text-xl text-cream">01 / Pilsner & Lagers</span>
+                            <span class="text-gold text-sm font-semibold">2.0 Bar / LUKR</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-navy border border-navy-light">
+                            <span class="font-serif text-xl text-cream">02 / Hop-Forward IPAs</span>
+                            <span class="text-gold text-sm font-semibold">2.4 Bar / Micro-Matic</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-navy border border-navy-light">
+                            <span class="font-serif text-xl text-cream">03 / Wild & Sour Ferments</span>
+                            <span class="text-gold text-sm font-semibold">1.8 Bar / Specialized</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-navy border border-navy-light">
+                            <span class="font-serif text-xl text-cream">04 / Cold Brew & Botanical</span>
+                            <span class="text-gold text-sm font-semibold">Nitrogen Infused</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Incubator Section -->
+    <section id="incubator" class="py-28 px-6 bg-navy-dark/70 border-t border-navy-light/30">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-gold text-xs uppercase tracking-[0.3em] font-bold block mb-3" data-es="Innovación Independiente" data-en="Independent Innovation">Innovación Independiente</span>
+            <h2 class="text-4xl md:text-6xl font-serif font-bold text-cream mb-6" data-es="Brand Incubator" data-en="Brand Incubator">Brand Incubator</h2>
+            <div class="w-24 h-0.5 bg-gold mx-auto mb-8"></div>
+            <p class="text-cream/80 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-12" data-es="Más allá de un espacio de degustación, operamos como una incubadora y plataforma de lanzamiento para productores de bebidas independientes que buscan conectar directamente con paladares exigentes y recopilar datos de consumo en vivo." data-en="Beyond a tasting venue, we operate as an incubator and launch platform for independent beverage producers seeking to connect directly with discerning palates and collect live consumption data.">
+                Más allá de un espacio de degustación, operamos como una incubadora y plataforma de lanzamiento para productores de bebidas independientes que buscan conectar directamente con paladares exigentes y recopilar datos de consumo en vivo.
+            </p>
+            <div class="inline-block bg-navy border border-gold/40 px-8 py-6 rounded-2xl shadow-xl">
+                <p class="text-xs uppercase tracking-[0.2em] text-gold font-semibold mb-1" data-es="Liderazgo Creativo" data-en="Creative Leadership">Liderazgo Creativo</p>
+                <p class="text-2xl font-serif font-bold text-cream">Michael Burmil</p>
+                <p class="text-sm text-cream/70 font-light mt-1" data-es="Director of Beverage Innovation" data-en="Director of Beverage Innovation">Director of Beverage Innovation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & VIP Access Section -->
+    <section id="contacto" class="py-28 px-6 bg-navy">
+        <div class="max-w-4xl mx-auto bg-navy-dark/90 border border-gold/40 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold text-xs uppercase tracking-[0.3em] font-bold block mb-3" data-es="Mantente Conectado" data-en="Stay Connected">Mantente Conectado</span>
+                <h2 class="text-4xl font-serif font-bold text-cream mb-4" data-es="Únete al Lanzamiento" data-en="Join the Launch">Únete al Lanzamiento</h2>
+                <p class="text-cream/80 font-light" data-es="Regístrate para recibir invitaciones exclusivas a catas privadas, actualizaciones de ubicación y preventas especiales." data-en="Sign up to receive exclusive invitations to private tastings, location updates, and special presales.">
+                    Regístrate para recibir invitaciones exclusivas a catas privadas, actualizaciones de ubicación y preventas especiales.
+                </p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('¡Gracias por registrarte! Te contactaremos pronto.');" class="space-y-6 max-w-xl mx-auto">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Nombre" data-en="Name">Nombre</label>
+                        <input type="text" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors" placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
+                        <input type="email" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors" placeholder="tucorreo@domain.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Comentarios / Interés" data-en="Comments / Interest">Comentarios / Interés</label>
+                    <textarea rows="3" class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors" placeholder="Cuéntanos qué estilos te entusiasman más..."></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold tracking-wider text-sm uppercase transition-all duration-300 shadow-lg shadow-terracotta/30" data-es="Solicitar Acceso VIP" data-en="Request VIP Access">
+                        Solicitar Acceso VIP
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-16 pt-10 border-t border-navy-light/50 flex flex-col md:flex-row items-center justify-between text-sm text-cream/70 gap-4 text-center md:text-left">
+                <div>
+                    <p class="font-serif font-bold text-cream text-lg">Uno Más by Immersive Beverage Concepts</p>
+                    <p class="text-xs text-gold tracking-widest mt-0.5">Mazatlán, Sinaloa, México</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="mailto:ibc.mzt@gmail.com" class="hover:text-gold transition-colors">ibc.mzt@gmail.com</a>
+                    <a href="https://instagram.com/ibcmazatlan" target="_blank" class="hover:text-gold transition-colors">@ibcmazatlan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-cream/50 border-t border-navy-light/30">
+        <p>&copy; 2026 Immersive Beverage Concepts. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- LANGUAGE SWITCHER DICTIONARY & INTERACTION LOGIC -->
+    <!-- Language Toggle Script -->
     <script>
         let currentLang = 'es';
 
-        const i18n = {
-            es: {
-                nav_concept: "El Concepto",
-                nav_taps: "Matriz de Grifos",
-                nav_incubator: "Incubadora",
-                nav_contact: "Contacto",
-                cta_vip: "Acceso VIP",
-                
-                hero_badge: "Próximamente en Mazatlán | Ubicación por Anunciar",
-                hero_title_1: "El Lab de Sabores",
-                hero_title_2: "y Catas del Futuro",
-                hero_subtitle: "Una experiencia interactiva de autoservicio para los amantes del sabor artesanal. Cervezas de especialidad, bebidas fermentadas y creaciones únicas servidas por pulgada.",
-                hero_cta_primary: "Obtener Acceso VIP",
-                hero_cta_secondary: "Explorar Concepto",
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('langToggle').textContent = currentLang === 'es' ? 'EN' : 'ES';
+            document.documentElement.lang = currentLang;
 
-                metric_1_val: "Autoservicio",
-                metric_1_lbl: "Pago por Onza",
-                metric_2_val: "Precisión",
-                metric_2_lbl: "Térmica y Espuma",
-                metric_3_val: "Incubadora",
-                metric_3_lbl: "Lotes Exclusivos",
-                metric_4_val: "Tecnología",
-                metric_4_lbl: "Acceso RFID Sin Efectivo",
-
-                concept_tag: "Nuestra Visión",
-                concept_title: "Redefiniendo la Cultura de la Bebida",
-                concept_desc: "Diseñado por Immersive Beverage Concepts (IBC), Uno Más es un laboratorio experimental donde la alta coctelería, la cerveza artesanal de referencia mundial y el diseño interactivo convergen bajo la premisa: \"Llega con sed, vete con curiosidad.\"",
-                
-                card1_title: "Libertad de Cata",
-                card1_desc: "Sirve desde un sorbo hasta una copa completa. Explora estilos raros e innovadores a tu propio ritmo sin depender de un servicio tradicional.",
-                card2_title: "Experiencia Digital",
-                card2_desc: "Check-in rápido, pulseras inteligentes RFID y monitoreo en tiempo real de tu consumo para una experiencia fluida y sin interrupciones.",
-                card3_title: "Pared de Grifos Interactiva",
-                card3_desc: "Pantallas digitales con perfiles de sabor, gradación alcohólica, origen de los ingredientes y recomendaciones del sommelier.",
-
-                taps_tag: "Catálogo de Autoservicio",
-                taps_title: "La Matriz de Grifos",
-                taps_desc: "Selecciones calibradas con precisión térmica y flujo optimizado para garantizar la presentación ideal de cada bebida.",
-
-                tap1_title: "Cerveza Artesanal y Trapense",
-                tap1_desc: "Desde Helles bávaras tradicionales, Kellerbiers y Rauchbiers humeadas hasta ales trapenses belgas y microcervecerías mexicanas.",
-                tap1_item1: "Lagers europeas de referencia mundial",
-                tap1_item2: "Cervezas de abadía y IPAs locales",
-                tap1_item3: "Ediciones especiales en barrica",
-
-                tap2_title: "Fermentados y Seltzers",
-                tap2_desc: "Hard seltzers con extractos botánicos naturales, tepaches artesanales, kombuchas y sidras espumosas de producción limitada.",
-                tap2_item1: "Seltzers infundidos con fruta regional",
-                tap2_item2: "Tepache y elixires botánicos",
-                tap2_item3: "Bebidas refrescantes de bajo ABV",
-
-                tap3_title: "Bebidas Nitro y Cold Brew",
-                tap3_desc: "Texturas sedosas infundidas con nitrógeno, stouts de cuerpo denso, café de extracción en frío y tés artesanales nitrogenados.",
-                tap3_item1: "Servicio nitrogenado de alta cremosidad",
-                tap3_item2: "Cold Brew artesanal a presión de grifo",
-                tap3_item3: "Creaciones exclusivas de temporada",
-
-                inc_tag: "Para Productores Independientes",
-                inc_title: "Una Incubadora para Creadores de Bebidas",
-                inc_desc: "Uno Más funciona como una plataforma de pruebas en vivo para cervecerías artesanales, productores independientes e innovadores del sector. Prueba nuevas recetas y analiza datos de consumo en tiempo real.",
-                inc_feat1_title: "Métricas de Consumo Real",
-                inc_feat1_desc: "Registra volúmenes servidos, velocidad de consumo y calificaciones de clientes.",
-                inc_feat2_title: "Pruebas de Lotes Pequeños",
-                inc_feat2_desc: "Valida recetas de edición limitada antes de su lanzamiento comercial a gran escala.",
-                inc_dir_title: "Director de Innovación en Bebidas",
-                inc_dir_cta: "Contactar",
-
-                inc_model_tag: "Modelo de Incubación",
-                inc_model_title: "Laboratorio de Validación",
-                step_1: "1. Colocación de Lote en Grifo",
-                step_2: "2. Cata Directa y Retroalimentación",
-                step_3: "3. Reporte de Viabilidad Comercial",
-                inc_quote: "\"Acelerando la innovación artesanal mediante la experiencia directa del consumidor.\"",
-
-                vip_title: "Sé el Primero en Experimentarlo",
-                vip_desc: "Estamos finalizando los detalles de nuestra ubicación en Mazatlán. Regístrate para recibir invitaciones exclusivas a nuestras catas privadas de inauguración y revelar la ubicación antes que nadie.",
-                vip_btn: "Solicitar Invitación",
-                vip_privacy: "Respetamos tu privacidad. Solo enviaremos invitaciones oficiales y lanzamientos exclusivos.",
-                vip_success: "¡Registro completado! Te notificaremos de inmediato cuando se revele la ubicación en Mazatlán.",
-
-                contact_tag: "Contacto Directo",
-                contact_title: "Conecta con Immersive Beverage Concepts",
-                contact_desc: "Ya sea que seas un productor interesado en ingresar a la incubadora o desees más información sobre el proyecto Uno Más, estamos a tu disposición.",
-                contact_email_lbl: "Correo Electrónico",
-                contact_phone_lbl: "Directo / WhatsApp",
-
-                form_title: "Enviar Mensaje Directo",
-                form_desc: "Escríbenos y nuestro equipo te responderá a la brevedad.",
-                form_name: "Nombre Completo",
-                form_email: "Correo Electrónico",
-                form_msg: "Mensaje",
-                form_btn: "Enviar Mensaje"
-            },
-            en: {
-                nav_concept: "The Concept",
-                nav_taps: "Tap Matrix",
-                nav_incubator: "Incubator",
-                nav_contact: "Contact",
-                cta_vip: "VIP Access",
-
-                hero_badge: "Coming Soon to Mazatlán | Location TBA",
-                hero_title_1: "The Future Flavor Lab",
-                hero_title_2: "and Tasting Studio",
-                hero_subtitle: "An interactive self-serve tasting experience for craft beverage lovers. Specialty beers, fermented drinks, and unique draft creations served by the ounce.",
-                hero_cta_primary: "Get VIP Access",
-                hero_cta_secondary: "Explore Concept",
-
-                metric_1_val: "Self-Serve",
-                metric_1_lbl: "Pay By Ounce",
-                metric_2_val: "Precision",
-                metric_2_lbl: "Thermal & Foam Control",
-                metric_3_val: "Incubator",
-                metric_3_lbl: "Small-Batch Taps",
-                metric_4_val: "Tech Driven",
-                metric_4_lbl: "Cashless RFID Access",
-
-                concept_tag: "Our Vision",
-                concept_title: "Redefining Beverage Culture",
-                concept_desc: "Designed by Immersive Beverage Concepts (IBC), Uno Más is an experimental flavor lab where craft beverage culture and interactive self-serve tech unite under one motto: \"Come thirsty, leave curious.\"",
-
-                card1_title: "Freedom of Taste",
-                card1_desc: "Pour a single sip or a full glass. Discover rare and innovative styles at your own pace without waiting for traditional service.",
-                card2_title: "Seamless Tech",
-                card2_desc: "Fast check-in, smart RFID wristbands, and real-time tab tracking for a frictionless tasting experience.",
-                card3_title: "Interactive Tap Wall",
-                card3_desc: "Digital screens displaying flavor profiles, ABV, ingredient origins, and sommelier notes above every faucet.",
-
-                taps_tag: "Self-Serve Selection",
-                taps_title: "The Tap Matrix",
-                taps_desc: "Precisely calibrated temperature and flow control to guarantee optimal head presentation for every pour.",
-
-                tap1_title: "Craft & Trappist Beer",
-                tap1_desc: "From traditional Bavarian Helles, Kellerbiers, and smoky Rauchbiers to Belgian Trappist ales and Mexican craft microbreweries.",
-                tap1_item1: "Benchmark European Lagers",
-                tap1_item2: "Abbey Ales & Local IPAs",
-                tap1_item3: "Barrel-Aged Special Releases",
-
-                tap2_title: "Ferments & Seltzers",
-                tap2_desc: "Hard seltzers infused with natural botanical extracts, artisanal tepaches, kombuchas, and small-batch sparkling ciders.",
-                tap2_item1: "Local fruit botanical seltzers",
-                tap2_item2: "Fermented Tepache & botanical elixirs",
-                tap2_item3: "Refreshingly crisp low-ABV pours",
-
-                tap3_title: "Nitro & Cold Brew Taps",
-                tap3_desc: "Silky nitrogen-infused dark brews, rich stouts, craft cold brew coffee, and sparkling nitrogenated teas.",
-                tap3_item1: "Velvety nitro cream pours",
-                tap3_item2: "Draft cold brew coffee",
-                tap3_item3: "Exclusive seasonal creations",
-
-                inc_tag: "For Independent Producers",
-                inc_title: "A Brand Incubator for Creators",
-                inc_desc: "Uno Más functions as a live testing ground for craft breweries and beverage innovators. Test new recipes and measure direct consumer feedback in real time.",
-                inc_feat1_title: "Live Consumer Metrics",
-                inc_feat1_desc: "Track pour velocity, volume per session, and guest rating metrics.",
-                inc_feat2_title: "Small-Batch Test Runs",
-                inc_feat2_desc: "Validate limited-run recipes before committing to full commercial scaling.",
-                inc_dir_title: "Director of Beverage Innovation",
-                inc_dir_cta: "Inquire Direct",
-
-                inc_model_tag: "Incubator Framework",
-                inc_model_title: "Validation Laboratory",
-                step_1: "1. Small-Batch Tap Placement",
-                step_2: "2. Direct Tasting & Live Ratings",
-                step_3: "3. Commercial Feasibility Report",
-                inc_quote: "\"Accelerating beverage innovation through direct consumer tasting.\"",
-
-                vip_title: "Be First to Experience It",
-                vip_desc: "We are finalizing our Mazatlán location details. Sign up for exclusive invites to our private opening tastings and location reveal before anyone else.",
-                vip_btn: "Request Invitation",
-                vip_privacy: "We respect your privacy. Only official invitations and launch updates.",
-                vip_success: "Registration complete! We will notify you as soon as the Mazatlán location is revealed.",
-
-                contact_tag: "Get In Touch",
-                contact_title: "Connect with Immersive Beverage Concepts",
-                contact_desc: "Whether you are a craft producer looking to join our incubator or inquiring about the Uno Más concept, we look forward to hearing from you.",
-                contact_email_lbl: "Email Address",
-                contact_phone_lbl: "Direct / WhatsApp",
-
-                form_title: "Send a Direct Message",
-                form_desc: "Drop us a line and team IBC will respond shortly.",
-                form_name: "Full Name",
-                form_email: "Email Address",
-                form_msg: "Message",
-                form_btn: "Send Message"
-            }
-        };
-
-        function switchLanguage(lang) {
-            currentLang = lang;
-            
-            // Toggle active pill button styles
-            const btnEs = document.getElementById('lang-es');
-            const btnEn = document.getElementById('lang-en');
-
-            if (lang === 'es') {
-                btnEs.className = "px-3 py-1 rounded-full text-xs font-bold transition-all bg-terracotta text-white shadow-md";
-                btnEn.className = "px-3 py-1 rounded-full text-xs font-bold transition-all text-slate-300 hover:text-white";
-                document.documentElement.lang = "es";
-            } else {
-                btnEn.className = "px-3 py-1 rounded-full text-xs font-bold transition-all bg-terracotta text-white shadow-md";
-                btnEs.className = "px-3 py-1 rounded-full text-xs font-bold transition-all text-slate-300 hover:text-white";
-                document.documentElement.lang = "en";
-            }
-
-            // Update all translated strings
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (i18n[lang][key]) {
-                    element.innerHTML = i18n[lang][key];
+            const elements = document.querySelectorAll('[data-es]');
+            elements.forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text) {
+                    if (text.includes('<') || text.includes('&')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
                 }
             });
         }
-
-        // Mobile drawer toggling logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
     </script>
 </body>
 </html>
+
