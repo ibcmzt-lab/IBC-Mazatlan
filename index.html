@@ -7,7 +7,7 @@
     <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -17,20 +17,20 @@
                     colors: {
                         navy: {
                             DEFAULT: '#0F2B3C',
-                            dark: '#081721',
-                            light: '#1A455E'
+                            dark: '#071620',
+                            light: '#18425A'
                         },
                         terracotta: {
                             DEFAULT: '#C2593F',
-                            light: '#D9735A',
-                            dark: '#A3422A'
+                            light: '#E06D51',
+                            dark: '#9E3C25'
                         },
                         gold: {
                             DEFAULT: '#D4AF37',
-                            light: '#E6C657',
-                            dark: '#B08D22'
+                            light: '#F3E5AB',
+                            dark: '#A3821A'
                         },
-                        cream: '#F9F8F6'
+                        cream: '#FBF9F5'
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
@@ -44,7 +44,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0F2B3C;
-            color: #F9F8F6;
+            color: #FBF9F5;
         }
         h1, h2, h3, h4, .font-serif-custom {
             font-family: 'Cormorant Garamond', serif;
@@ -59,14 +59,14 @@
             
             <!-- Logo & Brand -->
             <a href="#" class="flex items-center gap-4 group">
-                <div class="w-20 h-20 rounded-full bg-cream p-1 shadow-xl flex items-center justify-center border-2 border-gold/60 group-hover:border-gold transition-all duration-300">
+                <div class="w-20 h-20 rounded-full bg-cream p-1 shadow-2xl flex items-center justify-center border-2 border-gold/60 group-hover:border-gold transition-all duration-300">
                     <!-- Circular Vector Logo -->
                     <svg viewBox="0 0 400 400" class="w-full h-full rounded-full overflow-hidden" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="200" cy="200" r="190" fill="#F9F8F6" stroke="#0F2B3C" stroke-width="6"/>
+                        <circle cx="200" cy="200" r="190" fill="#FBF9F5" stroke="#0F2B3C" stroke-width="6"/>
                         <circle cx="200" cy="200" r="175" fill="none" stroke="#0F2B3C" stroke-width="2"/>
                         <path d="M 10 190 L 30 190 M 10 210 L 30 210 M 370 190 L 390 190 M 370 210 L 390 210" stroke="#0F2B3C" stroke-width="4" stroke-linecap="round"/>
                         <path d="M 90 95 C 100 135 105 170 115 210 C 120 230 130 240 145 240 L 175 240 C 190 240 200 230 205 210 C 215 170 220 135 230 95 Z" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="5"/>
-                        <ellipse cx="160" cy="95" rx="70" ry="12" fill="#F5F3EF" stroke="#0F2B3C" stroke-width="4"/>
+                        <ellipse cx="160" cy="95" rx="70" ry="12" fill="#FBF9F5" stroke="#0F2B3C" stroke-width="4"/>
                         <rect x="135" y="240" width="50" height="25" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="4"/>
                         <ellipse cx="160" cy="265" rx="45" ry="10" fill="#FFFFFF" stroke="#0F2B3C" stroke-width="4"/>
                         <path d="M 108 175 C 125 185 145 165 170 180 C 195 195 204 185 212 175 C 218 215 200 235 175 235 L 145 235 C 125 235 110 215 108 175 Z" fill="#C2593F" opacity="0.9"/>
@@ -82,22 +82,22 @@
                     </svg>
                 </div>
                 <div class="hidden sm:block">
-                    <span class="text-2xl font-serif tracking-wide font-bold block text-cream">Uno Más</span>
-                    <span class="text-xs uppercase tracking-[0.2em] text-gold font-medium">Immersive Beverage Concepts</span>
+                    <span class="text-3xl font-serif tracking-wide font-bold block text-cream">Uno Más</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-gold font-bold">Immersive Beverage Concepts</span>
                 </div>
             </a>
 
-            <!-- Navigation Links & Controls -->
-            <div class="flex items-center gap-8">
-                <nav class="hidden md:flex items-center gap-8 text-base font-semibold tracking-wide">
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-10">
+                <nav class="hidden md:flex items-center gap-10 font-serif text-xl tracking-wider">
                     <a href="#concepto" class="hover:text-gold transition-colors" data-es="El Concepto" data-en="The Concept">El Concepto</a>
-                    <a href="#socios" class="hover:text-gold transition-colors" data-es="Socios" data-en="Partners">Socios</a>
+                    <a href="#socios" class="hover:text-gold transition-colors" data-es="Socios y Proveedores" data-en="Partners & Suppliers">Socios y Proveedores</a>
                     <a href="#incubadora" class="hover:text-gold transition-colors" data-es="Incubadora" data-en="Brand Incubator">Incubadora</a>
                     <a href="#contacto" class="hover:text-gold transition-colors" data-es="Contacto" data-en="Contact">Contacto</a>
                 </nav>
 
                 <!-- Language Toggle Button -->
-                <button id="langToggle" onclick="toggleLanguage()" class="px-4 py-2 rounded-full border border-gold/40 hover:border-gold bg-navy-light/50 text-gold text-xs font-semibold tracking-widest transition-all shadow-sm">
+                <button id="langToggle" onclick="toggleLanguage()" class="px-5 py-2.5 rounded-full border-2 border-gold/60 hover:border-gold bg-navy-light/60 text-gold text-xs font-extrabold tracking-[0.2em] transition-all shadow-md hover:scale-105">
                     EN
                 </button>
             </div>
@@ -107,229 +107,19 @@
     <!-- Hero Section featuring SelfPour.png -->
     <section class="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
         
-        <!-- Hero Image Container (SelfPour.png prominently displayed at the top) -->
-        <div class="relative w-full max-w-5xl mx-auto mb-10 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark">
+        <!-- Hero Image Container (SelfPour.png) -->
+        <div class="relative w-full max-w-5xl mx-auto mb-12 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-navy-dark">
             <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60 z-10"></div>
-            <img src="./SelfPour.png" alt="Uno Más Self-Pour Wall Hero" class="w-full h-[320px] md:h-[480px] object-cover object-center transform hover:scale-105 transition-transform duration-700">
+            <img src="./SelfPour.png" alt="Uno Más Self-Pour Wall Hero" class="w-full h-[340px] md:h-[500px] object-cover object-center transform hover:scale-105 transition-transform duration-700">
         </div>
 
-        <!-- Headline & Content Positioned Below the Hero Image -->
+        <!-- Headline & Content Below Hero -->
         <div class="relative z-10 max-w-5xl mx-auto text-center">
-            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-terracotta/20 border border-terracotta/40 text-terracotta-light text-xs uppercase tracking-[0.25em] font-semibold mb-8 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-terracotta/20 border border-terracotta/40 text-terracotta-light text-xs uppercase tracking-[0.3em] font-bold mb-8 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-terracotta animate-pulse"></span>
                 <span data-es="Próximamente en Mazatlán • Ubicación por Anunciar" data-en="Coming Soon to Mazatlán • Location TBA">Próximamente en Mazatlán • Ubicación por Anunciar</span>
             </div>
 
             <!-- Bilingual Tagline -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-cream tracking-tight mb-8 leading-[1.1]">
-                <span data-es="Ven sediento.<br><span class='italic text-gold font-normal'>Quédate curioso.</span>" data-en="Come thirsty.<br><span class='italic text-gold font-normal'>Leave curious.</span>">Ven sediento.<br><span class="italic text-gold font-normal">Quédate curioso.</span></span>
-            </h1>
-
-            <p class="text-xl md:text-2xl text-cream/90 max-w-3xl mx-auto font-light leading-relaxed mb-12" data-es="Un laboratorio experimental de sabores y estudio de degustación automatizado. Descubre la siguiente ola de bebidas artesanales a través de una experiencia sensorial sin precedentes." data-en="An experimental flavor laboratory and automated tasting studio. Discover the next wave of craft beverages through an unprecedented sensory experience.">
-                Un laboratorio experimental de sabores y estudio de degustación automatizado. Descubre la siguiente ola de bebidas artesanales a través de una experiencia sensorial sin precedentes.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-                <a href="#contacto" class="w-full sm:w-auto px-9 py-4 rounded-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold tracking-wider text-base uppercase transition-all duration-300 shadow-xl shadow-terracotta/20 hover:scale-105" data-es="Acceso Anticipado VIP" data-en="VIP Early Access">
-                    Acceso Anticipado VIP
-                </a>
-                <a href="#socios" class="w-full sm:w-auto px-9 py-4 rounded-full bg-navy-light/60 hover:bg-navy-light border border-gold/30 hover:border-gold text-cream font-semibold tracking-wider text-base uppercase transition-all duration-300 backdrop-blur-md" data-es="Registro de Proveedores" data-en="Supplier Portfolio">
-                    Registro de Proveedores
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- El Concepto Section -->
-    <section id="concepto" class="py-28 px-6 bg-navy-dark/70 border-t border-navy-light/35">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-gold text-sm uppercase tracking-[0.3em] font-bold block mb-3" data-es="Filosofía del Proyecto" data-en="Project Philosophy">Filosofía del Proyecto</span>
-                <h2 class="text-5xl md:text-7xl font-serif font-bold text-cream mb-6" data-es="El Concepto" data-en="The Concept">El Concepto</h2>
-                <div class="w-28 h-0.5 bg-gold mx-auto mb-8"></div>
-                <p class="text-cream/90 text-lg md:text-xl font-light leading-relaxed tracking-wide max-w-3xl mx-auto font-sans" data-es="Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores." data-en="Uno Más redefines tasting culture by fusing precision self-serve technology with independent, innovative liquid profiles.">
-                    Una Más redefine la cultura de degustación fusionando tecnología de autoservicio de precisión con perfiles de líquidos independientes e innovadores.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-navy p-10 rounded-2xl border border-navy-light/60 hover:border-gold/50 transition-all duration-300 shadow-xl group">
-                    <div class="w-16 h-16 rounded-xl bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-terracotta-light text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        ⚡
-                    </div>
-                    <h3 class="text-3xl font-serif font-bold text-cream mb-4" data-es="Autoservicio Inteligente" data-en="Smart Self-Service">Autoservicio Inteligente</h3>
-                    <p class="text-cream/80 font-light text-base md:text-lg leading-relaxed" data-es="Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida." data-en="Flow systems with millimeter temperature control and ounce-by-ounce measurement, allowing explorers to design their own custom tasting flight.">
-                        Sistemas de flujo con control de temperatura milimétrico y medición por onza, permitiendo a los exploradores diseñar su propio vuelo de degustación a medida.
-                    </p>
-                </div>
-
-                <div class="bg-navy p-10 rounded-2xl border border-navy-light/60 hover:border-gold/50 transition-all duration-300 shadow-xl group">
-                    <div class="w-16 h-16 rounded-xl bg-gold/20 border border-gold/40 flex items-center justify-center text-gold text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        🧪
-                    </div>
-                    <h3 class="text-3xl font-serif font-bold text-cream mb-4" data-es="Laboratorio de Sabores" data-en="Flavor Laboratory">Laboratorio de Sabores</h3>
-                    <p class="text-cream/80 font-light text-base md:text-lg leading-relaxed" data-es="Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas." data-en="A dynamic space dedicated to classic European styles, hop experimentation, wild ferments, and exclusive botanical creations.">
-                        Un espacio dinámico dedicado a estilos europeos clásicos, experimentaciones con lúpulo, fermentos salvajes y creaciones botánicas exclusivas.
-                    </p>
-                </div>
-
-                <div class="bg-navy p-10 rounded-2xl border border-navy-light/60 hover:border-gold/50 transition-all duration-300 shadow-xl group">
-                    <div class="w-16 h-16 rounded-xl bg-terracotta/20 border border-terracotta/40 flex items-center justify-center text-terracotta-light text-3xl mb-6 group-hover:scale-110 transition-transform">
-                        🌐
-                    </div>
-                    <h3 class="text-3xl font-serif font-bold text-cream mb-4" data-es="Experiencia Cashless" data-en="Cashless Experience">Experiencia Cashless</h3>
-                    <p class="text-cream/80 font-light text-base md:text-lg leading-relaxed" data-es="Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo." data-en="Fully integrated RFID and mobile platform designed for seamless exploration, with no lines or friction between pours.">
-                        Plataforma totalmente integrada por tarjeta RFID y móvil, diseñada para una exploración fluida, sin filas ni fricción entre cada sorbo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners / Supplier Portfolio Submission Section -->
-    <section id="socios" class="py-28 px-6 bg-navy">
-        <div class="max-w-4xl mx-auto bg-navy-dark/90 border border-gold/40 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
-            <div class="absolute -left-20 -top-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-gold text-sm uppercase tracking-[0.3em] font-bold block mb-3" data-es="Red de Proveedores y Creadores" data-en="Supplier & Producer Network">Red de Proveedores y Creadores</span>
-                <h2 class="text-4xl md:text-6xl font-serif font-bold text-cream mb-4" data-es="Envía tu Portafolio de Bebidas" data-en="Submit Your Beverage Portfolio">Envía tu Portafolio de Bebidas</h2>
-                <div class="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
-                <p class="text-cream/90 text-base md:text-lg font-light leading-relaxed" data-es="Eres productor o proveedor de cerveza artesanal, vino o destilados independientes? Comparte tu portafolio y catálogo de productos para integrarte a nuestra base de datos oficial de líquidos." data-en="Are you a producer or supplier of craft beer, wine, or independent spirits? Share your portfolio and product catalog to join our official liquid database.">
-                    ¿Eres productor o proveedor de cerveza artesanal, vino o destilados independientes? Comparte tu portafolio y catálogo de productos para integrarte a nuestra base de datos oficial de líquidos.
-                </p>
-            </div>
-
-            <form onsubmit="event.preventDefault(); alert('¡Portafolio recibido con éxito! Se ha agregado a nuestra base de datos.');" class="space-y-6 max-w-xl mx-auto">
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Nombre del Productor / Empresa" data-en="Producer / Company Name">Nombre del Productor / Empresa</label>
-                        <input type="text" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="Ej. Cervecería...">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Correo de Contacto" data-en="Contact Email">Correo de Contacto</label>
-                        <input type="email" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="contacto@empresa.com">
-                    </div>
-                </div>
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Sitio Web o Redes Sociales" data-en="Website or Social Media">Sitio Web o Redes Sociales</label>
-                        <input type="text" class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="@instagram o web.com">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Enlace al Portafolio / Catálogo (PDF o Web)" data-en="Portfolio / Catalog Link (PDF or Web)">Enlace al Portafolio / Catálogo (PDF o Web)</label>
-                        <input type="url" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="https://tuportafolio.com/pdf">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Descripción de Estilos y Productos" data-en="Styles & Product Overview">Descripción de Estilos y Productos</label>
-                    <textarea rows="3" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" data-es-placeholder="Cuéntanos sobre tus cervezas, estilos principales o especialidades..." data-en-placeholder="Tell us about your beers, key styles, or specialties..." placeholder="Cuéntanos sobre tus cervezas, estilos principales o especialidades..."></textarea>
-                </div>
-                <div class="text-center pt-2">
-                    <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-full bg-gold hover:bg-gold-light text-navy-dark font-bold tracking-wider text-base uppercase transition-all duration-300 shadow-xl" data-es="Enviar Portafolio a Base de Datos" data-en="Submit Portfolio to Database">
-                        Enviar Portafolio a Base de Datos
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Brand Incubator / Incubadora de Marcas Section -->
-    <section id="incubadora" class="py-28 px-6 bg-navy-dark/70 border-t border-navy-light/35">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-gold text-sm uppercase tracking-[0.3em] font-bold block mb-3" data-es="Innovación Independiente" data-en="Independent Innovation">Innovación Independiente</span>
-            <h2 class="text-5xl md:text-7xl font-serif font-bold text-cream mb-6" data-es="Incubadora de Marcas" data-en="Brand Incubator">Incubadora de Marcas</h2>
-            <div class="w-28 h-0.5 bg-gold mx-auto mb-8"></div>
-            <p class="text-cream/90 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-12" data-es="Más allá de un espacio de degustación, operamos como una incubadora y plataforma de lanzamiento para productores de bebidas independientes que buscan conectar directamente con paladares exigentes y recopilar datos de consumo en vivo." data-en="Beyond a tasting venue, we operate as an incubator and launch platform for independent beverage producers seeking to connect directly with discerning palates and collect live consumption data.">
-                Más allá de un espacio de degustación, operamos como una incubadora y plataforma de lanzamiento para productores de bebidas independientes que buscan conectar directamente con paladares exigentes y recopilar datos de consumo en vivo.
-            </p>
-            <div class="inline-block bg-navy border border-gold/40 px-10 py-8 rounded-2xl shadow-xl">
-                <p class="text-sm uppercase tracking-[0.2em] text-gold font-bold mb-2" data-es="Liderazgo Creativo" data-en="Creative Leadership">Liderazgo Creativo</p>
-                <p class="text-3xl font-serif font-bold text-cream">Michael Burmil</p>
-                <p class="text-base text-cream/80 font-light mt-1.5" data-es="Director of Beverage Innovation" data-en="Director of Beverage Innovation">Director of Beverage Innovation</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- General Contact Section -->
-    <section id="contacto" class="py-28 px-6 bg-navy">
-        <div class="max-w-4xl mx-auto bg-navy-dark/90 border border-gold/40 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
-            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-gold text-sm uppercase tracking-[0.3em] font-bold block mb-3" data-es="Mantente Conectado" data-en="Stay Connected">Mantente Conectado</span>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-cream mb-4" data-es="Contacto General" data-en="General Contact">Contacto General</h2>
-                <p class="text-cream/90 text-base md:text-lg font-light" data-es="¿Tienes alguna consulta general, propuesta o deseas agendar una reunión? Escríbenos directamente." data-en="Do you have a general inquiry, proposal, or wish to schedule a meeting? Write to us directly.">
-                    ¿Tienes alguna consulta general, propuesta o deseas agendar una reunión? Escríbenos directamente.
-                </p>
-            </div>
-
-            <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');" class="space-y-6 max-w-xl mx-auto">
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Nombre" data-en="Name">Nombre</label>
-                        <input type="text" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="Tu nombre">
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
-                        <input type="email" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="tucorreo@domain.com">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs uppercase tracking-widest text-gold mb-2 font-semibold" data-es="Mensaje" data-en="Message">Mensaje</label>
-                    <textarea rows="3" required class="w-full bg-navy border border-navy-light rounded-xl px-4 py-3 text-cream placeholder-cream/30 focus:outline-none focus:border-gold transition-colors text-base" placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold tracking-wider text-base uppercase transition-all duration-300 shadow-lg shadow-terracotta/30" data-es="Enviar Mensaje" data-en="Send Message">
-                        Enviar Mensaje
-                    </button>
-                </div>
-            </form>
-
-            <!-- Enlarged Footer Contact Details -->
-            <div class="mt-16 pt-10 border-t border-navy-light/50 flex flex-col md:flex-row items-center justify-between text-base text-cream/90 gap-6 text-center md:text-left">
-                <div>
-                    <p class="font-serif font-bold text-cream text-xl">Uno Más by Immersive Beverage Concepts</p>
-                    <p class="text-sm text-gold tracking-widest mt-1">Mazatlán, Sinaloa, México</p>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center gap-6">
-                    <a href="mailto:ibc.mzt@gmail.com" class="text-base font-semibold hover:text-gold transition-colors">ibc.mzt@gmail.com</a>
-                    <a href="https://instagram.com/ibcmazatlan" target="_blank" class="text-base font-semibold hover:text-gold transition-colors">@ibcmazatlan</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 text-center text-sm text-cream/60 border-t border-navy-light/30">
-        <p>&copy; 2026 Immersive Beverage Concepts. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- Language Toggle Script -->
-    <script>
-        let currentLang = 'es';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            document.getElementById('langToggle').textContent = currentLang === 'es' ? 'EN' : 'ES';
-            document.documentElement.lang = currentLang;
-
-            const elements = document.querySelectorAll('[data-es]');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${currentLang}`);
-                if (text) {
-                    if (text.includes('<') || text.includes('&')) {
-                        el.innerHTML = text;
-                    } else {
-                        el.textContent = text;
-                    }
-                }
-                const placeholder = el.getAttribute(`data-${currentLang}-placeholder`);
-                if (placeholder) {
-                    el.placeholder = placeholder;
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-cream tracking-tight mb-8 leading-[1.05]">
+                <span data-es="
