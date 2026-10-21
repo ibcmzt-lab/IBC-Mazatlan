@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Una Más by IBC | Immersive Beverage Studio in Mazatlán</title>
+    <title>Una Más by IBC | Estudio de Bebidas en Mazatlán</title>
     <style>
         :root {
             --bg-color: #0f1115;
@@ -31,26 +31,44 @@
             border-bottom: 1px solid #222732;
         }
 
-        .logo-container img {
-            height: 50px;
-            width: auto;
+        .logo-container {
+            display: flex;
+            align-items: center;
         }
 
-        .lang-toggle {
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
             color: var(--text-light);
+            text-transform: uppercase;
             text-decoration: none;
-            font-size: 0.9rem;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 400;
+        }
+
+        .lang-btn {
+            color: var(--text-light);
+            background-color: #181b22;
+            border: 1px solid #333a4d;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
             font-weight: bold;
             letter-spacing: 1px;
-            border: 1px solid #333a4d;
-            padding: 6px 12px;
-            border-radius: 4px;
-            background-color: #181b22;
-            transition: border-color 0.2s ease;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease;
         }
 
-        .lang-toggle:hover {
+        .lang-btn:hover {
             border-color: var(--accent-gold);
+            color: var(--accent-gold);
         }
 
         .hero-image-container {
@@ -168,9 +186,12 @@
 
     <header>
         <div class="logo-container">
-            <img src="Una Mas transp.png" alt="Una Más by Immersive Beverage Concepts">
+            <a href="https://ibcmazatlan.com" class="logo-text">
+                UNA MÁS
+                <span>BY IMMERSIVE BEVERAGE CONCEPTS</span>
+            </a>
         </div>
-        <a href="#es" class="lang-toggle">ES | EN</a>
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">ES | EN</button>
     </header>
 
     <section class="hero-image-container">
@@ -178,35 +199,101 @@
     </section>
 
     <section class="hero-content">
-        <h1>Where Exceptional Liquids Take Center Stage.</h1>
-        <p>Mazatlán’s premier beverage studio—delivering an expertly curated, ever-changing selection of exceptional craft beer and fine beverages.</p>
-        <a href="#partner" class="cta-btn">Partner With Us</a>
+        <h1 id="heroHeadline">Donde los Líquidos Excepcionales Son los Protagonistas.</h1>
+        <p id="heroSubheadline">El estudio de bebidas líder en Mazatlán: ofreciendo una selección minuciosamente curada y en constante rotación de cerveza artesanal y bebidas finas.</p>
+        <a href="#partner" id="heroCta" class="cta-btn">Conéctate con Nosotros</a>
     </section>
 
     <section class="features">
         <div class="card">
-            <h3>Curated & Rotating Selection</h3>
-            <p>We source an evolving lineup of outstanding craft beers, functional beverages, and artisanal liquids from top independent producers across Mexico and beyond.</p>
+            <h3 id="card1Title">Selección Curada y En Rotación</h3>
+            <p id="card1Desc">Ofrecemos una oferta en constante evolución de cervezas artesanales destacadas, bebidas funcionales y líquidos artesanales de los mejores productores independientes de México y el mundo.</p>
         </div>
         <div class="card">
-            <h3>Draught Integrity & Perfect Pour</h3>
-            <p>Every pour matters. From precise temperature control and proper gas balance to style-specific glassware, we treat every beverage with the exact standard it deserves.</p>
+            <h3 id="card2Title">Integridad de Barril y Servido Perfecto</h3>
+            <p id="card2Desc">Cada servido cuenta. Desde el control preciso de temperatura y balance de gas hasta cristalería especializada por estilo, tratamos cada bebida con el estándar que merece.</p>
         </div>
         <div class="card">
-            <h3>Guided Discovery</h3>
-            <p>Whether you’re a seasoned enthusiast or just beginning to explore craft beverages, our team provides knowledgeable recommendations, guided flights, and thoughtful pairings.</p>
+            <h3 id="card3Title">Descubrimiento Guiado</h3>
+            <p id="card3Desc">Ya seas un entusiasta experimentado o estés comenzando a explorar las bebidas artesanales, nuestro equipo brinda recomendaciones expertas, catas guiadas y maridajes pensados a la medida.</p>
         </div>
     </section>
 
     <section id="partner" class="partner-section">
-        <h2>Partner With Us</h2>
-        <p>We are actively expanding our portfolio of independent breweries, craft importers, and innovative beverage producers. If you craft exceptional liquids, we’d love to connect.</p>
-        <a href="mailto:info@ibcmazatlan.com" class="cta-btn">Submit Portfolio or Price Sheet</a>
+        <h2 id="partnerTitle">Colabora con Nosotros</h2>
+        <p id="partnerDesc">Estamos expandiendo activamente nuestro portafolio de cervecerías independientes, importadores artesanales y productores innovadores. Si elaboras líquidos excepcionales, nos encantaría conectar contigo.</p>
+        <a href="mailto:info@ibcmazatlan.com" id="partnerCta" class="cta-btn">Enviar Portafolio o Lista de Precios</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Una Más by Immersive Beverage Concepts. All Rights Reserved. | <a href="https://ibcmazatlan.com">ibcmazatlan.com</a></p>
+        <p>&copy; 2026 Una Más by Immersive Beverage Concepts. <span id="rightsText">Todos los derechos reservados.</span> | <a href="https://ibcmazatlan.com">ibcmazatlan.com</a></p>
     </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        const content = {
+            es: {
+                pageTitle: "Una Más by IBC | Estudio de Bebidas en Mazatlán",
+                heroHeadline: "Donde los Líquidos Excepcionales Son los Protagonistas.",
+                heroSubheadline: "El estudio de bebidas líder en Mazatlán: ofreciendo una selección minuciosamente curada y en constante rotación de cerveza artesanal y bebidas finas.",
+                heroCta: "Conéctate con Nosotros",
+                card1Title: "Selección Curada y En Rotación",
+                card1Desc: "Ofrecemos una oferta en constante evolución de cervezas artesanales destacadas, bebidas funcionales y líquidos artesanales de los mejores productores independientes de México y el mundo.",
+                card2Title: "Integridad de Barril y Servido Perfecto",
+                card2Desc: "Cada servido cuenta. Desde el control preciso de temperatura y balance de gas hasta cristalería especializada por estilo, tratamos cada bebida con el estándar que merece.",
+                card3Title: "Descubrimiento Guiado",
+                card3Desc: "Ya seas un entusiasta experimentado o estés comenzando a explorar las bebidas artesanales, nuestro equipo brinda recomendaciones expertas, catas guiadas y maridajes pensados a la medida.",
+                partnerTitle: "Colabora con Nosotros",
+                partnerDesc: "Estamos expandiendo activamente nuestro portafolio de cervecerías independientes, importadores artesanales y productores innovadores. Si elaboras líquidos excepcionales, nos encantaría conectar contigo.",
+                partnerCta: "Enviar Portafolio o Lista de Precios",
+                rightsText: "Todos los derechos reservados."
+            },
+            en: {
+                pageTitle: "Una Más by IBC | Immersive Beverage Studio in Mazatlán",
+                heroHeadline: "Where Exceptional Liquids Take Center Stage.",
+                heroSubheadline: "Mazatlán’s premier beverage studio—delivering an expertly curated, ever-changing selection of exceptional craft beer and fine beverages.",
+                heroCta: "Partner With Us",
+                card1Title: "Curated & Rotating Selection",
+                card1Desc: "We source an evolving lineup of outstanding craft beers, functional beverages, and artisanal liquids from top independent producers across Mexico and beyond.",
+                card2Title: "Draught Integrity & Perfect Pour",
+                card2Desc: "Every pour matters. From precise temperature control and proper gas balance to style-specific glassware, we treat every beverage with the exact standard it deserves.",
+                card3Title: "Guided Discovery",
+                card3Desc: "Whether you’re a seasoned enthusiast or just beginning to explore craft beverages, our team provides knowledgeable recommendations, guided flights, and thoughtful pairings.",
+                partnerTitle: "Partner With Us",
+                partnerDesc: "We are actively expanding our portfolio of independent breweries, craft importers, and innovative beverage producers. If you craft exceptional liquids, we’d love to connect.",
+                partnerCta: "Submit Portfolio or Price Sheet",
+                rightsText: "All Rights Reserved."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            const langData = content[currentLang];
+
+            document.title = langData.pageTitle;
+            document.documentElement.lang = currentLang;
+
+            document.getElementById('heroHeadline').innerText = langData.heroHeadline;
+            document.getElementById('heroSubheadline').innerText = langData.heroSubheadline;
+            document.getElementById('heroCta').innerText = langData.heroCta;
+
+            document.getElementById('card1Title').innerText = langData.card1Title;
+            document.getElementById('card1Desc').innerText = langData.card1Desc;
+
+            document.getElementById('card2Title').innerText = langData.card2Title;
+            document.getElementById('card2Desc').innerText = langData.card2Desc;
+
+            document.getElementById('card3Title').innerText = langData.card3Title;
+            document.getElementById('card3Desc').innerText = langData.card3Desc;
+
+            document.getElementById('partnerTitle').innerText = langData.partnerTitle;
+            document.getElementById('partnerDesc').innerText = langData.partnerDesc;
+            document.getElementById('partnerCta').innerText = langData.partnerCta;
+
+            document.getElementById('rightsText').innerText = langData.rightsText;
+        }
+    </script>
 
 </body>
 </html>
