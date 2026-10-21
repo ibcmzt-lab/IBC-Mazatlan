@@ -58,17 +58,24 @@
             background-color: #181b22;
             border: 1px solid #333a4d;
             padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: bold;
-            letter-spacing: 1px;
             cursor: pointer;
-            transition: border-color 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
         .lang-btn:hover {
             border-color: var(--accent-gold);
-            color: var(--accent-gold);
+            background-color: #20242e;
+        }
+
+        .flag-icon {
+            font-size: 1.15rem;
+            line-height: 1;
         }
 
         .hero-image-container {
@@ -191,7 +198,9 @@
                 <span>BY IMMERSIVE BEVERAGE CONCEPTS</span>
             </a>
         </div>
-        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">ES | EN</button>
+        <button id="langToggle" class="lang-btn" onclick="toggleLanguage()">
+            <span class="flag-icon">🇲🇽</span> ESP | <span class="flag-icon">🇺🇸</span> ENG
+        </button>
     </header>
 
     <section class="hero-image-container">
