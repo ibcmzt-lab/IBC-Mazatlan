@@ -36,21 +36,53 @@
             width: auto;
         }
 
-        .hero {
-            position: relative;
+        .lang-toggle {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid #333a4d;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background-color: #181b22;
+            transition: border-color 0.2s ease;
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-height: 600px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero-content {
             text-align: center;
-            padding: 100px 20px 80px;
-            background: linear-gradient(180deg, rgba(15,17,21,0.6) 0%, rgba(15,17,21,1) 100%), url('taproom.png') center/cover no-repeat;
+            padding: 60px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        .hero-content h1 {
+            font-size: 2.8rem;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
-        .hero p {
+        .hero-content p {
             font-size: 1.25rem;
             color: var(--text-muted);
             max-width: 650px;
@@ -138,9 +170,14 @@
         <div class="logo-container">
             <img src="Una Mas transp.png" alt="Una Más by Immersive Beverage Concepts">
         </div>
+        <a href="#es" class="lang-toggle">ES | EN</a>
     </header>
 
-    <section class="hero">
+    <section class="hero-image-container">
+        <img src="taproom.png" alt="Una Más Taproom Bar and Draft Wall">
+    </section>
+
+    <section class="hero-content">
         <h1>Where Exceptional Liquids Take Center Stage.</h1>
         <p>Mazatlán’s premier beverage studio—delivering an expertly curated, ever-changing selection of exceptional craft beer and fine beverages.</p>
         <a href="#partner" class="cta-btn">Partner With Us</a>
