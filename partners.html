@@ -55,6 +55,11 @@
     .privacy{font-size:.9rem;color:var(--muted);margin:0}
     footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:#aab5af;font-size:1rem}
     footer a{color:var(--gold);text-decoration:none}
+    .follow-label{margin-top:16px;color:var(--cream);font-weight:700}
+    .social-links{display:flex;justify-content:center;gap:18px;margin-top:10px}
+    .social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;color:var(--cream);transition:color .2s,border-color .2s,background .2s}
+    .social-links a:hover{color:var(--gold);border-color:var(--gold);background:rgba(217,183,107,.08)}
+    .social-links svg{width:22px;height:22px;display:block}
     @media(max-width:850px){.layout{grid-template-columns:1fr}.info{order:2}.form-panel{order:1}}
     @media(max-width:480px){body{font-size:18px}header{padding:15px 14px}.brand{font-size:1.05rem}.brand small{font-size:.58rem}.lang{padding:9px 10px;font-size:.95rem}.wrap{padding:35px 16px}.info,.form-panel{padding:20px}}
   </style>
@@ -73,7 +78,7 @@
     <div class="layout">
       <section class="form-panel">
         <h2 data-es="Comparte con IBC" data-en="Share with IBC">Comparte con IBC</h2>
-        <p class="form-intro" data-es="Cuéntanos quién eres y qué estás elaborando. Puedes adjuntar hasta cinco archivos." data-en="Tell us who you are and what you're making. You can attach up to five files.">Cuéntanos quién eres y qué estás elaborando. Puedes adjuntar hasta cinco archivos.</p>
+        <p class="form-intro" data-es="Cuéntanos quién eres. Eso es suficiente para empezar." data-en="Tell us who you are. That's enough to get started.">Cuéntanos quién eres y qué estás elaborando. Puedes adjuntar hasta cinco archivos.</p>
         <div class="status success" id="success" role="status" aria-live="polite"></div>
         <div class="status error" id="error" role="alert" aria-live="assertive"></div>
 
@@ -96,39 +101,16 @@
             <input id="whatsapp" name="whatsapp" type="tel" maxlength="60" autocomplete="tel" placeholder="+52 ...">
           </div>
           <div class="field">
-            <label for="type"><span data-es="¿Qué tipo de empresa eres?" data-en="What kind of business are you?">¿Qué tipo de empresa eres?</span> <span class="required">*</span></label>
-            <select id="type" name="supplier_type" required>
-              <option value="brewery" data-es="Cervecería" data-en="Brewery">Cervecería</option>
-              <option value="beverage_producer" data-es="Productor de otras bebidas" data-en="Other beverage producer">Productor de otras bebidas</option>
-              <option value="distributor" data-es="Distribuidor" data-en="Distributor">Distribuidor</option>
-              <option value="equipment" data-es="Equipo / tecnología / insumos" data-en="Equipment / technology / supplies">Equipo / tecnología / insumos</option>
-              <option value="other" data-es="Otro" data-en="Other">Otro</option>
-            </select>
-          </div>
-          <div class="field">
+                      <div class="field">
             <label for="website" data-es="Sitio web o redes sociales" data-en="Website or social media">Sitio web o redes sociales</label>
             <input id="website" name="website" type="url" maxlength="500" placeholder="https://">
           </div>
           <div class="field">
-            <label for="regions" data-es="¿Dónde distribuyes?" data-en="Where do you distribute?">¿Dónde distribuyes?</label>
-            <input id="regions" name="regions_served" maxlength="500" data-placeholder-es="Estados, ciudades o cobertura nacional" data-placeholder-en="States, cities, or nationwide" placeholder="Estados, ciudades o cobertura nacional">
-          </div>
-          <div class="field">
-            <label for="products"><span data-es="Cuéntanos sobre tus productos" data-en="Tell us about your products">Cuéntanos sobre tus productos</span> <span class="required">*</span></label>
-            <textarea id="products" name="product_summary" required minlength="5" maxlength="5000" data-placeholder-es="Marcas, estilos, formatos, ABV, novedades, productos estrella..." data-placeholder-en="Brands, styles, formats, ABV, new releases, standout products..." placeholder="Marcas, estilos, formatos, ABV, novedades, productos estrella..."></textarea>
-          </div>
-          <div class="field">
-            <label for="pricing" data-es="Precios y condiciones" data-en="Pricing and terms">Precios y condiciones</label>
-            <textarea id="pricing" name="pricing_notes" maxlength="3000" data-placeholder-es="Moneda, pedido mínimo, vigencia de precios, entrega..." data-placeholder-en="Currency, minimum order, price validity, delivery..." placeholder="Moneda, pedido mínimo, vigencia de precios, entrega..."></textarea>
-          </div>
-          <div class="field">
-            <label for="files" data-es="Catálogos, listas de precios o fichas técnicas" data-en="Catalogs, price lists, or product sheets">Catálogos, listas de precios o fichas técnicas</label>
-            <input id="files" name="files" type="file" multiple accept=".pdf,.xlsx,.xls,.docx,.doc,.csv,.txt,.jpg,.jpeg,.png,.webp">
-            <p class="help" data-es="Hasta 5 archivos, 15 MB cada uno. PDF, Excel, Word, CSV e imágenes." data-en="Up to 5 files, 15 MB each. PDF, Excel, Word, CSV, and images.">Hasta 5 archivos, 15 MB cada uno. PDF, Excel, Word, CSV e imágenes.</p>
-            <div id="fileList" class="file-list" aria-live="polite"></div>
+            <label for="products" data-es="¿Algo que quieras contarnos? (opcional)" data-en="Anything you would like to share? (optional)">¿Algo que quieras contarnos? (opcional)</label>
+            <textarea id="products" name="product_summary" maxlength="5000" data-placeholder-es="Marcas, productos o novedades, si quieres..." data-placeholder-en="Brands, products, or news, if you like..." placeholder="Marcas, productos o novedades, si quieres..."></textarea>
           </div>
           <button class="btn submit" id="submit" type="submit" data-es="Enviar información a IBC" data-en="Send information to IBC">Enviar información a IBC</button>
-          <p class="privacy" data-es="Usaremos esta información para revisar tus productos y dar seguimiento comercial. Tus archivos se guardan en un espacio privado, no público." data-en="We'll use this information to review your products and follow up about business opportunities. Your files are stored privately, not publicly.">Usaremos esta información para revisar tus productos y dar seguimiento comercial. Tus archivos se guardan en un espacio privado, no público.</p>
+          <p class="privacy" data-es="Usaremos esta información para contactarte sobre posibles oportunidades. Más adelante podrás compartir catálogos, precios y novedades." data-en="We'll use this information to contact you about potential opportunities. You can share catalogs, pricing, and new releases later.">Usaremos esta información para revisar tus productos y dar seguimiento comercial. Tus archivos se guardan en un espacio privado, no público.</p>
         </form>
       </section>
 
@@ -144,7 +126,7 @@
     </div>
     <p style="margin-top:28px"><a href="index.html" data-es="← Volver a Una Más" data-en="← Back to Una Más">← Volver a Una Más</a></p>
   </main>
-  <footer>UNA MÁS BY IBC · MAZATLÁN, SINALOA · <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a></footer>
+  <footer class="social-footer"><div class="footer-line">UNA MÁS BY IBC · MAZATLÁN, SINALOA · <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a></div><div class="follow-label" data-es="Síguenos" data-en="Follow us">Síguenos</div><div class="social-links"><a href="https://www.instagram.com/IBCMazatlan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de IBC" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a><a href="https://x.com/IBC_MZT" target="_blank" rel="noopener noreferrer" aria-label="IBC en X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.4 6.8L18.9 2zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20z" fill="currentColor"/></svg></a></div></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
@@ -156,8 +138,6 @@
       const submit = document.getElementById("submit");
       const success = document.getElementById("success");
       const error = document.getElementById("error");
-      const filesInput = document.getElementById("files");
-      const fileList = document.getElementById("fileList");
       const toggle = document.getElementById("toggle");
       let language = "es";
 
@@ -183,11 +163,6 @@
         link.href = requestedLanguage === "en" ? "index.html?lang=en" : "index.html?lang=es";
       });
 
-      filesInput.addEventListener("change", () => {
-        const files = Array.from(filesInput.files || []);
-        fileList.textContent = files.length ? files.map(f => f.name + " (" + (f.size / 1048576).toFixed(1) + " MB)").join(" · ") : "";
-      });
-
       function showError(message) {
         error.textContent = message;
         error.classList.add("show");
@@ -199,43 +174,28 @@
         error.classList.remove("show");
         success.classList.remove("show");
         if (document.getElementById("companyFax").value) return;
-        const files = Array.from(filesInput.files || []);
-        const allowed = new Set(["application/pdf","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/msword","text/csv","text/plain","image/jpeg","image/png","image/webp"]);
-        if (files.length > 5) return showError(language === "es" ? "Puedes adjuntar un máximo de 5 archivos." : "You can attach up to 5 files.");
-        for (const file of files) {
-          if (file.size > 15 * 1024 * 1024) return showError(language === "es" ? "Cada archivo debe pesar 15 MB o menos." : "Each file must be 15 MB or less.");
-          if (!allowed.has(file.type)) return showError(language === "es" ? "Uno de los archivos tiene un formato no permitido. Usa PDF, Excel, Word, CSV, TXT, JPG, PNG o WEBP." : "One file type isn't allowed. Use PDF, Excel, Word, CSV, TXT, JPG, PNG, or WEBP.");
-        }
         const data = new FormData(form);
         const payload = {
           company_name: String(data.get("company_name") || "").trim(),
           contact_name: String(data.get("contact_name") || "").trim(),
           email: String(data.get("email") || "").trim(),
           whatsapp: String(data.get("whatsapp") || "").trim() || null,
-          supplier_type: String(data.get("supplier_type") || "brewery"),
+          supplier_type: null,
           website: String(data.get("website") || "").trim() || null,
           country: "Mexico",
-          regions_served: String(data.get("regions_served") || "").trim() || null,
-          product_summary: String(data.get("product_summary") || "").trim(),
-          pricing_notes: String(data.get("pricing_notes") || "").trim() || null,
+          regions_served: null,
+          product_summary: String(data.get("product_summary") || "").trim() || null,
+          pricing_notes: null,
           file_paths: []
         };
         submit.disabled = true;
         submit.textContent = language === "es" ? "Enviando…" : "Sending…";
         try {
-          for (const file of files) {
-            const safeName = file.name.normalize("NFKD").replace(/[^a-zA-Z0-9._-]+/g, "-").slice(-100) || "document";
-            const path = "incoming/" + crypto.randomUUID() + "-" + safeName;
-            const { error: uploadError } = await client.storage.from("supplier-submissions").upload(path, file, { upsert: false, contentType: file.type || "application/octet-stream" });
-            if (uploadError) throw uploadError;
-            payload.file_paths.push(path);
-          }
           const { error: insertError } = await client.from("supplier_inquiries").insert(payload);
           if (insertError) throw insertError;
           success.textContent = language === "es" ? "¡Listo! Recibimos tu información. Gracias por compartir tus productos con IBC. Te contactaremos si necesitamos dar seguimiento." : "You're all set! We received your information. Thanks for sharing your products with IBC. We'll be in touch if we need to follow up.";
           success.classList.add("show");
           form.reset();
-          fileList.textContent = "";
         } catch (err) {
           console.error("Supplier submission failed", err);
           showError(language === "es" ? "No pudimos completar el envío. Revisa tu conexión e inténtalo de nuevo, o escríbenos a ibc.mzt@gmail.com." : "We couldn't complete your submission. Check your connection and try again, or email ibc.mzt@gmail.com.");
