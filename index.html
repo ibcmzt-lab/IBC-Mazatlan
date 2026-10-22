@@ -122,6 +122,8 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 4px;
+            border: none;
+            cursor: pointer;
             transition: opacity 0.2s ease;
         }
 
@@ -175,6 +177,70 @@
             margin: 0 auto 25px;
         }
 
+        /* Modal Popup Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--accent-gold);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #fff;
+        }
+
+        .upload-form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .upload-form input[type="text"],
+        .upload-form input[type="email"],
+        .upload-form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #333a4d;
+            background-color: #0f1115;
+            color: var(--text-light);
+            box-sizing: border-box;
+        }
+
+        .upload-form input[type="file"] {
+            padding: 8px;
+            cursor: pointer;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -210,7 +276,7 @@
     <section class="hero-content">
         <h1 id="heroHeadline">Donde los Líquidos Excepcionales Son los Protagonistas.</h1>
         <p id="heroSubheadline">El estudio de bebidas líder en Mazatlán: ofreciendo una selección minuciosamente curada y en constante rotación de cerveza artesanal y bebidas finas.</p>
-        <a href="#partner" id="heroCta" class="cta-btn">Conéctate con Nosotros</a>
+        <button onclick="openModal()" id="heroCta" class="cta-btn">Conéctate con Nosotros</button>
     </section>
 
     <section class="features">
@@ -231,8 +297,28 @@
     <section id="partner" class="partner-section">
         <h2 id="partnerTitle">Colabora con Nosotros</h2>
         <p id="partnerDesc">Estamos expandiendo activamente nuestro portafolio de cervecerías independientes, importadores artesanales y productores innovadores. Si elaboras líquidos excepcionales, nos encantaría conectar contigo.</p>
-        <a href="mailto:info@ibcmazatlan.com" id="partnerCta" class="cta-btn">Enviar Portafolio o Lista de Precios</a>
+        <button onclick="openModal()" id="partnerCta" class="cta-btn">Enviar Portafolio o Lista de Precios</button>
     </section>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle" style="color: var(--accent-gold); margin-top: 0;">Subir Documentos de Proveedor</h3>
+            <form class="upload-form" onsubmit="handleUpload(event)">
+                <label id="lblBrandName" for="brandName">Nombre de la Marca / Cervecería:</label>
+                <input type="text" id="brandName" required placeholder="Ej. Cervecería Artesanal">
+
+                <label id="lblEmail" for="contactEmail">Correo Electrónico de Contacto:</label>
+                <input type="email" id="contactEmail" required placeholder="contacto@marca.com">
+
+                <label id="lblFile" for="docFile">Escanear o Adjuntar Archivo (PDF / Imagen):</label>
+                <input type="file" id="docFile" accept="image/*,application/pdf" required>
+
+                <button type="submit" id="btnSubmitUpload" class="cta-btn" style="width: 100%; margin-top: 20px;">Enviar Documentos</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Una Más by Immersive Beverage Concepts. <span id="rightsText">Todos los derechos reservados.</span> | <a href="https://ibcmazatlan.com">ibcmazatlan.com</a></p>
@@ -256,7 +342,12 @@
                 partnerTitle: "Colabora con Nosotros",
                 partnerDesc: "Estamos expandiendo activamente nuestro portafolio de cervecerías independientes, importadores artesanales y productores innovadores. Si elaboras líquidos excepcionales, nos encantaría conectar contigo.",
                 partnerCta: "Enviar Portafolio o Lista de Precios",
-                rightsText: "Todos los derechos reservados."
+                rightsText: "Todos los derechos reservados.",
+                modalTitle: "Subir Documentos de Proveedor",
+                lblBrandName: "Nombre de la Marca / Cervecería:",
+                lblEmail: "Correo Electrónico de Contacto:",
+                lblFile: "Escanear o Adjuntar Archivo (PDF / Imagen):",
+                btnSubmitUpload: "Enviar Documentos"
             },
             en: {
                 pageTitle: "Una Más by IBC | Immersive Beverage Studio in Mazatlán",
@@ -272,7 +363,12 @@
                 partnerTitle: "Partner With Us",
                 partnerDesc: "We are actively expanding our portfolio of independent breweries, craft importers, and innovative beverage producers. If you craft exceptional liquids, we’d love to connect.",
                 partnerCta: "Submit Portfolio or Price Sheet",
-                rightsText: "All Rights Reserved."
+                rightsText: "All Rights Reserved.",
+                modalTitle: "Upload Supplier Documents",
+                lblBrandName: "Brand / Brewery Name:",
+                lblEmail: "Contact Email:",
+                lblFile: "Scan or Attach File (PDF / Image):",
+                btnSubmitUpload: "Submit Documents"
             }
         };
 
@@ -301,6 +397,30 @@
             document.getElementById('partnerCta').innerText = langData.partnerCta;
 
             document.getElementById('rightsText').innerText = langData.rightsText;
+
+            // Modal text updates
+            document.getElementById('modalTitle').innerText = langData.modalTitle;
+            document.getElementById('lblBrandName').innerText = langData.lblBrandName;
+            document.getElementById('lblEmail').innerText = langData.lblEmail;
+            document.getElementById('lblFile').innerText = langData.lblFile;
+            document.getElementById('btnSubmitUpload').innerText = langData.btnSubmitUpload;
+        }
+
+        function openModal() {
+            document.getElementById('uploadModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('uploadModal').style.display = 'none';
+        }
+
+        function handleUpload(event) {
+            event.preventDefault();
+            const msg = currentLang === 'es' 
+                ? '¡Gracias! Hemos recibido sus documentos y nos pondremos en contacto pronto.' 
+                : 'Thank you! We have received your documents and will be in touch soon.';
+            alert(msg);
+            closeModal();
         }
     </script>
 
