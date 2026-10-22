@@ -56,7 +56,7 @@ async function loadInquiries(){
 document.getElementById("loginForm").addEventListener("submit",async e=>{
  e.preventDefault();const button=document.getElementById("loginButton");button.disabled=true;
  const email=document.getElementById("email").value.trim();
- const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.href.split("#")[0]}});
+ const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:"https://ibcmazatlan.com/admin.html"}});
  if(error)notice("Could not send sign-in link: "+error.message,"error");else notice("Check "+email+" for your secure sign-in link. If the email doesn't arrive, check spam or your Supabase Auth email settings.","success");
  button.disabled=false;
 });
