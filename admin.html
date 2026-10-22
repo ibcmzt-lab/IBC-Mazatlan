@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10191a">
+<title>IBC Back Office | Una Más</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10191a;--panel:#182526;--cream:#f4efe5;--muted:#c0c9c4;--gold:#d9b76b;--line:#354344;--teal:#8dc7bb}
+*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--cream);font:18px/1.6 "DM Sans",sans-serif}h1,h2,h3,.brand{font-family:"Bricolage Grotesque",sans-serif}header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(18px,5vw,70px);border-bottom:1px solid var(--line)}a{color:var(--gold)}.brand{color:var(--cream);text-decoration:none;font-size:1.25rem;font-weight:800;letter-spacing:.1em}.brand small{display:block;color:var(--gold);font:700 .68rem "DM Sans",sans-serif}.wrap{max-width:1200px;margin:auto;padding:clamp(30px,5vw,64px) clamp(16px,4vw,44px)}h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1;margin:8px 0 12px;letter-spacing:-.05em}.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.9rem}.muted{color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,3vw,32px);margin:22px 0}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.field{display:grid;gap:7px;margin:15px 0}input,select,button{font:inherit}input,select{background:var(--ink);color:var(--cream);border:1px solid #596662;border-radius:6px;min-height:48px;padding:10px 12px}button{cursor:pointer}.btn{border:1px solid var(--gold);background:var(--gold);color:var(--ink);font-weight:700;padding:12px 18px;border-radius:6px;min-height:48px}.btn.secondary{background:transparent;color:var(--cream)}.notice{padding:14px 16px;border:1px solid var(--line);border-radius:8px;color:var(--muted);margin:14px 0;overflow-wrap:anywhere}.notice.error{border-color:#9c554a;color:#ffd8d1}.notice.success{border-color:#3f7865;color:#c6f0df}.hidden{display:none!important}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.stat{padding:18px;background:#10191a;border:1px solid var(--line);border-radius:8px}.stat strong{display:block;font:800 2rem "Bricolage Grotesque";color:var(--gold)}.inquiry{padding:22px 0;border-top:1px solid var(--line)}.inquiry:first-child{border-top:0}.inquiry h3{font-size:1.5rem;margin:0 0 5px}.details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}.detail{background:#10191a;border-radius:6px;padding:12px;overflow-wrap:anywhere}.detail strong{display:block;color:var(--gold);font-size:.9rem}.files{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.filelink{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:8px 12px;text-decoration:none}.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.actions select{min-width:170px}footer{padding:25px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:650px){header{align-items:flex-start}.stats{grid-template-columns:1fr}.details{grid-template-columns:1fr}.wrap{padding-left:14px;padding-right:14px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">UNA MÁS <small>IBC · BACK OFFICE</small></a><button id="signOut" class="btn secondary hidden" type="button">Sign out</button></header>
+<main class="wrap">
+<div class="eyebrow">Internal workspace</div><h1>Supplier desk.</h1><p class="muted">Review incoming producer information, documents, and follow-up status. Access is limited to approved IBC team members.</p>
+<div id="message" class="notice" role="status">Sign in with your IBC email to continue.</div>
+<section id="loginPanel" class="panel">
+<h2>Team sign-in</h2><p class="muted">We'll email you a secure sign-in link. Only accounts explicitly approved for the IBC team can view submissions.</p>
+<form id="loginForm"><div class="field"><label for="email">Work email</label><input id="email" type="email" required autocomplete="email" placeholder="you@company.com"></div><button class="btn" id="loginButton" type="submit">Email me a sign-in link</button></form>
+</section>
+<section id="dashboard" class="hidden">
+<div class="stats"><div class="stat"><span class="muted">New inquiries</span><strong id="newCount">0</strong></div><div class="stat"><span class="muted">Being reviewed</span><strong id="reviewCount">0</strong></div><div class="stat"><span class="muted">All submissions</span><strong id="allCount">0</strong></div></div>
+<div class="panel"><div class="row" style="justify-content:space-between"><h2>Supplier inquiries</h2><button id="refresh" class="btn secondary" type="button">Refresh</button></div><p class="muted">New submissions appear here. Update the status as your team follows up.</p><div id="inquiries"><p class="muted">Loading submissions…</p></div></div>
+</section>
+</main>
+<footer>IBC Mazatlán · Internal use only · <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(() => {
+const supabase = window.supabase.createClient("https://kueckuienhnqmkgtgqpi.supabase.co","sb_publishable_Ym1jg6DpfVsZo6f10_YBzA_3yYV522a");
+const message=document.getElementById("message"), loginPanel=document.getElementById("loginPanel"), dashboard=document.getElementById("dashboard"), signOut=document.getElementById("signOut"), inquiries=document.getElementById("inquiries");
+const safe=(v)=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function notice(text,type){message.textContent=text;message.className="notice"+(type?" "+type:"");message.classList.remove("hidden")}
+function setSignedIn(show){loginPanel.classList.toggle("hidden",show);dashboard.classList.toggle("hidden",!show);signOut.classList.toggle("hidden",!show)}
+async function checkAccess(){
+ const {data:{session}}=await supabase.auth.getSession();
+ if(!session){setSignedIn(false);return}
+ const {data:member,error}=await supabase.from("team_members").select("role,active").eq("user_id",session.user.id).maybeSingle();
+ if(error||!member||!member.active){setSignedIn(false);notice("You're signed in, but this account hasn't been approved for the IBC team yet. Ask an administrator to grant access to this email address.","error");return}
+ setSignedIn(true);notice("Signed in as "+session.user.email+".","success");await loadInquiries();
+}
+async function loadInquiries(){
+ inquiries.innerHTML='<p class="muted">Loading submissions…</p>';
+ const {data,error}=await supabase.from("supplier_inquiries").select("*").order("created_at",{ascending:false});
+ if(error){inquiries.textContent="Could not load submissions. Please refresh and try again.";notice("The back office could not retrieve submissions. Check that your account is approved.","error");return}
+ document.getElementById("allCount").textContent=data.length;
+ document.getElementById("newCount").textContent=data.filter(x=>x.status==="new").length;
+ document.getElementById("reviewCount").textContent=data.filter(x=>x.status==="reviewing").length;
+ if(!data.length){inquiries.innerHTML='<p class="muted">No submissions yet. New supplier forms will appear here.</p>';return}
+ inquiries.innerHTML=data.map(x=>{
+  const files=(x.file_paths||[]).map((p,i)=>'<button class="filelink" type="button" data-file="'+safe(p)+'">Open document '+(i+1)+'</button>').join("");
+  return '<article class="inquiry" data-id="'+safe(x.id)+'"><h3>'+safe(x.company_name)+'</h3><div class="muted">'+safe(new Date(x.created_at).toLocaleString())+' · '+safe(x.supplier_type.replaceAll("_"," "))+'</div><div class="details"><div class="detail"><strong>Contact</strong>'+safe(x.contact_name)+'<br><a href="mailto:'+safe(x.email)+'">'+safe(x.email)+'</a>'+(x.whatsapp?'<br>'+safe(x.whatsapp):'')+'</div><div class="detail"><strong>Website / distribution</strong>'+(x.website?'<a href="'+safe(x.website)+'" target="_blank" rel="noopener noreferrer">'+safe(x.website)+'</a>':'Not provided')+'<br>'+safe(x.regions_served||"Coverage not provided")+'</div><div class="detail"><strong>Products</strong>'+safe(x.product_summary)+'</div><div class="detail"><strong>Pricing and terms</strong>'+safe(x.pricing_notes||"Not provided")+'</div></div><div class="files">'+(files||'<span class="muted">No files attached.</span>')+'</div><div class="actions"><label for="status-'+safe(x.id)+'">Status</label><select id="status-'+safe(x.id)+'" data-status><option value="new" '+(x.status==="new"?"selected":"")+'>New</option><option value="reviewing" '+(x.status==="reviewing"?"selected":"")+'>Reviewing</option><option value="contacted" '+(x.status==="contacted"?"selected":"")+'>Contacted</option><option value="converted" '+(x.status==="converted"?"selected":"")+'>Converted</option><option value="closed" '+(x.status==="closed"?"selected":"")+'>Closed</option></select><button class="btn secondary" type="button" data-save>Save status</button></div></article>'
+ }).join("");
+}
+document.getElementById("loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();const button=document.getElementById("loginButton");button.disabled=true;
+ const email=document.getElementById("email").value.trim();
+ const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.href.split("#")[0]}});
+ if(error)notice("Could not send sign-in link: "+error.message,"error");else notice("Check "+email+" for your secure sign-in link. If the email doesn't arrive, check spam or your Supabase Auth email settings.","success");
+ button.disabled=false;
+});
+inquiries.addEventListener("click",async e=>{
+ const article=e.target.closest(".inquiry");if(!article)return;
+ if(e.target.matches("[data-file]")){
+  const {data,error}=await supabase.storage.from("supplier-submissions").createSignedUrl(e.target.dataset.file,300);
+  if(error){notice("Could not create a private document link. Check team access.","error");return}
+  window.open(data.signedUrl,"_blank","noopener,noreferrer");return;
+ }
+ if(e.target.matches("[data-save]")){
+  const select=article.querySelector("[data-status]");const {error}=await supabase.from("supplier_inquiries").update({status:select.value}).eq("id",article.dataset.id);
+  if(error)notice("Status wasn't saved. Check team access and try again.","error");else{notice("Status updated.","success");await loadInquiries()}
+ }
+});
+document.getElementById("refresh").addEventListener("click",loadInquiries);
+signOut.addEventListener("click",async()=>{await supabase.auth.signOut();setSignedIn(false);notice("You've signed out.")});
+supabase.auth.onAuthStateChange(()=>{setTimeout(checkAccess,0)});
+checkAccess();
+})();
+</script>
+</body>
+</html>
