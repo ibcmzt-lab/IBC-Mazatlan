@@ -78,7 +78,7 @@
     <div class="layout">
       <section class="form-panel">
         <h2 data-es="Comparte con IBC" data-en="Share with IBC">Comparte con IBC</h2>
-        <p class="form-intro" data-es="Cuéntanos quién eres. Eso es suficiente para empezar." data-en="Tell us who you are. That's enough to get started.">Cuéntanos quién eres y qué estás elaborando. Puedes adjuntar hasta cinco archivos.</p>
+        <p class="form-intro" data-es="Cuéntanos quién eres. Eso es suficiente para empezar." data-en="Tell us who you are. That’s enough to get started.">Cuéntanos quién eres. Eso es suficiente para empezar.</p>
         <div class="status success" id="success" role="status" aria-live="polite"></div>
         <div class="status error" id="error" role="alert" aria-live="assertive"></div>
 
@@ -101,7 +101,6 @@
             <input id="whatsapp" name="whatsapp" type="tel" maxlength="60" autocomplete="tel" placeholder="+52 ...">
           </div>
           <div class="field">
-                      <div class="field">
             <label for="website" data-es="Sitio web o redes sociales" data-en="Website or social media">Sitio web o redes sociales</label>
             <input id="website" name="website" type="url" maxlength="500" placeholder="https://">
           </div>
@@ -193,8 +192,9 @@
         try {
           const { error: insertError } = await client.from("supplier_inquiries").insert(payload);
           if (insertError) throw insertError;
-          success.textContent = language === "es" ? "¡Listo! Recibimos tu información. Gracias por compartir tus productos con IBC. Te contactaremos si necesitamos dar seguimiento." : "You're all set! We received your information. Thanks for sharing your products with IBC. We'll be in touch if we need to follow up.";
+          success.textContent = language === "es" ? "¡Enviado correctamente! Tu información quedó registrada en IBC. Gracias. Puedes cerrar esta página." : "Successfully submitted! Your information has been saved with IBC. Thank you. You can close this page.";
           success.classList.add("show");
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
           form.reset();
         } catch (err) {
           console.error("Supplier submission failed", err);
