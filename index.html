@@ -313,6 +313,43 @@
       text-decoration: underline;
     }
 
+    .follow-label {
+      margin-top: 16px;
+      color: var(--cream);
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--cream);
+      transition: color .2s, border-color .2s, background .2s;
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(217, 183, 107, .08);
+    }
+
+    .social-links svg {
+      display: block;
+      width: 23px;
+      height: 23px;
+    }
+
     @media (max-width: 800px) {
       .grid {
         grid-template-columns: 1fr;
@@ -586,8 +623,18 @@
   </main>
 
   <footer class="site-footer">
-    UNA MÁS BY IBC · MAZATLÁN, SINALOA ·
-    <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a>
+    <div>UNA MÁS BY IBC · MAZATLÁN, SINALOA ·
+      <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a>
+    </div>
+    <div class="follow-label" data-es="Síguenos" data-en="Follow us">Síguenos</div>
+    <div class="social-links" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/IBCMazatlan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de IBC" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+      </a>
+      <a href="https://x.com/IBC_MZT" target="_blank" rel="noopener noreferrer" aria-label="IBC en X" title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.4 6.8L18.9 2zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20z" fill="currentColor"/></svg>
+      </a>
+    </div>
   </footer>
 
   <script>
