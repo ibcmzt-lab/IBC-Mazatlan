@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -61,7 +61,7 @@
     h2,
     h3,
     .brand {
-      font-family: "Space Grotesk", "DM Sans", sans-serif;
+      font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
     }
 
     .site-header {
@@ -77,9 +77,9 @@
     .brand {
       display: inline-block;
       text-decoration: none;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: .13em;
+      font-size: 1.32rem;
+      font-weight: 800;
+      letter-spacing: .1em;
       line-height: 1.25;
     }
 
@@ -134,7 +134,7 @@
       isolation: isolate;
       display: flex;
       align-items: flex-end;
-      min-height: clamp(520px, 66vw, 780px);
+      min-height: clamp(640px, 82svh, 940px);
       overflow: hidden;
       background: #172324;
     }
@@ -146,7 +146,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 55%;
+      object-position: center 52%;
     }
 
     .hero::after {
@@ -154,8 +154,8 @@
       z-index: -1;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(10, 18, 19, .88) 0%, rgba(10, 18, 19, .53) 48%, rgba(10, 18, 19, .08) 100%),
-        linear-gradient(0deg, rgba(10, 18, 19, .55), transparent 65%);
+        linear-gradient(90deg, rgba(10, 18, 19, .60) 0%, rgba(10, 18, 19, .16) 55%, rgba(10, 18, 19, .02) 100%),
+        linear-gradient(0deg, rgba(10, 18, 19, .70) 0%, transparent 58%);
       content: "";
     }
 
@@ -163,7 +163,17 @@
       width: 100%;
       max-width: var(--page-width);
       margin: 0 auto;
-      padding: clamp(24px, 5vw, 64px);
+      padding: clamp(24px, 5vw, 68px);
+    }
+
+    .hero-copy > .eyebrow {
+      display: inline-flex;
+      padding: 8px 14px;
+      border: 1px solid rgba(244, 239, 229, .42);
+      border-radius: 999px;
+      background: rgba(16, 25, 26, .48);
+      backdrop-filter: blur(8px);
+      letter-spacing: .08em;
     }
 
     .eyebrow {
@@ -176,20 +186,23 @@
     }
 
     .hero h1 {
-      max-width: 850px;
-      margin: 10px 0 12px;
-      font-size: clamp(2.35rem, 5.5vw, 4.8rem);
-      font-weight: 600;
-      letter-spacing: -.055em;
-      line-height: .99;
+      max-width: 920px;
+      margin: 12px 0 14px;
+      font-size: clamp(3.2rem, 7vw, 6.7rem);
+      font-weight: 800;
+      letter-spacing: -.065em;
+      line-height: .92;
+      text-wrap: balance;
+      text-shadow: 0 3px 30px rgba(0, 0, 0, .28);
     }
 
     .hero-copy > p {
-      max-width: 650px;
+      max-width: 620px;
       margin: 0;
-      color: #e1e4df;
-      font-size: clamp(1.15rem, 1.8vw, 1.3rem);
+      color: #f1f0e9;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
       line-height: 1.55;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .4);
     }
 
     .hero .button {
@@ -310,7 +323,8 @@
       }
 
       .hero {
-        min-height: 640px;
+        min-height: 76svh;
+        min-height: max(660px, 76svh);
       }
 
       .hero-image {
@@ -319,8 +333,7 @@
 
       .hero::after {
         background:
-          linear-gradient(90deg, rgba(10, 18, 19, .75), rgba(10, 18, 19, .2)),
-          linear-gradient(0deg, rgba(10, 18, 19, .85), rgba(10, 18, 19, .04) 95%);
+          linear-gradient(180deg, rgba(10, 18, 19, .08) 10%, rgba(10, 18, 19, .12) 42%, rgba(10, 18, 19, .86) 100%);
       }
 
       .hero-copy {
@@ -360,8 +373,13 @@
       }
 
       .hero h1 {
-        font-size: clamp(2.2rem, 9vw, 3rem);
-        line-height: 1.02;
+        max-width: 100%;
+        font-size: clamp(3rem, 12vw, 4.5rem);
+        line-height: .94;
+      }
+
+      .hero-copy > p {
+        font-size: 1.12rem;
       }
 
       .partner-actions {
@@ -415,27 +433,27 @@
       <div class="hero-copy">
         <div
           class="eyebrow"
-          data-es="Una barra de bebidas con carácter"
-          data-en="A bar for beverages with character"
-        >Una barra de bebidas con carácter</div>
+          data-es="Una experiencia de bebidas para descubrir"
+          data-en="A beverage experience made for discovery"
+        >Una experiencia de bebidas para descubrir</div>
 
         <h1
           id="hero-title"
-          data-es="Buena cerveza. Nuevas historias. Buena compañía."
-          data-en="Great beer. New stories. Good company."
-        >Buena cerveza. Nuevas historias. Buena compañía.</h1>
+          data-es="Ven. Explora. Disfruta."
+          data-en="Come. Explore. Enjoy."
+        >Ven. Explora. Disfruta.</h1>
 
         <p
-          data-es="Una Más reúne cerveza artesanal y bebidas especiales de productores independientes de México y del mundo, servidas con cuidado y sin complicaciones."
-          data-en="Una Más brings together craft beer and specialty beverages from independent producers in Mexico and around the world, served with care and without fuss."
-        >Una Más reúne cerveza artesanal y bebidas especiales de productores independientes de México y del mundo, servidas con cuidado y sin complicaciones.</p>
+          data-es="Descubre cervezas artesanales y bebidas especiales de productores independientes. Prueba algo nuevo, comparte tus hallazgos y disfruta lo que viene."
+          data-en="Discover craft beer and specialty beverages from independent producers. Try something new, share your finds, and enjoy what comes next."
+        >Descubre cervezas artesanales y bebidas especiales de productores independientes. Prueba algo nuevo, comparte tus hallazgos y disfruta lo que viene.</p>
 
         <a
           class="button primary"
           href="#concepto"
-          data-es="Conoce Una Más"
-          data-en="Meet Una Más"
-        >Conoce Una Más</a>
+          data-es="Descubre el concepto"
+          data-en="Explore the concept"
+        >Descubre el concepto</a>
       </div>
     </section>
 
