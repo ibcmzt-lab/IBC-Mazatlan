@@ -175,7 +175,13 @@
         toggle.setAttribute("aria-label", next === "es" ? "Cambiar idioma a inglés" : "Switch language to Spanish");
       }
       toggle.addEventListener("click", () => setLanguage(language === "es" ? "en" : "es"));
-      setLanguage("es");
+      const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+      setLanguage(requestedLanguage === "en" ? "en" : "es");
+
+      // Keep the chosen language when returning to the homepage.
+      document.querySelectorAll('a[href="index.html"]').forEach((link) => {
+        link.href = requestedLanguage === "en" ? "index.html?lang=en" : "index.html?lang=es";
+      });
 
       filesInput.addEventListener("change", () => {
         const files = Array.from(filesInput.files || []);
