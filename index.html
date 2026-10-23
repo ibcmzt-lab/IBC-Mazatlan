@@ -65,8 +65,10 @@
     }
 
     .site-header {
-      min-height: 68px;
-      padding: 12px clamp(20px, 6vw, 88px);
+      position: relative;
+      z-index: 2;
+      min-height: 84px;
+      padding: 14px clamp(20px, 6vw, 88px);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,21 +78,38 @@
 
     .brand {
       display: inline-block;
+      color: var(--cream);
       text-decoration: none;
-      font-size: 1.32rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      line-height: 1.25;
+      line-height: 1;
+    }
+
+    .brand-mark {
+      display: block;
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(1.65rem, 2.4vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: .075em;
+      line-height: .95;
     }
 
     .brand small {
-      display: block;
-      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 9px;
       color: var(--gold);
       font-family: "DM Sans", sans-serif;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .13em;
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+    }
+
+    .brand-rule {
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--gold);
+      opacity: .8;
     }
 
     .lang-button,
@@ -134,7 +153,7 @@
       isolation: isolate;
       display: flex;
       align-items: flex-end;
-      min-height: clamp(640px, 82svh, 940px);
+      min-height: clamp(650px, 82svh, 900px);
       overflow: hidden;
       background: #172324;
     }
@@ -146,7 +165,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 52%;
+      object-position: center 50%;
     }
 
     .hero::after {
@@ -154,8 +173,8 @@
       z-index: -1;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(10, 18, 19, .60) 0%, rgba(10, 18, 19, .16) 55%, rgba(10, 18, 19, .02) 100%),
-        linear-gradient(0deg, rgba(10, 18, 19, .70) 0%, transparent 58%);
+        linear-gradient(90deg, rgba(7, 17, 18, .18) 0%, rgba(7, 17, 18, 0) 58%),
+        linear-gradient(0deg, rgba(7, 17, 18, .94) 0%, rgba(7, 17, 18, .74) 16%, rgba(7, 17, 18, .12) 43%, transparent 68%);
       content: "";
     }
 
@@ -163,17 +182,18 @@
       width: 100%;
       max-width: var(--page-width);
       margin: 0 auto;
-      padding: clamp(24px, 5vw, 68px);
+      padding: clamp(26px, 4vw, 54px) clamp(24px, 6vw, 88px) clamp(34px, 5vw, 62px);
     }
 
     .hero-copy > .eyebrow {
       display: inline-flex;
-      padding: 8px 14px;
-      border: 1px solid rgba(244, 239, 229, .42);
-      border-radius: 999px;
-      background: rgba(16, 25, 26, .48);
-      backdrop-filter: blur(8px);
-      letter-spacing: .08em;
+      padding: 7px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--gold);
+      letter-spacing: .18em;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .7);
     }
 
     .eyebrow {
@@ -186,21 +206,21 @@
     }
 
     .hero h1 {
-      max-width: 920px;
-      margin: 12px 0 14px;
-      font-size: clamp(3.2rem, 7vw, 6.7rem);
-      font-weight: 800;
-      letter-spacing: -.065em;
-      line-height: .92;
+      max-width: 800px;
+      margin: 8px 0 12px;
+      font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: .98;
       text-wrap: balance;
       text-shadow: 0 3px 30px rgba(0, 0, 0, .28);
     }
 
     .hero-copy > p {
-      max-width: 620px;
+      max-width: 650px;
       margin: 0;
       color: #f1f0e9;
-      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      font-size: clamp(1.05rem, 1.55vw, 1.25rem);
       line-height: 1.55;
       text-shadow: 0 2px 18px rgba(0, 0, 0, .4);
     }
@@ -412,14 +432,19 @@
         padding: 17px 16px;
       }
 
-      .brand {
-        font-size: 1.05rem;
-        letter-spacing: .1em;
+      .brand-mark {
+        font-size: 1.45rem;
+        letter-spacing: .055em;
       }
 
       .brand small {
-        font-size: .62rem;
-        letter-spacing: .05em;
+        gap: 5px;
+        font-size: .55rem;
+        letter-spacing: .1em;
+      }
+
+      .brand-rule {
+        width: 10px;
       }
 
       .lang-button {
@@ -464,10 +489,7 @@
 
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Una Más by IBC, inicio">
-      UNA MÁS
-      <small>BY IMMERSIVE BEVERAGE CONCEPTS</small>
-    </a>
+    <a class="brand" href="index.html" aria-label="Una Más by IBC, inicio"><span class="brand-mark">UNA MÁS</span><small><span class="brand-rule"></span> BY IBC · MAZATLÁN <span class="brand-rule"></span></small></a>
 
     <button
       class="lang-button"
@@ -481,8 +503,8 @@
     <section class="hero" aria-labelledby="hero-title">
       <img
         class="hero-image"
-        src="tapwall.png?v=3"
-        alt="Muro de grifos en una barra contemporánea de cerveza artesanal"
+        src="Lukr.png?v=1"
+        alt="Barra contemporánea de cerveza artesanal Una Más con muro de grifos y detalles en teal y latón"
         fetchpriority="high"
       >
 
