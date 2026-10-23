@@ -127,12 +127,10 @@
   </main>
   <footer class="social-footer"><div class="footer-line">UNA MÁS BY IBC · MAZATLÁN, SINALOA · <a href="mailto:ibc.mzt@gmail.com">ibc.mzt@gmail.com</a></div><div class="follow-label" data-es="Síguenos" data-en="Follow us">Síguenos</div><div class="social-links"><a href="https://www.instagram.com/IBCMazatlan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de IBC" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a><a href="https://x.com/IBC_MZT" target="_blank" rel="noopener noreferrer" aria-label="IBC en X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.4 6.8L18.9 2zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20z" fill="currentColor"/></svg></a></div></footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     (() => {
       const SUPABASE_URL = "https://kueckuienhnqmkgtgqpi.supabase.co";
       const SUPABASE_KEY = "sb_publishable_Ym1jg6DpfVsZo6f10_YBzA_3yYV522a";
-      const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       const form = document.getElementById("supplierForm");
       const submit = document.getElementById("submit");
       const success = document.getElementById("success");
@@ -178,21 +176,33 @@
           company_name: String(data.get("company_name") || "").trim(),
           contact_name: String(data.get("contact_name") || "").trim(),
           email: String(data.get("email") || "").trim(),
-          whatsapp: String(data.get("whatsapp") || "").trim() || null,
-          supplier_type: null,
-          website: String(data.get("website") || "").trim() || null,
-          country: "Mexico",
-          regions_served: null,
-          product_summary: String(data.get("product_summary") || "").trim() || null,
-          pricing_notes: null,
-          file_paths: []
+          whatsapp: String(data.get("whatsapp") || "").trim(),
+          website: String(data.get("website") || "").trim(),
+          product_summary: String(data.get("product_summary") || "").trim(),
+          companyFax: String(data.get("companyFax") || "").trim()
         };
         submit.disabled = true;
         submit.textContent = language === "es" ? "Enviando…" : "Sending…";
         try {
-          const { error: insertError } = await client.from("supplier_inquiries").insert(payload);
-          if (insertError) throw insertError;
-          success.textContent = language === "es" ? "¡Enviado correctamente! Tu información quedó registrada en IBC. Gracias. Puedes cerrar esta página." : "Successfully submitted! Your information has been saved with IBC. Thank you. You can close this page.";
+          const response = await fetch(SUPABASE_URL + "/functions/v1/supplier-submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "apikey": SUPABASE_KEY
+            },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "Submission failed");
+          }
+          success.textContent = result.notificationSent
+            ? (language === "es"
+                ? "¡Listo! Tu información quedó registrada y enviamos una notificación al equipo de IBC. Gracias."
+                : "All set! Your information has been saved and an email notification was sent to the IBC team. Thank you.")
+            : (language === "es"
+                ? "Tu información quedó registrada. La notificación por correo no pudo enviarse en este momento; el equipo de IBC deberá revisar el registro."
+                : "Your information has been saved. The email notification could not be sent right now; the IBC team will need to check the submission.");
           success.classList.add("show");
           success.scrollIntoView({ behavior: "smooth", block: "center" });
           form.reset();
