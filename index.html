@@ -751,7 +751,7 @@
   <script>
     (() => {
       const toggle = document.getElementById("langToggle");
-      let language = "es";
+      let language = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "es";
 
       function setLanguage(nextLanguage) {
         language = nextLanguage;
@@ -773,21 +773,23 @@
         }
       }
 
-      // Carry the selected language to the supplier portal instead of resetting to Spanish.
-      const supplierLinks = document.querySelectorAll('a[href="partners.html"]');
-      function updateSupplierLinks() {
-        supplierLinks.forEach((link) => {
+      // Preserve the selected language when navigating to another page.
+      function updateLanguageLinks() {
+        document.querySelectorAll(".language-aware-link").forEach((link) => {
+          link.href = language === "en" ? "get-involved.html?lang=en" : "get-involved.html?lang=es";
+        });
+        document.querySelectorAll('a[href="partners.html"], a[href="partners.html?lang=en"], a[href="partners.html?lang=es"]').forEach((link) => {
           link.href = language === "en" ? "partners.html?lang=en" : "partners.html?lang=es";
         });
       }
 
       toggle.addEventListener("click", () => {
         setLanguage(language === "es" ? "en" : "es");
-        updateSupplierLinks();
+        updateLanguageLinks();
       });
 
-      setLanguage("es");
-      updateSupplierLinks();
+      setLanguage(language);
+      updateLanguageLinks();
     })();
   </script>
 
