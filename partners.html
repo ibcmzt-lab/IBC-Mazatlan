@@ -82,7 +82,7 @@
         <div class="status success" id="success" role="status" aria-live="polite"></div>
         <div class="status error" id="error" role="alert" aria-live="assertive"></div>
 
-        <form id="supplierForm">
+        <form id="supplierForm" novalidate>
           <div class="trap" aria-hidden="true"><label for="companyFax">Leave this field empty</label><input id="companyFax" name="companyFax" tabindex="-1" autocomplete="off"></div>
           <div class="field">
             <label for="company"><span data-es="Empresa / cervecería" data-en="Company / brewery">Empresa / cervecería</span> <span class="required">*</span></label>
@@ -170,6 +170,19 @@
         event.preventDefault();
         error.classList.remove("show");
         success.classList.remove("show");
+
+        const companyInput = document.getElementById("company");
+        const contactInput = document.getElementById("contact");
+        const emailInput = document.getElementById("email");
+        const invalidInput = [companyInput, contactInput, emailInput].find((input) => !input.checkValidity());
+        if (invalidInput) {
+          showError(language === "es"
+            ? "Revisa los campos obligatorios. Introduce empresa, persona de contacto y un correo electrónico válido."
+            : "Please check the required fields. Enter a company, contact person, and valid email address.");
+          invalidInput.focus();
+          return;
+        }
+
         if (document.getElementById("companyFax").value) return;
         const data = new FormData(form);
         const payload = {
@@ -183,6 +196,8 @@
         };
         submit.disabled = true;
         submit.textContent = language === "es" ? "Enviando…" : "Sending…";
+        success.textContent = language === "es" ? "Conectando con IBC…" : "Connecting to IBC…";
+        success.classList.add("show");
         try {
           const response = await fetch(SUPABASE_URL + "/functions/v1/supplier-submit", {
             method: "POST",
@@ -208,7 +223,10 @@
           form.reset();
         } catch (err) {
           console.error("Supplier submission failed", err);
-          showError(language === "es" ? "No pudimos completar el envío. Revisa tu conexión e inténtalo de nuevo, o escríbenos a ibc.mzt@gmail.com." : "We couldn't complete your submission. Check your connection and try again, or email ibc.mzt@gmail.com.");
+          const detail = err && err.message ? String(err.message).slice(0, 160) : "";
+          showError(language === "es"
+            ? "No pudimos completar el envío. " + (detail ? "Detalle: " + detail + ". " : "") + "Revisa tu conexión o escríbenos a ibc.mzt@gmail.com."
+            : "We couldn't complete your submission. " + (detail ? "Details: " + detail + ". " : "") + "Check your connection or email ibc.mzt@gmail.com.");
         } finally {
           submit.disabled = false;
           submit.textContent = language === "es" ? "Enviar información a IBC" : "Send information to IBC";
