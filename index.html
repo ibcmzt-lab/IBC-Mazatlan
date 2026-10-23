@@ -760,6 +760,9 @@
         document.querySelectorAll("[data-es][data-en]").forEach((element) => {
           element.textContent = element.getAttribute(`data-${language}`);
         });
+        document.querySelectorAll("[data-placeholder-es][data-placeholder-en]").forEach((element) => {
+          element.placeholder = element.getAttribute(`data-placeholder-${language}`);
+        });
 
         if (language === "es") {
           toggle.textContent = "🇺🇸 English";
