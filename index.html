@@ -484,6 +484,42 @@
         transition-duration: .01ms !important;
       }
     }
+
+    /* Expanded concept sections and larger, more comfortable typography */
+    body { font-size: 20px; }
+    .intro { font-size: clamp(1.25rem, 1.8vw, 1.45rem); }
+    .tile p { font-size: 1.18rem; }
+    .eyebrow { font-size: 1rem; letter-spacing: .14em; }
+    .button, .lang-button { min-height: 54px; padding: 14px 23px; }
+    .feature-band { background: #182526; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .feature-band .section { padding-top: clamp(56px, 7vw, 90px); padding-bottom: clamp(56px, 7vw, 90px); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin-top: 34px; }
+    .feature-card { padding: 26px; border: 1px solid var(--line); background: rgba(16,25,26,.55); }
+    .feature-card h3 { margin: 14px 0 10px; font-size: 1.5rem; line-height: 1.2; }
+    .feature-card p { margin: 0; color: var(--muted); font-size: 1.15rem; }
+    .signup-panel { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(30px,5vw,72px); align-items: start; }
+    .signup-form { padding: clamp(22px,3vw,36px); border: 1px solid var(--line); background: var(--panel); }
+    .form-field { display: grid; gap: 7px; margin-bottom: 17px; }
+    .form-field label, .form-label { font-size: 1rem; font-weight: 700; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 52px; padding: 12px 14px; border: 1px solid #596665; border-radius: 3px; background: #10191a; color: var(--cream); font: inherit; font-size: 1.05rem; }
+    .form-field textarea { min-height: 112px; resize: vertical; }
+    .check-row { display: flex; align-items: flex-start; gap: 12px; margin: 18px 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+    .check-row input { width: 22px; height: 22px; margin-top: 3px; flex: 0 0 auto; accent-color: var(--gold); }
+    .form-status { display: none; margin-top: 16px; padding: 13px 15px; border: 1px solid var(--teal); color: var(--cream); overflow-wrap: anywhere; }
+    .form-status.show { display: block; }
+    .form-status.error { border-color: #d99b86; }
+    .fine-print { color: var(--muted); font-size: .92rem; line-height: 1.55; }
+    .text-link { color: var(--gold); text-underline-offset: 4px; }
+    @media (max-width: 800px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .signup-panel { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 440px) {
+      body { font-size: 19px; }
+      .section h2, .partner-inner h2 { font-size: clamp(2.35rem, 10vw, 3.25rem); }
+      .intro, .partner-inner > p { font-size: 1.2rem; }
+    }
+
   </style>
 </head>
 
@@ -607,6 +643,56 @@
       </div>
     </section>
 
+
+    <section class="feature-band" id="mexico">
+      <div class="section">
+        <div class="eyebrow" data-es="México en cada descubrimiento" data-en="Mexico in every discovery">México en cada descubrimiento</div>
+        <h2 data-es="Traer México a Sinaloa." data-en="Bringing Mexico to Sinaloa.">Traer México a Sinaloa.</h2>
+        <p class="intro" data-es="La cultura de las bebidas de México es diversa, regional y está llena de historias que merecen ser descubiertas. Una Más quiere acercar a Mazatlán a los productores, estilos, sabores y personas que dan forma a esa cultura, una copa a la vez." data-en="Mexico's beverage culture is regional, diverse, and full of stories worth discovering. Una Más aims to connect Mazatlán with the producers, styles, flavors, and people shaping that culture, one glass at a time.">La cultura de las bebidas de México es diversa, regional y está llena de historias que merecen ser descubiertas. Una Más quiere acercar a Mazatlán a los productores, estilos, sabores y personas que dan forma a esa cultura, una copa a la vez.</p>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="tile-number">01 / <span data-es="DESCUBRIR" data-en="DISCOVER">DESCUBRIR</span></div><h3 data-es="Más allá de lo conocido" data-en="Beyond the familiar">Más allá de lo conocido</h3><p data-es="Dar espacio a estilos, regiones y productores que quizá aún no forman parte de tu radar." data-en="Make room for styles, regions, and producers that may not be on your radar yet.">Dar espacio a estilos, regiones y productores que quizá aún no forman parte de tu radar.</p></article>
+          <article class="feature-card"><div class="tile-number">02 / <span data-es="CONECTAR" data-en="CONNECT">CONECTAR</span></div><h3 data-es="Personas y productores" data-en="People and producers">Personas y productores</h3><p data-es="Crear puentes entre quienes elaboran bebidas extraordinarias y quienes quieren conocerlas." data-en="Build bridges between the people making remarkable beverages and the people eager to discover them.">Crear puentes entre quienes elaboran bebidas extraordinarias y quienes quieren conocerlas.</p></article>
+          <article class="feature-card"><div class="tile-number">03 / <span data-es="CONSTRUIR" data-en="BUILD">CONSTRUIR</span></div><h3 data-es="Una comunidad desde el inicio" data-en="A community from the beginning">Una comunidad desde el inicio</h3><p data-es="La idea está tomando forma. Queremos escuchar a quienes puedan aportar ideas, talento, experiencia y energía." data-en="The concept is taking shape. We want to hear from people who can bring ideas, talent, experience, and energy.">La idea está tomando forma. Queremos escuchar a quienes puedan aportar ideas, talento, experiencia y energía.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="comunidad">
+      <div class="signup-panel">
+        <div>
+          <div class="eyebrow" data-es="Forma parte del comienzo" data-en="Be part of the beginning">Forma parte del comienzo</div>
+          <h2 data-es="Algo nuevo está tomando forma en Mazatlán." data-en="Something new is taking shape in Mazatlán.">Algo nuevo está tomando forma en Mazatlán.</h2>
+          <p class="intro" data-es="Recibe novedades ocasionales sobre Una Más, descubrimientos de bebidas, avances del concepto y futuras actividades. Sin ruido innecesario. Solo noticias cuando tengamos algo que compartir." data-en="Get occasional updates about Una Más, beverage discoveries, progress on the concept, and future activities. No unnecessary noise. Just news when we have something worth sharing.">Recibe novedades ocasionales sobre Una Más, descubrimientos de bebidas, avances del concepto y futuras actividades. Sin ruido innecesario. Solo noticias cuando tengamos algo que compartir.</p>
+          <p style="margin-top:24px"><a class="button secondary" href="get-involved.html" data-es="Quiero ayudar a construir Una Más" data-en="I want to help build Una Más">Quiero ayudar a construir Una Más</a></p>
+        </div>
+        <form class="signup-form" id="communitySignup">
+          <h3 style="margin:0 0 8px;font-size:1.65rem" data-es="Mantente en contacto" data-en="Stay in touch">Mantente en contacto</h3>
+          <p class="fine-print" style="margin-top:0" data-es="Únete a nuestra lista para recibir novedades. Puedes elegir tus intereses." data-en="Join our list for updates. You can choose what interests you.">Únete a nuestra lista para recibir novedades. Puedes elegir tus intereses.</p>
+          <div class="form-field"><label for="signupName" data-es="Nombre (opcional)" data-en="Name (optional)">Nombre (opcional)</label><input id="signupName" name="full_name" maxlength="160" autocomplete="name" data-placeholder-es="Tu nombre" data-placeholder-en="Your name" placeholder="Tu nombre"></div>
+          <div class="form-field"><label for="signupEmail" data-es="Correo electrónico" data-en="Email address">Correo electrónico</label><input id="signupEmail" name="email" type="email" maxlength="254" required autocomplete="email" placeholder="nombre@ejemplo.com"></div>
+          <div class="form-field"><label for="signupCity" data-es="Ciudad (opcional)" data-en="City (optional)">Ciudad (opcional)</label><input id="signupCity" name="city" maxlength="120" autocomplete="address-level2" data-placeholder-es="Mazatlán, Sinaloa" data-placeholder-en="Mazatlán, Sinaloa" placeholder="Mazatlán, Sinaloa"></div>
+          <div class="form-field"><label for="signupInterest" data-es="¿Qué te interesa?" data-en="What interests you?">¿Qué te interesa?</label><select id="signupInterest" name="interest"><option value="community" data-es="Comunidad y novedades" data-en="Community and updates">Comunidad y novedades</option><option value="ambassador" data-es="Ser embajador/a de marca" data-en="Becoming a brand ambassador">Ser embajador/a de marca</option><option value="digital" data-es="Sitio web y redes sociales" data-en="Website and social media">Sitio web y redes sociales</option><option value="beverage" data-es="Bebidas y hospitalidad" data-en="Beverages and hospitality">Bebidas y hospitalidad</option><option value="partner" data-es="Colaboración comercial" data-en="Business collaboration">Colaboración comercial</option><option value="investor" data-es="Información para inversionistas" data-en="Investor information">Información para inversionistas</option></select></div>
+          <label class="check-row"><input id="signupConsent" type="checkbox" required><span data-es="Acepto recibir correos ocasionales de Una Más by IBC. Puedo cancelar mi suscripción cuando quiera." data-en="I agree to receive occasional emails from Una Más by IBC. I can unsubscribe at any time.">Acepto recibir correos ocasionales de Una Más by IBC. Puedo cancelar mi suscripción cuando quiera.</span></label>
+          <input type="text" id="signupWebsiteCheck" name="website_check" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <button class="button primary" type="submit" id="signupSubmit" style="width:100%" data-es="Quiero recibir novedades" data-en="Keep me updated">Quiero recibir novedades</button>
+          <div class="form-status" id="signupStatus" role="status" aria-live="polite"></div>
+          <p class="fine-print" data-es="Usaremos tus datos para responder a tu solicitud y enviarte las comunicaciones que hayas aceptado. Consulta nuestro aviso de privacidad o escríbenos si tienes preguntas." data-en="We'll use your details to respond to your request and send communications you've agreed to receive. Contact us if you have privacy questions.">Usaremos tus datos para responder a tu solicitud y enviarte las comunicaciones que hayas aceptado. Consulta nuestro aviso de privacidad o escríbenos si tienes preguntas.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="partner" id="involucrate">
+      <div class="partner-inner">
+        <div class="eyebrow" data-es="Personas con ideas y energía" data-en="People with ideas and energy">Personas con ideas y energía</div>
+        <h2 data-es="No buscamos solo seguidores. Buscamos colaboradores." data-en="We're not just looking for followers. We're looking for collaborators.">No buscamos solo seguidores. Buscamos colaboradores.</h2>
+        <p data-es="Buscamos embajadores de marca, coordinadores de redes sociales, desarrolladores web, creativos, profesionales de bebidas y personas que quieran ayudar a dar forma a Una Más. Cuéntanos qué sabes hacer y cómo te gustaría participar." data-en="We're looking for brand ambassadors, social media coordinators, web developers, creatives, beverage professionals, and people who want to help shape Una Más. Tell us what you do and how you'd like to contribute.">Buscamos embajadores de marca, coordinadores de redes sociales, desarrolladores web, creativos, profesionales de bebidas y personas que quieran ayudar a dar forma a Una Más. Cuéntanos qué sabes hacer y cómo te gustaría participar.</p>
+        <div class="partner-actions">
+          <a class="button primary" href="get-involved.html" data-es="Conoce cómo participar" data-en="Explore ways to get involved">Conoce cómo participar</a>
+          <a class="button secondary" href="partners.html" data-es="Soy productor o proveedor" data-en="I'm a producer or supplier">Soy productor o proveedor</a>
+        </div>
+      </div>
+    </section>
+
     <section class="partner" id="proveedores">
       <div class="partner-inner">
         <div
@@ -701,5 +787,59 @@
       updateSupplierLinks();
     })();
   </script>
+
+  <script>
+    (() => {
+      const form = document.getElementById("communitySignup");
+      if (!form) return;
+      const submit = document.getElementById("signupSubmit");
+      const status = document.getElementById("signupStatus");
+      const toggle = document.getElementById("langToggle");
+      function currentLanguage() { return document.documentElement.lang === "en" ? "en" : "es"; }
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        status.className = "form-status";
+        const language = currentLanguage();
+        const email = document.getElementById("signupEmail").value.trim();
+        const consent = document.getElementById("signupConsent").checked;
+        if (!email || !consent) {
+          status.textContent = language === "es" ? "Introduce un correo válido y confirma tu consentimiento." : "Enter a valid email and confirm your consent.";
+          status.classList.add("show", "error"); return;
+        }
+        const interest = document.getElementById("signupInterest").value;
+        const payload = {
+          full_name: document.getElementById("signupName").value.trim(),
+          email,
+          city: document.getElementById("signupCity").value.trim(),
+          interests: [interest],
+          email_updates: true,
+          consent: true,
+          source: "homepage-newsletter",
+          website_check: document.getElementById("signupWebsiteCheck").value
+        };
+        submit.disabled = true;
+        submit.textContent = language === "es" ? "Enviando…" : "Sending…";
+        try {
+          const response = await fetch("https://kueckuienhnqmkgtgqpi.supabase.co/functions/v1/community-submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "apikey": "sb_publishable_Ym1jg6DpfVsZo6f10_YBzA_3yYV522a" },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok) throw new Error(result.error || "Submission failed");
+          status.textContent = language === "es" ? "¡Gracias! Tu interés quedó registrado. Nos mantendremos en contacto." : "Thank you! Your interest has been recorded. We'll stay in touch.";
+          status.classList.add("show");
+          form.reset();
+        } catch (error) {
+          status.textContent = language === "es" ? "No pudimos completar el registro. Inténtalo de nuevo o escríbenos a ibc.mzt@gmail.com." : "We couldn't complete the signup. Please try again or email ibc.mzt@gmail.com.";
+          status.classList.add("show", "error");
+        } finally {
+          submit.disabled = false;
+          submit.textContent = language === "es" ? "Quiero recibir novedades" : "Keep me updated";
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
